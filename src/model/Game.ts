@@ -1,4 +1,4 @@
-import Player from "@/model/player";
+import Player from "@/model/Player";
 
 export default class Game {
     public players!: Player[];

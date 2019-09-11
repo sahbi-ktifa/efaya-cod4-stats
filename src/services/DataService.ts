@@ -1,6 +1,5 @@
 import axios from "axios";
 import * as key from "@/key";
-import Game from "@/model/Game";
 
 axios.defaults.headers.common["secret-key"] = key.jsonBinKey;
 const collectionId = "5d701ecf2d1fb96463c4b42a";
