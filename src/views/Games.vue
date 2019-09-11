@@ -3,7 +3,7 @@
     <ul>
       <li v-for="game in sortedGames">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-        <h3>{{game.map}}</h3>
+        <router-link :to="'game/' + game.map" tag="h3">{{game.map}}</router-link>
         <span>{{game.date}}</span>
         <span>Players: <strong>{{game.players.length}}</strong></span>
         <div>
@@ -33,7 +33,7 @@ import Game from "@/model/Game";
     })
   }
 })
-export default class Home extends Vue {
+export default class Games extends Vue {
   protected games!: Game[];
 
   get sortedGames() {

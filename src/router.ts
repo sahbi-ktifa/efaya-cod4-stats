@@ -14,20 +14,19 @@ export default new Router({
       component: Games,
     },
     {
+      path: "/game/:map",
+      name: "game",
+      component: () => import(/* webpackChunkName: "game" */ "./views/Game.vue"),
+    },
+    {
       path: "/players",
       name: "players",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ "./views/Players.vue"),
+      component: () => import(/* webpackChunkName: "players" */ "./views/Players.vue"),
     },
     {
       path: "/halloffame",
       name: "halloffame",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ "./views/HallOfFame.vue"),
+      component: () => import(/* webpackChunkName: "halloffame" */ "./views/HallOfFame.vue"),
     }
   ],
 });

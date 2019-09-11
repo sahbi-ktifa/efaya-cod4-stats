@@ -5,8 +5,8 @@
     <img class="cod4-logo" alt="COD4 logo" src="./assets/cod4.png">
     <div id="nav">
       <router-link to="/">Games</router-link> |
-      <router-link to="/players">Players</router-link> |
-      <router-link to="/halloffame">Hall of fame</router-link>
+      <router-link to="/players">Players</router-link> <!--|
+      <router-link to="/halloffame">Hall of fame</router-link-->
     </div>
     <div v-if="loading" class="loader"></div>
     <router-view/>
