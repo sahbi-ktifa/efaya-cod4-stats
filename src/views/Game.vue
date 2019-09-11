@@ -57,36 +57,76 @@
         </ul>
       </li>
     </ul>
+    <div class="trophies-container">
+      <div class="trophies">
+        <div>
+          <img src="../assets/trophy.jpg" class="trophy">
+          <strong>The killer</strong><br/>
+          <i>{{deadliest}}</i>
+        </div>
+        <div>
+          <img src="../assets/trophy.jpg" class="trophy">
+          <strong>The scorer</strong><br/>
+          <i>{{scorer}}</i>
+        </div>
+        <div>
+          <img src="../assets/trophy.jpg" class="trophy">
+          <strong>The most bankable</strong><br/>
+          <i>{{bankable}}</i>
+        </div>
+        <div>
+          <img src="../assets/trophy.jpg" class="trophy">
+          <strong>The most targeted</strong><br/>
+          <i>{{targeted}}</i>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
-import Game from "@/model/Game";
-import Player from "@/model/Player";
+  import {Component, Vue} from "vue-property-decorator";
+  import {mapGetters} from "vuex";
+  import {orderBy} from "lodash";
+  import Game from "@/model/Game";
+  import Player from "@/model/Player";
 
-@Component({
-  computed: {
-    ...mapGetters({
-      games: "games"
-    })
+  @Component({
+    computed: {
+      ...mapGetters({
+        games: "games"
+      })
+    }
+  })
+  export default class GameDetails extends Vue {
+    public game!: Game;
+    public winners!: Player[];
+    public losers!: Player[];
+    protected games!: Game[];
+
+    public created() {
+      // @ts-ignore
+      this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+      this.winners = this.game.players.filter((p) => p.totalPoints === 20);
+      this.losers = this.game.players.filter((p) => p.totalPoints < 20);
+    }
+
+    get bankable() {
+      return orderBy(this.game.players, ["globalRatio"], ["desc"])[0].playerName;
+    }
+
+    get deadliest() {
+      return orderBy(this.game.players, ["totalKills"], ["desc"])[0].playerName;
+    }
+
+    get scorer() {
+      return orderBy(this.game.players, ["totalScore"], ["desc"])[0].playerName;
+    }
+
+    get targeted() {
+      return orderBy(this.game.players, ["totalDeaths"], ["desc"])[0].playerName;
+    }
   }
-})
-export default class GameDetails extends Vue {
-  public game!: Game;
-  public winners!: Player[];
-  public losers!: Player[];
-  protected games!: Game[];
-
-  public created() {
-    // @ts-ignore
-    this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
-    this.winners = this.game.players.filter((p) => p.totalPoints === 20);
-    this.losers = this.game.players.filter((p) => p.totalPoints < 20);
-  }
-
-}
 </script>
 
 <style scoped>
@@ -106,5 +146,18 @@ export default class GameDetails extends Vue {
     align-items: center;
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
+  }
+  .trophies {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-gap: 0 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .trophies .trophy {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
