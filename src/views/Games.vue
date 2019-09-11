@@ -12,8 +12,8 @@
           <div align="center">{{game.mod}}</div>
         </div>
         <div>
-          <a :href="game.twitchUrl" target="_blank"><img class="twitch-logo" alt="Twitch logo" src="../assets/twitch.png"></a>
-          <a :href="game.youtubeUrl" target="_blank"><img class="youtube-logo" alt="Youtube logo" src="../assets/youtube.png"></a>
+          <a :href="game.twitchUrl" v-if="game.twitchUrl" target="_blank"><img class="twitch-logo" alt="Twitch logo" src="../assets/twitch.png"></a>
+          <a :href="game.youtubeUrl" v-if="game.youtubeUrl" target="_blank"><img class="youtube-logo" alt="Youtube logo" src="../assets/youtube.png"></a>
         </div>
       </li>
     </ul>
