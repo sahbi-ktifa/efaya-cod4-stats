@@ -7,16 +7,16 @@
         <ul>
           <li>
             <span></span>
-            <span>Scores</span>
-            <span>Kills</span>
-            <span>Assists</span>
-            <span>Deaths</span>
-            <span>Ratio</span>
-            <span>Total Score</span>
-            <span>Total Kills</span>
-            <span>Total Assists</span>
-            <span>Total Deaths</span>
-            <span>Global Ratio</span>
+            <strong>Scores</strong>
+            <strong>Kills</strong>
+            <strong>Assists</strong>
+            <strong>Deaths</strong>
+            <strong>Ratio</strong>
+            <strong>Total Score</strong>
+            <strong>Total Kills</strong>
+            <strong>Total Assists</strong>
+            <strong>Total Deaths</strong>
+            <strong>Global Ratio</strong>
           </li>
         </ul>
       </li>
@@ -89,7 +89,7 @@
   import {mapGetters} from "vuex";
   import {orderBy} from "lodash";
   import Game from "@/model/Game";
-  import Player from "@/model/Player";
+  import {Player} from "@/model/Player";
 
   @Component({
     computed: {

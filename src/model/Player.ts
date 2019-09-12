@@ -1,4 +1,16 @@
-export default class Player {
+export class PlayerGlobalData {
+    public playerName!: string;
+    public bestScore: number = 0;
+    public bestKills: number = 0;
+    public bestRatio: number = 0;
+
+    constructor(playerName: string) {
+        this.playerName = playerName;
+    }
+}
+
+// tslint:disable-next-line:max-classes-per-file
+export class Player {
     public playerName!: string;
     public points!: number[];
     public score!: number[];
