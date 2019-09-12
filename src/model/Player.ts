@@ -3,6 +3,7 @@ export class PlayerGlobalData {
     public bestScore: number = 0;
     public bestKills: number = 0;
     public bestRatio: number = 0;
+    public currentMood: boolean[] = [];
 
     constructor(playerName: string) {
         this.playerName = playerName;

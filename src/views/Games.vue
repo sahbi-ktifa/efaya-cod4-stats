@@ -1,7 +1,7 @@
 <template>
   <div class="games">
     <ul>
-      <li v-for="game in sortedGames">
+      <li v-for="game in games">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
         <router-link :to="'game/' + game.map" tag="h3">{{game.map}}</router-link>
         <span>{{game.date}}</span>
@@ -23,7 +23,6 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import {mapGetters} from "vuex";
-import {orderBy} from "lodash";
 import Game from "@/model/Game";
 
 @Component({
@@ -35,12 +34,6 @@ import Game from "@/model/Game";
 })
 export default class Games extends Vue {
   protected games!: Game[];
-
-  get sortedGames() {
-    if (this.games) {
-      return orderBy(this.games, ["date"], ["desc"]);
-    }
-  }
 
   public isEfayaMod(game: Game) {
     return game.mod === "Mod Efaya";

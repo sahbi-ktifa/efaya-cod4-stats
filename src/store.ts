@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueX from "vuex";
+import { orderBy } from "lodash";
 import Game from "@/model/Game";
 
 Vue.use(VueX);
@@ -16,6 +17,7 @@ export default new VueX.Store({
   mutations: {
     gameRetrieved(state, game: Game) {
       state.games.push(game);
+      state.games = orderBy(state.games, ["date"], ["desc"]);
     }
   }
 });

@@ -6,12 +6,14 @@
         <strong>Best score overall</strong>
         <strong>Best kills overall</strong>
         <strong>Best ratio overall</strong>
+        <strong>Current mood</strong>
       </li>
       <li v-for="dataForPlayer in dataForPlayers">
         <strong>{{dataForPlayer.playerName}}</strong>
         <span>{{dataForPlayer.bestScore}}</span>
         <span>{{dataForPlayer.bestKills}}</span>
         <span>{{dataForPlayer.bestRatio}}</span>
+        <span><span v-for="mood in dataForPlayer.currentMood"><img src="../assets/green.png" v-if="mood === true" class="mood"/><img src="../assets/red.png" v-if="mood === false" class="mood"/></span></span>
       </li>
     </ul>
   </div>
@@ -37,7 +39,7 @@ export default class Games extends Vue {
 
   public created() {
     const dataForPlayersMap: Map<string, PlayerGlobalData> = new Map();
-    this.games.forEach((game) => {
+    orderBy(this.games, ["date"], ["asc"]).forEach((game) => {
       game.players.forEach((player) => {
         let dataForPlayer = dataForPlayersMap.get(player.playerName);
         if (!dataForPlayer) {
@@ -52,6 +54,7 @@ export default class Games extends Vue {
         if (player.globalRatio > dataForPlayer!!.bestRatio) {
           dataForPlayer!!.bestRatio = player.globalRatio;
         }
+        dataForPlayer.currentMood.push(player.totalPoints === 20);
         dataForPlayersMap.set(player.playerName, dataForPlayer);
       });
     });
@@ -70,10 +73,14 @@ export default class Games extends Vue {
   }
   .players > ul > li {
     display: grid;
-    grid-template-columns: 150px 100px 100px 100px;
+    grid-template-columns: 150px 100px 100px 100px 120px;
     grid-gap: 0 20px;
     align-items: center;
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
+  }
+  .mood {
+    width: 20px;
+    margin-left: 5px;
   }
 </style>

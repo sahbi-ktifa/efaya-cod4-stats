@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Games from "./views/Games.vue";
 
 Vue.use(Router);
 
@@ -11,7 +10,7 @@ export default new Router({
     {
       path: "/",
       name: "games",
-      component: Games,
+      component: () => import(/* webpackChunkName: "games" */ "./views/Games.vue"),
     },
     {
       path: "/game/:map",
