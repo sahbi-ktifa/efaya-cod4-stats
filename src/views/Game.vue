@@ -139,7 +139,7 @@
   .game > ul > li {
     display: grid;
   }
-  .game > ul > li > ul > li{
+  .game > ul > li > ul > li {
     display: grid;
     grid-template-columns: 100px repeat(10, 85px);
     grid-gap: 0 10px;

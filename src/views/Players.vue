@@ -33,7 +33,7 @@ import {PlayerGlobalData} from "@/model/Player";
     })
   }
 })
-export default class Games extends Vue {
+export default class Players extends Vue {
   protected games!: Game[];
   private dataForPlayers: PlayerGlobalData[] = [];
 

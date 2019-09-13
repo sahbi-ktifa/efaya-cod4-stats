@@ -1,3 +1,27 @@
+export class HonorData {
+    public playerName!: string;
+    public honorAmount = 0;
+    public description = "";
+
+    constructor(desc: string = "") {
+        this.description = desc;
+    }
+}
+
+// tslint:disable-next-line:max-classes-per-file
+export class Honors {
+    public overallKills = 0;
+    public topKiller = new HonorData("Joueur ayant fait le plus de victimes");
+    public topKillerForARun = new HonorData("Joueur ayant fait le plus de victimes dans une manche");
+    public topAssister = new HonorData("Joueur ayant fait le plus d'assists");
+    public topAssisterForARun = new HonorData("Joueur ayant fait le plus d'assists dans une manche");
+    public topBankable = new HonorData("Joueur ayant le meilleur ratio");
+    public topBankableForARun = new HonorData("Joueur ayant le meilleur ratio dans une manche");
+    public tourist = new HonorData("Le joueur qu'on voit rarement");
+    public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!");
+}
+
+// tslint:disable-next-line:max-classes-per-file
 export class PlayerGlobalData {
     public playerName!: string;
     public bestScore: number = 0;
