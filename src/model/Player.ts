@@ -35,7 +35,32 @@ export class PlayerGlobalData {
 }
 
 // tslint:disable-next-line:max-classes-per-file
+export class PlayerRef {
+    public guid!: string;
+    public playerName!: string;
+
+    public constructor(guid: string, playerName: string) {
+        this.guid = guid;
+        this.playerName = playerName;
+    }
+}
+
+
+// tslint:disable-next-line:max-classes-per-file
+export class PlayerForRound {
+    public playerRef!: PlayerRef;
+    public kills = 0;
+    public deaths = 0;
+
+    public constructor(playerRef: PlayerRef) {
+        this.playerRef = playerRef;
+    }
+}
+
+// tslint:disable-next-line:max-classes-per-file
 export class Player {
+    public playerRef!: PlayerRef;
+    public team!: string;
     public playerName!: string;
     public points!: number[];
     public score!: number[];
@@ -49,4 +74,8 @@ export class Player {
     public totalDeaths!: number;
     public totalAssists!: number;
     public globalRatio!: number;
+
+    public constructor(playerRef: PlayerRef) {
+        this.playerRef = playerRef;
+    }
 }

@@ -26,6 +26,11 @@ export default new Router({
       path: "/halloffame",
       name: "halloffame",
       component: () => import(/* webpackChunkName: "halloffame" */ "./views/HallOfFame.vue"),
+    },
+    {
+      path: "/parser",
+      name: "parser",
+      component: () => import(/* webpackChunkName: "logsparser" */ "./views/LogsParser.vue"),
     }
   ],
 });
