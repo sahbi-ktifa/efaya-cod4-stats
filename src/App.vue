@@ -7,6 +7,7 @@
       <router-link to="/">Games</router-link> |
       <router-link to="/players">Players</router-link> |
       <router-link to="/halloffame">Hall of fame</router-link>
+      <router-link to="/parser">Parser</router-link>
     </div>
     <div v-if="loading" class="loader"></div>
     <router-view/>

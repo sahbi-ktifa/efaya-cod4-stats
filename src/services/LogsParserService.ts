@@ -6,6 +6,10 @@ import SRSDEndGameParser from "@/services/SRSDEndGameParser";
 import WinParser from "@/services/WinParser";
 import KillParser from "@/services/KillParser";
 import JoinTeamParser from "@/services/JoinTeamParser";
+import KillConfirmedParser from '@/services/KillConfirmedParser';
+import KillDeniedParser from '@/services/KillDeniedParser';
+import BombDefusedParser from '@/services/BombDefusedParser';
+import BombPlantedParser from '@/services/BombPlantedParser';
 
 export enum LogEvent {
     J = "join",
@@ -34,7 +38,11 @@ const parsers = [
     new SRSDEndGameParser(),
     new WinParser(),
     new KillParser(),
-    new JoinTeamParser()
+    new JoinTeamParser(),
+    new KillConfirmedParser(),
+    new KillDeniedParser(),
+    new BombDefusedParser(),
+    new BombPlantedParser()
 ];
 
 // tslint:disable-next-line:max-classes-per-file

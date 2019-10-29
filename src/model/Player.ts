@@ -51,6 +51,17 @@ export class PlayerForRound {
     public playerRef!: PlayerRef;
     public kills = 0;
     public deaths = 0;
+    public killsConfirmed = 0;
+    public killsDenied = 0;
+    public bombsPlanted = 0;
+    public bombsDefused = 0;
+    public headShots = 0;
+    public teamKills = 0;
+    public grenadeKills = 0;
+    public pistolKills = 0;
+    public rifleKills = 0;
+    public weaps: any = {};
+    public parts: any = {};
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
