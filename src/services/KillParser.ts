@@ -26,14 +26,38 @@ export default class KillParser implements LineParser {
                     if (tokens[12] === "head") {
                         player.headShots++;
                     }
-                    if (tokens[11] === "MOD_GRENADE_SPLASH") {
+                    if (tokens[9] === "frag_grenade_mp") {
                         player.grenadeKills++;
                     }
-                    if (tokens[11] === "MOD_PISTOL_BULLET") {
+                    if (tokens[9].indexOf("usp") === 0 || tokens[9].indexOf("beretta") === 0
+                        || tokens[9].indexOf("colt") === 0 || tokens[9].indexOf("deserteagle") === 0) {
                         player.pistolKills++;
                     }
-                    if (tokens[11] === "MOD_RIFLE_BULLET") {
+                    if (tokens[9].indexOf("m16_") === 0 || tokens[9].indexOf("m4_") === 0
+                        || tokens[9].indexOf("g3_") === 0 || tokens[9].indexOf("m14_") === 0
+                        || tokens[9].indexOf("ak47") === 0 || tokens[9].indexOf("g36c") === 0
+                        || tokens[9].indexOf("mp44") === 0) {
                         player.rifleKills++;
+                    }
+                    if (tokens[9].indexOf("mp5") === 0 || tokens[9].indexOf("uzi") === 0
+                        || tokens[9].indexOf("p90") === 0 || tokens[9].indexOf("ak74u") === 0
+                        || tokens[9].indexOf("skorpion") === 0) {
+                        player.smgKills++;
+                    }
+                    if (tokens[9].indexOf("winchester") === 0 || tokens[9].indexOf("m1014") === 0) {
+                        player.shotgunKills++;
+                    }
+                    if (tokens[9].indexOf("barrett") === 0 || tokens[9].indexOf("dragunov") === 0
+                        || tokens[9].indexOf("m21") === 0 || tokens[9].indexOf("m40a3") === 0
+                        || tokens[9].indexOf("remington") === 0) {
+                        player.sniperKills++;
+                    }
+                    if (tokens[11] === "MOD_MELEE") {
+                        player.meleeKills++;
+                    }
+                    if (tokens[11] === "MOD_TRIGGER_HURT" || tokens[11] === "MOD_FALLING"
+                        || tokens[11] === "MOD_SUICIDE") {
+                        player.suicides++;
                     }
                     if (!player.weaps[tokens[9]]) {
                         player.weaps[tokens[9]] = 0;

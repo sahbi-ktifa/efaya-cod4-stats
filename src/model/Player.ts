@@ -60,6 +60,12 @@ export class PlayerForRound {
     public grenadeKills = 0;
     public pistolKills = 0;
     public rifleKills = 0;
+    public smgKills = 0;
+    public shotgunKills = 0;
+    public sniperKills = 0;
+    public meleeKills = 0;
+    public suicides = 0;
+    public tchatter = 0;
     public weaps: any = {};
     public parts: any = {};
 
