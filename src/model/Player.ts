@@ -49,6 +49,7 @@ export class PlayerRef {
 // tslint:disable-next-line:max-classes-per-file
 export class PlayerForRound {
     public playerRef!: PlayerRef;
+    public score = 0;
     public kills = 0;
     public deaths = 0;
     public killsConfirmed = 0;
@@ -79,18 +80,34 @@ export class Player {
     public playerRef!: PlayerRef;
     public team!: string;
     public playerName!: string;
-    public points!: number[];
-    public score!: number[];
-    public kills!: number[];
-    public deaths!: number[];
-    public assists!: number[];
-    public ratio!: number[];
-    public totalPoints!: number;
-    public totalScore!: number;
-    public totalKills!: number;
-    public totalDeaths!: number;
-    public totalAssists!: number;
-    public globalRatio!: number;
+    public score: number[] = [0, 0];
+    public kills: number[] = [0, 0];
+    public deaths: number[] = [0, 0];
+    public assists: number[] = [0, 0];
+    public ratio: number[] = [0, 0];
+    public totalPoints: number = 0;
+    public totalScore: number = 0;
+    public totalKills: number = 0;
+    public totalDeaths: number = 0;
+    public totalAssists: number = 0;
+    public globalRatio: number = 0;
+    public killsConfirmed = 0;
+    public killsDenied = 0;
+    public bombsPlanted = 0;
+    public bombsDefused = 0;
+    public headShots = 0;
+    public teamKills = 0;
+    public grenadeKills = 0;
+    public pistolKills = 0;
+    public rifleKills = 0;
+    public smgKills = 0;
+    public shotgunKills = 0;
+    public sniperKills = 0;
+    public meleeKills = 0;
+    public suicides = 0;
+    public tchatter = 0;
+    public weaps: any = {};
+    public parts: any = {};
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;

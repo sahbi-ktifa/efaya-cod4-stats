@@ -1,5 +1,9 @@
 import {Player, PlayerForRound, PlayerRef} from "@/model/Player";
 
+export enum POINTS {
+    KILL = 10, BOMB_PLANTED = 100, BOMB_DEFUSED = 100, KILL_CONFIRMED = 5, KILL_DENIED = 5
+}
+
 export class Round {
     public players: PlayerForRound[] = [];
 }
@@ -25,6 +29,8 @@ export class GameRef {
 
 // tslint:disable-next-line:max-classes-per-file
 export default class Game {
+    public id!: string;
+    public gameRefs!: GameRef[];
     public players!: Player[];
     public date!: Date;
     public map!: string;
@@ -32,4 +38,12 @@ export default class Game {
     public mod!: string;
     public twitchUrl!: string;
     public youtubeUrl!: string;
+
+    constructor(gameRefs: GameRef[], players: Player[]) {
+        this.mod = gameRefs[0].mod;
+        this.map = gameRefs[0].map;
+        this.id = btoa(this.mod + "_" + this.map);
+        this.gameRefs = gameRefs;
+        this.players = players;
+    }
 }

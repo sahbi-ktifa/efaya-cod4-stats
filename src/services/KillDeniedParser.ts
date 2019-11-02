@@ -1,5 +1,6 @@
 import {ParsedData} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
+import {POINTS} from "@/model/Game";
 
 export default class KillDeniedParser implements LineParser {
     public accept(line: string): boolean {
@@ -20,6 +21,7 @@ export default class KillDeniedParser implements LineParser {
             for (const player of parsedData.currentGame.currentRound.players) {
                 if (player.playerRef.guid === tokens[1]) {
                     player.killsDenied++;
+                    player.score += POINTS.KILL_DENIED;
                 }
             }
         }

@@ -1,6 +1,6 @@
-import {PlayerRef} from "@/model/Player";
+import {Player, PlayerRef} from "@/model/Player";
 import JoinParser from "@/services/JoinParser";
-import {GameRef} from "@/model/Game";
+import Game, {GameRef} from "@/model/Game";
 import InitGameParser from "@/services/InitGameParser";
 import SRSDEndGameParser from "@/services/SRSDEndGameParser";
 import WinParser from "@/services/WinParser";
@@ -59,8 +59,63 @@ export default class LogsParserService {
             this.parseLine(line, parsedData);
             lines++;
         });
+        const gameRefs = parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
+            && (g.axisScore === 10 || g.alliesScore === 10));
+        const games = [];
+        for (let i = 0; i < gameRefs.length; i += 2) {
+            const players = gameRefs[i + 1].players.map((p) => new Player(p.playerRef));
+            this.computeGameRef(gameRefs[i], 0, players);
+            this.computeGameRef(gameRefs[i + 1], 1, players);
+            games.push(new Game([gameRefs[i], gameRefs[i + 1]], players));
+        }
         // tslint:disable-next-line:no-console
-        console.log(lines, parsedData);
+        console.log(games);
+    }
+
+    private computeGameRef(gameRef: GameRef, roundIndex: number, players: Player[]) {
+        for (const round of gameRef.rounds) {
+            for (const player of round.players) {
+                players
+                    .filter((p) => p.playerRef.guid === player.playerRef.guid)
+                    .forEach((p) => {
+                        p.score[roundIndex] += player.score;
+                        p.totalScore += player.score;
+                        p.kills[roundIndex] += player.kills;
+                        p.totalKills += player.kills;
+                        p.deaths[roundIndex] += player.deaths;
+                        p.totalDeaths += player.deaths;
+                        p.killsConfirmed += player.killsConfirmed;
+                        p.killsDenied += player.killsDenied;
+                        p.bombsPlanted += player.bombsPlanted;
+                        p.bombsDefused += player.bombsDefused;
+                        p.headShots += player.headShots;
+                        p.teamKills += player.teamKills;
+                        p.grenadeKills += player.grenadeKills;
+                        p.pistolKills += player.pistolKills;
+                        p.sniperKills += player.sniperKills;
+                        p.rifleKills += player.rifleKills;
+                        p.smgKills += player.smgKills;
+                        p.shotgunKills += player.shotgunKills;
+                        p.meleeKills += player.meleeKills;
+                        p.suicides += player.suicides;
+                        p.tchatter += player.tchatter;
+                        for (const [key] of Object.entries(player.weaps)) {
+                            if (!p.weaps[key]) {
+                                p.weaps[key] =  player.weaps[key];
+                            } else {
+                                p.weaps[key] += player.weaps[key];
+                            }
+                        }
+                        for (const [key] of Object.entries(player.parts)) {
+                            if (!p.parts[key]) {
+                                p.parts[key] =  player.parts[key];
+                            } else {
+                                p.parts[key] += player.parts[key];
+                            }
+                        }
+                    });
+            }
+        }
     }
 
     private parseLine(line: string, parsedData: ParsedData) {

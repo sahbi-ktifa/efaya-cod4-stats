@@ -20,9 +20,19 @@ export default class SRSDEndGameParser implements LineParser {
         const winner = splittedLine[splittedLine.length - 1].split(";")[1];
         if (winner === "allies") {
             parsedData.currentGame.alliesScore++;
+            for (const player of parsedData.currentGame.players) {
+                if (player.team === "allies") {
+                    player.totalPoints++;
+                }
+            }
         }
         if (winner === "axis") {
             parsedData.currentGame.axisScore++;
+            for (const player of parsedData.currentGame.players) {
+                if (player.team === "axis") {
+                    player.totalPoints++;
+                }
+            }
         }
         if (winner) {
             parsedData.currentGame.rounds.push(parsedData.currentGame.currentRound);
