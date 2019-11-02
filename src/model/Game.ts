@@ -29,6 +29,15 @@ export class GameRef {
 
 // tslint:disable-next-line:max-classes-per-file
 export default class Game {
+
+    public static build(data: any) {
+        const game = new Game(data.gameRefs, data.players);
+        game.date = new Date(data.date);
+        game.mapPreview = data.mapPreview;
+        game.twitchUrl = data.twitchUrl;
+        game.youtubeUrl = data.youtubeUrl;
+        return game;
+    }
     public id!: string;
     public gameRefs!: GameRef[];
     public players!: Player[];

@@ -1,7 +1,7 @@
 <template>
   <div class="game">
     <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-    <h3>{{game.map}} on {{game.date}}</h3>
+    <h3>{{game.map}} - {{formatDate(game.date)}} - {{game.mod}}</h3>
     <ul>
       <li>
         <ul>
@@ -24,7 +24,7 @@
         <h4>Winning Team!</h4>
         <ul>
           <li v-for="player in winners">
-            <span>{{player.playerName}}</span>
+            <span>{{player.playerRef.playerName}}</span>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.assists[0]}}<br/>{{player.assists[1]}}</span>
@@ -42,7 +42,7 @@
         <h4>Loosing Team!</h4>
         <ul>
           <li v-for="player in losers">
-            <span>{{player.playerName}}</span>
+            <span>{{player.playerRef.playerName}}</span>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.assists[0]}}<br/>{{player.assists[1]}}</span>
@@ -85,48 +85,53 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from "vue-property-decorator";
-  import {mapGetters} from "vuex";
-  import {orderBy} from "lodash";
-  import Game from "@/model/Game";
-  import {Player} from "@/model/Player";
+import {Component, Vue} from "vue-property-decorator";
+import {mapGetters} from "vuex";
+import {orderBy} from "lodash";
+import Game from "@/model/Game";
+import {Player} from "@/model/Player";
+import { format } from "date-fns";
 
-  @Component({
-    computed: {
-      ...mapGetters({
-        games: "games"
-      })
-    }
-  })
-  export default class GameDetails extends Vue {
-    public game!: Game;
-    public winners!: Player[];
-    public losers!: Player[];
-    protected games!: Game[];
-
-    public created() {
-      // @ts-ignore
-      this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
-      this.winners = this.game.players.filter((p) => p.totalPoints === 20);
-      this.losers = this.game.players.filter((p) => p.totalPoints < 20);
-    }
-
-    get bankable() {
-      return orderBy(this.game.players, ["globalRatio"], ["desc"])[0].playerName;
-    }
-
-    get deadliest() {
-      return orderBy(this.game.players, ["totalKills"], ["desc"])[0].playerName;
-    }
-
-    get scorer() {
-      return orderBy(this.game.players, ["totalScore"], ["desc"])[0].playerName;
-    }
-
-    get targeted() {
-      return orderBy(this.game.players, ["totalDeaths"], ["desc"])[0].playerName;
-    }
+@Component({
+  computed: {
+    ...mapGetters({
+      games: "games"
+    })
   }
+})
+export default class GameDetails extends Vue {
+  public game!: Game;
+  public winners!: Player[];
+  public losers!: Player[];
+  protected games!: Game[];
+
+  public created() {
+    // @ts-ignore
+    this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+    this.winners = this.game.players.filter((p) => p.totalPoints === 20);
+    this.losers = this.game.players.filter((p) => p.totalPoints < 20);
+  }
+
+  get bankable() {
+    return orderBy(this.game.players, ["globalRatio"], ["desc"])[0].playerRef.playerName;
+  }
+
+  get deadliest() {
+    return orderBy(this.game.players, ["totalKills"], ["desc"])[0].playerRef.playerName;
+  }
+
+  get scorer() {
+    return orderBy(this.game.players, ["totalScore"], ["desc"])[0].playerRef.playerName;
+  }
+
+  get targeted() {
+    return orderBy(this.game.players, ["totalDeaths"], ["desc"])[0].playerRef.playerName;
+  }
+
+  public formatDate(date: Date): string {
+    return format(date, "dd/MM/yyyy");
+  }
+}
 </script>
 
 <style scoped>
@@ -141,7 +146,7 @@
   }
   .game > ul > li > ul > li {
     display: grid;
-    grid-template-columns: 100px repeat(10, 85px);
+    grid-template-columns: 130px repeat(10, 85px);
     grid-gap: 0 10px;
     align-items: center;
     margin-bottom: 10px;

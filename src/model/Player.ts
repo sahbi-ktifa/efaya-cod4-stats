@@ -79,7 +79,6 @@ export class PlayerForRound {
 export class Player {
     public playerRef!: PlayerRef;
     public team!: string;
-    public playerName!: string;
     public score: number[] = [0, 0];
     public kills: number[] = [0, 0];
     public deaths: number[] = [0, 0];

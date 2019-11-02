@@ -68,8 +68,12 @@ export default class LogsParserService {
             this.computeGameRef(gameRefs[i + 1], 1, players);
             games.push(new Game([gameRefs[i], gameRefs[i + 1]], players));
         }
+        let parsedContent = "";
+        games.forEach((g) => {
+            parsedContent += JSON.stringify(g) + ",\n";
+        });
         // tslint:disable-next-line:no-console
-        console.log(games);
+        console.log(parsedContent);
     }
 
     private computeGameRef(gameRef: GameRef, roundIndex: number, players: Player[]) {
@@ -116,6 +120,17 @@ export default class LogsParserService {
                     });
             }
         }
+        this.computeRatio(players, roundIndex);
+    }
+
+    private computeRatio(players: Player[], roundIndex: number) {
+        players
+            .forEach((p) => {
+                p.ratio[roundIndex] = Number((p.kills[roundIndex] / p.deaths[roundIndex]).toFixed(2));
+                if (roundIndex === 1) {
+                    p.globalRatio = Number((p.totalKills / p.totalDeaths).toFixed(2));
+                }
+            });
     }
 
     private parseLine(line: string, parsedData: ParsedData) {

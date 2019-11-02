@@ -1,16 +1,14 @@
-import axios from "axios";
-import * as key from "@/key";
-
-axios.defaults.headers.common["secret-key"] = key.jsonBinKey;
-const collectionId = "5d701ecf2d1fb96463c4b42a";
+import Game from "@/model/Game";
+import data from "@/data/data.json";
 
 export class DataService {
-    public retrieveGames(): Promise<any> {
-        return axios.get("https://api.jsonbin.io/e/collection/" + collectionId + "/all-bins");
-    }
-
-    public retrieveGame(id: string): Promise<any> {
-        return axios.get(`https://api.jsonbin.io/b/${id}/latest`);
+    public retrieveGames(): Game[] {
+        const games: Game[] = [];
+        // tslint:disable-next-line:forin no-shadowed-variable
+        for (const key in data) {
+            games.push(Game.build(data[key]));
+        }
+        return games;
     }
 }
 

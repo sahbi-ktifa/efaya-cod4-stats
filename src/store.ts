@@ -15,8 +15,8 @@ export default new VueX.Store({
     }
   },
   mutations: {
-    gameRetrieved(state, game: Game) {
-      state.games.push(game);
+    gamesRetrieved(state, games: Game[]) {
+      state.games = games;
       state.games = orderBy(state.games, ["date"], ["desc"]);
     }
   }

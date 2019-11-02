@@ -4,7 +4,7 @@
       <li v-for="game in games">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
         <router-link :to="'game/' + game.map" tag="h3">{{game.map}}</router-link>
-        <span>{{game.date}}</span>
+        <span>{{formatDate(game.date)}}</span>
         <span>Players: <strong>{{game.players.length}}</strong></span>
         <div>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.jpg" v-if="isEfayaMod(game)">
@@ -23,6 +23,7 @@
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import {mapGetters} from "vuex";
+import {format} from "date-fns";
 import Game from "@/model/Game";
 
 @Component({
@@ -36,10 +37,15 @@ export default class Games extends Vue {
   protected games!: Game[];
 
   public isEfayaMod(game: Game) {
-    return game.mod === "Mod Efaya";
+    return game.mod.startsWith("efaya_mod");
   }
+
   public isIMMMod(game: Game) {
-    return game.mod === "IClan Mits Mod";
+    return game.mod.startsWith("imm");
+  }
+
+  public formatDate(date: Date): string {
+    return format(date, "dd/MM/yyyy");
   }
 }
 </script>
@@ -71,5 +77,8 @@ export default class Games extends Vue {
   .youtube-logo {
     margin-left: 15px;
     margin-bottom: 5px;
+  }
+  h3 {
+    cursor: pointer;
   }
 </style>

@@ -25,17 +25,8 @@ export default class App extends Vue {
 
   public async created() {
     this.loading = true;
-    const res = await this.dataService.retrieveGames();
-    if (res.data.records) {
-      for (const record of res.data.records) {
-        const game = await this.dataService.retrieveGame(record.id);
-        if (game.data.date) {
-          const date = game.data.date.split("/");
-          game.data.date = new Date(`${date[2]}-${date[1]}-${date[0]}`);
-        }
-        this.$store.commit("gameRetrieved", game.data);
-      }
-    }
+    const games = await this.dataService.retrieveGames();
+    this.$store.commit("gamesRetrieved", games);
     this.loading = false;
   }
 }
