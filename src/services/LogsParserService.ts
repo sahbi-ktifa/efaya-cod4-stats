@@ -66,6 +66,20 @@ export default class LogsParserService {
             const players = gameRefs[i + 1].players.map((p) => new Player(p.playerRef));
             this.computeGameRef(gameRefs[i], 0, players);
             this.computeGameRef(gameRefs[i + 1], 1, players);
+            for (const player of gameRefs[i].players) {
+                for (const playerRef of players) {
+                    if (playerRef.playerRef.guid === player.playerRef.guid) {
+                        playerRef.totalPoints += player.totalPoints;
+                    }
+                }
+            }
+            for (const player of gameRefs[i + 1].players) {
+                for (const playerRef of players) {
+                    if (playerRef.playerRef.guid === player.playerRef.guid) {
+                        playerRef.totalPoints += player.totalPoints;
+                    }
+                }
+            }
             games.push(new Game([gameRefs[i], gameRefs[i + 1]], players));
         }
         let parsedContent = "";
