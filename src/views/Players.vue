@@ -18,10 +18,10 @@
         <span>{{dataForPlayer.bestNades}}</span>
         <span>{{dataForPlayer.bestKnifes}}</span>
         <span>
-          <span v-for="mood in dataForPlayer.currentMood">
+          <span v-for="mood in dataForPlayer.currentMood.slice(Math.max(dataForPlayer.currentMood.length - 5, 1))">
             <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)" src="../assets/green.png" v-if="mood.win === true" class="mood"/>
-            <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)"src="../assets/red.png" v-if="mood.win === false && mood.played === true" class="mood"/>
-            <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)"src="../assets/grey.png" v-if="mood.win === false && mood.played === false" class="mood"/>
+            <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)" src="../assets/red.png" v-if="mood.win === false && mood.played === true" class="mood"/>
+            <img alt="" src="../assets/grey.png" v-if="mood.win === false && mood.played === false" class="mood"/>
           </span>
         </span>
       </li>
@@ -116,7 +116,7 @@ export default class Players extends Vue {
   }
   .players > ul > li {
     display: grid;
-    grid-template-columns: 150px 100px 100px 100px 100px 100px 120px;
+    grid-template-columns: 150px 100px 100px 100px 100px 100px 150px;
     grid-gap: 0 20px;
     align-items: center;
     margin-bottom: 10px;

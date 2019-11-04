@@ -63,9 +63,20 @@ export default class LogsParserService {
             && (g.axisScore === 10 || g.alliesScore === 10));
         const games = [];
         for (let i = 0; i < gameRefs.length; i += 2) {
-            const players = gameRefs[i + 1].players.map((p) => new Player(p.playerRef));
+            let j = 0;
+            let found = false;
+            for (; j < gameRefs.length; j++) {
+                if (gameRefs[j].map === gameRefs[i].map && j !== i) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                continue;
+            }
+            const players = gameRefs[j].players.map((p) => new Player(p.playerRef));
             this.computeGameRef(gameRefs[i], 0, players);
-            this.computeGameRef(gameRefs[i + 1], 1, players);
+            this.computeGameRef(gameRefs[j], 1, players);
             for (const player of gameRefs[i].players) {
                 for (const playerRef of players) {
                     if (playerRef.playerRef.guid === player.playerRef.guid) {
@@ -73,14 +84,14 @@ export default class LogsParserService {
                     }
                 }
             }
-            for (const player of gameRefs[i + 1].players) {
+            for (const player of gameRefs[j].players) {
                 for (const playerRef of players) {
                     if (playerRef.playerRef.guid === player.playerRef.guid) {
                         playerRef.totalPoints += player.totalPoints;
                     }
                 }
             }
-            games.push(new Game([gameRefs[i], gameRefs[i + 1]], players));
+            games.push(new Game([gameRefs[i], gameRefs[j]], players));
         }
         let parsedContent = "";
         games.forEach((g) => {
