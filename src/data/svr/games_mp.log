@@ -1,0 +1,1118 @@
+2061:29 ------------------------------------------------------------
+2061:29 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2061:38 J;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92
+2061:38 J;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul
+2061:42 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2062:12 ShutdownGame:
+2062:12 ------------------------------------------------------------
+2062:12 ------------------------------------------------------------
+2062:12 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2062:13 J;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul
+2062:13 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2062:13 J;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92
+2062:37 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;usp_mp;40;MOD_PISTOL_BULLET;torso_upper
+2062:44 D;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;28;MOD_PISTOL_BULLET;right_arm_lower
+2063:00 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;usp_mp;32;MOD_PISTOL_BULLET;left_leg_upper
+2063:11 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;usp_mp;34;MOD_PISTOL_BULLET;torso_lower
+2063:17 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2063:28 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;usp_mp;6;MOD_PISTOL_BULLET;left_arm_lower
+2063:29 K;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;10;MOD_PISTOL_BULLET;torso_lower
+2063:36 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;5;MOD_PISTOL_BULLET;left_arm_lower
+2063:37 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;2;MOD_PISTOL_BULLET;torso_lower
+2063:37 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;1;MOD_PISTOL_BULLET;torso_lower
+2063:38 V;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;called_vote
+2063:47 D;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;25;MOD_PISTOL_BULLET;torso_lower
+2063:47 K;357e8601e337dbf72c286cd7a2d7db44;2;axis;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;35;MOD_PISTOL_BULLET;neck
+2063:57 ShutdownGame:
+2063:57 ------------------------------------------------------------
+2063:57 ------------------------------------------------------------
+2063:57 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2064:03 J;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92
+2064:04 J;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul
+2064:04 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2064:16 ShutdownGame:
+2064:16 ------------------------------------------------------------
+2064:16 ------------------------------------------------------------
+2064:16 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2064:17 J;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul
+2064:17 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2064:17 J;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92
+2064:31 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;24;MOD_PISTOL_BULLET;torso_lower
+2064:32 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;31;MOD_PISTOL_BULLET;left_leg_upper
+2064:34 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;78;MOD_HEAD_SHOT;head
+2064:40 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;30;MOD_PISTOL_BULLET;torso_lower
+2064:43 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2064:44 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;23;MOD_PISTOL_BULLET;torso_lower
+2064:45 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;28;MOD_PISTOL_BULLET;torso_lower
+2064:54 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;left_leg_upper
+2064:56 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;right_arm_lower
+2065:02 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;37;MOD_PISTOL_BULLET;left_leg_upper
+2065:11 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;46;MOD_HEAD_SHOT;head
+2065:17 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;38;MOD_PISTOL_BULLET;torso_lower
+2065:25 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;right_arm_upper
+2065:25 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;39;MOD_HEAD_SHOT;head
+2065:30 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2065:46 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;78;MOD_HEAD_SHOT;head
+2065:51 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2065:58 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;right_arm_lower
+2065:59 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;left_hand
+2066:00 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2066:03 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;6;MOD_PISTOL_BULLET;left_arm_lower
+2066:04 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_leg_lower
+2066:15 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2066:20 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;33;MOD_PISTOL_BULLET;torso_lower
+2066:22 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;28;MOD_PISTOL_BULLET;right_arm_upper
+2066:29 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2066:33 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;25;MOD_PISTOL_BULLET;torso_lower
+2066:33 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;39;MOD_HEAD_SHOT;head
+2066:44 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;26;MOD_PISTOL_BULLET;right_leg_upper
+2066:44 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;28;MOD_PISTOL_BULLET;left_leg_upper
+2066:47 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;40;MOD_PISTOL_BULLET;left_leg_upper
+2066:58 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;torso_lower
+2066:59 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2067:05 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;27;MOD_PISTOL_BULLET;left_hand
+2067:05 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;26;MOD_PISTOL_BULLET;torso_lower
+2067:12 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;right_arm_upper
+2067:18 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2067:18 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2067:19 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;34;MOD_PISTOL_BULLET;left_leg_lower
+2067:29 Weapon;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul;usp_mp
+2067:29 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;23;MOD_PISTOL_BULLET;right_leg_upper
+2067:30 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;28;MOD_PISTOL_BULLET;left_leg_upper
+2067:38 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2067:45 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;left_leg_lower
+2067:45 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2067:52 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;40;MOD_PISTOL_BULLET;torso_upper
+2067:53 Weapon;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul;usp_mp
+2067:55 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2067:55 Weapon;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul;usp_mp
+2068:02 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;left_arm_upper
+2068:04 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;40;MOD_PISTOL_BULLET;torso_lower
+2068:11 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;left_arm_lower
+2068:13 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2068:14 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;25;MOD_PISTOL_BULLET;right_leg_upper
+2068:14 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;25;MOD_PISTOL_BULLET;torso_lower
+2068:15 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;26;MOD_PISTOL_BULLET;right_leg_lower
+2068:22 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2068:25 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2068:26 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_arm_lower
+2068:29 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2068:35 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;71;MOD_HEAD_SHOT;head
+2068:40 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;4;MOD_PISTOL_BULLET;torso_lower
+2068:42 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;26;MOD_PISTOL_BULLET;torso_lower
+2068:44 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2068:48 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;1;MOD_PISTOL_BULLET;torso_lower
+2068:48 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2068:48 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;28;MOD_PISTOL_BULLET;neck
+2068:54 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;2;MOD_PISTOL_BULLET;torso_lower
+2068:56 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;19;MOD_PISTOL_BULLET;torso_lower
+2069:02 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;left_hand
+2069:04 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;39;MOD_HEAD_SHOT;head
+2069:08 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2069:08 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;13;MOD_PISTOL_BULLET;right_leg_lower
+2069:21 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;32;MOD_PISTOL_BULLET;right_arm_lower
+2069:23 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_arm_lower
+2069:24 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;39;MOD_HEAD_SHOT;head
+2069:29 Weapon;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul;usp_mp
+2069:31 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;27;MOD_PISTOL_BULLET;torso_upper
+2069:33 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;29;MOD_PISTOL_BULLET;torso_upper
+2069:38 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;26;MOD_PISTOL_BULLET;right_leg_upper
+2069:47 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2069:48 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2069:51 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;1;MOD_PISTOL_BULLET;torso_upper
+2069:52 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;15;MOD_PISTOL_BULLET;torso_upper
+2069:59 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;torso_upper
+2070:07 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2070:11 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;26;MOD_PISTOL_BULLET;torso_lower
+2070:17 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;31;MOD_PISTOL_BULLET;torso_lower
+2070:25 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;34;MOD_PISTOL_BULLET;torso_lower
+2070:28 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2070:30 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_leg_upper
+2070:36 Weapon;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3;usp_mp
+2070:39 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_leg_upper
+2070:41 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;left_leg_upper
+2070:43 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;25;MOD_PISTOL_BULLET;torso_upper
+2070:47 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;21;MOD_PISTOL_BULLET;torso_lower
+2070:47 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;21;MOD_PISTOL_BULLET;right_leg_upper
+2070:50 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;28;MOD_PISTOL_BULLET;torso_lower
+2071:00 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2071:04 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;left_arm_upper
+2071:04 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;left_leg_upper
+2071:08 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;39;MOD_HEAD_SHOT;head
+2071:16 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;20;MOD_PISTOL_BULLET;torso_upper
+2071:18 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;16;MOD_HEAD_SHOT;head
+2071:22 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;27;MOD_PISTOL_BULLET;torso_lower
+2071:25 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;30;MOD_PISTOL_BULLET;torso_lower
+2071:27 Weapon;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul;usp_mp
+2071:28 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;9;MOD_PISTOL_BULLET;left_leg_upper
+2071:32 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;5;MOD_PISTOL_BULLET;torso_lower
+2071:35 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;right_leg_upper
+2071:38 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;15;MOD_PISTOL_BULLET;right_leg_upper
+2071:41 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;39;MOD_HEAD_SHOT;head
+2071:48 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;torso_lower
+2071:52 Weapon;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92;usp_mp
+2071:54 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_leg_upper
+2071:55 D;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2071:55 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2072:00 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;40;MOD_PISTOL_BULLET;torso_lower
+2072:04 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;left_arm_upper
+2072:14 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;33;MOD_PISTOL_BULLET;left_leg_lower
+2072:18 D;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2072:22 K;357e8601e337dbf72c286cd7a2d7db44;2;allies;iClan|fre2x3;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;42;MOD_HEAD_SHOT;head
+2072:28 K;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;usp_mp;21;MOD_PISTOL_BULLET;torso_lower
+2072:39 D;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;torso_lower
+2072:40 W;;ee37f4649620e4ab801fa0854caa2b98;iClan|Louis92
+2072:40 L;;;001489cdb1e13dc0cfe6ecbf94e73b2e;iClan|gamoul;357e8601e337dbf72c286cd7a2d7db44;iClan|fre2x3
+2072:40 K;001489cdb1e13dc0cfe6ecbf94e73b2e;3;allies;iClan|gamoul;ee37f4649620e4ab801fa0854caa2b98;0;allies;iClan|Louis92;usp_mp;20;MOD_PISTOL_BULLET;right_arm_upper
+2072:42 Q;001489cdb1e13dc0cfe6ecbf94e73b2e;3;iClan|gamoul
+2072:44 Q;ee37f4649620e4ab801fa0854caa2b98;0;iClan|Louis92
+2072:57 ShutdownGame:
+2072:57 ------------------------------------------------------------
+2072:57 ------------------------------------------------------------
+2072:57 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2073:04 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2073:21 ShutdownGame:
+2073:21 ------------------------------------------------------------
+2073:21 ------------------------------------------------------------
+2073:21 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2073:28 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2073:33 ShutdownGame:
+2073:33 ------------------------------------------------------------
+2073:33 ------------------------------------------------------------
+2073:33 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dm\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2073:40 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2073:46 ShutdownGame:
+2073:46 ------------------------------------------------------------
+2073:46 ------------------------------------------------------------
+2073:46 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2073:53 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2074:24 ShutdownGame:
+2074:24 ------------------------------------------------------------
+2074:24 ------------------------------------------------------------
+2074:24 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2074:30 J;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2074:37 Q;357e8601e337dbf72c286cd7a2d7db44;2;iClan|fre2x3
+2104:29 ExitLevel: executed
+2104:29 ShutdownGame:
+2104:29 ------------------------------------------------------------
+2104:29 ------------------------------------------------------------
+2104:29 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2134:34 ExitLevel: executed
+2134:34 ShutdownGame:
+2134:34 ------------------------------------------------------------
+2134:34 ------------------------------------------------------------
+2134:34 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2164:39 ExitLevel: executed
+2164:39 ShutdownGame:
+2164:39 ------------------------------------------------------------
+2164:39 ------------------------------------------------------------
+2164:39 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2194:44 ExitLevel: executed
+2194:44 ShutdownGame:
+2194:44 ------------------------------------------------------------
+2194:44 ------------------------------------------------------------
+2194:44 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2224:50 ExitLevel: executed
+2224:50 ShutdownGame:
+2224:50 ------------------------------------------------------------
+2224:50 ------------------------------------------------------------
+2224:50 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2254:55 ExitLevel: executed
+2254:55 ShutdownGame:
+2254:55 ------------------------------------------------------------
+2254:55 ------------------------------------------------------------
+2254:55 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2285:00 ExitLevel: executed
+2285:00 ShutdownGame:
+2285:00 ------------------------------------------------------------
+2285:00 ------------------------------------------------------------
+2285:00 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2315:05 ExitLevel: executed
+2315:05 ShutdownGame:
+2315:05 ------------------------------------------------------------
+2315:05 ------------------------------------------------------------
+2315:05 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2345:10 ExitLevel: executed
+2345:10 ShutdownGame:
+2345:10 ------------------------------------------------------------
+2345:10 ------------------------------------------------------------
+2345:10 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2375:16 ExitLevel: executed
+2375:16 ShutdownGame:
+2375:16 ------------------------------------------------------------
+2375:16 ------------------------------------------------------------
+2375:16 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2405:21 ExitLevel: executed
+2405:21 ShutdownGame:
+2405:21 ------------------------------------------------------------
+2405:21 ------------------------------------------------------------
+2405:21 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2435:26 ExitLevel: executed
+2435:26 ShutdownGame:
+2435:26 ------------------------------------------------------------
+2435:26 ------------------------------------------------------------
+2435:26 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2465:31 ExitLevel: executed
+2465:31 ShutdownGame:
+2465:31 ------------------------------------------------------------
+2465:31 ------------------------------------------------------------
+2465:31 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2495:36 ExitLevel: executed
+2495:36 ShutdownGame:
+2495:36 ------------------------------------------------------------
+2495:36 ------------------------------------------------------------
+2495:36 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2525:42 ExitLevel: executed
+2525:42 ShutdownGame:
+2525:42 ------------------------------------------------------------
+2525:42 ------------------------------------------------------------
+2525:42 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2555:47 ExitLevel: executed
+2555:47 ShutdownGame:
+2555:47 ------------------------------------------------------------
+2555:47 ------------------------------------------------------------
+2555:47 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2585:52 ExitLevel: executed
+2585:52 ShutdownGame:
+2585:52 ------------------------------------------------------------
+2585:52 ------------------------------------------------------------
+2585:52 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2615:57 ExitLevel: executed
+2615:57 ShutdownGame:
+2615:57 ------------------------------------------------------------
+2615:57 ------------------------------------------------------------
+2615:57 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2646:02 ExitLevel: executed
+2646:02 ShutdownGame:
+2646:02 ------------------------------------------------------------
+2646:02 ------------------------------------------------------------
+2646:02 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2676:08 ExitLevel: executed
+2676:08 ShutdownGame:
+2676:08 ------------------------------------------------------------
+2676:08 ------------------------------------------------------------
+2676:08 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2706:13 ExitLevel: executed
+2706:13 ShutdownGame:
+2706:13 ------------------------------------------------------------
+2706:13 ------------------------------------------------------------
+2706:13 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2736:18 ExitLevel: executed
+2736:18 ShutdownGame:
+2736:18 ------------------------------------------------------------
+2736:18 ------------------------------------------------------------
+2736:18 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2766:23 ExitLevel: executed
+2766:23 ShutdownGame:
+2766:23 ------------------------------------------------------------
+2766:23 ------------------------------------------------------------
+2766:23 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2796:28 ExitLevel: executed
+2796:28 ShutdownGame:
+2796:28 ------------------------------------------------------------
+2796:28 ------------------------------------------------------------
+2796:28 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2826:34 ExitLevel: executed
+2826:34 ShutdownGame:
+2826:34 ------------------------------------------------------------
+2826:34 ------------------------------------------------------------
+2826:34 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2856:39 ExitLevel: executed
+2856:39 ShutdownGame:
+2856:39 ------------------------------------------------------------
+2856:39 ------------------------------------------------------------
+2856:39 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2886:44 ExitLevel: executed
+2886:44 ShutdownGame:
+2886:44 ------------------------------------------------------------
+2886:44 ------------------------------------------------------------
+2886:44 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2916:49 ExitLevel: executed
+2916:49 ShutdownGame:
+2916:49 ------------------------------------------------------------
+2916:49 ------------------------------------------------------------
+2916:49 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2946:54 ExitLevel: executed
+2946:54 ShutdownGame:
+2946:54 ------------------------------------------------------------
+2946:54 ------------------------------------------------------------
+2946:54 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+2977:00 ExitLevel: executed
+2977:00 ShutdownGame:
+2977:00 ------------------------------------------------------------
+2977:00 ------------------------------------------------------------
+2977:00 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3007:05 ExitLevel: executed
+3007:05 ShutdownGame:
+3007:05 ------------------------------------------------------------
+3007:05 ------------------------------------------------------------
+3007:05 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3037:10 ExitLevel: executed
+3037:10 ShutdownGame:
+3037:10 ------------------------------------------------------------
+3037:10 ------------------------------------------------------------
+3037:10 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3067:15 ExitLevel: executed
+3067:15 ShutdownGame:
+3067:15 ------------------------------------------------------------
+3067:15 ------------------------------------------------------------
+3067:15 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3097:20 ExitLevel: executed
+3097:20 ShutdownGame:
+3097:20 ------------------------------------------------------------
+3097:20 ------------------------------------------------------------
+3097:20 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3127:26 ExitLevel: executed
+3127:26 ShutdownGame:
+3127:26 ------------------------------------------------------------
+3127:26 ------------------------------------------------------------
+3127:26 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3157:31 ExitLevel: executed
+3157:31 ShutdownGame:
+3157:31 ------------------------------------------------------------
+3157:31 ------------------------------------------------------------
+3157:31 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3187:36 ExitLevel: executed
+3187:36 ShutdownGame:
+3187:36 ------------------------------------------------------------
+3187:36 ------------------------------------------------------------
+3187:36 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3217:41 ExitLevel: executed
+3217:41 ShutdownGame:
+3217:41 ------------------------------------------------------------
+3217:41 ------------------------------------------------------------
+3217:41 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3247:46 ExitLevel: executed
+3247:46 ShutdownGame:
+3247:46 ------------------------------------------------------------
+3247:46 ------------------------------------------------------------
+3247:46 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3277:52 ExitLevel: executed
+3277:52 ShutdownGame:
+3277:52 ------------------------------------------------------------
+3277:52 ------------------------------------------------------------
+3277:52 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3307:57 ExitLevel: executed
+3307:57 ShutdownGame:
+3307:57 ------------------------------------------------------------
+3307:57 ------------------------------------------------------------
+3307:57 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3338:02 ExitLevel: executed
+3338:02 ShutdownGame:
+3338:02 ------------------------------------------------------------
+3338:02 ------------------------------------------------------------
+3338:02 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3368:07 ExitLevel: executed
+3368:07 ShutdownGame:
+3368:07 ------------------------------------------------------------
+3368:07 ------------------------------------------------------------
+3368:07 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3398:12 ExitLevel: executed
+3398:12 ShutdownGame:
+3398:12 ------------------------------------------------------------
+3398:12 ------------------------------------------------------------
+3398:12 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3428:18 ExitLevel: executed
+3428:18 ShutdownGame:
+3428:18 ------------------------------------------------------------
+3428:18 ------------------------------------------------------------
+3428:18 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3458:23 ExitLevel: executed
+3458:23 ShutdownGame:
+3458:23 ------------------------------------------------------------
+3458:23 ------------------------------------------------------------
+3458:23 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3488:28 ExitLevel: executed
+3488:28 ShutdownGame:
+3488:28 ------------------------------------------------------------
+3488:28 ------------------------------------------------------------
+3488:28 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3518:33 ExitLevel: executed
+3518:33 ShutdownGame:
+3518:33 ------------------------------------------------------------
+3518:33 ------------------------------------------------------------
+3518:33 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3548:38 ExitLevel: executed
+3548:38 ShutdownGame:
+3548:38 ------------------------------------------------------------
+3548:38 ------------------------------------------------------------
+3548:38 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3578:44 ExitLevel: executed
+3578:44 ShutdownGame:
+3578:44 ------------------------------------------------------------
+3578:44 ------------------------------------------------------------
+3578:44 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3608:49 ExitLevel: executed
+3608:49 ShutdownGame:
+3608:49 ------------------------------------------------------------
+3608:49 ------------------------------------------------------------
+3608:49 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3638:54 ExitLevel: executed
+3638:54 ShutdownGame:
+3638:54 ------------------------------------------------------------
+3638:54 ------------------------------------------------------------
+3638:54 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3668:59 ExitLevel: executed
+3668:59 ShutdownGame:
+3668:59 ------------------------------------------------------------
+3668:59 ------------------------------------------------------------
+3668:59 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3699:04 ExitLevel: executed
+3699:04 ShutdownGame:
+3699:04 ------------------------------------------------------------
+3699:04 ------------------------------------------------------------
+3699:04 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3729:10 ExitLevel: executed
+3729:10 ShutdownGame:
+3729:10 ------------------------------------------------------------
+3729:10 ------------------------------------------------------------
+3729:10 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3759:15 ExitLevel: executed
+3759:15 ShutdownGame:
+3759:15 ------------------------------------------------------------
+3759:15 ------------------------------------------------------------
+3759:15 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3789:20 ExitLevel: executed
+3789:20 ShutdownGame:
+3789:20 ------------------------------------------------------------
+3789:20 ------------------------------------------------------------
+3789:20 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3819:25 ExitLevel: executed
+3819:25 ShutdownGame:
+3819:25 ------------------------------------------------------------
+3819:25 ------------------------------------------------------------
+3819:25 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3849:30 ExitLevel: executed
+3849:30 ShutdownGame:
+3849:30 ------------------------------------------------------------
+3849:30 ------------------------------------------------------------
+3849:30 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3879:36 ExitLevel: executed
+3879:36 ShutdownGame:
+3879:36 ------------------------------------------------------------
+3879:36 ------------------------------------------------------------
+3879:36 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3909:41 ExitLevel: executed
+3909:41 ShutdownGame:
+3909:41 ------------------------------------------------------------
+3909:41 ------------------------------------------------------------
+3909:41 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3939:46 ExitLevel: executed
+3939:46 ShutdownGame:
+3939:46 ------------------------------------------------------------
+3939:46 ------------------------------------------------------------
+3939:46 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3969:51 ExitLevel: executed
+3969:51 ShutdownGame:
+3969:51 ------------------------------------------------------------
+3969:51 ------------------------------------------------------------
+3969:51 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3999:56 ExitLevel: executed
+3999:56 ShutdownGame:
+3999:56 ------------------------------------------------------------
+3999:56 ------------------------------------------------------------
+3999:56 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4030:02 ExitLevel: executed
+4030:02 ShutdownGame:
+4030:02 ------------------------------------------------------------
+4030:02 ------------------------------------------------------------
+4030:02 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4060:07 ExitLevel: executed
+4060:07 ShutdownGame:
+4060:07 ------------------------------------------------------------
+4060:07 ------------------------------------------------------------
+4060:07 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4090:12 ExitLevel: executed
+4090:12 ShutdownGame:
+4090:12 ------------------------------------------------------------
+4090:12 ------------------------------------------------------------
+4090:12 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4120:17 ExitLevel: executed
+4120:17 ShutdownGame:
+4120:17 ------------------------------------------------------------
+4120:17 ------------------------------------------------------------
+4120:17 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4150:22 ExitLevel: executed
+4150:22 ShutdownGame:
+4150:22 ------------------------------------------------------------
+4150:22 ------------------------------------------------------------
+4150:22 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4180:28 ExitLevel: executed
+4180:28 ShutdownGame:
+4180:28 ------------------------------------------------------------
+4180:28 ------------------------------------------------------------
+4180:28 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4210:33 ExitLevel: executed
+4210:33 ShutdownGame:
+4210:33 ------------------------------------------------------------
+4210:33 ------------------------------------------------------------
+4210:33 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4240:38 ExitLevel: executed
+4240:38 ShutdownGame:
+4240:38 ------------------------------------------------------------
+4240:38 ------------------------------------------------------------
+4240:38 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4270:43 ExitLevel: executed
+4270:43 ShutdownGame:
+4270:43 ------------------------------------------------------------
+4270:43 ------------------------------------------------------------
+4270:43 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4300:48 ExitLevel: executed
+4300:48 ShutdownGame:
+4300:48 ------------------------------------------------------------
+4300:48 ------------------------------------------------------------
+4300:48 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4330:54 ExitLevel: executed
+4330:54 ShutdownGame:
+4330:54 ------------------------------------------------------------
+4330:54 ------------------------------------------------------------
+4330:54 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4360:59 ExitLevel: executed
+4360:59 ShutdownGame:
+4360:59 ------------------------------------------------------------
+4360:59 ------------------------------------------------------------
+4360:59 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4391:04 ExitLevel: executed
+4391:04 ShutdownGame:
+4391:04 ------------------------------------------------------------
+4391:04 ------------------------------------------------------------
+4391:04 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4421:09 ExitLevel: executed
+4421:09 ShutdownGame:
+4421:09 ------------------------------------------------------------
+4421:09 ------------------------------------------------------------
+4421:09 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4451:14 ExitLevel: executed
+4451:14 ShutdownGame:
+4451:14 ------------------------------------------------------------
+4451:14 ------------------------------------------------------------
+4451:14 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4481:20 ExitLevel: executed
+4481:20 ShutdownGame:
+4481:20 ------------------------------------------------------------
+4481:20 ------------------------------------------------------------
+4481:20 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4511:25 ExitLevel: executed
+4511:25 ShutdownGame:
+4511:25 ------------------------------------------------------------
+4511:25 ------------------------------------------------------------
+4511:25 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4541:30 ExitLevel: executed
+4541:30 ShutdownGame:
+4541:30 ------------------------------------------------------------
+4541:30 ------------------------------------------------------------
+4541:30 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4571:35 ExitLevel: executed
+4571:35 ShutdownGame:
+4571:35 ------------------------------------------------------------
+4571:35 ------------------------------------------------------------
+4571:35 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4601:40 ExitLevel: executed
+4601:40 ShutdownGame:
+4601:40 ------------------------------------------------------------
+4601:40 ------------------------------------------------------------
+4601:40 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4631:46 ExitLevel: executed
+4631:46 ShutdownGame:
+4631:46 ------------------------------------------------------------
+4631:46 ------------------------------------------------------------
+4631:46 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4661:51 ExitLevel: executed
+4661:51 ShutdownGame:
+4661:51 ------------------------------------------------------------
+4661:51 ------------------------------------------------------------
+4661:51 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4691:56 ExitLevel: executed
+4691:56 ShutdownGame:
+4691:56 ------------------------------------------------------------
+4691:56 ------------------------------------------------------------
+4691:56 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4722:01 ExitLevel: executed
+4722:01 ShutdownGame:
+4722:01 ------------------------------------------------------------
+4722:01 ------------------------------------------------------------
+4722:01 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4752:06 ExitLevel: executed
+4752:06 ShutdownGame:
+4752:06 ------------------------------------------------------------
+4752:06 ------------------------------------------------------------
+4752:06 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4782:12 ExitLevel: executed
+4782:12 ShutdownGame:
+4782:12 ------------------------------------------------------------
+4782:12 ------------------------------------------------------------
+4782:12 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4812:17 ExitLevel: executed
+4812:17 ShutdownGame:
+4812:17 ------------------------------------------------------------
+4812:17 ------------------------------------------------------------
+4812:17 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4842:22 ExitLevel: executed
+4842:22 ShutdownGame:
+4842:22 ------------------------------------------------------------
+4842:22 ------------------------------------------------------------
+4842:22 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4872:27 ExitLevel: executed
+4872:27 ShutdownGame:
+4872:27 ------------------------------------------------------------
+4872:27 ------------------------------------------------------------
+4872:27 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4902:32 ExitLevel: executed
+4902:32 ShutdownGame:
+4902:32 ------------------------------------------------------------
+4902:32 ------------------------------------------------------------
+4902:32 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4932:38 ExitLevel: executed
+4932:38 ShutdownGame:
+4932:38 ------------------------------------------------------------
+4932:38 ------------------------------------------------------------
+4932:38 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4962:43 ExitLevel: executed
+4962:43 ShutdownGame:
+4962:43 ------------------------------------------------------------
+4962:43 ------------------------------------------------------------
+4962:43 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4992:48 ExitLevel: executed
+4992:48 ShutdownGame:
+4992:48 ------------------------------------------------------------
+4992:48 ------------------------------------------------------------
+4992:48 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5022:53 ExitLevel: executed
+5022:53 ShutdownGame:
+5022:53 ------------------------------------------------------------
+5022:53 ------------------------------------------------------------
+5022:53 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5052:58 ExitLevel: executed
+5052:58 ShutdownGame:
+5052:58 ------------------------------------------------------------
+5052:58 ------------------------------------------------------------
+5052:58 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5083:04 ExitLevel: executed
+5083:04 ShutdownGame:
+5083:04 ------------------------------------------------------------
+5083:04 ------------------------------------------------------------
+5083:04 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5113:09 ExitLevel: executed
+5113:09 ShutdownGame:
+5113:09 ------------------------------------------------------------
+5113:09 ------------------------------------------------------------
+5113:09 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5143:14 ExitLevel: executed
+5143:14 ShutdownGame:
+5143:14 ------------------------------------------------------------
+5143:14 ------------------------------------------------------------
+5143:14 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5173:19 ExitLevel: executed
+5173:19 ShutdownGame:
+5173:19 ------------------------------------------------------------
+5173:19 ------------------------------------------------------------
+5173:19 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5203:24 ExitLevel: executed
+5203:24 ShutdownGame:
+5203:24 ------------------------------------------------------------
+5203:24 ------------------------------------------------------------
+5203:24 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5233:30 ExitLevel: executed
+5233:30 ShutdownGame:
+5233:30 ------------------------------------------------------------
+5233:30 ------------------------------------------------------------
+5233:30 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5263:35 ExitLevel: executed
+5263:35 ShutdownGame:
+5263:35 ------------------------------------------------------------
+5263:35 ------------------------------------------------------------
+5263:35 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5293:40 ExitLevel: executed
+5293:40 ShutdownGame:
+5293:40 ------------------------------------------------------------
+5293:40 ------------------------------------------------------------
+5293:40 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5323:45 ExitLevel: executed
+5323:45 ShutdownGame:
+5323:45 ------------------------------------------------------------
+5323:45 ------------------------------------------------------------
+5323:45 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5353:50 ExitLevel: executed
+5353:50 ShutdownGame:
+5353:50 ------------------------------------------------------------
+5353:50 ------------------------------------------------------------
+5353:50 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5383:56 ExitLevel: executed
+5383:56 ShutdownGame:
+5383:56 ------------------------------------------------------------
+5383:56 ------------------------------------------------------------
+5383:56 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5414:01 ExitLevel: executed
+5414:01 ShutdownGame:
+5414:01 ------------------------------------------------------------
+5414:01 ------------------------------------------------------------
+5414:01 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5444:06 ExitLevel: executed
+5444:06 ShutdownGame:
+5444:06 ------------------------------------------------------------
+5444:06 ------------------------------------------------------------
+5444:06 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5474:11 ExitLevel: executed
+5474:11 ShutdownGame:
+5474:11 ------------------------------------------------------------
+5474:11 ------------------------------------------------------------
+5474:11 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5504:16 ExitLevel: executed
+5504:16 ShutdownGame:
+5504:16 ------------------------------------------------------------
+5504:16 ------------------------------------------------------------
+5504:16 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5534:22 ExitLevel: executed
+5534:22 ShutdownGame:
+5534:22 ------------------------------------------------------------
+5534:22 ------------------------------------------------------------
+5534:22 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5564:27 ExitLevel: executed
+5564:27 ShutdownGame:
+5564:27 ------------------------------------------------------------
+5564:27 ------------------------------------------------------------
+5564:27 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5594:32 ExitLevel: executed
+5594:32 ShutdownGame:
+5594:32 ------------------------------------------------------------
+5594:32 ------------------------------------------------------------
+5594:32 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5624:37 ExitLevel: executed
+5624:37 ShutdownGame:
+5624:37 ------------------------------------------------------------
+5624:37 ------------------------------------------------------------
+5624:37 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5654:42 ExitLevel: executed
+5654:42 ShutdownGame:
+5654:42 ------------------------------------------------------------
+5654:42 ------------------------------------------------------------
+5654:42 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5684:48 ExitLevel: executed
+5684:48 ShutdownGame:
+5684:48 ------------------------------------------------------------
+5684:48 ------------------------------------------------------------
+5684:48 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5714:53 ExitLevel: executed
+5714:53 ShutdownGame:
+5714:53 ------------------------------------------------------------
+5714:53 ------------------------------------------------------------
+5714:53 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5744:58 ExitLevel: executed
+5744:58 ShutdownGame:
+5744:58 ------------------------------------------------------------
+5744:58 ------------------------------------------------------------
+5744:58 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3673:58 ------------------------------------------------------------
+3673:58 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3704:03 ExitLevel: executed
+3704:03 ShutdownGame:
+3704:03 ------------------------------------------------------------
+3704:03 ------------------------------------------------------------
+3704:03 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3734:09 ExitLevel: executed
+3734:09 ShutdownGame:
+3734:09 ------------------------------------------------------------
+3734:09 ------------------------------------------------------------
+3734:09 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3764:14 ExitLevel: executed
+3764:14 ShutdownGame:
+3764:14 ------------------------------------------------------------
+3764:14 ------------------------------------------------------------
+3764:14 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3794:19 ExitLevel: executed
+3794:19 ShutdownGame:
+3794:19 ------------------------------------------------------------
+3794:19 ------------------------------------------------------------
+3794:19 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3824:24 ExitLevel: executed
+3824:24 ShutdownGame:
+3824:24 ------------------------------------------------------------
+3824:24 ------------------------------------------------------------
+3824:24 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3854:29 ExitLevel: executed
+3854:29 ShutdownGame:
+3854:29 ------------------------------------------------------------
+3854:29 ------------------------------------------------------------
+3854:29 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3884:35 ExitLevel: executed
+3884:35 ShutdownGame:
+3884:35 ------------------------------------------------------------
+3884:35 ------------------------------------------------------------
+3884:35 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3914:40 ExitLevel: executed
+3914:40 ShutdownGame:
+3914:40 ------------------------------------------------------------
+3914:40 ------------------------------------------------------------
+3914:40 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3944:45 ExitLevel: executed
+3944:45 ShutdownGame:
+3944:45 ------------------------------------------------------------
+3944:45 ------------------------------------------------------------
+3944:45 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+3974:50 ExitLevel: executed
+3974:50 ShutdownGame:
+3974:50 ------------------------------------------------------------
+3974:50 ------------------------------------------------------------
+3974:50 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4004:55 ExitLevel: executed
+4004:55 ShutdownGame:
+4004:55 ------------------------------------------------------------
+4004:55 ------------------------------------------------------------
+4004:55 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4035:01 ExitLevel: executed
+4035:01 ShutdownGame:
+4035:01 ------------------------------------------------------------
+4035:01 ------------------------------------------------------------
+4035:01 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4065:06 ExitLevel: executed
+4065:06 ShutdownGame:
+4065:06 ------------------------------------------------------------
+4065:06 ------------------------------------------------------------
+4065:06 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4095:11 ExitLevel: executed
+4095:11 ShutdownGame:
+4095:11 ------------------------------------------------------------
+4095:11 ------------------------------------------------------------
+4095:11 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4125:16 ExitLevel: executed
+4125:16 ShutdownGame:
+4125:16 ------------------------------------------------------------
+4125:16 ------------------------------------------------------------
+4125:16 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4155:21 ExitLevel: executed
+4155:21 ShutdownGame:
+4155:21 ------------------------------------------------------------
+4155:21 ------------------------------------------------------------
+4155:21 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4185:27 ExitLevel: executed
+4185:27 ShutdownGame:
+4185:27 ------------------------------------------------------------
+4185:27 ------------------------------------------------------------
+4185:27 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4215:32 ExitLevel: executed
+4215:32 ShutdownGame:
+4215:32 ------------------------------------------------------------
+4215:32 ------------------------------------------------------------
+4215:32 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4245:37 ExitLevel: executed
+4245:37 ShutdownGame:
+4245:37 ------------------------------------------------------------
+4245:37 ------------------------------------------------------------
+4245:37 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4275:42 ExitLevel: executed
+4275:42 ShutdownGame:
+4275:42 ------------------------------------------------------------
+4275:42 ------------------------------------------------------------
+4275:42 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4305:47 ExitLevel: executed
+4305:47 ShutdownGame:
+4305:47 ------------------------------------------------------------
+4305:47 ------------------------------------------------------------
+4305:47 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4335:53 ExitLevel: executed
+4335:53 ShutdownGame:
+4335:53 ------------------------------------------------------------
+4335:53 ------------------------------------------------------------
+4335:53 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4365:58 ExitLevel: executed
+4365:58 ShutdownGame:
+4365:58 ------------------------------------------------------------
+4365:58 ------------------------------------------------------------
+4365:58 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4396:03 ExitLevel: executed
+4396:03 ShutdownGame:
+4396:03 ------------------------------------------------------------
+4396:03 ------------------------------------------------------------
+4396:03 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4426:08 ExitLevel: executed
+4426:08 ShutdownGame:
+4426:08 ------------------------------------------------------------
+4426:08 ------------------------------------------------------------
+4426:08 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4456:13 ExitLevel: executed
+4456:13 ShutdownGame:
+4456:13 ------------------------------------------------------------
+4456:13 ------------------------------------------------------------
+4456:13 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4486:19 ExitLevel: executed
+4486:19 ShutdownGame:
+4486:19 ------------------------------------------------------------
+4486:19 ------------------------------------------------------------
+4486:19 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4516:24 ExitLevel: executed
+4516:24 ShutdownGame:
+4516:24 ------------------------------------------------------------
+4516:24 ------------------------------------------------------------
+4516:24 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4546:29 ExitLevel: executed
+4546:29 ShutdownGame:
+4546:29 ------------------------------------------------------------
+4546:29 ------------------------------------------------------------
+4546:29 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4576:34 ExitLevel: executed
+4576:34 ShutdownGame:
+4576:34 ------------------------------------------------------------
+4576:34 ------------------------------------------------------------
+4576:34 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4606:39 ExitLevel: executed
+4606:39 ShutdownGame:
+4606:39 ------------------------------------------------------------
+4606:39 ------------------------------------------------------------
+4606:39 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4636:45 ExitLevel: executed
+4636:45 ShutdownGame:
+4636:45 ------------------------------------------------------------
+4636:45 ------------------------------------------------------------
+4636:45 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4666:50 ExitLevel: executed
+4666:50 ShutdownGame:
+4666:50 ------------------------------------------------------------
+4666:50 ------------------------------------------------------------
+4666:50 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4696:55 ExitLevel: executed
+4696:55 ShutdownGame:
+4696:55 ------------------------------------------------------------
+4696:55 ------------------------------------------------------------
+4696:55 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4727:00 ExitLevel: executed
+4727:00 ShutdownGame:
+4727:00 ------------------------------------------------------------
+4727:00 ------------------------------------------------------------
+4727:00 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4757:05 ExitLevel: executed
+4757:05 ShutdownGame:
+4757:05 ------------------------------------------------------------
+4757:05 ------------------------------------------------------------
+4757:05 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4787:11 ExitLevel: executed
+4787:11 ShutdownGame:
+4787:11 ------------------------------------------------------------
+4787:11 ------------------------------------------------------------
+4787:11 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4817:16 ExitLevel: executed
+4817:16 ShutdownGame:
+4817:16 ------------------------------------------------------------
+4817:16 ------------------------------------------------------------
+4817:16 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4847:21 ExitLevel: executed
+4847:21 ShutdownGame:
+4847:21 ------------------------------------------------------------
+4847:21 ------------------------------------------------------------
+4847:21 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_cargoship\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4877:26 ExitLevel: executed
+4877:26 ShutdownGame:
+4877:26 ------------------------------------------------------------
+4877:26 ------------------------------------------------------------
+4877:26 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_showdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4907:31 ExitLevel: executed
+4907:31 ShutdownGame:
+4907:31 ------------------------------------------------------------
+4907:31 ------------------------------------------------------------
+4907:31 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4937:37 ExitLevel: executed
+4937:37 ShutdownGame:
+4937:37 ------------------------------------------------------------
+4937:37 ------------------------------------------------------------
+4937:37 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_carentan\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4967:42 ExitLevel: executed
+4967:42 ShutdownGame:
+4967:42 ------------------------------------------------------------
+4967:42 ------------------------------------------------------------
+4967:42 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+4997:47 ExitLevel: executed
+4997:47 ShutdownGame:
+4997:47 ------------------------------------------------------------
+4997:47 ------------------------------------------------------------
+4997:47 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_vacant\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5027:52 ExitLevel: executed
+5027:52 ShutdownGame:
+5027:52 ------------------------------------------------------------
+5027:52 ------------------------------------------------------------
+5027:52 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5057:57 ExitLevel: executed
+5057:57 ShutdownGame:
+5057:57 ------------------------------------------------------------
+5057:57 ------------------------------------------------------------
+5057:57 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5088:03 ExitLevel: executed
+5088:03 ShutdownGame:
+5088:03 ------------------------------------------------------------
+5088:03 ------------------------------------------------------------
+5088:03 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_citystreets\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5118:08 ExitLevel: executed
+5118:08 ShutdownGame:
+5118:08 ------------------------------------------------------------
+5118:08 ------------------------------------------------------------
+5118:08 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5148:13 ExitLevel: executed
+5148:13 ShutdownGame:
+5148:13 ------------------------------------------------------------
+5148:13 ------------------------------------------------------------
+5148:13 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_pipeline\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5178:18 ExitLevel: executed
+5178:18 ShutdownGame:
+5178:18 ------------------------------------------------------------
+5178:18 ------------------------------------------------------------
+5178:18 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_creek\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5208:23 ExitLevel: executed
+5208:23 ShutdownGame:
+5208:23 ------------------------------------------------------------
+5208:23 ------------------------------------------------------------
+5208:23 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_overgrown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5238:29 ExitLevel: executed
+5238:29 ShutdownGame:
+5238:29 ------------------------------------------------------------
+5238:29 ------------------------------------------------------------
+5238:29 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_bloc\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5268:34 ExitLevel: executed
+5268:34 ShutdownGame:
+5268:34 ------------------------------------------------------------
+5268:34 ------------------------------------------------------------
+5268:34 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_backlot\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5298:39 ExitLevel: executed
+5298:39 ShutdownGame:
+5298:39 ------------------------------------------------------------
+5298:39 ------------------------------------------------------------
+5298:39 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_crash_snow\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5328:44 ExitLevel: executed
+5328:44 ShutdownGame:
+5328:44 ------------------------------------------------------------
+5328:44 ------------------------------------------------------------
+5328:44 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\koth\gamename\Call of Duty 4\mapname\mp_farm\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5358:49 ExitLevel: executed
+5358:49 ShutdownGame:
+5358:49 ------------------------------------------------------------
+5358:49 ------------------------------------------------------------
+5358:49 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\dom\gamename\Call of Duty 4\mapname\mp_bog\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5388:55 ExitLevel: executed
+5388:55 ShutdownGame:
+5388:55 ------------------------------------------------------------
+5388:55 ------------------------------------------------------------
+5388:55 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_crossfire\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5419:00 ExitLevel: executed
+5419:00 ShutdownGame:
+5419:00 ------------------------------------------------------------
+5419:00 ------------------------------------------------------------
+5419:00 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_broadcast\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5449:05 ExitLevel: executed
+5449:05 ShutdownGame:
+5449:05 ------------------------------------------------------------
+5449:05 ------------------------------------------------------------
+5449:05 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_crash\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5479:10 ExitLevel: executed
+5479:10 ShutdownGame:
+5479:10 ------------------------------------------------------------
+5479:10 ------------------------------------------------------------
+5479:10 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\war\gamename\Call of Duty 4\mapname\mp_convoy\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5509:15 ExitLevel: executed
+5509:15 ShutdownGame:
+5509:15 ------------------------------------------------------------
+5509:15 ------------------------------------------------------------
+5509:15 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sab\gamename\Call of Duty 4\mapname\mp_countdown\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5539:21 ExitLevel: executed
+5539:21 ShutdownGame:
+5539:21 ------------------------------------------------------------
+5539:21 ------------------------------------------------------------
+5539:21 InitGame: \_Mod\SVR\_ModVer\3.13\_Website\www.iclan.net\fs_game\mods/svr\g_compassShowEnemies\0\g_gametype\sd\gamename\Call of Duty 4\mapname\mp_strike\protocol\6\shortversion\1.7\sv_allowAnonymous\0\sv_disableClientConsole\0\sv_floodprotect\1\sv_hostname\Serveur CoD4 iClan, le clan Mac\sv_maxclients\40\sv_maxPing\300\sv_maxRate\25000\sv_minPing\0\sv_privateClients\0\sv_punkbuster\0\sv_pure\1\sv_voice\0\ui_maxclients\64
+5558:58 ShutdownGame:
+5558:58 ------------------------------------------------------------

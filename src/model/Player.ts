@@ -13,12 +13,24 @@ export class Honors {
     public overallKills = 0;
     public topKiller = new HonorData("Joueur ayant fait le plus de victimes");
     public topKillerForARun = new HonorData("Joueur ayant fait le plus de victimes dans une manche");
-    public topAssister = new HonorData("Joueur ayant fait le plus d'assists");
-    public topAssisterForARun = new HonorData("Joueur ayant fait le plus d'assists dans une manche");
     public topBankable = new HonorData("Joueur ayant le meilleur ratio");
     public topBankableForARun = new HonorData("Joueur ayant le meilleur ratio dans une manche");
     public tourist = new HonorData("Le joueur qu'on voit rarement");
     public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!");
+    public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot");
+    public bomber = new HonorData("Le joueur qui plante toujours la bombe");
+    public defuser = new HonorData("Le joueur qui defuse toujours la bombe");
+    public medicineMan = new HonorData("Le joueur qui rescue ses potes");
+    public exterminator = new HonorData("Le joueur qui élimine les autres");
+    public suicideMan = new HonorData("Mr. Malchance");
+    public knifeMan = new HonorData("Edward aux mains d'argent");
+    public grenadeMan = new HonorData("Grenade man");
+    public sniperMan = new HonorData("Le loup solitaire et son sniper");
+    public shotgunMan = new HonorData("Demolition man");
+    public rifleMan = new HonorData("Maître du fusil d'assaut");
+    public smgMan = new HonorData("Maître des SMG");
+    public pistolMan = new HonorData("Pistols master");
+    public tchattyMan = new HonorData("Blah Blah Blah");
 }
 
 // tslint:disable-next-line:max-classes-per-file
@@ -37,6 +49,16 @@ export class PlayerGlobalData {
     public bestRatio: number = 0;
     public bestNades: number = 0;
     public bestKnifes: number = 0;
+    public bestRifle: number = 0;
+    public bestSniper: number = 0;
+    public bestShotgun: number = 0;
+    public bestSmg: number = 0;
+    public bestMedic: number = 0;
+    public bestExtermination: number = 0;
+    public bestDefused: number = 0;
+    public bestPlanted: number = 0;
+    public bestParts: any = {};
+    public bestWeapons: any = {};
     public currentMood: GameMood[] = [];
 
     constructor(playerName: string, gamesCount: number) {

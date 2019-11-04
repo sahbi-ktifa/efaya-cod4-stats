@@ -39,74 +39,118 @@ export default class HallOfFame extends Vue {
       game.players.forEach((player) => {
         this.honors.overallKills += player.totalKills;
         this.computeKills(player);
-        this.computeAssists(player);
         this.computeRatio(player);
-        if (!playerPresence[player.playerName]) {
-          playerPresence[player.playerName] = 1;
+        this.computeOthers(player);
+        if (!playerPresence[player.playerRef.guid]) {
+          playerPresence[player.playerRef.guid] = {value: 1, name: player.playerRef.playerName};
         } else {
-          playerPresence[player.playerName]++;
+          playerPresence[player.playerRef.guid].value++;
         }
       });
     });
     let touristKey = null;
     let touristValue = Number.MAX_SAFE_INTEGER;
     for (const key in playerPresence) {
-      if (playerPresence[key] > this.honors.goodStudent.honorAmount) {
-        this.honors.goodStudent.playerName = key;
-        this.honors.goodStudent.honorAmount = playerPresence[key];
+      if (playerPresence[key].value > this.honors.goodStudent.honorAmount) {
+        this.honors.goodStudent.playerName = playerPresence[key].name;
+        this.honors.goodStudent.honorAmount = playerPresence[key].value;
       }
-      if (playerPresence[key] <= touristValue) {
-        touristValue = playerPresence[key];
+      if (playerPresence[key].value <= touristValue) {
+        touristValue = playerPresence[key].value;
         touristKey = key;
       }
     }
     if (touristKey) {
-      this.honors.tourist.playerName = touristKey;
-      this.honors.tourist.honorAmount = playerPresence[touristKey];
+      this.honors.tourist.playerName = playerPresence[touristKey].name;
+      this.honors.tourist.honorAmount = playerPresence[touristKey].value;
     }
   }
 
   private computeKills(player: Player) {
     if (this.honors.topKiller.honorAmount < player.totalKills) {
-      this.honors.topKiller.playerName = player.playerName;
+      this.honors.topKiller.playerName = player.playerRef.playerName;
       this.honors.topKiller.honorAmount = player.totalKills;
     }
     if (this.honors.topKillerForARun.honorAmount < player.kills[0]) {
-      this.honors.topKillerForARun.playerName = player.playerName;
+      this.honors.topKillerForARun.playerName = player.playerRef.playerName;
       this.honors.topKillerForARun.honorAmount = player.kills[0];
     }
     if (this.honors.topKillerForARun.honorAmount < player.kills[1]) {
-      this.honors.topKillerForARun.playerName = player.playerName;
+      this.honors.topKillerForARun.playerName = player.playerRef.playerName;
       this.honors.topKillerForARun.honorAmount = player.kills[1];
     }
   }
 
-  private computeAssists(player: Player) {
-    if (this.honors.topAssister.honorAmount < player.totalAssists) {
-      this.honors.topAssister.playerName = player.playerName;
-      this.honors.topAssister.honorAmount = player.totalAssists;
+  private computeOthers(player: Player) {
+    if (this.honors.headshotMan.honorAmount < player.headShots) {
+      this.honors.headshotMan.playerName = player.playerRef.playerName;
+      this.honors.headshotMan.honorAmount = player.headShots;
     }
-    if (this.honors.topAssisterForARun.honorAmount < player.assists[0]) {
-      this.honors.topAssisterForARun.playerName = player.playerName;
-      this.honors.topAssisterForARun.honorAmount = player.assists[0];
+    if (this.honors.bomber.honorAmount < player.bombsPlanted) {
+      this.honors.bomber.playerName = player.playerRef.playerName;
+      this.honors.bomber.honorAmount = player.bombsPlanted;
     }
-    if (this.honors.topAssisterForARun.honorAmount < player.assists[1]) {
-      this.honors.topAssisterForARun.playerName = player.playerName;
-      this.honors.topAssisterForARun.honorAmount = player.assists[1];
+    if (this.honors.defuser.honorAmount < player.bombsDefused) {
+      this.honors.defuser.playerName = player.playerRef.playerName;
+      this.honors.defuser.honorAmount = player.bombsDefused;
+    }
+    if (this.honors.medicineMan.honorAmount < player.killsDenied) {
+      this.honors.medicineMan.playerName = player.playerRef.playerName;
+      this.honors.medicineMan.honorAmount = player.killsDenied;
+    }
+    if (this.honors.exterminator.honorAmount < player.killsConfirmed) {
+      this.honors.exterminator.playerName = player.playerRef.playerName;
+      this.honors.exterminator.honorAmount = player.killsConfirmed;
+    }
+    if (this.honors.suicideMan.honorAmount < player.suicides) {
+      this.honors.suicideMan.playerName = player.playerRef.playerName;
+      this.honors.suicideMan.honorAmount = player.suicides;
+    }
+    if (this.honors.knifeMan.honorAmount < player.meleeKills) {
+      this.honors.knifeMan.playerName = player.playerRef.playerName;
+      this.honors.knifeMan.honorAmount = player.meleeKills;
+    }
+    if (this.honors.grenadeMan.honorAmount < player.grenadeKills) {
+      this.honors.grenadeMan.playerName = player.playerRef.playerName;
+      this.honors.grenadeMan.honorAmount = player.grenadeKills;
+    }
+    if (this.honors.rifleMan.honorAmount < player.rifleKills) {
+      this.honors.rifleMan.playerName = player.playerRef.playerName;
+      this.honors.rifleMan.honorAmount = player.rifleKills;
+    }
+    if (this.honors.smgMan.honorAmount < player.smgKills) {
+      this.honors.smgMan.playerName = player.playerRef.playerName;
+      this.honors.smgMan.honorAmount = player.smgKills;
+    }
+    if (this.honors.sniperMan.honorAmount < player.sniperKills) {
+      this.honors.sniperMan.playerName = player.playerRef.playerName;
+      this.honors.sniperMan.honorAmount = player.sniperKills;
+    }
+    if (this.honors.shotgunMan.honorAmount < player.shotgunKills) {
+      this.honors.shotgunMan.playerName = player.playerRef.playerName;
+      this.honors.shotgunMan.honorAmount = player.shotgunKills;
+    }
+    if (this.honors.pistolMan.honorAmount < player.pistolKills) {
+      this.honors.pistolMan.playerName = player.playerRef.playerName;
+      this.honors.pistolMan.honorAmount = player.pistolKills;
+    }
+    if (this.honors.tchattyMan.honorAmount < player.tchatter) {
+      this.honors.tchattyMan.playerName = player.playerRef.playerName;
+      this.honors.tchattyMan.honorAmount = player.tchatter;
     }
   }
 
   private computeRatio(player: Player) {
     if (this.honors.topBankable.honorAmount < player.globalRatio) {
-      this.honors.topBankable.playerName = player.playerName;
+      this.honors.topBankable.playerName = player.playerRef.playerName;
       this.honors.topBankable.honorAmount = player.globalRatio;
     }
     if (this.honors.topBankableForARun.honorAmount < player.ratio[0]) {
-      this.honors.topBankableForARun.playerName = player.playerName;
+      this.honors.topBankableForARun.playerName = player.playerRef.playerName;
       this.honors.topBankableForARun.honorAmount = player.ratio[0];
     }
     if (this.honors.topBankableForARun.honorAmount < player.ratio[1]) {
-      this.honors.topBankableForARun.playerName = player.playerName;
+      this.honors.topBankableForARun.playerName = player.playerRef.playerName;
       this.honors.topBankableForARun.honorAmount = player.ratio[1];
     }
   }

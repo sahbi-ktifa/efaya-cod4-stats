@@ -132,6 +132,11 @@
           <strong>Knife Master</strong><br/>
           <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}}</i>
         </div>
+        <div>
+          <img src="../assets/trophy.jpg" class="trophy">
+          <strong>Pistol Master</strong><br/>
+          <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}}</i>
+        </div>
       </div>
     </div>
   </div>
@@ -225,6 +230,10 @@ export default class GameDetails extends Vue {
 
   get nadeKiller() {
     return this.retrieveValue("grenadeKills");
+  }
+
+  get pistolKiller() {
+    return this.retrieveValue("pistolKills");
   }
 
   public formatDate(date: Date): string {
