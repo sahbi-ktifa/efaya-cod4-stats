@@ -22,15 +22,28 @@ export class Honors {
 }
 
 // tslint:disable-next-line:max-classes-per-file
+export class GameMood {
+    public played: boolean = false;
+    public win: boolean = false;
+    public mapRef!: string;
+    public date!: string;
+}
+
+// tslint:disable-next-line:max-classes-per-file
 export class PlayerGlobalData {
     public playerName!: string;
     public bestScore: number = 0;
     public bestKills: number = 0;
     public bestRatio: number = 0;
-    public currentMood: boolean[] = [];
+    public bestNades: number = 0;
+    public bestKnifes: number = 0;
+    public currentMood: GameMood[] = [];
 
-    constructor(playerName: string) {
+    constructor(playerName: string, gamesCount: number) {
         this.playerName = playerName;
+        for (let i = 0; i < gamesCount; i++) {
+            this.currentMood[i] = new GameMood();
+        }
     }
 }
 

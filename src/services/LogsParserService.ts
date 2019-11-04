@@ -87,7 +87,7 @@ export default class LogsParserService {
             parsedContent += JSON.stringify(g) + ",\n";
         });
         // tslint:disable-next-line:no-console
-        console.log(parsedContent);
+        console.log(parsedContent, games);
     }
 
     private computeGameRef(gameRef: GameRef, roundIndex: number, players: Player[]) {

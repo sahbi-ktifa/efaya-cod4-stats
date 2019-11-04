@@ -65,42 +65,42 @@
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The killer</strong><br/>
-          <i>{{deadliest.playerRef.playerName}} : {{rifleKiller.totalKills}}</i>
+          <i>{{deadliest.playerRef.playerName}} : {{deadliest.totalKills}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The scorer</strong><br/>
-          <i>{{scorer.playerRef.playerName}} : {{rifleKiller.totalScore}}</i>
+          <i>{{scorer.playerRef.playerName}} : {{scorer.totalScore}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The most bankable</strong><br/>
-          <i>{{bankable.playerRef.playerName}} : {{rifleKiller.globalRatio}}</i>
+          <i>{{bankable.playerRef.playerName}} : {{bankable.globalRatio}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The most targeted</strong><br/>
-          <i>{{targeted.playerRef.playerName}} : {{rifleKiller.totalDeaths}}</i>
+          <i>{{targeted.playerRef.playerName}} : {{targeted.totalDeaths}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The bomber</strong><br/>
-          <i>{{bomber.playerRef.playerName}} : {{rifleKiller.bombsPlanted}}</i>
+          <i>{{bomber.playerRef.playerName}} : {{bomber.bombsPlanted}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The defuser</strong><br/>
-          <i>{{defuser.playerRef.playerName}} : {{rifleKiller.bombsDefused}}</i>
+          <i>{{defuser.playerRef.playerName}} : {{defuser.bombsDefused}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>Exterminator</strong><br/>
-          <i>{{exterminator.playerRef.playerName}} : {{rifleKiller.killsConfirmed}}</i>
+          <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
           <strong>The Medic</strong><br/>
-          <i>{{medic.playerRef.playerName}} : {{rifleKiller.killsDenied}}</i>
+          <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}}</i>
         </div>
         <div>
           <img src="../assets/trophy.jpg" class="trophy">
@@ -192,7 +192,7 @@ export default class GameDetails extends Vue {
   }
 
   get defuser() {
-    return this.retrieveValue("bombsDefuser");
+    return this.retrieveValue("bombsDefused");
   }
 
   get exterminator() {
