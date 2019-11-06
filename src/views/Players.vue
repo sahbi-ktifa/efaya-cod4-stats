@@ -11,7 +11,7 @@
         <strong>Current mood</strong>
       </li>
       <li v-for="dataForPlayer in dataForPlayers">
-        <strong class="name">{{dataForPlayer.playerName}}</strong>
+        <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
         <span>{{dataForPlayer.bestScore}}</span>
         <span>{{dataForPlayer.bestKills}}</span>
         <span>{{dataForPlayer.bestRatio}}</span>
@@ -55,7 +55,7 @@ export default class Players extends Vue {
       game.players.forEach((player) => {
         let dataForPlayer = dataForPlayersMap.get(player.playerRef.guid);
         if (!dataForPlayer) {
-          dataForPlayer = new PlayerGlobalData(player.playerRef.playerName, orderedGames.length);
+          dataForPlayer = new PlayerGlobalData(player.playerRef, orderedGames.length);
           dataForPlayersMap.set(player.playerRef.guid, dataForPlayer);
         }
       });
@@ -97,7 +97,7 @@ export default class Players extends Vue {
     dataForPlayersMap.forEach((data) => {
       this.dataForPlayers.push(data);
     });
-    this.dataForPlayers = orderBy(this.dataForPlayers, ["playerName"], ["asc"]);
+    this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
   }
 
   public goToGame(mood: GameMood) {

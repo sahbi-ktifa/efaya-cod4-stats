@@ -25,7 +25,7 @@
         <h4>Winning Team!</h4>
         <ul>
           <li v-for="player in winners">
-            <span>{{player.playerRef.playerName}}</span>
+            <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.deaths[0]}}<br/>{{player.deaths[1]}}</span>
@@ -44,7 +44,7 @@
         <h4>Loosing Team!</h4>
         <ul>
           <li v-for="player in losers">
-            <span>{{player.playerRef.playerName}}</span>
+            <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.deaths[0]}}<br/>{{player.deaths[1]}}</span>
@@ -289,5 +289,8 @@ export default class GameDetails extends Vue {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+  .name {
+    cursor: pointer;
   }
 </style>

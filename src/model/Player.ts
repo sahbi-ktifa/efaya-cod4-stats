@@ -43,7 +43,7 @@ export class GameMood {
 
 // tslint:disable-next-line:max-classes-per-file
 export class PlayerGlobalData {
-    public playerName!: string;
+    public playerRef!: PlayerRef;
     public bestScore: number = 0;
     public bestKills: number = 0;
     public bestRatio: number = 0;
@@ -61,8 +61,8 @@ export class PlayerGlobalData {
     public bestWeapons: any = {};
     public currentMood: GameMood[] = [];
 
-    constructor(playerName: string, gamesCount: number) {
-        this.playerName = playerName;
+    constructor(playerRef: PlayerRef, gamesCount: number) {
+        this.playerRef = playerRef;
         for (let i = 0; i < gamesCount; i++) {
             this.currentMood[i] = new GameMood();
         }
@@ -146,5 +146,43 @@ export class Player {
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
+    }
+}
+
+// tslint:disable-next-line:max-classes-per-file
+export class PlayerInfoDetails {
+    public value = 0;
+    public mapRef!: string;
+}
+
+// tslint:disable-next-line:max-classes-per-file
+export class PlayerInfo {
+    public playerRef!: PlayerRef;
+    public bestScore = new PlayerInfoDetails();
+    public bestKills = new PlayerInfoDetails();
+    public bestDeaths = new PlayerInfoDetails();
+    public bestAssists = new PlayerInfoDetails();
+    public bestRatio = new PlayerInfoDetails();
+    public killsConfirmed = new PlayerInfoDetails();
+    public killsDenied = new PlayerInfoDetails();
+    public bombsPlanted = new PlayerInfoDetails();
+    public bombsDefused = new PlayerInfoDetails();
+    public headShots = new PlayerInfoDetails();
+    public teamKills = new PlayerInfoDetails();
+    public grenadeKills = new PlayerInfoDetails();
+    public pistolKills = new PlayerInfoDetails();
+    public rifleKills = new PlayerInfoDetails();
+    public smgKills = new PlayerInfoDetails();
+    public shotgunKills = new PlayerInfoDetails();
+    public sniperKills = new PlayerInfoDetails();
+    public meleeKills = new PlayerInfoDetails();
+    public suicides = new PlayerInfoDetails();
+    public tchatter = new PlayerInfoDetails();
+    public weaps: any = {};
+    public parts: any = {};
+
+    public constructor(playerRef: PlayerRef) {
+        this.playerRef = playerRef;
+        this.bestDeaths.value = 1000000;
     }
 }
