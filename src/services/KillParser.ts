@@ -75,7 +75,6 @@ export default class KillParser implements LineParser {
                 if (player.playerRef.guid === tokens[1]) {
                     player.deaths++;
                 }
-                // assist handle
             }
         }
     }

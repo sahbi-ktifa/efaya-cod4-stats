@@ -166,14 +166,27 @@ export default class GameDetails extends Vue {
   public created() {
     // @ts-ignore
     this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
-    let maxScore = 0;
-    this.game.players.forEach((p) => {
-      if (p.totalPoints > maxScore) {
-        maxScore = p.totalPoints;
-      }
-    });
-    this.winners = this.game.players.filter((p) => p.totalPoints === maxScore);
-    this.losers = this.game.players.filter((p) => p.totalPoints < maxScore);
+    const team1 = this.game.gameRefs[0].alliesScore + this.game.gameRefs[1].axisScore;
+    const team2 = this.game.gameRefs[0].axisScore + this.game.gameRefs[1].alliesScore;
+    let winnersGuid: string[] = [];
+    let losersGuid: string[] = [];
+    if (team1 > team2) {
+      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
+      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
+      winnersGuid = Array.from(new Set(winners));
+      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
+      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
+      losersGuid = Array.from(new Set(losers));
+    } else {
+      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
+      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
+      winnersGuid = Array.from(new Set(winners));
+      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
+      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
+      losersGuid = Array.from(new Set(losers));
+    }
+    this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
+    this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
   }
 
   get bankable() {

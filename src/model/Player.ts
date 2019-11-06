@@ -85,6 +85,7 @@ export class PlayerRef {
 export class PlayerForRound {
     public playerRef!: PlayerRef;
     public score = 0;
+    public assists = 0;
     public kills = 0;
     public deaths = 0;
     public killsConfirmed = 0;

@@ -11,6 +11,7 @@ import KillDeniedParser from "@/services/KillDeniedParser";
 import BombDefusedParser from "@/services/BombDefusedParser";
 import BombPlantedParser from "@/services/BombPlantedParser";
 import TchatterParser from "@/services/TchatterParser";
+import AssistParser from "@/services/AssistParser";
 
 export enum LogEvent {
     J = "join",
@@ -44,7 +45,8 @@ const parsers = [
     new KillDeniedParser(),
     new BombDefusedParser(),
     new BombPlantedParser(),
-    new TchatterParser()
+    new TchatterParser(),
+    new AssistParser()
 ];
 
 // tslint:disable-next-line:max-classes-per-file
@@ -95,7 +97,9 @@ export default class LogsParserService {
         }
         let parsedContent = "";
         games.forEach((g) => {
-            parsedContent += JSON.stringify(g) + ",\n";
+            if (g.players.length > 4) {
+                parsedContent += JSON.stringify(g) + ",\n";
+            }
         });
         // tslint:disable-next-line:no-console
         console.log(parsedContent, games);
@@ -111,6 +115,8 @@ export default class LogsParserService {
                         p.totalScore += player.score;
                         p.kills[roundIndex] += player.kills;
                         p.totalKills += player.kills;
+                        p.assists[roundIndex] += player.assists;
+                        p.totalAssists += player.assists;
                         p.deaths[roundIndex] += player.deaths;
                         p.totalDeaths += player.deaths;
                         p.killsConfirmed += player.killsConfirmed;
@@ -129,10 +135,13 @@ export default class LogsParserService {
                         p.suicides += player.suicides;
                         p.tchatter += player.tchatter;
                         for (const [key] of Object.entries(player.weaps)) {
-                            if (!p.weaps[key]) {
-                                p.weaps[key] =  player.weaps[key];
+                            if (!p.weaps[gameRef.mod]) {
+                                p.weaps[gameRef.mod] = {};
+                            }
+                            if (!p.weaps[gameRef.mod][key]) {
+                                p.weaps[gameRef.mod][key] =  player.weaps[key];
                             } else {
-                                p.weaps[key] += player.weaps[key];
+                                p.weaps[gameRef.mod][key] += player.weaps[key];
                             }
                         }
                         for (const [key] of Object.entries(player.parts)) {

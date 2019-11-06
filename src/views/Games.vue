@@ -45,7 +45,7 @@ export default class Games extends Vue {
   }
 
   public formatDate(date: Date): string {
-    return format(date, "dd/MM/yyyy");
+    return !isNaN(date.getTime()) ? format(date, "dd/MM/yyyy") : "";
   }
 }
 </script>
