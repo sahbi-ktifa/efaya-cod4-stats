@@ -23,6 +23,7 @@
       </li>
       <li>
         <h4>Winning Team!</h4>
+        <div>Round1: <strong>{{winnerPoints[0]}}</strong> / Round2: <strong>{{winnerPoints[1]}}</strong> - Total: <strong>{{winnerPoints[0] + winnerPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in winners">
             <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
@@ -42,6 +43,7 @@
       </li>
       <li>
         <h4>Loosing Team!</h4>
+        <div>Round1: <strong>{{loserPoints[0]}}</strong> / Round2: <strong>{{loserPoints[1]}}</strong> - Total: <strong>{{loserPoints[0] + loserPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in losers">
             <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
@@ -161,6 +163,8 @@ export default class GameDetails extends Vue {
   public game!: Game;
   public winners!: Player[];
   public losers!: Player[];
+  public winnerPoints: number[] = [];
+  public loserPoints: number[] = [];
   protected games!: Game[];
 
   public created() {
@@ -171,6 +175,10 @@ export default class GameDetails extends Vue {
     let winnersGuid: string[] = [];
     let losersGuid: string[] = [];
     if (team1 > team2) {
+      this.winnerPoints[0] = this.game.gameRefs[0].alliesScore;
+      this.winnerPoints[1] = this.game.gameRefs[1].axisScore;
+      this.loserPoints[0] = this.game.gameRefs[0].axisScore;
+      this.loserPoints[1] = this.game.gameRefs[1].alliesScore;
       const winners = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
       winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
       winnersGuid = Array.from(new Set(winners));
@@ -178,6 +186,10 @@ export default class GameDetails extends Vue {
       losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
       losersGuid = Array.from(new Set(losers));
     } else {
+      this.winnerPoints[0] = this.game.gameRefs[0].axisScore;
+      this.winnerPoints[1] = this.game.gameRefs[1].alliesScore;
+      this.loserPoints[0] = this.game.gameRefs[0].alliesScore;
+      this.loserPoints[1] = this.game.gameRefs[1].axisScore;
       const winners = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
       winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
       winnersGuid = Array.from(new Set(winners));

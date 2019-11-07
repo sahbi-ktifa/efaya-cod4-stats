@@ -5,7 +5,12 @@
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
         <router-link :to="'game/' + game.map" tag="h3">{{game.map}}</router-link>
         <span>{{formatDate(game.date)}}</span>
-        <span>Players: <strong>{{game.players.length}}</strong></span>
+        <span>
+          Players: <strong>{{game.players.length}}</strong><br/>
+          Round1: <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
+          Round2: <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
+          Final Score: <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
+        </span>
         <div>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.jpg" v-if="isEfayaMod(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/imm.jpg" v-if="isIMMMod(game)">
@@ -57,7 +62,7 @@ export default class Games extends Vue {
   }
   .games > ul > li {
     display: grid;
-    grid-template-columns: 275px 200px 100px 100px 150px max-content;
+    grid-template-columns: 275px 250px 100px 150px 150px max-content;
     grid-gap: 0 20px;
     align-items: center;
     margin-bottom: 15px;
