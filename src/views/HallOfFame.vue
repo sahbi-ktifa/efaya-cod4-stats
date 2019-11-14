@@ -5,7 +5,7 @@
       <li v-for="(honor, propertyName) in honors">
         <div>
           <img :src="getImgUrl(honor.icon)" class="trophy">
-          <strong>{{propertyName}}</strong><br/>
+          <strong>{{propertyName}}</strong>
           <i v-if="propertyName !== 'overallKills'"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}</i>
           <i v-if="propertyName === 'overallKills'">{{honor.honorAmount}}</i>
           <div class="honor-description" v-if="honor.description && honor.description.length > 0">{{honor.description}}</div>
@@ -207,7 +207,7 @@ export default class HallOfFame extends Vue {
   }
   .hall-of-fame > ul > li i {
     margin-bottom: 10px;
-
+    display: block;
   }
   .hall-of-fame .trophy {
     width: 220px;
