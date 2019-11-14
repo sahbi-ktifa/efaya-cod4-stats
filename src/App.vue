@@ -36,6 +36,7 @@ export default class App extends Vue {
   }
   body {
     margin: 0;
+    line-height: 1.5;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
