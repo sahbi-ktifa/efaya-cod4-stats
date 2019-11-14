@@ -2,7 +2,7 @@
   <div class="players">
     <ul>
       <li>
-        <span class="header"   @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</span>
+        <strong class="header" @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</strong>
         <strong class="header" @click="changeSort('bestScore')" :class="{'active': sortKey === 'bestScore'}">Meilleur score dans une partie</strong>
         <strong class="header" @click="changeSort('bestKills')" :class="{'active': sortKey === 'bestKills'}">Le plus de kill dans une partie</strong>
         <strong class="header" @click="changeSort('bestRatio')" :class="{'active': sortKey === 'bestRatio'}">Meilleur ratio dans une partie</strong>
@@ -154,5 +154,11 @@ export default class Players extends Vue {
     width: 20px;
     margin-left: 5px;
     cursor: pointer;
+  }
+  .header {
+    cursor: pointer;
+  }
+  .header.active {
+    color: orange;
   }
 </style>
