@@ -81,6 +81,7 @@ export class EfayaV2Weapons implements WeaponNames {
 }
 
 
+// tslint:disable-next-line:max-classes-per-file
 export class IMMWeapons implements WeaponNames {
     public giveMeMyHumanName(weapon: string): string {
         let res = "";
@@ -104,6 +105,8 @@ export class IMMWeapons implements WeaponNames {
             res += "Springfield Scoped";
         } else if (weapon.startsWith("mp44_")) {
             res += "Springfield";
+        } else if (weapon.startsWith("mp5_")) {
+            res += "Kar 98";
         } else if (weapon.startsWith("uzi_")) {
             res += "Type 38";
         } else if (weapon.startsWith("m14_")) {
@@ -139,6 +142,7 @@ export class IMMWeapons implements WeaponNames {
     }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class EfayaModV1Weapons implements WeaponNames {
     public giveMeMyHumanName(weapon: string): string {
         let res = "";

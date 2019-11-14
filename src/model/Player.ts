@@ -1,5 +1,6 @@
 export class HonorData {
     public playerName!: string;
+    public playerGuid!: string;
     public honorAmount = 0;
     public description = "";
     public icon = "";
