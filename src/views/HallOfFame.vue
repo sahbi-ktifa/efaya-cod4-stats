@@ -206,6 +206,7 @@ export default class HallOfFame extends Vue {
     margin-bottom: 10px;
   }
   .hall-of-fame > ul > li i {
+    margin-top: 10px;
     margin-bottom: 10px;
     display: block;
   }
