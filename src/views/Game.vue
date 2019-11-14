@@ -165,46 +165,6 @@ import { format } from "date-fns";
   }
 })
 export default class GameDetails extends Vue {
-  public game!: Game;
-  public winners!: Player[];
-  public losers!: Player[];
-  public winnerPoints: number[] = [];
-  public loserPoints: number[] = [];
-  protected games!: Game[];
-
-  public created() {
-    // @ts-ignore
-    this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
-    const team1 = this.game.gameRefs[0].alliesScore + this.game.gameRefs[1].axisScore;
-    const team2 = this.game.gameRefs[0].axisScore + this.game.gameRefs[1].alliesScore;
-    let winnersGuid: string[] = [];
-    let losersGuid: string[] = [];
-    if (team1 > team2) {
-      this.winnerPoints[0] = this.game.gameRefs[0].alliesScore;
-      this.winnerPoints[1] = this.game.gameRefs[1].axisScore;
-      this.loserPoints[0] = this.game.gameRefs[0].axisScore;
-      this.loserPoints[1] = this.game.gameRefs[1].alliesScore;
-      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
-      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
-      winnersGuid = Array.from(new Set(winners));
-      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
-      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
-      losersGuid = Array.from(new Set(losers));
-    } else {
-      this.winnerPoints[0] = this.game.gameRefs[0].axisScore;
-      this.winnerPoints[1] = this.game.gameRefs[1].alliesScore;
-      this.loserPoints[0] = this.game.gameRefs[0].alliesScore;
-      this.loserPoints[1] = this.game.gameRefs[1].axisScore;
-      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
-      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
-      winnersGuid = Array.from(new Set(winners));
-      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
-      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
-      losersGuid = Array.from(new Set(losers));
-    }
-    this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
-    this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
-  }
 
   get bankable() {
     return this.retrieveValue("globalRatio");
@@ -269,17 +229,57 @@ export default class GameDetails extends Vue {
   get pistolKiller() {
     return this.retrieveValue("pistolKills");
   }
+  public game!: Game;
+  public winners!: Player[];
+  public losers!: Player[];
+  public winnerPoints: number[] = [];
+  public loserPoints: number[] = [];
+  protected games!: Game[];
+
+  public created() {
+    // @ts-ignore
+    this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+    const team1 = this.game.gameRefs[0].alliesScore + this.game.gameRefs[1].axisScore;
+    const team2 = this.game.gameRefs[0].axisScore + this.game.gameRefs[1].alliesScore;
+    let winnersGuid: string[] = [];
+    let losersGuid: string[] = [];
+    if (team1 > team2) {
+      this.winnerPoints[0] = this.game.gameRefs[0].alliesScore;
+      this.winnerPoints[1] = this.game.gameRefs[1].axisScore;
+      this.loserPoints[0] = this.game.gameRefs[0].axisScore;
+      this.loserPoints[1] = this.game.gameRefs[1].alliesScore;
+      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
+      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
+      winnersGuid = Array.from(new Set(winners));
+      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
+      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
+      losersGuid = Array.from(new Set(losers));
+    } else {
+      this.winnerPoints[0] = this.game.gameRefs[0].axisScore;
+      this.winnerPoints[1] = this.game.gameRefs[1].alliesScore;
+      this.loserPoints[0] = this.game.gameRefs[0].alliesScore;
+      this.loserPoints[1] = this.game.gameRefs[1].axisScore;
+      const winners = this.game.gameRefs[0].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid);
+      winners.concat(this.game.gameRefs[1].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid));
+      winnersGuid = Array.from(new Set(winners));
+      const losers = this.game.gameRefs[0].players.filter((p) => p.team === "allies").map((p) => p.playerRef.guid);
+      losers.concat(this.game.gameRefs[1].players.filter((p) => p.team === "axis").map((p) => p.playerRef.guid));
+      losersGuid = Array.from(new Set(losers));
+    }
+    this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
+    this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
+  }
 
   public formatDate(date: Date): string {
     return format(date, "dd/MM/yyyy");
   }
 
-  private retrieveValue(ref: string) {
-    return orderBy(this.game.players, [ref], ["desc"])[0];
-  }
-
   public mapNamer(mapName: string): string {
     return mapName.replace("mp_", "").replace(/_/g, " ").toUpperCase();
+  }
+
+  private retrieveValue(ref: string) {
+    return orderBy(this.game.players, [ref], ["desc"])[0];
   }
 }
 </script>
@@ -320,7 +320,7 @@ export default class GameDetails extends Vue {
     align-items: center;
   }
   .trophies .trophy {
-    width: 150px;
+    width: 220px;
     display: block;
     margin-left: auto;
     margin-right: auto;
