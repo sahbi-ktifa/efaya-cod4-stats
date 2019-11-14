@@ -93,7 +93,7 @@ export default class LogsParserService {
                     }
                 }
             }
-            games.push(new Game([gameRefs[i], gameRefs[j]], players));
+            games.push(new Game([gameRefs[j], gameRefs[i]], players));
         }
         let parsedContent = "";
         games.forEach((g) => {
@@ -103,6 +103,8 @@ export default class LogsParserService {
         });
         // tslint:disable-next-line:no-console
         console.log(parsedContent, games);
+        // @ts-ignore
+        window.games = games;
     }
 
     private computeGameRef(gameRef: GameRef, roundIndex: number, players: Player[]) {

@@ -217,8 +217,17 @@ export default class PlayerDetails extends Vue {
 </script>
 
 <style scoped>
+  .player {
+    padding-top: 25px;
+    padding-bottom: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  h2 {
+    color: #36ebff;
+  }
   .map {
     cursor: pointer;
+    color: #36ebff;
   }
   .weap-parts-container {
     display: grid;

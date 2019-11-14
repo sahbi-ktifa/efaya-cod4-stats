@@ -2,35 +2,37 @@ export class HonorData {
     public playerName!: string;
     public honorAmount = 0;
     public description = "";
+    public icon = "";
 
-    constructor(desc: string = "") {
+    constructor(desc: string = "", icon: string) {
         this.description = desc;
+        this.icon = icon;
     }
 }
 
 // tslint:disable-next-line:max-classes-per-file
 export class Honors {
-    public overallKills = 0;
-    public topKiller = new HonorData("Joueur ayant fait le plus de victimes");
-    public topKillerForARun = new HonorData("Joueur ayant fait le plus de victimes dans une manche");
-    public topBankable = new HonorData("Joueur ayant le meilleur ratio");
-    public topBankableForARun = new HonorData("Joueur ayant le meilleur ratio dans une manche");
-    public tourist = new HonorData("Le joueur qu'on voit rarement");
-    public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!");
-    public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot");
-    public bomber = new HonorData("Le joueur qui plante toujours la bombe");
-    public defuser = new HonorData("Le joueur qui defuse toujours la bombe");
-    public medicineMan = new HonorData("Le joueur qui rescue ses potes");
-    public exterminator = new HonorData("Le joueur qui élimine les autres");
-    public suicideMan = new HonorData("Mr. Malchance");
-    public knifeMan = new HonorData("Edward aux mains d'argent");
-    public grenadeMan = new HonorData("Grenade man");
-    public sniperMan = new HonorData("Le loup solitaire et son sniper");
-    public shotgunMan = new HonorData("Demolition man");
-    public rifleMan = new HonorData("Maître du fusil d'assaut");
-    public smgMan = new HonorData("Maître des SMG");
-    public pistolMan = new HonorData("Pistols master");
-    public tchattyMan = new HonorData("Blah Blah Blah");
+    public overallKills = new HonorData("Total de victimes sur le serveur", "trophy");
+    public topKiller = new HonorData("Joueur ayant fait le plus de victimes", "killer");
+    public topKillerForARun = new HonorData("Joueur ayant fait le plus de victimes dans une manche", "killer");
+    public topBankable = new HonorData("Joueur ayant le meilleur ratio", "bankable");
+    public topBankableForARun = new HonorData("Joueur ayant le meilleur ratio dans une manche", "bankable");
+    public tourist = new HonorData("Le joueur qu'on voit rarement", "tourist");
+    public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!", "student");
+    public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot", "headshot");
+    public bomber = new HonorData("Le joueur qui plante toujours la bombe", "bomber");
+    public defuser = new HonorData("Le joueur qui defuse toujours la bombe", "defuser");
+    public medicineMan = new HonorData("Le joueur qui rescue ses potes", "medic");
+    public exterminator = new HonorData("Le joueur qui élimine les autres", "exterminator");
+    public suicideMan = new HonorData("Mr. Malchance", "suicides");
+    public knifeMan = new HonorData("Edward aux mains d'argent", "knife");
+    public grenadeMan = new HonorData("Grenade man", "grenade");
+    public sniperMan = new HonorData("Le loup solitaire et son sniper", "sniper");
+    public shotgunMan = new HonorData("Demolition man", "shotgun");
+    public rifleMan = new HonorData("Maître du fusil d'assaut", "rifler");
+    public smgMan = new HonorData("Maître des SMG", "smg");
+    public pistolMan = new HonorData("Pistols master", "pistol");
+    public tchattyMan = new HonorData("Blah Blah Blah", "tchatty");
 }
 
 // tslint:disable-next-line:max-classes-per-file

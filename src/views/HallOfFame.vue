@@ -1,13 +1,13 @@
 <template>
   <div class="hall-of-fame">
-    <h1>This is the iClan Hall of Fame</h1>
+    <h1>- &nbsp;Hall of Fame</h1>
     <ul>
       <li v-for="(honor, propertyName) in honors">
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img :src="getImgUrl(honor.icon)" class="trophy">
           <strong>{{propertyName}}</strong><br/>
           <i v-if="propertyName !== 'overallKills'">{{honor.playerName}} {{honor.honorAmount}}</i>
-          <i v-if="propertyName === 'overallKills'">{{honors.overallKills}}</i>
+          <i v-if="propertyName === 'overallKills'">{{honor.honorAmount}}</i>
           <div class="honor-description" v-if="honor.description && honor.description.length > 0">{{honor.description}}</div>
         </div>
       </li>
@@ -37,7 +37,7 @@ export default class HallOfFame extends Vue {
     const playerPresence: any = {};
     orderBy(this.games, ["date"], ["asc"]).forEach((game) => {
       game.players.forEach((player) => {
-        this.honors.overallKills += player.totalKills;
+        this.honors.overallKills.honorAmount += player.totalKills;
         this.computeKills(player);
         this.computeRatio(player);
         this.computeOthers(player);
@@ -64,6 +64,10 @@ export default class HallOfFame extends Vue {
       this.honors.tourist.playerName = playerPresence[touristKey].name;
       this.honors.tourist.honorAmount = playerPresence[touristKey].value;
     }
+  }
+
+  public getImgUrl(icon: string): string {
+    return require("../assets/award/" + icon + ".png");
   }
 
   private computeKills(player: Player) {
@@ -161,6 +165,10 @@ export default class HallOfFame extends Vue {
   .hall-of-fame {
     padding: 30px;
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  #app .hall-of-fame h1 {
+    margin-left: 450px;
   }
   .hall-of-fame > ul {
     text-align: center;

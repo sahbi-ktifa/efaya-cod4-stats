@@ -83,7 +83,59 @@ export class EfayaV2Weapons implements WeaponNames {
 
 export class IMMWeapons implements WeaponNames {
     public giveMeMyHumanName(weapon: string): string {
-        return weapon;
+        let res = "";
+        if (weapon.startsWith("m16_")) {
+            res += "Kar98 Scoped";
+        } else if (weapon.startsWith("dragunov_")) {
+            res += "Mosin Scoped";
+        } else if (weapon.startsWith("flash_")) {
+            res += "Stun grenade";
+        } else if (weapon.startsWith("frag_")) {
+            res += "MK2 Frag grenade";
+        } else if (weapon.startsWith("barrett_acog")) {
+            res += "Endfield Scoped";
+        } else if (weapon.startsWith("barrett_")) {
+            res += "Endfield";
+        } else if (weapon.startsWith("m40a3_acog")) {
+            res += "Mosin";
+        } else if (weapon.startsWith("m40a3")) {
+            res += "Kard98";
+        } else if (weapon.startsWith("remington700_")) {
+            res += "Springfield Scoped";
+        } else if (weapon.startsWith("mp44_")) {
+            res += "Springfield";
+        } else if (weapon.startsWith("uzi_")) {
+            res += "Type 38";
+        } else if (weapon.startsWith("m14_")) {
+            res += "Type 38 Scoped";
+        } else if (weapon.startsWith("skorpion_")) {
+            res += "Mosin";
+        } else if (weapon.startsWith("ak74u_")) {
+            res += "Enfield";
+        } else if (weapon.startsWith("g36c_")) {
+            res += "Winchester Scoped";
+        } else if (weapon.startsWith("p90_")) {
+            res += "Winchester";
+        } else if (weapon.startsWith("g3_")) {
+            res += "Springfield Scoped";
+        } else if (weapon.startsWith("m4_")) {
+            res += "Arisaka Scoped";
+        } else if (weapon.startsWith("m21_")) {
+            res += "Arisaka";
+        } else if (weapon.startsWith("m60e4_")) {
+            res += "SVT-40";
+        } else if (weapon.startsWith("saw_")) {
+            res += "M1A1";
+        } else if (weapon.startsWith("rpd_")) {
+            res += "Gewehr 43";
+        } else if (weapon.startsWith("m1014_")) {
+            res += "Double Barrel";
+        } else if (weapon.startsWith("winchester1200_")) {
+            res += "Double Barrel";
+        } else {
+            res += weapon;
+        }
+        return res;
     }
 }
 

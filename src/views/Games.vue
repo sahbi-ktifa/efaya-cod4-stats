@@ -1,24 +1,19 @@
 <template>
   <div class="games">
     <ul>
-      <li v-for="game in games">
+      <li v-for="game in games" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-        <router-link :to="'game/' + game.map" tag="h3">{{game.map}}</router-link>
-        <span>{{formatDate(game.date)}}</span>
-        <span>
-          Players: <strong>{{game.players.length}}</strong><br/>
-          Round1: <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
-          Round2: <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
-          Final Score: <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
-        </span>
-        <div>
+        <div class="game-summary">
+          <h4>{{mapNamer(game.map)}}</h4>
+          <h4 class="game-date">{{formatDate(game.date)}}</h4>
+          <div class="players-summary">Players : <strong>{{game.players.length}}</strong></div>
+          <span class="round-summary">
+            Round1: <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
+            Round2: <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
+            Final Score: <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
+          </span>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.jpg" v-if="isEfayaMod(game)">
-          <img class="mod-logo" alt="Mod logo" src="../assets/imm.jpg" v-if="isIMMMod(game)">
-          <div align="center">{{game.mod}}</div>
-        </div>
-        <div>
-          <a :href="game.twitchUrl" v-if="game.twitchUrl" target="_blank"><img class="twitch-logo" alt="Twitch logo" src="../assets/twitch.png"></a>
-          <a :href="game.youtubeUrl" v-if="game.youtubeUrl" target="_blank"><img class="youtube-logo" alt="Youtube logo" src="../assets/youtube.png"></a>
+          <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)">
         </div>
       </li>
     </ul>
@@ -52,38 +47,75 @@ export default class Games extends Vue {
   public formatDate(date: Date): string {
     return !isNaN(date.getTime()) ? format(date, "dd/MM/yyyy") : "";
   }
+
+  public goToGame(game: Game) {
+    this.$router.push("/game/" + game.map);
+  }
+
+  public mapNamer(mapName: string): string {
+    return mapName.replace("mp_", "").replace(/_/g, " ").toUpperCase();
+  }
 }
 </script>
 
 <style scoped>
   .games {
-    padding: 30px;
+    padding: 20px 200px 20px 20px;
     text-align: left;
   }
-  .games > ul > li {
+  .games > ul {
     display: grid;
-    grid-template-columns: 275px 250px 100px 150px 150px max-content;
-    grid-gap: 0 20px;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px 20px;
     align-items: center;
-    margin-bottom: 15px;
+    max-width: 1080px;
+  }
+  .games > ul > li {
+    border: solid 2px lightgrey;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 175px;
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
   }
   .games .map-preview {
-    height: 150px;
+    height: 100%;
+    max-height: 175px;
+    width: calc(100%);
+    object-fit: cover;
+  }
+  .game-summary {
+    padding: 10px;
+    position: relative;
+  }
+  .game-summary h4 {
+    text-transform: uppercase;
+    position: absolute;
+    left: 10px;
+    margin-top: 0;
+  }
+  .game-summary h4.game-date {
+    right: 10px;
+    left: initial;
+    margin-top: 25px;
+  }
+  div.players-summary {
+    text-transform: uppercase;
+    color: #36ebff;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  div.players-summary strong {
+    color: white;
+  }
+  .round-summary {
+    margin-top: 20px;
+    display: block;
   }
   .mod-logo {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    height: 75px;
-  }
-  .twitch-logo,.youtube-logo {
-    width: 30px;
-  }
-  .youtube-logo {
-    margin-left: 15px;
-    margin-bottom: 5px;
-  }
-  h3 {
-    cursor: pointer;
+    position: absolute;
+    width: 65px;
+    right: 0;
+    bottom: 0;
   }
 </style>

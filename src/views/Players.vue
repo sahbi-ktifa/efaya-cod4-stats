@@ -110,9 +110,11 @@ export default class Players extends Vue {
   .players {
     padding: 30px;
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.4);
   }
   .name {
     cursor: pointer;
+    color: #36ebff;
   }
   .players > ul > li {
     display: grid;

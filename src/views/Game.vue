@@ -1,7 +1,7 @@
 <template>
   <div class="game">
     <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-    <h3>{{game.map}} - {{formatDate(game.date)}} - {{game.mod}}</h3>
+    <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}} - {{game.mod}}</h3>
     <ul>
       <li>
         <ul>
@@ -65,77 +65,82 @@
     <div class="trophies-container">
       <div class="trophies">
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/killer.png" class="trophy">
           <strong>The killer</strong><br/>
           <i>{{deadliest.playerRef.playerName}} : {{deadliest.totalKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/scorer.png" class="trophy">
           <strong>The scorer</strong><br/>
           <i>{{scorer.playerRef.playerName}} : {{scorer.totalScore}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/bankable.png" class="trophy">
           <strong>The most bankable</strong><br/>
           <i>{{bankable.playerRef.playerName}} : {{bankable.globalRatio}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/death.png" class="trophy">
           <strong>The most targeted</strong><br/>
           <i>{{targeted.playerRef.playerName}} : {{targeted.totalDeaths}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/ghost.png" class="trophy">
+          <strong>The less killed</strong><br/>
+          <i>{{unkillable.playerRef.playerName}} : {{unkillable.totalDeaths}}</i>
+        </div>
+        <div>
+          <img src="../assets/award/bomber.png" class="trophy">
           <strong>The bomber</strong><br/>
           <i>{{bomber.playerRef.playerName}} : {{bomber.bombsPlanted}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/defuser.png" class="trophy">
           <strong>The defuser</strong><br/>
           <i>{{defuser.playerRef.playerName}} : {{defuser.bombsDefused}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/exterminator.png" class="trophy">
           <strong>Exterminator</strong><br/>
           <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/medic.png" class="trophy">
           <strong>The Medic</strong><br/>
           <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/rifler.png" class="trophy">
           <strong>Rifle Master</strong><br/>
           <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/smg.png" class="trophy">
           <strong>SMG Master</strong><br/>
           <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/sniper.png" class="trophy">
           <strong>Sniper Master</strong><br/>
           <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/shotgun.png" class="trophy">
           <strong>Shotgun Master</strong><br/>
           <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/grenade.png" class="trophy">
           <strong>Grenade Master</strong><br/>
           <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/knife.png" class="trophy">
           <strong>Knife Master</strong><br/>
           <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}}</i>
         </div>
         <div>
-          <img src="../assets/trophy.jpg" class="trophy">
+          <img src="../assets/award/pistol.png" class="trophy">
           <strong>Pistol Master</strong><br/>
           <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}}</i>
         </div>
@@ -209,6 +214,10 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("totalKills");
   }
 
+  get unkillable() {
+    return orderBy(this.game.players, ["totalDeaths"], ["asc"])[0];
+  }
+
   get scorer() {
     return this.retrieveValue("totalScore");
   }
@@ -268,15 +277,24 @@ export default class GameDetails extends Vue {
   private retrieveValue(ref: string) {
     return orderBy(this.game.players, [ref], ["desc"])[0];
   }
+
+  public mapNamer(mapName: string): string {
+    return mapName.replace("mp_", "").replace(/_/g, " ").toUpperCase();
+  }
 }
 </script>
 
 <style scoped>
+  .game {
+    margin-top: 15px;
+  }
   .game .map-preview {
     height: 250px;
   }
   .game > ul {
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 0;
   }
   .game > ul > li {
     display: grid;
@@ -288,6 +306,11 @@ export default class GameDetails extends Vue {
     align-items: center;
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
+  }
+  .trophies-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 25px;
+    padding-bottom: 30px;
   }
   .trophies {
     display: grid;
@@ -304,5 +327,6 @@ export default class GameDetails extends Vue {
   }
   .name {
     cursor: pointer;
+    color: #36ebff;
   }
 </style>
