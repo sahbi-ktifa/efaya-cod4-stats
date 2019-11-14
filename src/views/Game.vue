@@ -1,7 +1,9 @@
 <template>
   <div class="game">
     <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-    <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}} - {{game.mod}}</h3>
+    <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}} - <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
+      <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
+      <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)"></h3>
     <ul>
       <li>
         <ul>
@@ -278,6 +280,18 @@ export default class GameDetails extends Vue {
     return mapName.replace("mp_", "").replace(/_/g, " ").toUpperCase();
   }
 
+  public isEfayaMod(game: Game) {
+    return game.mod.startsWith("efaya_mod");
+  }
+
+  public isEfayaModV2(game: Game) {
+    return game.mod.startsWith("efaya_v2");
+  }
+
+  public isIMMMod(game: Game) {
+    return game.mod.startsWith("imm");
+  }
+
   private retrieveValue(ref: string) {
     return orderBy(this.game.players, [ref], ["desc"])[0];
   }
@@ -328,5 +342,8 @@ export default class GameDetails extends Vue {
   .name {
     cursor: pointer;
     color: #36ebff;
+  }
+  .mod-logo {
+    width: 65px;
   }
 </style>

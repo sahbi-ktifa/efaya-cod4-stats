@@ -12,7 +12,8 @@
             Round2: <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
             Final Score: <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
           </span>
-          <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.jpg" v-if="isEfayaMod(game)">
+          <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
+          <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)">
         </div>
       </li>
@@ -38,6 +39,10 @@ export default class Games extends Vue {
 
   public isEfayaMod(game: Game) {
     return game.mod.startsWith("efaya_mod");
+  }
+
+  public isEfayaModV2(game: Game) {
+    return game.mod.startsWith("efaya_v2");
   }
 
   public isIMMMod(game: Game) {
