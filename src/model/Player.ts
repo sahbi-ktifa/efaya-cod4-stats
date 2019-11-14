@@ -23,7 +23,7 @@ export class Honors {
     public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot", "headshot");
     public bomber = new HonorData("Le joueur qui plante toujours la bombe", "bomber");
     public defuser = new HonorData("Le joueur qui defuse toujours la bombe", "defuser");
-    public medicineMan = new HonorData("Le joueur qui rescue ses potes", "medic");
+    public medicineMan = new HonorData("Le joueur qui réanime ses équipiers", "medic");
     public exterminator = new HonorData("Le joueur qui élimine les autres", "exterminator");
     public suicideMan = new HonorData("Mr. Malchance", "suicides");
     public knifeMan = new HonorData("Edward aux mains d'argent", "knife");
@@ -32,7 +32,7 @@ export class Honors {
     public shotgunMan = new HonorData("Demolition man", "shotgun");
     public rifleMan = new HonorData("Maître du fusil d'assaut", "rifler");
     public smgMan = new HonorData("Maître des SMG", "smg");
-    public pistolMan = new HonorData("Pistols master", "pistol");
+    public pistolMan = new HonorData("Maître du pistolet", "pistol");
     public tchattyMan = new HonorData("Blah Blah Blah", "tchatty");
 }
 

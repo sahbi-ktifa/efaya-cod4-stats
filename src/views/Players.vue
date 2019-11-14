@@ -2,21 +2,25 @@
   <div class="players">
     <ul>
       <li>
-        <span></span>
-        <strong>Best score overall</strong>
-        <strong>Best kills overall</strong>
-        <strong>Best ratio overall</strong>
-        <strong>Best grenade overall</strong>
-        <strong>Best knife overall</strong>
-        <strong>Current mood</strong>
+        <span class="header"   @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</span>
+        <strong class="header" @click="changeSort('bestScore')" :class="{'active': sortKey === 'bestScore'}">Meilleur score dans une partie</strong>
+        <strong class="header" @click="changeSort('bestKills')" :class="{'active': sortKey === 'bestKills'}">Le plus de kill dans une partie</strong>
+        <strong class="header" @click="changeSort('bestRatio')" :class="{'active': sortKey === 'bestRatio'}">Meilleur ratio dans une partie</strong>
+        <strong class="header" @click="changeSort('bestNades')" :class="{'active': sortKey === 'bestNades'}">Kill à la grenade dans une partie</strong>
+        <strong class="header" @click="changeSort('bestKnifes')" :class="{'active': sortKey === 'bestKnifes'}">Kill au couteau dans une partie</strong>
+        <strong class="header" @click="changeSort('bestMedic')" :class="{'active': sortKey === 'bestMedic'}">Sauvetage dans une partie</strong>
+        <strong class="header" @click="changeSort('bestExtermination')" :class="{'active': sortKey === 'bestExtermination'}">Kill confirmé dans une partie</strong>
+        <strong>Forme actuelle sur les 5 derniers matchs</strong>
       </li>
-      <li v-for="dataForPlayer in dataForPlayers">
+      <li v-for="dataForPlayer in sortedDataForPlayers">
         <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
         <span>{{dataForPlayer.bestScore}}</span>
         <span>{{dataForPlayer.bestKills}}</span>
         <span>{{dataForPlayer.bestRatio}}</span>
         <span>{{dataForPlayer.bestNades}}</span>
         <span>{{dataForPlayer.bestKnifes}}</span>
+        <span>{{dataForPlayer.bestMedic}}</span>
+        <span>{{dataForPlayer.bestExtermination}}</span>
         <span>
           <span v-for="mood in dataForPlayer.currentMood.slice(Math.max(dataForPlayer.currentMood.length - 5, 1))">
             <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)" src="../assets/green.png" v-if="mood.win === true" class="mood"/>
@@ -47,6 +51,8 @@ import {format} from "date-fns";
 export default class Players extends Vue {
   protected games!: Game[];
   private dataForPlayers: PlayerGlobalData[] = [];
+  private sortKey: string = "playerRef.playerName";
+  private sortKeyDirection: string = "asc";
 
   public created() {
     const dataForPlayersMap: Map<string, PlayerGlobalData> = new Map();
@@ -86,6 +92,12 @@ export default class Players extends Vue {
         if (player.meleeKills > dataForPlayer!!.bestKnifes) {
           dataForPlayer!!.bestKnifes = player.meleeKills;
         }
+        if (player.killsConfirmed > dataForPlayer!!.bestExtermination) {
+          dataForPlayer!!.bestExtermination = player.killsConfirmed;
+        }
+        if (player.killsDenied > dataForPlayer!!.bestMedic) {
+          dataForPlayer!!.bestMedic = player.killsDenied;
+        }
         dataForPlayer!!.currentMood[gameIndex].played = true;
         dataForPlayer!!.currentMood[gameIndex].win = player.totalPoints === maxScore;
         dataForPlayer!!.currentMood[gameIndex].mapRef = game.map;
@@ -98,6 +110,20 @@ export default class Players extends Vue {
       this.dataForPlayers.push(data);
     });
     this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
+  }
+
+  public changeSort(key: string) {
+    if (this.sortKey === key) {
+      this.sortKeyDirection = this.sortKeyDirection === "desc" ? "asc" : "desc";
+    } else {
+      this.sortKeyDirection = "desc";
+    }
+    this.sortKey = key;
+  }
+
+  get sortedDataForPlayers(): PlayerGlobalData[] {
+    // @ts-ignore
+    return orderBy(this.dataForPlayers, [this.sortKey], this.sortKeyDirection);
   }
 
   public goToGame(mood: GameMood) {
@@ -118,7 +144,7 @@ export default class Players extends Vue {
   }
   .players > ul > li {
     display: grid;
-    grid-template-columns: 150px 100px 100px 100px 100px 100px 150px;
+    grid-template-columns: 150px 80px 80px 80px 80px 80px 80px 80px 150px;
     grid-gap: 0 20px;
     align-items: center;
     margin-bottom: 10px;

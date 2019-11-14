@@ -4,12 +4,12 @@
     <img class="cod4-logo" alt="COD4 logo" src="./assets/cod4.png">
     <div id="header-banner"></div>
     <div id="nav">
-      <router-link to="/">Games</router-link> |
-      <router-link to="/players">Players</router-link> |
-      <router-link to="/halloffame">Hall of fame</router-link> |
+      <router-link to="/">Soirées</router-link> |
+      <router-link to="/players">Joueurs</router-link> |
+      <router-link to="/halloffame">La creme de la creme</router-link> |
       <router-link to="/parser">Parser</router-link>
     </div>
-    <h1>COD4 iClan Statistics</h1>
+    <h1>COD4 iClan Statistiques</h1>
     <router-view/>
   </div>
 </template>
@@ -22,7 +22,7 @@ import {DataService} from "@/services/DataService";
 export default class App extends Vue {
   @Inject("dataService") public dataService!: DataService;
 
-  async created() {
+  public async created() {
     const games = await this.dataService.retrieveGames();
     this.$store.commit("gamesRetrieved", games);
   }

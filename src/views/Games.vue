@@ -6,11 +6,11 @@
         <div class="game-summary">
           <h4>{{mapNamer(game.map)}}</h4>
           <h4 class="game-date">{{formatDate(game.date)}}</h4>
-          <div class="players-summary">Players : <strong>{{game.players.length}}</strong></div>
+          <div class="players-summary">Joueurs : <strong>{{game.players.length}}</strong></div>
           <span class="round-summary">
-            Round1: <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
-            Round2: <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
-            Final Score: <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
+            Manche 1 : <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
+            Manche 2 : <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
+            Score Final : <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
           </span>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">

@@ -1,6 +1,6 @@
 <template>
   <div class="hall-of-fame">
-    <h1>- &nbsp;Hall of Fame</h1>
+    <h1>- &nbsp;Les meilleurs des meilleurs</h1>
     <ul>
       <li v-for="(honor, propertyName) in honors">
         <div>
@@ -188,7 +188,7 @@ export default class HallOfFame extends Vue {
     background-color: rgba(0, 0, 0, 0.4);
   }
   #app .hall-of-fame h1 {
-    margin-left: 450px;
+    margin-left: 490px;
   }
   .hall-of-fame > ul {
     text-align: center;

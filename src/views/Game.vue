@@ -18,14 +18,14 @@
             <strong>Total Deaths</strong>
             <strong>Global Ratio</strong>
             <strong>Bomb Planted / Defused</strong>
-            <strong>Kill confirmed</strong>
-            <strong>Teammate rescued</strong>
+            <strong>Kill confirmés</strong>
+            <strong>Equipiers ranimés</strong>
           </li>
         </ul>
       </li>
       <li>
-        <h4>Winning Team!</h4>
-        <div>Round1: <strong>{{winnerPoints[0]}}</strong> / Round2: <strong>{{winnerPoints[1]}}</strong> - Total: <strong>{{winnerPoints[0] + winnerPoints[1]}}</strong></div>
+        <h4>Les heureux Vainqueurs!</h4>
+        <div>Manche 1 : <strong>{{winnerPoints[0]}}</strong> / Manche 2 : <strong>{{winnerPoints[1]}}</strong> - Total : <strong>{{winnerPoints[0] + winnerPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in winners">
             <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
@@ -44,8 +44,8 @@
         </ul>
       </li>
       <li>
-        <h4>Loosing Team!</h4>
-        <div>Round1: <strong>{{loserPoints[0]}}</strong> / Round2: <strong>{{loserPoints[1]}}</strong> - Total: <strong>{{loserPoints[0] + loserPoints[1]}}</strong></div>
+        <h4>Les malheureux perdants!</h4>
+        <div>Manche 1 : <strong>{{loserPoints[0]}}</strong> / Manche 2 : <strong>{{loserPoints[1]}}</strong> - Total: <strong>{{loserPoints[0] + loserPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in losers">
             <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
@@ -68,37 +68,37 @@
       <div class="trophies">
         <div>
           <img src="../assets/award/killer.png" class="trophy">
-          <strong>The killer</strong><br/>
+          <strong>Le tueur</strong><br/>
           <i>{{deadliest.playerRef.playerName}} : {{deadliest.totalKills}}</i>
         </div>
         <div>
           <img src="../assets/award/scorer.png" class="trophy">
-          <strong>The scorer</strong><br/>
+          <strong>Le scorer</strong><br/>
           <i>{{scorer.playerRef.playerName}} : {{scorer.totalScore}}</i>
         </div>
         <div>
           <img src="../assets/award/bankable.png" class="trophy">
-          <strong>The most bankable</strong><br/>
+          <strong>Celui sur qui parié (meilleur ratio)</strong><br/>
           <i>{{bankable.playerRef.playerName}} : {{bankable.globalRatio}}</i>
         </div>
         <div>
           <img src="../assets/award/death.png" class="trophy">
-          <strong>The most targeted</strong><br/>
+          <strong>Le plus pris pour cible</strong><br/>
           <i>{{targeted.playerRef.playerName}} : {{targeted.totalDeaths}}</i>
         </div>
         <div>
           <img src="../assets/award/ghost.png" class="trophy">
-          <strong>The less killed</strong><br/>
+          <strong>Le mec intuable</strong><br/>
           <i>{{unkillable.playerRef.playerName}} : {{unkillable.totalDeaths}}</i>
         </div>
         <div>
           <img src="../assets/award/bomber.png" class="trophy">
-          <strong>The bomber</strong><br/>
+          <strong>Le planteur de bombe</strong><br/>
           <i>{{bomber.playerRef.playerName}} : {{bomber.bombsPlanted}}</i>
         </div>
         <div>
           <img src="../assets/award/defuser.png" class="trophy">
-          <strong>The defuser</strong><br/>
+          <strong>Le démineur</strong><br/>
           <i>{{defuser.playerRef.playerName}} : {{defuser.bombsDefused}}</i>
         </div>
         <div>
@@ -108,42 +108,42 @@
         </div>
         <div>
           <img src="../assets/award/medic.png" class="trophy">
-          <strong>The Medic</strong><br/>
+          <strong>Le médic</strong><br/>
           <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}}</i>
         </div>
         <div>
           <img src="../assets/award/rifler.png" class="trophy">
-          <strong>Rifle Master</strong><br/>
+          <strong>Maître des fusils d'assaut</strong><br/>
           <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}}</i>
         </div>
         <div>
           <img src="../assets/award/smg.png" class="trophy">
-          <strong>SMG Master</strong><br/>
+          <strong>Maître des SMG</strong><br/>
           <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}}</i>
         </div>
         <div>
           <img src="../assets/award/sniper.png" class="trophy">
-          <strong>Sniper Master</strong><br/>
+          <strong>Maître des Sniper</strong><br/>
           <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}}</i>
         </div>
         <div>
           <img src="../assets/award/shotgun.png" class="trophy">
-          <strong>Shotgun Master</strong><br/>
+          <strong>Maître du pompe</strong><br/>
           <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}}</i>
         </div>
         <div>
           <img src="../assets/award/grenade.png" class="trophy">
-          <strong>Grenade Master</strong><br/>
+          <strong>Maître des Grenades</strong><br/>
           <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}}</i>
         </div>
         <div>
           <img src="../assets/award/knife.png" class="trophy">
-          <strong>Knife Master</strong><br/>
+          <strong>Maître du couteau</strong><br/>
           <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}}</i>
         </div>
         <div>
           <img src="../assets/award/pistol.png" class="trophy">
-          <strong>Pistol Master</strong><br/>
+          <strong>Maître du pistolet</strong><br/>
           <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}}</i>
         </div>
       </div>
