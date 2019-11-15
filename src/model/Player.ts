@@ -21,6 +21,7 @@ export class Honors {
     public tourist = new HonorData("Le joueur qu'on voit rarement", "tourist");
     public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!", "student");
     public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot", "headshot");
+    public teamKiller = new HonorData("Le joueur qui joue un peu pour l'autre équipe", "teamkiller");
     public bomber = new HonorData("Le joueur qui plante toujours la bombe", "bomber");
     public defuser = new HonorData("Le joueur qui defuse toujours la bombe", "defuser");
     public medicineMan = new HonorData("Le joueur qui réanime ses équipiers", "medic");

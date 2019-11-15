@@ -159,6 +159,11 @@ export default class HallOfFame extends Vue {
       this.honors.tchattyMan.playerGuid = player.playerRef.guid;
       this.honors.tchattyMan.honorAmount = player.tchatter;
     }
+    if (this.honors.teamKiller.honorAmount < player.teamKills) {
+      this.honors.teamKiller.playerName = player.playerRef.playerName;
+      this.honors.teamKiller.playerGuid = player.playerRef.guid;
+      this.honors.teamKiller.honorAmount = player.teamKills;
+    }
   }
 
   private computeRatio(player: Player) {

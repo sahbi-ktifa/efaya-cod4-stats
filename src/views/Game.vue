@@ -112,6 +112,11 @@
           <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}}</i>
         </div>
         <div>
+          <img src="../assets/award/teamkiller.png" class="trophy">
+          <strong>Le mec qui joue en fait pour l'autre équipe</strong><br/>
+          <i>{{teamKiller.playerRef.playerName}} : {{teamKiller.teamKills}} teamkill(s)</i>
+        </div>
+        <div>
           <img src="../assets/award/rifler.png" class="trophy">
           <strong>Maître des fusils d'assaut</strong><br/>
           <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}}</i>
@@ -218,6 +223,10 @@ export default class GameDetails extends Vue {
 
   get shotgunKiller() {
     return this.retrieveValue("shotgunKills");
+  }
+
+  get teamKiller() {
+    return this.retrieveValue("teamKills");
   }
 
   get knifeKiller() {
