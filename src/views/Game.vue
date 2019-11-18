@@ -88,7 +88,7 @@
         </div>
         <div>
           <img src="../assets/award/ghost.png" class="trophy">
-          <strong>Le mec intuable</strong><br/>
+          <strong>Le mec qui évite les balles</strong><br/>
           <i>{{unkillable.playerRef.playerName}} : {{unkillable.totalDeaths}}</i>
         </div>
         <div>
@@ -103,7 +103,7 @@
         </div>
         <div>
           <img src="../assets/award/exterminator.png" class="trophy">
-          <strong>Exterminator</strong><br/>
+          <strong>Chasseur de tags</strong><br/>
           <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}}</i>
         </div>
         <div>
