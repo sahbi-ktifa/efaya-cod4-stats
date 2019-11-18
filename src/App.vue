@@ -7,7 +7,7 @@
       <router-link to="/">Soirées</router-link> |
       <router-link to="/players">Joueurs</router-link> |
       <router-link to="/halloffame">La creme de la creme</router-link> |
-      <router-link to="/parser">Parser</router-link>
+      <router-link to="/parser" class="parser">Parser</router-link>
     </div>
     <h1 class="long">COD4 iClan Statistiques</h1>
     <h1 class="short">iClan Stats</h1>
@@ -92,7 +92,7 @@ export default class App extends Vue {
   }
 
   @media (max-width: 640px) {
-    .cod4-logo {
+    .cod4-logo, .parser {
       display: none;
     }
     .short {
