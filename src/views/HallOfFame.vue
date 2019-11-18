@@ -229,4 +229,20 @@ export default class HallOfFame extends Vue {
     cursor: pointer;
     color: #36ebff;
   }
+  @media (max-width: 640px) {
+    .hall-of-fame {
+      padding: 10px;
+    }
+    .hall-of-fame > ul {
+      padding: 0;
+      grid-template-columns: 50% 50%;
+      grid-gap: 0 5px;
+    }
+    .hall-of-fame > ul > li {
+      margin-bottom: 0;
+    }
+    .hall-of-fame .trophy {
+      width: 180px;
+    }
+  }
 </style>

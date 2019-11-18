@@ -9,7 +9,8 @@
       <router-link to="/halloffame">La creme de la creme</router-link> |
       <router-link to="/parser">Parser</router-link>
     </div>
-    <h1>COD4 iClan Statistiques</h1>
+    <h1 class="long">COD4 iClan Statistiques</h1>
+    <h1 class="short">iClan Stats</h1>
     <router-view/>
   </div>
 </template>
@@ -84,5 +85,21 @@ export default class App extends Vue {
 
   #nav a.router-link-exact-active {
     color: #36ebff;
+  }
+
+  .short {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .cod4-logo {
+      display: none;
+    }
+    .short {
+      display: block;
+    }
+    .long {
+      display: none;
+    }
   }
 </style>

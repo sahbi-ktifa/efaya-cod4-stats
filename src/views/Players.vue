@@ -161,4 +161,16 @@ export default class Players extends Vue {
   .header.active {
     color: orange;
   }
+    @media (max-width: 640px) {
+    .players {
+      padding: 5px;
+    }
+    .players > ul {
+      overflow-x: auto;
+      padding-left: 5px;
+    }
+    .players > ul > li {
+      border-bottom: none;
+    }
+  }
 </style>

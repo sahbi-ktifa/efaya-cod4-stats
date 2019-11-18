@@ -303,4 +303,14 @@ export default class PlayerDetails extends Vue {
   .mod-logo {
     width: 65px;
   }
+
+  @media (max-width: 640px) {
+    .weap-parts-container {
+      grid-template-columns: 100%;
+    }
+    .weap-wrapper > ul {
+      padding: 10px;
+      grid-template-columns: 50% 50%;
+    }
+  }
 </style>

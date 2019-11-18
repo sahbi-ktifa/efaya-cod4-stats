@@ -355,4 +355,16 @@ export default class GameDetails extends Vue {
   .mod-logo {
     width: 65px;
   }
+  @media (max-width: 640px) {
+    .game > ul {
+      overflow-x: auto;
+      padding-left: 5px;
+    }
+    .game > ul > li > ul {
+      padding-left: 10px;
+    }
+    .trophies {
+      grid-template-columns: 100%;
+    }
+  }
 </style>

@@ -123,4 +123,23 @@ export default class Games extends Vue {
     right: 0;
     bottom: 0;
   }
+
+  @media (max-width: 640px) {
+    .games {
+      padding: 15px;
+    }
+    .games > ul {
+      padding: 0;
+      grid-template-columns: 100%;
+    }
+    div.players-summary {
+      margin-top: 45px;
+    }
+    .round-summary {
+      margin-top: 0;
+    }
+    .mod-logo {
+      width: 50px;
+    }
+  }
 </style>
