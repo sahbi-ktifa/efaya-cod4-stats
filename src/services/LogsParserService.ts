@@ -141,16 +141,30 @@ export default class LogsParserService {
                                 p.weaps[gameRef.mod] = {};
                             }
                             if (!p.weaps[gameRef.mod][key]) {
-                                p.weaps[gameRef.mod][key] =  player.weaps[key];
+                                p.weaps[gameRef.mod][key] = player.weaps[key];
                             } else {
                                 p.weaps[gameRef.mod][key] += player.weaps[key];
                             }
                         }
                         for (const [key] of Object.entries(player.parts)) {
                             if (!p.parts[key]) {
-                                p.parts[key] =  player.parts[key];
+                                p.parts[key] = player.parts[key];
                             } else {
                                 p.parts[key] += player.parts[key];
+                            }
+                        }
+                        for (const [key] of Object.entries(player.nemesis)) {
+                            if (!p.nemesis[key]) {
+                                p.nemesis[key] = player.nemesis[key];
+                            } else {
+                                p.nemesis[key] += player.nemesis[key];
+                            }
+                        }
+                        for (const [key] of Object.entries(player.prey)) {
+                            if (!p.prey[key]) {
+                                p.prey[key] = player.prey[key];
+                            } else {
+                                p.prey[key] += player.prey[key];
                             }
                         }
                     });

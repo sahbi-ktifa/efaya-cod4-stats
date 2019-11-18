@@ -109,6 +109,8 @@ export class PlayerForRound {
     public tchatter = 0;
     public weaps: any = {};
     public parts: any = {};
+    public nemesis: any = {};
+    public prey: any = {};
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
@@ -147,6 +149,8 @@ export class Player {
     public tchatter = 0;
     public weaps: any = {};
     public parts: any = {};
+    public nemesis: any = {};
+    public prey: any = {};
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;

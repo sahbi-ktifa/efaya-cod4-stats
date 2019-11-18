@@ -71,9 +71,17 @@ export default class KillParser implements LineParser {
                         }
                         player.parts[tokens[12]]++;
                     }
+                    if (!player.prey[tokens[1]]) {
+                        player.prey[tokens[1]] = 0;
+                    }
+                    player.prey[tokens[1]]++;
                 }
                 if (player.playerRef.guid === tokens[1]) {
                     player.deaths++;
+                    if (!player.nemesis[tokens[5]]) {
+                        player.nemesis[tokens[5]] = 0;
+                    }
+                    player.nemesis[tokens[5]]++;
                 }
             }
         }

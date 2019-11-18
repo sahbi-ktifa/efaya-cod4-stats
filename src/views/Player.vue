@@ -2,6 +2,10 @@
   <div class="player" v-if="player">
     <h2>{{player.playerRef.playerName}}</h2>
     <div>
+      <i>Ma Nemesis</i>: <strong class="name" @click="goToPlayer(nemesisGuid)">{{giveMeMyName(nemesisGuid)}}</strong> m'a tué <strong>{{nemesisValue}}</strong> fois<br />
+      <i>Ma victime favorite</i>: <strong class="name" @click="goToPlayer(preyGuid)">{{giveMeMyName(preyGuid)}}</strong> que j'ai tué <strong>{{preyValue}}</strong> fois<br />
+    </div>
+    <div>
       <p>
         <strong>Meilleur Score : </strong> <i>{{player.bestScore.value}}</i>
         (<router-link :to="'/game/' + player.bestScore.mapRef" tag="span" class="map">{{player.bestScore.mapRef}}</router-link>)
@@ -117,6 +121,7 @@ import {mapGetters} from "vuex";
 import Game from "@/model/Game";
 import {PlayerInfo} from "@/model/Player";
 import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames} from "@/model/Weapons";
+import { merge } from "lodash";
 
 @Component({
   computed: {
@@ -129,10 +134,21 @@ export default class PlayerDetails extends Vue {
   public player: PlayerInfo | null = null;
   public partKeys: string[] = [];
   public weaponNamer = {efaya_v2: new EfayaV2Weapons(), imm: new IMMWeapons(), efaya_mod_test: new EfayaModV1Weapons()};
+  public nemesisGuid: string = "";
+  public nemesisValue: string = "";
+  public preyGuid: string = "";
+  public preyValue: string = "";
   protected games!: Game[];
 
   public created() {
+    this.updatePlayerData();
+  }
+
+  public updatePlayerData() {
     let partsSum = 0;
+    const nemesis: any = {};
+    const prey: any = {};
+    this.player = null;
     this.games.forEach((game) => {
       game.players.forEach((player) => {
         if (player.playerRef.guid === this.$route.params.guid) {
@@ -179,16 +195,54 @@ export default class PlayerDetails extends Vue {
               }
             }
           }
+          if (player.nemesis) {
+            for (const [guid, value] of Object.entries(player.nemesis)) {
+              if (!nemesis[guid]) {
+                nemesis[guid] = 0;
+              }
+              nemesis[guid] += value;
+            }
+          }
+          if (player.prey) {
+            for (const [guid, value] of Object.entries(player.prey)) {
+              if (!prey[guid]) {
+                prey[guid] = 0;
+              }
+              prey[guid] += value;
+            }
+          }
         }
       });
     });
     if (this.player) {
+      this.nemesisGuid = Object.keys(nemesis).sort(function(a, b) {return nemesis[a] - nemesis[b]; }).reverse()[0];
+      this.nemesisValue = nemesis[this.nemesisGuid];
+      this.preyGuid = Object.keys(prey).sort(function(a, b) {return prey[a] - prey[b]; }).reverse()[0];
+      this.preyValue = prey[this.preyGuid];
+      // @ts-ignore
       for (const [key, value] of Object.entries(this.player.parts)) {
+        // @ts-ignore
         this.player.parts[key] = (value as number * 100) / partsSum;
       }
       // @ts-ignore
       this.partKeys = Object.keys(this.player.parts).sort((a, b) => this.player.parts[b] - this.player.parts[a]);
     }
+  }
+
+  public giveMeMyName(ref: string): string {
+    let name = "";
+    this.games.forEach((g) => {
+      const found = g.players.find((p) => p.playerRef.guid === ref);
+      if (found) {
+        name = found.playerRef.playerName;
+      }
+    });
+    return name;
+  }
+
+  public goToPlayer(guid: string) {
+    this.$router.push({ path: "/player/" + guid});
+    this.updatePlayerData();
   }
 
   public sortByWeaponValues(array: any) {
@@ -279,6 +333,10 @@ export default class PlayerDetails extends Vue {
   }
   h2 {
     color: #36ebff;
+  }
+  strong.name {
+    color: #36ebff;
+    cursor: pointer;
   }
   .map {
     cursor: pointer;
