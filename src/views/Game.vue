@@ -69,12 +69,12 @@
         <div>
           <img src="../assets/award/killer.png" class="trophy">
           <strong>Le tueur</strong><br/>
-          <i>{{deadliest.playerRef.playerName}} : {{deadliest.totalKills}}</i>
+          <i>{{deadliest.playerRef.playerName}} : {{deadliest.totalKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/scorer.png" class="trophy">
           <strong>Le scorer</strong><br/>
-          <i>{{scorer.playerRef.playerName}} : {{scorer.totalScore}}</i>
+          <i>{{scorer.playerRef.playerName}} : {{scorer.totalScore}} pts</i>
         </div>
         <div>
           <img src="../assets/award/bankable.png" class="trophy">
@@ -84,12 +84,12 @@
         <div>
           <img src="../assets/award/death.png" class="trophy">
           <strong>Le plus pris pour cible</strong><br/>
-          <i>{{targeted.playerRef.playerName}} : {{targeted.totalDeaths}}</i>
+          <i>{{targeted.playerRef.playerName}} : mort {{targeted.totalDeaths}} fois</i>
         </div>
         <div>
           <img src="../assets/award/ghost.png" class="trophy">
           <strong>Le mec qui évite les balles</strong><br/>
-          <i>{{unkillable.playerRef.playerName}} : {{unkillable.totalDeaths}}</i>
+          <i>{{unkillable.playerRef.playerName}} : mort {{unkillable.totalDeaths}} fois</i>
         </div>
         <div>
           <img src="../assets/award/bomber.png" class="trophy">
@@ -104,12 +104,12 @@
         <div>
           <img src="../assets/award/exterminator.png" class="trophy">
           <strong>Chasseur de tags</strong><br/>
-          <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}}</i>
+          <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}} tag(s)</i>
         </div>
         <div>
           <img src="../assets/award/medic.png" class="trophy">
           <strong>Le médic</strong><br/>
-          <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}}</i>
+          <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}} réanimation(s)</i>
         </div>
         <div>
           <img src="../assets/award/teamkiller.png" class="trophy">
@@ -119,37 +119,37 @@
         <div>
           <img src="../assets/award/rifler.png" class="trophy">
           <strong>Maître des fusils d'assaut</strong><br/>
-          <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}}</i>
+          <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/smg.png" class="trophy">
           <strong>Maître des SMG</strong><br/>
-          <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}}</i>
+          <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/sniper.png" class="trophy">
           <strong>Maître des Sniper</strong><br/>
-          <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}}</i>
+          <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/shotgun.png" class="trophy">
           <strong>Maître du pompe</strong><br/>
-          <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}}</i>
+          <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/grenade.png" class="trophy">
           <strong>Maître des Grenades</strong><br/>
-          <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}}</i>
+          <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/knife.png" class="trophy">
           <strong>Maître du couteau</strong><br/>
-          <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}}</i>
+          <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}} kills</i>
         </div>
         <div>
           <img src="../assets/award/pistol.png" class="trophy">
           <strong>Maître du pistolet</strong><br/>
-          <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}}</i>
+          <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}} kills</i>
         </div>
       </div>
     </div>
