@@ -363,8 +363,15 @@ export default class GameDetails extends Vue {
     .game > ul > li > ul {
       padding-left: 10px;
     }
+    .trophies-container {
+      padding: 5px;
+    }
     .trophies {
-      grid-template-columns: 100%;
+      grid-template-columns: 50% 50%;
+      grid-gap: 0 5px;
+    }
+    .trophies .trophy {
+      width: 180px;
     }
   }
 </style>
