@@ -1,7 +1,7 @@
 <template>
   <div class="hall-of-fame">
     <h1>- &nbsp;Les meilleurs des meilleurs</h1>
-    <i>Ces statistiques sont calculés pour le meilleur sur une une seule partie.</i>
+    <i>Ces statistiques sont calculés pour le meilleur sur une seule partie.</i>
     <ul>
       <li v-for="(honor, propertyName) in honors">
         <div>
