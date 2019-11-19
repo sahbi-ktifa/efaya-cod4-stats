@@ -36,6 +36,7 @@ export default class HallOfFame extends Vue {
 
   public created() {
     const playerPresence: any = {};
+    const consistency: any = {};
     orderBy(this.games, ["date"], ["asc"]).forEach((game) => {
       game.players.forEach((player) => {
         this.honors.overallKills.honorAmount += player.totalKills;
@@ -47,8 +48,18 @@ export default class HallOfFame extends Vue {
         } else {
           playerPresence[player.playerRef.guid].value++;
         }
+        if (player.consistency && !consistency[player.playerRef.guid]) {
+          consistency[player.playerRef.guid] = {value: player.consistency, name: player.playerRef.playerName};
+        } else if (player.consistency) {
+          consistency[player.playerRef.guid].value += player.consistency;
+        }
       });
     });
+    this.computeConsistency(consistency, playerPresence);
+    this.computeTourist(playerPresence);
+  }
+
+  private computeTourist(playerPresence: any) {
     let touristKey = null;
     let touristValue = Number.MAX_SAFE_INTEGER;
     for (const key in playerPresence) {
@@ -65,6 +76,30 @@ export default class HallOfFame extends Vue {
       this.honors.tourist.playerName = playerPresence[touristKey].name;
       this.honors.tourist.honorAmount = playerPresence[touristKey].value;
     }
+  }
+
+  private computeConsistency(consistency: any, playerPresence: any) {
+    let consistent = {value: Infinity, key: "", name: ""};
+    let inconsistent = {value: 0, key: "", name: ""};
+    for (const key in consistency) {
+      consistency[key].total = consistency[key].value / playerPresence[key].value;
+      if (consistency[key].total > inconsistent.value && playerPresence[key].value > 4) {
+        inconsistent.value = consistency[key].total;
+        inconsistent.name = consistency[key].name;
+        inconsistent.key = key;
+      }
+      if (consistency[key].total < consistent.value && playerPresence[key].value > 4) {
+        consistent.value = consistency[key].total;
+        consistent.name = consistency[key].name;
+        consistent.key = key;
+      }
+    }
+    this.honors.consistent.honorAmount = Number(consistent.value.toFixed(1));
+    this.honors.consistent.playerGuid = consistent.key;
+    this.honors.consistent.playerName = consistent.name;
+    this.honors.inconsistent.honorAmount = Number(inconsistent.value.toFixed(1));
+    this.honors.inconsistent.playerGuid = inconsistent.key;
+    this.honors.inconsistent.playerName = inconsistent.name;
   }
 
   public getImgUrl(icon: string): string {

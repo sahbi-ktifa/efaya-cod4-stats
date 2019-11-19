@@ -20,6 +20,7 @@
             <strong>Bomb Planted / Defused</strong>
             <strong>Kill confirmés</strong>
             <strong>Equipiers ranimés</strong>
+            <strong>Régularité*</strong>
           </li>
         </ul>
       </li>
@@ -40,6 +41,7 @@
             <span>{{player.bombsPlanted}}<br/>{{player.bombsDefused}}</span>
             <span>{{player.killsConfirmed}}</span>
             <span>{{player.killsDenied}}</span>
+            <span>{{player.consistency ? player.consistency.toFixed(1) : "N/A"}}</span>
           </li>
         </ul>
       </li>
@@ -60,8 +62,12 @@
             <span>{{player.bombsPlanted}}<br/>{{player.bombsDefused}}</span>
             <span>{{player.killsConfirmed}}</span>
             <span>{{player.killsDenied}}</span>
+            <span>{{player.consistency ? player.consistency.toFixed(1) : "N/A"}}</span>
           </li>
         </ul>
+      </li>
+      <li>
+        <i>Régularité * : Plus la régularité est basse, plus on est régulier</i>
       </li>
     </ul>
     <div class="trophies-container">
@@ -90,6 +96,16 @@
           <img src="../assets/award/ghost.png" class="trophy">
           <strong>Le mec qui évite les balles</strong><br/>
           <i>{{unkillable.playerRef.playerName}} : mort {{unkillable.totalDeaths}} fois</i>
+        </div>
+        <div>
+          <img src="../assets/award/consistency.png" class="trophy">
+          <strong>Le joueur super régulier</strong><br/>
+          <i>{{consistency.playerRef.playerName}} : {{consistency.consistency ? consistency.consistency.toFixed(1) : "N/A"}}</i>
+        </div>
+        <div>
+          <img src="../assets/award/inconsistency.png" class="trophy">
+          <strong>Le foufou pas du tout régulier</strong><br/>
+          <i>{{inconsistency.playerRef.playerName}} : {{inconsistency.consistency ? inconsistency.consistency.toFixed(1) : "N/A"}}</i>
         </div>
         <div>
           <img src="../assets/award/bomber.png" class="trophy">
@@ -240,6 +256,15 @@ export default class GameDetails extends Vue {
   get pistolKiller() {
     return this.retrieveValue("pistolKills");
   }
+
+  get consistency() {
+    return orderBy(this.game.players, ["consistency"], ["asc"])[0];
+  }
+
+  get inconsistency() {
+    return orderBy(this.game.players, ["consistency"], ["desc"])[0];
+  }
+
   public game!: Game;
   public winners!: Player[];
   public losers!: Player[];
@@ -324,7 +349,7 @@ export default class GameDetails extends Vue {
   }
   .game > ul > li > ul > li {
     display: grid;
-    grid-template-columns: 130px repeat(11, 85px);
+    grid-template-columns: 130px repeat(12, 85px);
     grid-gap: 0 10px;
     align-items: center;
     margin-bottom: 10px;

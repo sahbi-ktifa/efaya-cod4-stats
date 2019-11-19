@@ -1,13 +1,14 @@
 export class HonorData {
     public playerName!: string;
     public playerGuid!: string;
-    public honorAmount = 0;
+    public honorAmount!: number;
     public description = "";
     public icon = "";
 
-    constructor(desc: string = "", icon: string) {
+constructor(desc: string = "", icon: string, honorAmount = 0) {
         this.description = desc;
         this.icon = icon;
+        this.honorAmount = honorAmount;
     }
 }
 
@@ -22,6 +23,8 @@ export class Honors {
     public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!", "student");
     public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot", "headshot");
     public teamKiller = new HonorData("Le joueur qui joue un peu pour l'autre équipe", "teamkiller");
+    public consistent = new HonorData("Le joueur qui a été le plus régulier", "consistency", Infinity);
+    public inconsistent = new HonorData("Le joueur qui a été le plus irrégulier", "inconsistency");
     public bomber = new HonorData("Le joueur qui plante toujours la bombe", "bomber");
     public defuser = new HonorData("Le joueur qui defuse toujours la bombe", "defuser");
     public medicineMan = new HonorData("Le joueur qui réanime ses équipiers", "medic");
@@ -59,6 +62,7 @@ export class PlayerGlobalData {
     public bestSmg: number = 0;
     public bestMedic: number = 0;
     public bestExtermination: number = 0;
+    public bestConsistency: number = Infinity;
     public bestDefused: number = 0;
     public bestPlanted: number = 0;
     public bestParts: any = {};
@@ -151,6 +155,7 @@ export class Player {
     public parts: any = {};
     public nemesis: any = {};
     public prey: any = {};
+    public consistency: number = Infinity;
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
@@ -188,9 +193,12 @@ export class PlayerInfo {
     public tchatter = new PlayerInfoDetails();
     public weaps: any = {};
     public parts: any = {};
+    public consistency = new PlayerInfoDetails();
+    public inconsistency = new PlayerInfoDetails();
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
-        this.bestDeaths.value = 1000000;
+        this.bestDeaths.value = Infinity;
+        this.consistency.value = Infinity;
     }
 }

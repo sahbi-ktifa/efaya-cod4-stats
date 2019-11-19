@@ -93,6 +93,7 @@ export default class LogsParserService {
                     }
                 }
             }
+            this.computeConsistency(players);
             games.push(new Game([gameRefs[j], gameRefs[i]], players));
         }
         let parsedContent = "";
@@ -187,6 +188,21 @@ export default class LogsParserService {
         const parser = parsers.filter((p) => p.accept(line))[0];
         if (parser) {
             parser.parse(line, parsedData);
+        }
+    }
+
+    private computeConsistency(players: Player[]) {
+        for (const playerRef of players) {
+            const killRate = playerRef.kills[1] > playerRef.kills[0] ?
+                ((playerRef.kills[1] - playerRef.kills[0]) / (playerRef.kills[0] > 0 ? playerRef.kills[0] : playerRef.kills[1])) * 100 :
+                ((playerRef.kills[0] - playerRef.kills[1]) / (playerRef.kills[1] > 0 ? playerRef.kills[1] : playerRef.kills[0])) * 100;
+            const deathRate = playerRef.deaths[1] > playerRef.deaths[0] ?
+                ((playerRef.deaths[1] - playerRef.deaths[0]) / (playerRef.deaths[0] > 0 ? playerRef.deaths[0] : playerRef.deaths[1])) * 100 :
+                ((playerRef.deaths[0] - playerRef.deaths[1]) / (playerRef.deaths[1] > 0 ? playerRef.deaths[1] : playerRef.deaths[0])) * 100;
+            const scoreRate = playerRef.score[1] > playerRef.score[0] ?
+                ((playerRef.score[1] - playerRef.score[0]) / (playerRef.score[0] > 0 ? playerRef.score[0] : playerRef.score[1])) * 100 :
+                ((playerRef.score[0] - playerRef.score[1]) / (playerRef.score[1] > 0 ? playerRef.score[1] : playerRef.score[0])) * 100;
+            playerRef.consistency = Math.abs((killRate + deathRate + scoreRate) / 3);
         }
     }
 }

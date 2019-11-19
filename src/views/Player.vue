@@ -31,6 +31,14 @@
         (<router-link :to="'/game/' + player.killsConfirmed.mapRef" tag="span" class="map">{{player.killsConfirmed.mapRef}}</router-link>)
       </p>
       <p>
+        <strong>Le plus de régularité : </strong> <i>{{player.consistency.value ? player.consistency.value.toFixed(1) : "N/A"}}</i>
+        (<router-link :to="'/game/' + player.consistency.mapRef" tag="span" class="map">{{player.consistency.mapRef}}</router-link>)
+      </p>
+      <p>
+        <strong>Le moins de régularité : </strong> <i>{{player.inconsistency.value ? player.inconsistency.value.toFixed(1) : "N/A"}}</i>
+        (<router-link :to="'/game/' + player.inconsistency.mapRef" tag="span" class="map">{{player.inconsistency.mapRef}}</router-link>)
+      </p>
+      <p>
         <strong>Le plus de coéquipiers réanimés : </strong> <i>{{player.killsDenied.value}}</i>
         (<router-link :to="'/game/' + player.killsDenied.mapRef" tag="span" class="map">{{player.killsDenied.mapRef}}</router-link>)
       </p>
@@ -175,6 +183,8 @@ export default class PlayerDetails extends Vue {
           this.checkInfo(player.meleeKills, game.map, "meleeKills");
           this.checkInfo(player.suicides, game.map, "suicides");
           this.checkInfo(player.tchatter, game.map, "tchatter");
+          this.checkInfo(player.consistency, game.map, "consistency", true);
+          this.checkInfo(player.consistency, game.map, "inconsistency");
           for (const [key, value] of Object.entries(player.parts)) {
             partsSum += value as number;
             if (!this.player.parts[key]) {

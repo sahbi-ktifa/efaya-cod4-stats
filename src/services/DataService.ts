@@ -1,22 +1,27 @@
 import Game from "@/model/Game";
-import data from "@/data/rawdata.json";
+import dataEfayaV2 from "@/data/efayav2.json";
+import dataImm from "@/data/imm.json";
+import dataEfayaV1 from "@/data/efayav1.json";
 import extraData from "@/data/extradata.json";
+
+const dataMods = [dataImm, dataEfayaV2, dataEfayaV1];
 
 export class DataService {
     public retrieveGames(): Game[] {
         const games: Game[] = [];
-        // tslint:disable-next-line:forin no-shadowed-variable
-        for (const key in data) {
-            // tslint:disable-next-line:forin
-            for (const key2 in extraData) {
-                if (data[key].id === extraData[key2].id) {
-                    data[key].date = extraData[key2].date;
-                    data[key].mapPreview = extraData[key2].mapPreview;
-                    data[key].twitchUrl = extraData[key2].twitchUrl;
-                    data[key].youtubeUrl = extraData[key2].youtubeUrl;
+        for (var i = 0; i < dataMods.length; i++) {
+            for (const key in dataMods[i]) {
+                // tslint:disable-next-line:forin
+                for (const key2 in extraData) {
+                    if (dataMods[i][key].id === extraData[key2].id) {
+                        dataMods[i][key].date = extraData[key2].date;
+                        dataMods[i][key].mapPreview = extraData[key2].mapPreview;
+                        dataMods[i][key].twitchUrl = extraData[key2].twitchUrl;
+                        dataMods[i][key].youtubeUrl = extraData[key2].youtubeUrl;
+                    }
                 }
+                games.push(Game.build(dataMods[i][key]));
             }
-            games.push(Game.build(data[key]));
         }
         return games;
     }
