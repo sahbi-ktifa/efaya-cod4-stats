@@ -380,7 +380,7 @@ export default class GameDetails extends Vue {
   .mod-logo {
     width: 65px;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 1150px) {
     .game > ul {
       overflow-x: auto;
       padding-left: 5px;

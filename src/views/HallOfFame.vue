@@ -59,6 +59,10 @@ export default class HallOfFame extends Vue {
     this.computeTourist(playerPresence);
   }
 
+  public getImgUrl(icon: string): string {
+    return require("../assets/award/" + icon + ".png");
+  }
+
   private computeTourist(playerPresence: any) {
     let touristKey = null;
     let touristValue = Number.MAX_SAFE_INTEGER;
@@ -79,8 +83,8 @@ export default class HallOfFame extends Vue {
   }
 
   private computeConsistency(consistency: any, playerPresence: any) {
-    let consistent = {value: Infinity, key: "", name: ""};
-    let inconsistent = {value: 0, key: "", name: ""};
+    const consistent = {value: Infinity, key: "", name: ""};
+    const inconsistent = {value: 0, key: "", name: ""};
     for (const key in consistency) {
       consistency[key].total = consistency[key].value / playerPresence[key].value;
       if (consistency[key].total > inconsistent.value && playerPresence[key].value > 4) {
@@ -100,10 +104,6 @@ export default class HallOfFame extends Vue {
     this.honors.inconsistent.honorAmount = Number(inconsistent.value.toFixed(1));
     this.honors.inconsistent.playerGuid = inconsistent.key;
     this.honors.inconsistent.playerName = inconsistent.name;
-  }
-
-  public getImgUrl(icon: string): string {
-    return require("../assets/award/" + icon + ".png");
   }
 
   private computeKills(player: Player) {
@@ -264,7 +264,7 @@ export default class HallOfFame extends Vue {
     cursor: pointer;
     color: #36ebff;
   }
-  @media (max-width: 640px) {
+  @media (max-width: 1150px) {
     .hall-of-fame {
       padding: 10px;
     }

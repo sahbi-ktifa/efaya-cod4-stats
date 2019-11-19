@@ -124,7 +124,7 @@ export default class Games extends Vue {
     bottom: 0;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 1150px) {
     .games {
       padding: 15px;
     }

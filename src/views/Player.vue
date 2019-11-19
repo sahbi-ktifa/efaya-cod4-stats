@@ -372,7 +372,7 @@ export default class PlayerDetails extends Vue {
     width: 65px;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 1150px) {
     .weap-parts-container {
       grid-template-columns: 100%;
     }
