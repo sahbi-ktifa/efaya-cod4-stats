@@ -262,7 +262,6 @@ export default class PlayerDetails extends Vue {
         text: "Evolution kills / deaths"
       },
       chart: {
-        width: "100%",
         toolbar: {
           show: false
         },
@@ -442,6 +441,7 @@ export default class PlayerDetails extends Vue {
   }
   .apexchart-container {
     margin-top: 10px;
+    padding: 20px;
   }
 
   @media (max-width: 1150px) {
