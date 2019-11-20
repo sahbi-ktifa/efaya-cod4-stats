@@ -5,95 +5,98 @@
       <i>Ma Nemesis</i>: <strong class="name" @click="goToPlayer(nemesisGuid)">{{giveMeMyName(nemesisGuid)}}</strong> m'a tué <strong>{{nemesisValue}}</strong> fois<br />
       <i>Ma victime favorite</i>: <strong class="name" @click="goToPlayer(preyGuid)">{{giveMeMyName(preyGuid)}}</strong> que j'ai tué <strong>{{preyValue}}</strong> fois<br />
     </div>
-    <div>
-      <p>
-        <strong>Meilleur Score : </strong> <i>{{player.bestScore.value}}</i>
-        (<router-link :to="'/game/' + player.bestScore.mapRef" tag="span" class="map">{{player.bestScore.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de Kills : </strong> <i>{{player.bestKills.value}}</i>
-        (<router-link :to="'/game/' + player.bestKills.mapRef" tag="span" class="map">{{player.bestKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le moins de morts : </strong> <i>{{player.bestDeaths.value}}</i>
-        (<router-link :to="'/game/' + player.bestDeaths.mapRef" tag="span" class="map">{{player.bestDeaths.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus d'assistances : </strong> <i>{{player.bestAssists.value}}</i>
-        (<router-link :to="'/game/' + player.bestAssists.mapRef" tag="span" class="map">{{player.bestAssists.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Meilleur Ratio : </strong> <i>{{player.bestRatio.value}}</i>
-        (<router-link :to="'/game/' + player.bestRatio.mapRef" tag="span" class="map">{{player.bestRatio.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill confirmé : </strong> <i>{{player.killsConfirmed.value}}</i>
-        (<router-link :to="'/game/' + player.killsConfirmed.mapRef" tag="span" class="map">{{player.killsConfirmed.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de régularité : </strong> <i>{{player.consistency.value ? player.consistency.value.toFixed(1) : "N/A"}}</i>
-        (<router-link :to="'/game/' + player.consistency.mapRef" tag="span" class="map">{{player.consistency.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le moins de régularité : </strong> <i>{{player.inconsistency.value ? player.inconsistency.value.toFixed(1) : "N/A"}}</i>
-        (<router-link :to="'/game/' + player.inconsistency.mapRef" tag="span" class="map">{{player.inconsistency.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de coéquipiers réanimés : </strong> <i>{{player.killsDenied.value}}</i>
-        (<router-link :to="'/game/' + player.killsDenied.mapRef" tag="span" class="map">{{player.killsDenied.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de bombe plantée : </strong> <i>{{player.bombsPlanted.value}}</i>
-        (<router-link :to="'/game/' + player.bombsPlanted.mapRef" tag="span" class="map">{{player.bombsPlanted.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de bombe désamorcée : </strong> <i>{{player.bombsDefused.value}}</i>
-        (<router-link :to="'/game/' + player.bombsDefused.mapRef" tag="span" class="map">{{player.bombsDefused.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de headshots : </strong> <i>{{player.headShots.value}}</i>
-        (<router-link :to="'/game/' + player.headShots.mapRef" tag="span" class="map">{{player.headShots.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de teamkills : </strong> <i>{{player.teamKills.value}}</i>
-        (<router-link :to="'/game/' + player.teamKills.mapRef" tag="span" class="map">{{player.teamKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill à la grenade : </strong> <i>{{player.grenadeKills.value}}</i>
-        (<router-link :to="'/game/' + player.grenadeKills.mapRef" tag="span" class="map">{{player.grenadeKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au fusil d'assaut : </strong> <i>{{player.rifleKills.value}}</i>
-        (<router-link :to="'/game/' + player.rifleKills.mapRef" tag="span" class="map">{{player.rifleKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au SMG : </strong> <i>{{player.smgKills.value}}</i>
-        (<router-link :to="'/game/' + player.smgKills.mapRef" tag="span" class="map">{{player.smgKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au sniper : </strong> <i>{{player.sniperKills.value}}</i>
-        (<router-link :to="'/game/' + player.sniperKills.mapRef" tag="span" class="map">{{player.sniperKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au pistolet : </strong> <i>{{player.pistolKills.value}}</i>
-        (<router-link :to="'/game/' + player.pistolKills.mapRef" tag="span" class="map">{{player.pistolKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au couteau : </strong> <i>{{player.meleeKills.value}}</i>
-        (<router-link :to="'/game/' + player.meleeKills.mapRef" tag="span" class="map">{{player.meleeKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de kill au fusil à pompe : </strong> <i>{{player.shotgunKills.value}}</i>
-        (<router-link :to="'/game/' + player.shotgunKills.mapRef" tag="span" class="map">{{player.shotgunKills.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Le plus de suicides : </strong> <i>{{player.suicides.value}}</i>
-        (<router-link :to="'/game/' + player.suicides.mapRef" tag="span" class="map">{{player.suicides.mapRef}}</router-link>)
-      </p>
-      <p>
-        <strong>Quand on a beaucoup parlé : </strong> <i>{{player.tchatter.value}}</i>
-        (<router-link :to="'/game/' + player.tchatter.mapRef" tag="span" class="map">{{player.tchatter.mapRef}}</router-link>)
-      </p>
+    <div class="personal-data">
+      <div>
+        <p>
+          <strong>Meilleur Score : </strong> <i>{{player.bestScore.value}}</i>
+          (<router-link :to="'/game/' + player.bestScore.mapRef" tag="span" class="map">{{player.bestScore.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de Kills : </strong> <i>{{player.bestKills.value}}</i>
+          (<router-link :to="'/game/' + player.bestKills.mapRef" tag="span" class="map">{{player.bestKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le moins de morts : </strong> <i>{{player.bestDeaths.value}}</i>
+          (<router-link :to="'/game/' + player.bestDeaths.mapRef" tag="span" class="map">{{player.bestDeaths.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus d'assistances : </strong> <i>{{player.bestAssists.value}}</i>
+          (<router-link :to="'/game/' + player.bestAssists.mapRef" tag="span" class="map">{{player.bestAssists.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Meilleur Ratio : </strong> <i>{{player.bestRatio.value}}</i>
+          (<router-link :to="'/game/' + player.bestRatio.mapRef" tag="span" class="map">{{player.bestRatio.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill confirmé : </strong> <i>{{player.killsConfirmed.value}}</i>
+          (<router-link :to="'/game/' + player.killsConfirmed.mapRef" tag="span" class="map">{{player.killsConfirmed.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de régularité : </strong> <i>{{player.consistency.value ? player.consistency.value.toFixed(1) : "N/A"}}</i>
+          (<router-link :to="'/game/' + player.consistency.mapRef" tag="span" class="map">{{player.consistency.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le moins de régularité : </strong> <i>{{player.inconsistency.value ? player.inconsistency.value.toFixed(1) : "N/A"}}</i>
+          (<router-link :to="'/game/' + player.inconsistency.mapRef" tag="span" class="map">{{player.inconsistency.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de coéquipiers réanimés : </strong> <i>{{player.killsDenied.value}}</i>
+          (<router-link :to="'/game/' + player.killsDenied.mapRef" tag="span" class="map">{{player.killsDenied.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de bombe plantée : </strong> <i>{{player.bombsPlanted.value}}</i>
+          (<router-link :to="'/game/' + player.bombsPlanted.mapRef" tag="span" class="map">{{player.bombsPlanted.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de bombe désamorcée : </strong> <i>{{player.bombsDefused.value}}</i>
+          (<router-link :to="'/game/' + player.bombsDefused.mapRef" tag="span" class="map">{{player.bombsDefused.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de headshots : </strong> <i>{{player.headShots.value}}</i>
+          (<router-link :to="'/game/' + player.headShots.mapRef" tag="span" class="map">{{player.headShots.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de teamkills : </strong> <i>{{player.teamKills.value}}</i>
+          (<router-link :to="'/game/' + player.teamKills.mapRef" tag="span" class="map">{{player.teamKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill à la grenade : </strong> <i>{{player.grenadeKills.value}}</i>
+          (<router-link :to="'/game/' + player.grenadeKills.mapRef" tag="span" class="map">{{player.grenadeKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au fusil d'assaut : </strong> <i>{{player.rifleKills.value}}</i>
+          (<router-link :to="'/game/' + player.rifleKills.mapRef" tag="span" class="map">{{player.rifleKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au SMG : </strong> <i>{{player.smgKills.value}}</i>
+          (<router-link :to="'/game/' + player.smgKills.mapRef" tag="span" class="map">{{player.smgKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au sniper : </strong> <i>{{player.sniperKills.value}}</i>
+          (<router-link :to="'/game/' + player.sniperKills.mapRef" tag="span" class="map">{{player.sniperKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au pistolet : </strong> <i>{{player.pistolKills.value}}</i>
+          (<router-link :to="'/game/' + player.pistolKills.mapRef" tag="span" class="map">{{player.pistolKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au couteau : </strong> <i>{{player.meleeKills.value}}</i>
+          (<router-link :to="'/game/' + player.meleeKills.mapRef" tag="span" class="map">{{player.meleeKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de kill au fusil à pompe : </strong> <i>{{player.shotgunKills.value}}</i>
+          (<router-link :to="'/game/' + player.shotgunKills.mapRef" tag="span" class="map">{{player.shotgunKills.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Le plus de suicides : </strong> <i>{{player.suicides.value}}</i>
+          (<router-link :to="'/game/' + player.suicides.mapRef" tag="span" class="map">{{player.suicides.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Quand on a beaucoup parlé : </strong> <i>{{player.tchatter.value}}</i>
+          (<router-link :to="'/game/' + player.tchatter.mapRef" tag="span" class="map">{{player.tchatter.mapRef}}</router-link>)
+        </p>
+      </div>
+      <apexchart width="500" type="line" class="apexchart-container" :options="options" :series="series"></apexchart>
     </div>
     <div class="weap-parts-container">
       <div class="weap-wrapper">
@@ -146,6 +149,10 @@ export default class PlayerDetails extends Vue {
   public nemesisValue: string = "";
   public preyGuid: string = "";
   public preyValue: string = "";
+  public killsSeries: number[] = [];
+  public deathsSeries: number[] = [];
+  public seriesLabels: string[] = [];
+  public playedGames: string[] = [];
   protected games!: Game[];
 
   public created() {
@@ -157,12 +164,21 @@ export default class PlayerDetails extends Vue {
     const nemesis: any = {};
     const prey: any = {};
     this.player = null;
+    this.killsSeries = [];
+    this.deathsSeries = [];
+    this.seriesLabels = [];
+    this.playedGames = [];
+
     this.games.forEach((game) => {
       game.players.forEach((player) => {
         if (player.playerRef.guid === this.$route.params.guid) {
           if (!this.player) {
             this.player = new PlayerInfo(player.playerRef);
           }
+          this.killsSeries.push(player.totalKills);
+          this.deathsSeries.push(player.totalDeaths);
+          this.seriesLabels.push(game.date.getDate() + "/" + (game.date.getMonth() + 1));
+          this.playedGames.push(game.map);
           this.checkInfo(player.totalScore, game.map, "bestScore");
           this.checkInfo(player.totalKills, game.map, "bestKills");
           this.checkInfo(player.totalDeaths, game.map, "bestDeaths", true);
@@ -225,6 +241,7 @@ export default class PlayerDetails extends Vue {
       });
     });
     if (this.player) {
+      this.playedGames = this.playedGames.reverse();
       this.nemesisGuid = Object.keys(nemesis).sort(function(a, b) {return nemesis[a] - nemesis[b]; }).reverse()[0];
       this.nemesisValue = nemesis[this.nemesisGuid];
       this.preyGuid = Object.keys(prey).sort(function(a, b) {return prey[a] - prey[b]; }).reverse()[0];
@@ -237,6 +254,54 @@ export default class PlayerDetails extends Vue {
       // @ts-ignore
       this.partKeys = Object.keys(this.player.parts).sort((a, b) => this.player.parts[b] - this.player.parts[a]);
     }
+  }
+
+  get options() {
+    return {
+      title: {
+        text: "Evolution kills / deaths"
+      },
+      chart: {
+        width: "100%",
+        toolbar: {
+          show: false
+        },
+        zoom: {
+          enabled: false
+        }
+      },
+      xaxis: {
+        type: "category",
+        categories: this.seriesLabels.reverse()
+      },
+      theme: {
+        mode: "dark"
+      },
+      tooltip: {
+        custom: (data: any) => {
+          return "<div style='padding: 10px'>" +
+                  "<strong>" + this.seriesLabels[data.dataPointIndex] + " - " + this.playedGames[data.dataPointIndex] + "</strong>" +
+                  "<div>Kills: " + data.series[0][data.dataPointIndex] + "</div>" +
+                  "<div>Deaths: " + data.series[1][data.dataPointIndex] + "</div>" +
+                  "</div>";
+        },
+      },
+      stroke: {
+        curve: "smooth"
+      }
+    };
+  }
+  get series() {
+    return [
+      {
+        name: "Kills",
+        data: this.killsSeries.reverse()
+      },
+      {
+        name: "Deaths",
+        data: this.deathsSeries.reverse()
+      }
+    ];
   }
 
   public giveMeMyName(ref: string): string {
@@ -371,6 +436,13 @@ export default class PlayerDetails extends Vue {
   .mod-logo {
     width: 65px;
   }
+  .personal-data {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .apexchart-container {
+    margin-top: 10px;
+  }
 
   @media (max-width: 1150px) {
     .weap-parts-container {
@@ -379,6 +451,13 @@ export default class PlayerDetails extends Vue {
     .weap-wrapper > ul {
       padding: 10px;
       grid-template-columns: 50% 50%;
+    }
+    .personal-data {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+    .apexchart-container {
+      display: none;
     }
   }
 </style>
