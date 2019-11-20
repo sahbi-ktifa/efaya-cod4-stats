@@ -94,7 +94,7 @@ export default class LogsParserService {
                 }
             }
             this.computeConsistency(players);
-            games.push(new Game([gameRefs[j], gameRefs[i]], players));
+            games.push(new Game([gameRefs[i], gameRefs[j]], players));
         }
         let parsedContent = "";
         games.forEach((g) => {
