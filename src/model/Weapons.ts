@@ -143,6 +143,68 @@ export class IMMWeapons implements WeaponNames {
 }
 
 // tslint:disable-next-line:max-classes-per-file
+export class WW2Weapons implements WeaponNames {
+    public giveMeMyHumanName(weapon: string): string {
+        let res = "";
+        if (weapon.startsWith("stun_")) {
+            res += "Fuel grenade";
+        } else if (weapon.startsWith("flash_")) {
+            res += "Signal flare";
+        } else if (weapon.startsWith("beretta_")) {
+            res += "Tokarev TT-33";
+        } else if (weapon.startsWith("deserteagle_")) {
+            res += "Walther P38";
+        } else if (weapon.startsWith("deserteaglegold_")) {
+            res += "Walther P38";
+        } else if (weapon.startsWith("mp5_")) {
+            res += "Type 100";
+        } else if (weapon.startsWith("skorpion_")) {
+            res += "MP40";
+        } else if (weapon.startsWith("p90_")) {
+            res += "PPSh-41";
+        } else if (weapon.startsWith("uzi_")) {
+            res += "Thompson";
+        } else if (weapon.startsWith("m60e4_")) {
+            res += "SVT-40";
+        } else if (weapon.startsWith("saw_")) {
+            res += "M1A1";
+        } else if (weapon.startsWith("winchester1200_")) {
+            res += "M1 Garand";
+        } else if (weapon.startsWith("m16_")) {
+            res += "Kark 98K";
+        } else if (weapon.startsWith("ak47_")) {
+            res += "Mosin";
+        } else if (weapon.startsWith("g3_")) {
+            res += "Type 38";
+        } else if (weapon.startsWith("g36c_")) {
+            res += "Springfield";
+        } else if (weapon.startsWith("m14_")) {
+            res += "Arisaka";
+        } else if (weapon.startsWith("m40a3_")) {
+            res += "Kar98 Scoped";
+        } else if (weapon.startsWith("remington700_")) {
+            res += "Arisaka Scoped";
+        } else if (weapon.startsWith("m21_")) {
+            res += "Type 38 Scoped";
+        } else if (weapon.startsWith("dragunov_")) {
+            res += "Mosin Scoped";
+        } else if (weapon.startsWith("barrett_")) {
+            res += "Springfield Scoped";
+        } else if (weapon.startsWith("m1014_")) {
+            res += "Gewehr 43 Scoped";
+        } else if (weapon.startsWith("frag_")) {
+            res += "MK2 Frag grenade";
+        } else if (weapon.startsWith("colt45_")) {
+            res += "Colt 45";
+        } else {
+            res += weapon;
+        }
+        return res;
+    }
+}
+
+
+// tslint:disable-next-line:max-classes-per-file
 export class EfayaModV1Weapons implements WeaponNames {
     public giveMeMyHumanName(weapon: string): string {
         let res = "";

@@ -3,7 +3,8 @@
     <img class="map-preview" :src="game.mapPreview" alt="map-preview">
     <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}} - <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
       <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
-      <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)"></h3>
+      <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)">
+      <img class="mod-logo" alt="Mod logo" src="../assets/ww2.png" v-if="isWW2Mod(game)"></h3>
     <ul>
       <li>
         <ul>
@@ -324,6 +325,10 @@ export default class GameDetails extends Vue {
 
   public isIMMMod(game: Game) {
     return game.mod.startsWith("imm");
+  }
+
+  public isWW2Mod(game: Game) {
+    return game.mod.startsWith("ww2");
   }
 
   private retrieveValue(ref: string) {

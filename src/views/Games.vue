@@ -15,6 +15,7 @@
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)">
+          <img class="mod-logo" alt="Mod logo" src="../assets/ww2.png" v-if="isWW2Mod(game)">
         </div>
       </li>
     </ul>
@@ -47,6 +48,10 @@ export default class Games extends Vue {
 
   public isIMMMod(game: Game) {
     return game.mod.startsWith("imm");
+  }
+
+  public isWW2Mod(game: Game) {
+    return game.mod.startsWith("ww2");
   }
 
   public formatDate(date: Date): string {

@@ -106,6 +106,7 @@
             <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(mod)">
             <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(mod)">
             <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(mod)">
+            <img class="mod-logo" alt="Mod logo" src="../assets/ww2.png" v-if="isWW2Mod(mod)">
             <ul>
               <li v-for="weapon in sortByWeaponValues(values)">
                 <strong>{{weaponName(weapon, mod)}} : </strong> <i>{{values[weapon]}}</i>
@@ -131,7 +132,7 @@ import {Component, Vue} from "vue-property-decorator";
 import {mapGetters} from "vuex";
 import Game from "@/model/Game";
 import {PlayerInfo} from "@/model/Player";
-import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames} from "@/model/Weapons";
+import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames, WW2Weapons} from "@/model/Weapons";
 import { merge } from "lodash";
 
 @Component({
@@ -144,7 +145,9 @@ import { merge } from "lodash";
 export default class PlayerDetails extends Vue {
   public player: PlayerInfo | null = null;
   public partKeys: string[] = [];
-  public weaponNamer = {efaya_v2: new EfayaV2Weapons(), imm: new IMMWeapons(), efaya_mod_test: new EfayaModV1Weapons()};
+  public weaponNamer = {
+    efaya_v2: new EfayaV2Weapons(), imm: new IMMWeapons(),
+    efaya_mod_test: new EfayaModV1Weapons(), ww2m: new WW2Weapons()};
   public nemesisGuid: string = "";
   public nemesisValue: string = "";
   public preyGuid: string = "";
@@ -385,6 +388,10 @@ export default class PlayerDetails extends Vue {
 
   public isIMMMod(mod: string) {
     return mod.startsWith("imm");
+  }
+
+  public isWW2Mod(mod: string) {
+    return mod.startsWith("ww2");
   }
 
   private checkInfo(valueRef: number, map: string, arg: string, desc = false) {
