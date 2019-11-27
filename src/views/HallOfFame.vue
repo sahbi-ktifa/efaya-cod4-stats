@@ -200,6 +200,46 @@ export default class HallOfFame extends Vue {
       this.honors.teamKiller.playerGuid = player.playerRef.guid;
       this.honors.teamKiller.honorAmount = player.teamKills;
     }
+    if (this.honors.accuracy.honorAmount < player.accuracy) {
+      this.honors.accuracy.playerName = player.playerRef.playerName;
+      this.honors.accuracy.playerGuid = player.playerRef.guid;
+      this.honors.accuracy.honorAmount = player.accuracy;
+    }
+    if (this.honors.killstreak.honorAmount < player.killstreak) {
+      this.honors.killstreak.playerName = player.playerRef.playerName;
+      this.honors.killstreak.playerGuid = player.playerRef.guid;
+      this.honors.killstreak.honorAmount = player.killstreak;
+    }
+    if (this.honors.deathstreak.honorAmount < player.deathstreak) {
+      this.honors.deathstreak.playerName = player.playerRef.playerName;
+      this.honors.deathstreak.playerGuid = player.playerRef.guid;
+      this.honors.deathstreak.honorAmount = player.deathstreak;
+    }
+    if (this.honors.distance.honorAmount < player.distance) {
+      this.honors.distance.playerName = player.playerRef.playerName;
+      this.honors.distance.playerGuid = player.playerRef.guid;
+      this.honors.distance.honorAmount = player.distance;
+    }
+    if (this.honors.longestKill.honorAmount < player.longestKill) {
+      this.honors.longestKill.playerName = player.playerRef.playerName;
+      this.honors.longestKill.playerGuid = player.playerRef.guid;
+      this.honors.longestKill.honorAmount = player.longestKill;
+    }
+    if (this.honors.longestHS.honorAmount < player.longestHS) {
+      this.honors.longestHS.playerName = player.playerRef.playerName;
+      this.honors.longestHS.playerGuid = player.playerRef.guid;
+      this.honors.longestHS.honorAmount = player.longestHS;
+    }
+    if (this.honors.crazyShooter.honorAmount < player.totalShots) {
+      this.honors.crazyShooter.playerName = player.playerRef.playerName;
+      this.honors.crazyShooter.playerGuid = player.playerRef.guid;
+      this.honors.crazyShooter.honorAmount = player.totalShots;
+    }
+    if (this.honors.everyBulletCounts.honorAmount > player.totalShots) {
+      this.honors.everyBulletCounts.playerName = player.playerRef.playerName;
+      this.honors.everyBulletCounts.playerGuid = player.playerRef.guid;
+      this.honors.everyBulletCounts.honorAmount = player.totalShots;
+    }
   }
 
   private computeRatio(player: Player) {

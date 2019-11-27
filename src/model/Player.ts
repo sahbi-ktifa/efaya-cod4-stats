@@ -38,6 +38,14 @@ export class Honors {
     public smgMan = new HonorData("Maître des SMG", "smg");
     public pistolMan = new HonorData("Maître du pistolet", "pistol");
     public tchattyMan = new HonorData("Blah Blah Blah", "tchatty");
+    public distance = new HonorData("Le marathonien", "distance");
+    public killstreak = new HonorData("La plus longue série de kills", "killstreak");
+    public deathstreak = new HonorData("La plus longue série de morts", "deathstreak");
+    public accuracy = new HonorData("Lucky Luke, le plus précis", "accuracy");
+    public longestKill = new HonorData("Le kill le plus lointain", "longestKill");
+    public longestHS = new HonorData("Le headshot le plus lointain", "longestHS");
+    public crazyShooter = new HonorData("Le tireur fou", "maxshots");
+    public everyBulletCounts = new HonorData("Chaque balle compte", "minusshot", Infinity);
 }
 
 // tslint:disable-next-line:max-classes-per-file
@@ -61,6 +69,8 @@ export class PlayerGlobalData {
     public bestShotgun: number = 0;
     public bestSmg: number = 0;
     public bestMedic: number = 0;
+    public killstreak: number = 0;
+    public longestKill: number = 0;
     public bestExtermination: number = 0;
     public bestConsistency: number = Infinity;
     public bestDefused: number = 0;
@@ -111,10 +121,18 @@ export class PlayerForRound {
     public meleeKills = 0;
     public suicides = 0;
     public tchatter = 0;
+    public totalShots = 0;
+    public accuracy = 0;
+    public killstreak = 0;
+    public deathstreak = 0;
+    public longestHS = 0;
+    public longestKill = 0;
+    public distance = 0;
     public weaps: any = {};
     public parts: any = {};
     public nemesis: any = {};
     public prey: any = {};
+    public archangel: any = {};
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
@@ -151,10 +169,18 @@ export class Player {
     public meleeKills = 0;
     public suicides = 0;
     public tchatter = 0;
+    public totalShots = 0;
+    public accuracy = 0;
+    public killstreak = 0;
+    public deathstreak = 0;
+    public longestHS = 0;
+    public longestKill = 0;
+    public distance = 0;
     public weaps: any = {};
     public parts: any = {};
     public nemesis: any = {};
     public prey: any = {};
+    public archangel: any = {};
     public consistency: number = Infinity;
 
     public constructor(playerRef: PlayerRef) {
@@ -195,6 +221,12 @@ export class PlayerInfo {
     public parts: any = {};
     public consistency = new PlayerInfoDetails();
     public inconsistency = new PlayerInfoDetails();
+    public accuracy = new PlayerInfoDetails();
+    public killstreak = new PlayerInfoDetails();
+    public deathstreak = new PlayerInfoDetails();
+    public distance = new PlayerInfoDetails();
+    public longestKill = new PlayerInfoDetails();
+    public longestHS = new PlayerInfoDetails();
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;

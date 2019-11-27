@@ -168,6 +168,46 @@
           <strong>Maître du pistolet</strong><br/>
           <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}} kills</i>
         </div>
+        <div>
+          <img src="../assets/award/accuracy.png" class="trophy">
+          <strong>Le mec précis</strong><br/>
+          <i>{{accuracy.playerRef.playerName}} : {{accuracy.accuracy}} %</i>
+        </div>
+        <div>
+          <img src="../assets/award/killstreak.png" class="trophy">
+          <strong>La plus longue série de kill</strong><br/>
+          <i>{{killstreak.playerRef.playerName}} : {{killstreak.killstreak}} kills d'affilé</i>
+        </div>
+        <div>
+          <img src="../assets/award/deathstreak.png" class="trophy">
+          <strong>La plus longue série de morts sans kill</strong><br/>
+          <i>{{deathstreak.playerRef.playerName}} : {{deathstreak.deathstreak}} morts d'affilé</i>
+        </div>
+        <div>
+          <img src="../assets/award/longestKill.png" class="trophy">
+          <strong>Le kill le plus lointain</strong><br/>
+          <i>{{longestKill.playerRef.playerName}} : {{longestKill.longestKill}} mètre(s)</i>
+        </div>
+        <div>
+          <img src="../assets/award/longestHS.png" class="trophy">
+          <strong>Le headshot le plus lointain</strong><br/>
+          <i>{{longestHS.playerRef.playerName}} : {{longestHS.longestHS}} mètre(s)</i>
+        </div>
+        <div>
+          <img src="../assets/award/distance.png" class="trophy">
+          <strong>Le gars qui court beaucoup</strong><br/>
+          <i>{{distance.playerRef.playerName}} : {{distance.distance}} mètre(s)</i>
+        </div>
+        <div>
+          <img src="../assets/award/maxshots.png" class="trophy">
+          <strong>Le gars qui tire vraiment partout</strong><br/>
+          <i>{{crazyShooter.playerRef.playerName}} : {{crazyShooter.totalShots}} tir(s)</i>
+        </div>
+        <div>
+          <img src="../assets/award/minusshot.png" class="trophy">
+          <strong>Le gars qui économise ses balles</strong><br/>
+          <i>{{everyBulletCounts.playerRef.playerName}} : {{everyBulletCounts.totalShots}} tir(s)</i>
+        </div>
       </div>
     </div>
   </div>
@@ -264,6 +304,38 @@ export default class GameDetails extends Vue {
 
   get inconsistency() {
     return orderBy(this.game.players, ["consistency"], ["desc"])[0];
+  }
+
+  get accuracy() {
+    return this.retrieveValue("accuracy");
+  }
+
+  get killstreak() {
+    return this.retrieveValue("killstreak");
+  }
+
+  get deathstreak() {
+    return this.retrieveValue("deathstreak");
+  }
+
+  get longestKill() {
+    return this.retrieveValue("longestKill");
+  }
+
+  get longestHS() {
+    return this.retrieveValue("longestHS");
+  }
+
+  get distance() {
+    return this.retrieveValue("distance");
+  }
+
+  get crazyShooter() {
+    return this.retrieveValue("totalShots");
+  }
+
+  get everyBulletCounts() {
+    return orderBy(this.game.players, ["totalShots"], ["asc"])[0];
   }
 
   public game!: Game;

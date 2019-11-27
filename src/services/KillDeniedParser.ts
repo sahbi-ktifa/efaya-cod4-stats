@@ -14,7 +14,7 @@ export default class KillDeniedParser implements LineParser {
 
     public parse(line: string, parsedData: ParsedData): void {
         // tslint:disable-next-line:max-line-length
-        // 3:45 SRKD;6fbc20faab02905c8a9b48ffa8569248;11;Ycaare
+        // 3:45 SRKD;6fbc20faab02905c8a9b48ffa8569248;11;Ycaare;6fbc20faab02905c8a9b48ffa8569248
         const splittedLine = line.split(" ");
         const tokens = splittedLine[splittedLine.length - 1].split(";");
         if (tokens) {
@@ -22,6 +22,12 @@ export default class KillDeniedParser implements LineParser {
                 if (player.playerRef.guid === tokens[1]) {
                     player.killsDenied++;
                     player.score += POINTS.KILL_DENIED;
+                }
+                if (player.playerRef.guid === tokens[4]) {
+                    if (!player.archangel[tokens[1]]) {
+                        player.archangel[tokens[1]] = 0;
+                    }
+                    player.archangel[tokens[1]]++;
                 }
             }
         }

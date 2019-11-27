@@ -12,6 +12,7 @@ import BombDefusedParser from "@/services/BombDefusedParser";
 import BombPlantedParser from "@/services/BombPlantedParser";
 import TchatterParser from "@/services/TchatterParser";
 import AssistParser from "@/services/AssistParser";
+import InGameStatParser from "@/services/InGameStatParser";
 
 export enum LogEvent {
     J = "join",
@@ -46,7 +47,8 @@ const parsers = [
     new BombDefusedParser(),
     new BombPlantedParser(),
     new TchatterParser(),
-    new AssistParser()
+    new AssistParser(),
+    new InGameStatParser()
 ];
 
 // tslint:disable-next-line:max-classes-per-file
@@ -137,6 +139,25 @@ export default class LogsParserService {
                         p.meleeKills += player.meleeKills;
                         p.suicides += player.suicides;
                         p.tchatter += player.tchatter;
+                        p.totalShots += player.totalShots;
+                        if (player.accuracy > p.accuracy) {
+                            p.accuracy = player.accuracy;
+                        }
+                        if (player.killstreak > p.killstreak) {
+                            p.killstreak = player.killstreak;
+                        }
+                        if (player.deathstreak > p.deathstreak) {
+                            p.deathstreak = player.deathstreak;
+                        }
+                        if (player.longestHS > p.longestHS) {
+                            p.longestHS = player.longestHS;
+                        }
+                        if (player.longestKill > p.longestKill) {
+                            p.longestKill = player.longestKill;
+                        }
+                        if (player.distance > p.distance) {
+                            p.distance = player.distance;
+                        }
                         for (const [key] of Object.entries(player.weaps)) {
                             if (!p.weaps[gameRef.mod]) {
                                 p.weaps[gameRef.mod] = {};
@@ -159,6 +180,13 @@ export default class LogsParserService {
                                 p.nemesis[key] = player.nemesis[key];
                             } else {
                                 p.nemesis[key] += player.nemesis[key];
+                            }
+                        }
+                        for (const [key] of Object.entries(player.archangel)) {
+                            if (!p.archangel[key]) {
+                                p.archangel[key] = player.archangel[key];
+                            } else {
+                                p.archangel[key] += player.archangel[key];
                             }
                         }
                         for (const [key] of Object.entries(player.prey)) {

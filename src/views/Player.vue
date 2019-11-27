@@ -4,6 +4,7 @@
     <div>
       <i>Ma Nemesis</i>: <strong class="name" @click="goToPlayer(nemesisGuid)">{{giveMeMyName(nemesisGuid)}}</strong> m'a tué <strong>{{nemesisValue}}</strong> fois<br />
       <i>Ma victime favorite</i>: <strong class="name" @click="goToPlayer(preyGuid)">{{giveMeMyName(preyGuid)}}</strong> que j'ai tué <strong>{{preyValue}}</strong> fois<br />
+      <i>Mon ange gardien</i>: <strong class="name" @click="goToPlayer(archangelGuid)">{{giveMeMyName(archangelGuid)}}</strong> qui m'a ranimé <strong>{{archangelValue}}</strong> fois<br />
     </div>
     <div class="personal-data">
       <div>
@@ -95,6 +96,30 @@
           <strong>Quand on a beaucoup parlé : </strong> <i>{{player.tchatter.value}}</i>
           (<router-link :to="'/game/' + player.tchatter.mapRef" tag="span" class="map">{{player.tchatter.mapRef}}</router-link>)
         </p>
+        <p>
+          <strong>Meilleure précision : </strong> <i>{{player.accuracy.value}} %</i>
+          (<router-link :to="'/game/' + player.accuracy.mapRef" tag="span" class="map">{{player.accuracy.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Meilleure série de kills : </strong> <i>{{player.killstreak.value}}</i>
+          (<router-link :to="'/game/' + player.killstreak.mapRef" tag="span" class="map">{{player.killstreak.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Pire série de morts : </strong> <i>{{player.deathstreak.value}}</i>
+          (<router-link :to="'/game/' + player.deathstreak.mapRef" tag="span" class="map">{{player.deathstreak.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Kill le plus lointain : </strong> <i>{{player.longestKill.value}} m</i>
+          (<router-link :to="'/game/' + player.longestKill.mapRef" tag="span" class="map">{{player.longestKill.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Headshot le plus lointain : </strong> <i>{{player.longestHS.value}} m</i>
+          (<router-link :to="'/game/' + player.longestHS.mapRef" tag="span" class="map">{{player.longestHS.mapRef}}</router-link>)
+        </p>
+        <p>
+          <strong>Distance la plus longue parcouru : </strong> <i>{{player.distance.value}} m</i>
+          (<router-link :to="'/game/' + player.distance.mapRef" tag="span" class="map">{{player.distance.mapRef}}</router-link>)
+        </p>
       </div>
       <apexchart width="500" type="line" class="apexchart-container" :options="options" :series="series"></apexchart>
     </div>
@@ -152,6 +177,8 @@ export default class PlayerDetails extends Vue {
   public nemesisValue: string = "";
   public preyGuid: string = "";
   public preyValue: string = "";
+  public archangelGuid: string = "";
+  public archangelValue: string = "";
   public killsSeries: number[] = [];
   public deathsSeries: number[] = [];
   public seriesLabels: string[] = [];
@@ -166,6 +193,7 @@ export default class PlayerDetails extends Vue {
     let partsSum = 0;
     const nemesis: any = {};
     const prey: any = {};
+    const archangel: any = {};
     this.player = null;
     this.killsSeries = [];
     this.deathsSeries = [];
@@ -204,6 +232,12 @@ export default class PlayerDetails extends Vue {
           this.checkInfo(player.tchatter, game.map, "tchatter");
           this.checkInfo(player.consistency, game.map, "consistency", true);
           this.checkInfo(player.consistency, game.map, "inconsistency");
+          this.checkInfo(player.accuracy, game.map, "accuracy");
+          this.checkInfo(player.distance, game.map, "distance");
+          this.checkInfo(player.longestHS, game.map, "longestHS");
+          this.checkInfo(player.longestKill, game.map, "longestKill");
+          this.checkInfo(player.killstreak, game.map, "killstreak");
+          this.checkInfo(player.deathstreak, game.map, "deathstreak");
           for (const [key, value] of Object.entries(player.parts)) {
             partsSum += value as number;
             if (!this.player.parts[key]) {
@@ -240,6 +274,14 @@ export default class PlayerDetails extends Vue {
               prey[guid] += value;
             }
           }
+          if (player.archangel) {
+            for (const [guid, value] of Object.entries(player.archangel)) {
+              if (!archangel[guid]) {
+                archangel[guid] = 0;
+              }
+              archangel[guid] += value;
+            }
+          }
         }
       });
     });
@@ -249,6 +291,8 @@ export default class PlayerDetails extends Vue {
       this.nemesisValue = nemesis[this.nemesisGuid];
       this.preyGuid = Object.keys(prey).sort(function(a, b) {return prey[a] - prey[b]; }).reverse()[0];
       this.preyValue = prey[this.preyGuid];
+      this.archangelGuid = Object.keys(archangel).sort(function(a, b) {return archangel[a] - archangel[b]; }).reverse()[0];
+      this.archangelValue = archangel[this.archangelGuid];
       // @ts-ignore
       for (const [key, value] of Object.entries(this.player.parts)) {
         // @ts-ignore
