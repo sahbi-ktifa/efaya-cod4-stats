@@ -39,6 +39,7 @@ export class Honors {
     public pistolMan = new HonorData("Maître du pistolet", "pistol");
     public tchattyMan = new HonorData("Blah Blah Blah", "tchatty");
     public distance = new HonorData("Le marathonien", "distance");
+    public camper = new HonorData("Le campeur ou le mec tué en début de partie", "camper", Infinity);
     public killstreak = new HonorData("La plus longue série de kills", "killstreak");
     public deathstreak = new HonorData("La plus longue série de morts", "deathstreak");
     public accuracy = new HonorData("Lucky Luke, le plus précis", "accuracy");
@@ -176,6 +177,7 @@ export class Player {
     public longestHS = 0;
     public longestKill = 0;
     public distance = 0;
+    public camper = Infinity;
     public weaps: any = {};
     public parts: any = {};
     public nemesis: any = {};

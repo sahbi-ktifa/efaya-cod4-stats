@@ -199,6 +199,11 @@
           <i>{{distance.playerRef.playerName}} : {{distance.distance}} mètre(s)</i>
         </div>
         <div>
+          <img src="../assets/award/camper.png" class="trophy">
+          <strong>Le gars qui a planté sa tente (ou qui s'est fait buté direct)</strong><br/>
+          <i>{{camper.playerRef.playerName}} : {{camper.camper}} mètre(s)</i>
+        </div>
+        <div>
           <img src="../assets/award/maxshots.png" class="trophy">
           <strong>Le gars qui tire vraiment partout</strong><br/>
           <i>{{crazyShooter.playerRef.playerName}} : {{crazyShooter.totalShots}} tir(s)</i>
@@ -328,6 +333,10 @@ export default class GameDetails extends Vue {
 
   get distance() {
     return this.retrieveValue("distance");
+  }
+
+  get camper() {
+    return orderBy(this.game.players, ["camper"], ["asc"])[0];
   }
 
   get crazyShooter() {

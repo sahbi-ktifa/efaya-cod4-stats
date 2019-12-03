@@ -158,6 +158,9 @@ export default class LogsParserService {
                         if (player.distance > p.distance) {
                             p.distance = player.distance;
                         }
+                        if (player.distance < p.camper) {
+                            p.camper = player.distance;
+                        }
                         for (const [key] of Object.entries(player.weaps)) {
                             if (!p.weaps[gameRef.mod]) {
                                 p.weaps[gameRef.mod] = {};
