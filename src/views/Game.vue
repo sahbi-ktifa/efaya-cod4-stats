@@ -200,8 +200,8 @@
         </div>
         <div>
           <img src="../assets/award/camper.png" class="trophy">
-          <strong>Le gars qui a planté sa tente (ou qui s'est fait buté direct)</strong><br/>
-          <i>{{camper.playerRef.playerName}} : {{camper.camper}} mètre(s)</i>
+          <strong>Le mec un peu fainéant</strong><br/>
+          <i>{{camper.playerRef.playerName}} : {{camper.distance}} mètre(s)</i>
         </div>
         <div>
           <img src="../assets/award/maxshots.png" class="trophy">
@@ -336,7 +336,7 @@ export default class GameDetails extends Vue {
   }
 
   get camper() {
-    return orderBy(this.game.players, ["camper"], ["asc"])[0];
+    return orderBy(this.game.players, ["distance"], ["asc"])[0];
   }
 
   get crazyShooter() {
