@@ -5,6 +5,8 @@
       <i>Ma Nemesis</i>: <strong class="name" @click="goToPlayer(nemesisGuid)">{{giveMeMyName(nemesisGuid)}}</strong> m'a tué <strong>{{nemesisValue}}</strong> fois<br />
       <i>Ma victime favorite</i>: <strong class="name" @click="goToPlayer(preyGuid)">{{giveMeMyName(preyGuid)}}</strong> que j'ai tué <strong>{{preyValue}}</strong> fois<br />
       <i>Mon ange gardien</i>: <strong class="name" @click="goToPlayer(archangelGuid)">{{giveMeMyName(archangelGuid)}}</strong> qui m'a ranimé <strong>{{archangelValue}}</strong> fois<br />
+      <i>Mon partenaire de choc</i>: <strong class="name" @click="goToPlayer(wingManGuid)">{{giveMeMyName(wingManGuid)}}</strong> avec qui j'ai gagné <strong>{{wingManValue}}</strong> fois<br />
+      <i>Mon chat noir</i>: <strong class="name" @click="goToPlayer(blackCatGuid)">{{giveMeMyName(blackCatGuid)}}</strong> avec qui j'ai perdu <strong>{{blackCatValue}}</strong> fois<br />
     </div>
     <div class="personal-data">
       <div>
@@ -159,6 +161,7 @@ import Game from "@/model/Game";
 import {PlayerInfo} from "@/model/Player";
 import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames, WW2Weapons} from "@/model/Weapons";
 import { merge } from "lodash";
+import {GameService} from "@/services/GameService";
 
 @Component({
   computed: {
@@ -179,6 +182,10 @@ export default class PlayerDetails extends Vue {
   public preyValue: string = "";
   public archangelGuid: string = "";
   public archangelValue: string = "";
+  public blackCatGuid: string = "";
+  public blackCatValue: string = "";
+  public wingManGuid: string = "";
+  public wingManValue: string = "";
   public killsSeries: number[] = [];
   public deathsSeries: number[] = [];
   public seriesLabels: string[] = [];
@@ -194,6 +201,8 @@ export default class PlayerDetails extends Vue {
     const nemesis: any = {};
     const prey: any = {};
     const archangel: any = {};
+    const wingMan: any = {};
+    const blackCat: any = {};
     this.player = null;
     this.killsSeries = [];
     this.deathsSeries = [];
@@ -210,6 +219,22 @@ export default class PlayerDetails extends Vue {
           this.deathsSeries.push(player.totalDeaths);
           this.seriesLabels.push(game.date.getDate() + "/" + (game.date.getMonth() + 1));
           this.playedGames.push(game.map);
+          const [winnersGuid, losersGuid] = new GameService().computeWinnersLosers(game);
+          game.players.forEach((_p) => {
+            if (_p.playerRef.guid !== player.playerRef.guid) {
+              if (winnersGuid.indexOf(player.playerRef.guid) > -1 && winnersGuid.indexOf(_p.playerRef.guid) > -1) {
+                if (!wingMan[_p.playerRef.guid]) {
+                  wingMan[_p.playerRef.guid] = 0;
+                }
+                wingMan[_p.playerRef.guid]++;
+              } else if (losersGuid.indexOf(player.playerRef.guid) > -1 && losersGuid.indexOf(_p.playerRef.guid) > -1) {
+                if (!blackCat[_p.playerRef.guid]) {
+                  blackCat[_p.playerRef.guid] = 0;
+                }
+                blackCat[_p.playerRef.guid]++;
+              }
+            }
+          });
           this.checkInfo(player.totalScore, game.map, "bestScore");
           this.checkInfo(player.totalKills, game.map, "bestKills");
           this.checkInfo(player.totalDeaths, game.map, "bestDeaths", true);
@@ -293,6 +318,10 @@ export default class PlayerDetails extends Vue {
       this.preyValue = prey[this.preyGuid];
       this.archangelGuid = Object.keys(archangel).sort(function(a, b) {return archangel[a] - archangel[b]; }).reverse()[0];
       this.archangelValue = archangel[this.archangelGuid];
+      this.blackCatGuid = Object.keys(blackCat).sort(function(a, b) {return blackCat[a] - blackCat[b]; }).reverse()[0];
+      this.blackCatValue = blackCat[this.blackCatGuid];
+      this.wingManGuid = Object.keys(wingMan).sort(function(a, b) {return wingMan[a] - wingMan[b]; }).reverse()[0];
+      this.wingManValue = wingMan[this.wingManGuid];
       // @ts-ignore
       for (const [key, value] of Object.entries(this.player.parts)) {
         // @ts-ignore
