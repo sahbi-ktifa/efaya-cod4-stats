@@ -170,7 +170,7 @@
         </div>
         <div>
           <img src="../assets/award/accuracy.png" class="trophy">
-          <strong>Le mec précis</strong><br/>
+          <strong>Le mec le plus précis sur une manche</strong><br/>
           <i>{{accuracy.playerRef.playerName}} : {{accuracy.accuracy}} %</i>
         </div>
         <div>

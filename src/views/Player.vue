@@ -99,7 +99,7 @@
           (<router-link :to="'/game/' + player.tchatter.mapRef" tag="span" class="map">{{player.tchatter.mapRef}}</router-link>)
         </p>
         <p>
-          <strong>Meilleure précision : </strong> <i>{{player.accuracy.value}} %</i>
+          <strong>Meilleure précision sur une manche : </strong> <i>{{player.accuracy.value}} %</i>
           (<router-link :to="'/game/' + player.accuracy.mapRef" tag="span" class="map">{{player.accuracy.mapRef}}</router-link>)
         </p>
         <p>

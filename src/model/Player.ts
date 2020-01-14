@@ -42,7 +42,7 @@ export class Honors {
     public camper = new HonorData("Le campeur ou le mec un peu fainéant", "camper", Infinity);
     public killstreak = new HonorData("La plus longue série de kills", "killstreak");
     public deathstreak = new HonorData("La plus longue série de morts", "deathstreak");
-    public accuracy = new HonorData("Lucky Luke, le plus précis", "accuracy");
+    public accuracy = new HonorData("Lucky Luke, le plus précis sur une manche", "accuracy");
     public longestKill = new HonorData("Le kill le plus lointain", "longestKill");
     public longestHS = new HonorData("Le headshot le plus lointain", "longestHS");
     public crazyShooter = new HonorData("Le tireur fou", "maxshots");
