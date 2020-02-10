@@ -3,6 +3,11 @@
         <h3>Logs Parser</h3>
         <input type="file" ref="logFile" @change="checkFile">
         <button @click="parse()" :disabled="!logFile">Parse!</button>
+
+        <div v-if="games > 0">
+            <h1>{{games}} game(s) was/were found !</h1>
+            <button @click="copy">Copy last game</button>
+        </div>
     </div>
 </template>
 
@@ -14,19 +19,37 @@ import LogsParserService from "@/services/LogsParserService";
 export default class LogsParser extends Vue {
     public logFile: File | null =  null;
     public parser = new LogsParserService();
+    public games = 0;
 
     public async parse() {
         if (this.logFile != null) {
             await this.parser.parseFile(this.logFile);
+            // @ts-ignore
+            this.games = window.games.length;
         }
     }
 
     public checkFile() {
         this.logFile = (this.$refs.logFile as any).files[0];
     }
+
+    public copy() {
+        const el = document.createElement("textarea");
+        // @ts-ignore
+        const lastGame = window.games[window.games.length - 1];
+        el.value = JSON.stringify(lastGame);
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+        alert("copied");
+    }
 }
 </script>
 
 <style scoped>
-
+    #app h1 {
+        position: initial;
+        margin-left: initial;
+    }
 </style>

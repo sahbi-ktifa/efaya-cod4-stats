@@ -36,6 +36,11 @@ export default new Router({
       path: "/parser",
       name: "parser",
       component: () => import(/* webpackChunkName: "logsparser" */ "./views/LogsParser.vue"),
+    },
+    {
+      path: "/matchmaking",
+      name: "matchmaking",
+      component: () => import(/* webpackChunkName: "logsparser" */ "./views/MatchMaking.vue"),
     }
   ],
 });
