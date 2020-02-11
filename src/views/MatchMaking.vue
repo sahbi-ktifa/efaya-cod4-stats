@@ -140,7 +140,7 @@ export default class MatchMaking extends Vue {
                 }
             });
         });
-        this.availablePlayers.sort((a, b) => (a.participations > b.participations) ? -1 : 1);
+        this.availablePlayers = orderBy(this.availablePlayers, ["participations"], ["desc"]);
     }
 
     private computeTeams() {
@@ -155,9 +155,28 @@ export default class MatchMaking extends Vue {
                 this.team1.push(ladder[i]);
             }
         }
-        // @ts-ignore
-        // console.log(Math.abs(this.team1.map(t => t.mean).reduce((a,b) => a + b, 0)
-        // - this.team2.map(t => t.mean).reduce((a,b) => a + b, 0)));
+        const opt1 = this.computeDiff(ladder, 3, 2);
+        const opt2 = this.computeDiff(ladder, 2, 3);
+        if (opt1[0] > opt2[0]) {
+            this.team1 = opt1[0] > opt2[0] ? opt2[1] as PlayerCard[] : opt1[1] as PlayerCard[];
+            this.team2 = opt1[0] < opt2[0] ? opt1[2] as PlayerCard[] : opt1[2] as PlayerCard[];
+        }
+    }
+
+    private computeDiff(ladder: PlayerCard[], opt1: number, opt2: number) {
+        const team1 = [];
+        const team2 = [];
+        team1.push(ladder[0], ladder[opt1]);
+        team2.push(ladder[1], ladder[opt2]);
+        for (let i = 4; i < ladder.length; i++) {
+            if (i % 2 === 0) {
+                team2.push(ladder[i]);
+            } else {
+                team1.push(ladder[i]);
+            }
+        }
+        return [Math.abs(team1.map(t => t.mean).reduce((a, b) => a + b, 0)
+            - team2.map(t => t.mean).reduce((a, b) => a + b, 0)), team1, team2];
     }
 }
 </script>
@@ -173,7 +192,7 @@ export default class MatchMaking extends Vue {
     }
     .available-players {
         display: grid;
-        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-columns: 20% 20% 20% 20%;
         grid-gap: 20px;
         margin-bottom: 20px;
     }
