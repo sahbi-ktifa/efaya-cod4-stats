@@ -18,7 +18,7 @@
 
         <div class="post-matchmaking" v-if="!matchmaking && matchmakingDone">
             <h2>Matchmaking succeeded!!!</h2>
-            <p>Algorithm is based on EMP (Efaya Matchmaking Points), which is a scientifically determined data determined on the last 6 games.</p>
+            <p>Algorithm uses EMP (Efaya Matchmaking Points), which is a scientifically determined data based on the last 6 games.</p>
             <div class="matchmaking-result-wrapper">
                 <div class="marines">
                     <img src="../assets/marines.png" class="team">
