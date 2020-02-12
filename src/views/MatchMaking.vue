@@ -146,21 +146,12 @@ export default class MatchMaking extends Vue {
     private computeTeams() {
         const ladder = orderBy(this.selectedPlayers, ["mean"], ["desc"]);
 
-        this.team1.push(ladder[0], ladder[3]);
-        this.team2.push(ladder[1], ladder[2]);
-        for (let i = 4; i < ladder.length; i++) {
-            if (i % 2 === 0) {
-                this.team2.push(ladder[i]);
-            } else {
-                this.team1.push(ladder[i]);
-            }
-        }
+        this.team1 = [];
+        this.team2 = [];
         const opt1 = this.computeDiff(ladder, 3, 2);
         const opt2 = this.computeDiff(ladder, 2, 3);
-        if (opt1[0] > opt2[0]) {
-            this.team1 = opt1[0] > opt2[0] ? opt2[1] as PlayerCard[] : opt1[1] as PlayerCard[];
-            this.team2 = opt1[0] < opt2[0] ? opt1[2] as PlayerCard[] : opt1[2] as PlayerCard[];
-        }
+        this.team1 = opt1[0] < opt2[0] ? opt1[1] as PlayerCard[] : opt2[1] as PlayerCard[];
+        this.team2 = opt1[0] < opt2[0] ? opt1[2] as PlayerCard[] : opt2[2] as PlayerCard[];
     }
 
     private computeDiff(ladder: PlayerCard[], opt1: number, opt2: number) {
