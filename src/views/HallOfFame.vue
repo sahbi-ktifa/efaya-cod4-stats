@@ -220,7 +220,7 @@ export default class HallOfFame extends Vue {
       this.honors.distance.playerGuid = player.playerRef.guid;
       this.honors.distance.honorAmount = player.distance;
     }
-    if (this.honors.camper.honorAmount > player.distance) {
+    if (this.honors.camper.honorAmount > player.distance && player.distance > 0) {
       this.honors.camper.playerName = player.playerRef.playerName;
       this.honors.camper.playerGuid = player.playerRef.guid;
       this.honors.camper.honorAmount = player.distance;
@@ -240,7 +240,7 @@ export default class HallOfFame extends Vue {
       this.honors.crazyShooter.playerGuid = player.playerRef.guid;
       this.honors.crazyShooter.honorAmount = player.totalShots;
     }
-    if (this.honors.everyBulletCounts.honorAmount > player.totalShots) {
+    if (this.honors.everyBulletCounts.honorAmount > player.totalShots && player.totalShots > 0) {
       this.honors.everyBulletCounts.playerName = player.playerRef.playerName;
       this.honors.everyBulletCounts.playerGuid = player.playerRef.guid;
       this.honors.everyBulletCounts.honorAmount = player.totalShots;

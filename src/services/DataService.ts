@@ -3,9 +3,10 @@ import dataEfayaV2 from "@/data/efayav2.json";
 import dataImm from "@/data/imm.json";
 import dataEfayaV1 from "@/data/efayav1.json";
 import dataWW2 from "@/data/ww2.json";
+import dataSvr from "@/data/svr.json";
 import extraData from "@/data/extradata.json";
 
-const dataMods = [dataImm, dataEfayaV2, dataEfayaV1, dataWW2];
+const dataMods = [dataImm, dataEfayaV2, dataEfayaV1, dataWW2, dataSvr];
 
 export class DataService {
     public retrieveGames(): Game[] {

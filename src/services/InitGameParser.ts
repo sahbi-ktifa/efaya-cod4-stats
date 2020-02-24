@@ -28,9 +28,13 @@ export default class InitGameParser implements LineParser {
         } else if (parsedData.currentGame &&
             (parsedData.currentGame.gameType !== gameType || parsedData.currentGame.map !== map)) {
             if (parsedData.currentGame.players.length > 2 &&
-                (parsedData.currentGame.winnerRef || parsedData.currentGame.alliesScore === 10
+                (parsedData.currentGame.alliesScore === 10
                     || parsedData.currentGame.axisScore === 10)) {
                 parsedData.games.push(parsedData.currentGame);
+            }
+            if (parsedData.currentGame.winnerRef) {
+                // @ts-ignore
+                parsedData.currentGame = new GameRef(mod, map, gameType);
             }
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);

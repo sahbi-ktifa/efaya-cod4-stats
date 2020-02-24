@@ -13,6 +13,7 @@ import BombPlantedParser from "@/services/BombPlantedParser";
 import TchatterParser from "@/services/TchatterParser";
 import AssistParser from "@/services/AssistParser";
 import InGameStatParser from "@/services/InGameStatParser";
+import SVREndGameParser from "@/services/SVREndGameParser";
 
 export enum LogEvent {
     J = "join",
@@ -48,7 +49,8 @@ const parsers = [
     new BombPlantedParser(),
     new TchatterParser(),
     new AssistParser(),
-    new InGameStatParser()
+    new InGameStatParser(),
+    new SVREndGameParser()
 ];
 
 // tslint:disable-next-line:max-classes-per-file
@@ -63,6 +65,7 @@ export default class LogsParserService {
             this.parseLine(line, parsedData);
             lines++;
         });
+        // console.log(parsedData)
         const gameRefs = parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
             && (g.axisScore === 10 || g.alliesScore === 10));
         const games = [];

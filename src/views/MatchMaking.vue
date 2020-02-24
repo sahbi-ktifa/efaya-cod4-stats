@@ -80,6 +80,8 @@ export default class MatchMaking extends Vue {
     private team2: PlayerCard[] = [];
     private matchmaking = false;
     private matchmakingDone = false;
+    // Old guid of players (Vaas)
+    private excludedGuids = ["4d4cd333036a7cc46507cee2bac934c7"];
 
     public created() {
         this.refreshPlayers();
@@ -134,7 +136,7 @@ export default class MatchMaking extends Vue {
         const players: string[] = [];
         this.games.forEach((g) => {
             g.players.forEach((p) => {
-                if (players.indexOf(p.playerRef.guid) === -1) {
+                if (players.indexOf(p.playerRef.guid) === -1 && this.excludedGuids.indexOf(p.playerRef.guid) === -1) {
                     this.availablePlayers.push(new PlayerCard(p.playerRef));
                     players.push(p.playerRef.guid);
                 }
@@ -166,8 +168,8 @@ export default class MatchMaking extends Vue {
                 team1.push(ladder[i]);
             }
         }
-        return [Math.abs(team1.map(t => t.mean).reduce((a, b) => a + b, 0)
-            - team2.map(t => t.mean).reduce((a, b) => a + b, 0)), team1, team2];
+        return [Math.abs(team1.map((t) => t.mean).reduce((a, b) => a + b, 0)
+            - team2.map((t) => t.mean).reduce((a, b) => a + b, 0)), team1, team2];
     }
 }
 </script>
