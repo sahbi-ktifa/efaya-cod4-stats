@@ -38,6 +38,11 @@ export default class WinParser implements LineParser {
                 if (!player.team) {
                     player.team = team === "allies" ? "axis" : "allies";
                 }
+                if (player.team === "axis") {
+                    player.totalPoints = parsedData.currentGame.axisScore;
+                } else {
+                    player.totalPoints = parsedData.currentGame.alliesScore;
+                }
             }
         }
     }

@@ -24,13 +24,6 @@ export default class SVREndGameParser implements LineParser {
         } else if (team === "axis") {
             parsedData.currentGame.alliesScore = this.alliesScore;
             parsedData.currentGame.axisScore = Number(splittedLine[splittedLine.length - 1].split(";")[2]);
-            for (const player of parsedData.currentGame.players) {
-                if (player.team === "axis") {
-                    player.totalPoints = parsedData.currentGame.axisScore;
-                } else {
-                    player.totalPoints = parsedData.currentGame.alliesScore;
-                }
-            }
             parsedData.currentGame.rounds.push(parsedData.currentGame.currentRound);
             parsedData.currentGame.currentRound = new Round();
         }
