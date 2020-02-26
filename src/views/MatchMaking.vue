@@ -102,7 +102,7 @@ export default class MatchMaking extends Vue {
     public launch() {
         this.matchmaking = true;
         const orderedGames = orderBy(this.games, ["date"], ["asc"])
-            .slice(Math.max(this.games.length - 6, 1));
+            .slice(Math.max(this.games.length - 4, 1));
         const playerMeans: any = {};
         this.selectedPlayers.forEach((p) => {
             orderedGames.forEach((g) => {
