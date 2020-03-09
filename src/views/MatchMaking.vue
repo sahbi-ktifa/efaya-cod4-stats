@@ -80,8 +80,8 @@ export default class MatchMaking extends Vue {
     private team2: PlayerCard[] = [];
     private matchmaking = false;
     private matchmakingDone = false;
-    // Old guid of players (Vaas, pascual)
-    private excludedGuids = ["4d4cd333036a7cc46507cee2bac934c7", "454ed2957639a0dec24b1fa1ed4b0ae8"];
+    // Old guid of players (Vaas, pascual, louis)
+    private excludedGuids = ["4d4cd333036a7cc46507cee2bac934c7", "454ed2957639a0dec24b1fa1ed4b0ae8", "ee37f4649620e4ab801fa0854caa2b98"];
 
     public created() {
         this.refreshPlayers();
