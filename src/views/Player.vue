@@ -132,6 +132,7 @@
           <li v-for="(values, mod) in player.weaps">
             <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(mod)">
             <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(mod)">
+            <img class="mod-logo" alt="Mod logo" src="../assets/promod.jpg" v-if="isPromod(mod)">
             <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(mod)">
             <img class="mod-logo" alt="Mod logo" src="../assets/ww2.png" v-if="isWW2Mod(mod)">
             <ul>
@@ -461,6 +462,10 @@ export default class PlayerDetails extends Vue {
 
   public isIMMMod(mod: string) {
     return mod.startsWith("imm");
+  }
+
+  public isPromod(mod: string) {
+    return mod.startsWith("pml");
   }
 
   public isWW2Mod(mod: string) {
