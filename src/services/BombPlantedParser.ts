@@ -7,7 +7,7 @@ export default class BombPlantedParser implements LineParser {
         const splittedLine = line.split(" ");
         const lastToken = splittedLine[splittedLine.length - 1];
         if (lastToken) {
-            return lastToken.split(";")[0] === "BP";
+            return lastToken.split(";")[0] === "BP" || lastToken.split(";")[0] === "P_P";
         }
         return false;
     }
