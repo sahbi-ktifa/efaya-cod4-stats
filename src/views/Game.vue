@@ -119,97 +119,97 @@
           <strong>Le démineur</strong><br/>
           <i>{{defuser.playerRef.playerName}} : {{defuser.bombsDefused}}</i>
         </div>
-        <div>
+        <div v-if="exterminator.killsConfirmed > 0">
           <img src="../assets/award/exterminator.png" class="trophy">
           <strong>Chasseur de tags</strong><br/>
           <i>{{exterminator.playerRef.playerName}} : {{exterminator.killsConfirmed}} tag(s)</i>
         </div>
-        <div>
+        <div v-if="medic.killsDenied > 0">
           <img src="../assets/award/medic.png" class="trophy">
           <strong>Le médic</strong><br/>
           <i>{{medic.playerRef.playerName}} : {{medic.killsDenied}} réanimation(s)</i>
         </div>
-        <div>
+        <div v-if="teamKiller.teamKills > 0">
           <img src="../assets/award/teamkiller.png" class="trophy">
           <strong>Le mec qui joue en fait pour l'autre équipe</strong><br/>
           <i>{{teamKiller.playerRef.playerName}} : {{teamKiller.teamKills}} teamkill(s)</i>
         </div>
-        <div>
+        <div v-if="rifleKiller.rifleKills > 0">
           <img src="../assets/award/rifler.png" class="trophy">
           <strong>Maître des fusils d'assaut</strong><br/>
           <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}} kills</i>
         </div>
-        <div>
+        <div v-if="smgKiller.smgKills > 0">
           <img src="../assets/award/smg.png" class="trophy">
           <strong>Maître des SMG</strong><br/>
           <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}} kills</i>
         </div>
-        <div>
+        <div v-if="sniperKiller.sniperKills > 0">
           <img src="../assets/award/sniper.png" class="trophy">
           <strong>Maître des Sniper</strong><br/>
           <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}} kills</i>
         </div>
-        <div>
+        <div v-if="shotgunKiller.shotgunKills > 0">
           <img src="../assets/award/shotgun.png" class="trophy">
           <strong>Maître du pompe</strong><br/>
           <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}} kills</i>
         </div>
-        <div>
+        <div v-if="nadeKiller.grenadeKills > 0">
           <img src="../assets/award/grenade.png" class="trophy">
           <strong>Maître des Grenades</strong><br/>
           <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}} kills</i>
         </div>
-        <div>
+        <div v-if="knifeKiller.meleeKills > 0">
           <img src="../assets/award/knife.png" class="trophy">
           <strong>Maître du couteau</strong><br/>
           <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}} kills</i>
         </div>
-        <div>
+        <div v-if="pistolKiller.pistolKills > 0">
           <img src="../assets/award/pistol.png" class="trophy">
           <strong>Maître du pistolet</strong><br/>
           <i>{{pistolKiller.playerRef.playerName}} : {{pistolKiller.pistolKills}} kills</i>
         </div>
-        <div>
+        <div v-if="accuracy.accuracy > 0">
           <img src="../assets/award/accuracy.png" class="trophy">
           <strong>Le mec le plus précis sur une manche</strong><br/>
           <i>{{accuracy.playerRef.playerName}} : {{accuracy.accuracy}} %</i>
         </div>
-        <div>
+        <div v-if="killstreak.killstreak > 0">
           <img src="../assets/award/killstreak.png" class="trophy">
           <strong>La plus longue série de kill</strong><br/>
-          <i>{{killstreak.playerRef.playerName}} : {{killstreak.killstreak}} kills d'affilé</i>
+          <i>{{killstreak.playerRef.playerName}} : {{killstreak.killstreak}} kills d'affilés</i>
         </div>
-        <div>
+        <div v-if="deathstreak.deathstreak > 0">
           <img src="../assets/award/deathstreak.png" class="trophy">
           <strong>La plus longue série de morts sans kill</strong><br/>
-          <i>{{deathstreak.playerRef.playerName}} : {{deathstreak.deathstreak}} morts d'affilé</i>
+          <i>{{deathstreak.playerRef.playerName}} : {{deathstreak.deathstreak}} morts d'affilées</i>
         </div>
-        <div>
+        <div v-if="longestKill.longestKill > 0">
           <img src="../assets/award/longestKill.png" class="trophy">
           <strong>Le kill le plus lointain</strong><br/>
           <i>{{longestKill.playerRef.playerName}} : {{longestKill.longestKill}} mètre(s)</i>
         </div>
-        <div>
+        <div v-if="longestHS.longestHS > 0">
           <img src="../assets/award/longestHS.png" class="trophy">
           <strong>Le headshot le plus lointain</strong><br/>
           <i>{{longestHS.playerRef.playerName}} : {{longestHS.longestHS}} mètre(s)</i>
         </div>
-        <div>
+        <div v-if="distance.distance > 0">
           <img src="../assets/award/distance.png" class="trophy">
           <strong>Le gars qui court beaucoup</strong><br/>
           <i>{{distance.playerRef.playerName}} : {{distance.distance}} mètre(s)</i>
         </div>
-        <div>
+        <div v-if="camper.distance > 0">
           <img src="../assets/award/camper.png" class="trophy">
           <strong>Le mec un peu fainéant</strong><br/>
           <i>{{camper.playerRef.playerName}} : {{camper.distance}} mètre(s)</i>
         </div>
-        <div>
+        <div v-if="crazyShooter.totalShots > 0">
           <img src="../assets/award/maxshots.png" class="trophy">
           <strong>Le gars qui tire vraiment partout</strong><br/>
           <i>{{crazyShooter.playerRef.playerName}} : {{crazyShooter.totalShots}} tir(s)</i>
         </div>
-        <div>
+        <div v-if="everyBulletCounts.totalShots > 0">
           <img src="../assets/award/minusshot.png" class="trophy">
           <strong>Le gars qui économise ses balles</strong><br/>
           <i>{{everyBulletCounts.playerRef.playerName}} : {{everyBulletCounts.totalShots}} tir(s)</i>

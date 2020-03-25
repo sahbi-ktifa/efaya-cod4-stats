@@ -28,7 +28,7 @@ export default class KillParser implements LineParser {
                     if (tokens[12] === "head") {
                         player.headShots++;
                     }
-                    if (tokens[9] === "frag_grenade_mp") {
+                    if (tokens[9] === "frag_grenade_mp" || tokens[9] === "frag_grenade_short_mp") {
                         player.grenadeKills++;
                     }
                     if (tokens[9].indexOf("usp") === 0 || tokens[9].indexOf("beretta") === 0
