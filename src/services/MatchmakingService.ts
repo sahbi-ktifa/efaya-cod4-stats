@@ -8,12 +8,10 @@ export class MatchmakingService {
             const isPlayerPresent = g.players.filter((player) => player.playerRef.guid === playerGuid);
             if (isPlayerPresent.length > 0) {
                 if (means.length < 4) {
-                    console.log(g.map, isPlayerPresent[0].totalScore)
                     means.push(isPlayerPresent[0].totalScore);
                 }
             }
         });
-        console.log(playerGuid, means);
         return means.reduce((a: number, b: number) => a + b, 0) / means.length;
     }
 }
