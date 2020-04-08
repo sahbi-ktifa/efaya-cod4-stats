@@ -1,6 +1,6 @@
 [
   {
-    "name": "4T4",
+    "name": "4G4",
     "map": "mp_mission",
     "members": [
       {
@@ -50,6 +50,24 @@
       {
         "guid": "a30e93ac1e800439e1955f5850d42283",
         "playerName": "LeBleu"
+      }
+    ]
+  },
+  {
+    "name": "The PPPunishers",
+    "map": "",
+    "members": [
+      {
+        "guid": "f5b4590d00d3b7fa2e3db490fe61b2d0",
+        "playerName": "Pascual66"
+      },
+      {
+        "guid": "bad40b5d8f3b3b99ae2361b92ed6ad81",
+        "playerName": "Paflechien"
+      },
+      {
+        "guid": "971ab0c65576db223856462391403f10",
+        "playerName": "Pistol-Pete"
       }
     ]
   }
