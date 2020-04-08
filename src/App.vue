@@ -7,6 +7,7 @@
       <router-link to="/">Soirées</router-link> |
       <router-link to="/players">Joueurs</router-link> |
       <router-link to="/halloffame">La creme de la creme</router-link> |
+      <router-link to="/championship">Tournoi</router-link> |
       <router-link to="/matchmaking">Matchmaking</router-link>
     </div>
     <h1 class="long">COD4 iClan Statistiques</h1>

@@ -1,0 +1,56 @@
+[
+  {
+    "name": "4T4",
+    "map": "mp_mission",
+    "members": [
+      {
+        "guid": "902cc6549e48763b23b4c719b0b4fa62",
+        "playerName": "Chris"
+      },
+      {
+        "guid": "597dce65ed33d9cf4b40064f7550eb82",
+        "playerName": "JmD"
+      },
+      {
+        "guid": "001489cdb1e13dc0cfe6ecbf94e73b2e",
+        "playerName": "Gamoul"
+      }
+    ]
+  },
+  {
+    "name": "The Office",
+    "map": "",
+    "members": [
+      {
+        "guid": "130236d724d02bcdd927e1622bdac598",
+        "playerName": "Cedmac"
+      },
+      {
+        "guid": "357e8601e337dbf72c286cd7a2d7db44",
+        "playerName": "Fre2x3"
+      },
+      {
+        "guid": "f13a742970b0b875c47372b97d668a82",
+        "playerName": "Akabane"
+      }
+    ]
+  },
+  {
+    "name": "Out Of Reach",
+    "map": "mp_favela",
+    "members": [
+      {
+        "guid": "9b26363dcbdfb0676e64637b635feb91",
+        "playerName": "Efaya"
+      },
+      {
+        "guid": "9701265888e7721574509c4dcca83188",
+        "playerName": "Proner"
+      },
+      {
+        "guid": "a30e93ac1e800439e1955f5850d42283",
+        "playerName": "LeBleu"
+      }
+    ]
+  }
+]
