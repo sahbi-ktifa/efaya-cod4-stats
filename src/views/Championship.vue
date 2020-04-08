@@ -5,7 +5,8 @@
             <li v-for="team in teams">
                 <div class="team-info">
                     <img class="team-logo" alt="Team logo" :src="teamIcon(team.name)">
-                    <h2>{{team.name}}</h2>
+                    <h2>{{team.name}} </h2>
+                    <span class="mean">({{team.emp.toFixed(0)}} EMP)</span>
                 </div>
                 <div class="team-info">
                     <img v-if="team.map" class="team-map" alt="Team map" :src="teamMap(team.map)">
@@ -26,18 +27,34 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+    import {Component, Inject, Vue} from 'vue-property-decorator';
 import season1Teams from "@/data/championship/season1/teams.json";
 import {ChampionshipTeam} from "@/model/Championship";
+import {mapGetters} from 'vuex';
+    import {MatchmakingService} from '@/services/MatchmakingService';
+    import Game from '@/model/Game';
 
-@Component
+@Component({
+    computed: {
+        ...mapGetters({
+            games: "games"
+        })
+    }
+})
 export default class Championship extends Vue {
+    @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
+    protected games!: Game[];
     private teams: ChampionshipTeam[] = [];
 
     public created() {
         for (let i = 0; i < season1Teams.length; i++) {
             this.teams.push(new ChampionshipTeam(season1Teams[i]));
         }
+        this.teams.forEach(t => {
+            var mean = 0;
+            t.members.forEach(m => mean += this.matchMakingService.computeEMP(m.guid, this.games));
+            t.emp = mean / 3;
+        });
     }
 
     public teamIcon(team: string): string {
@@ -100,5 +117,13 @@ export default class Championship extends Vue {
 
     .team-map {
         width: 250px;
+    }
+    .mean {
+        font-size: 14px;
+        font-style: italic;
+        font-weight: bold;
+        color: #36ebff;
+        margin-top: 25px;
+        margin-left: 10px;
     }
 </style>

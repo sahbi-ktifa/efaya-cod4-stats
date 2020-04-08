@@ -42,11 +42,13 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+    import {Component, Inject, Vue} from 'vue-property-decorator';
 import {mapGetters} from "vuex";
 import {orderBy} from "lodash";
 import Game from "@/model/Game";
 import {PlayerRef} from "@/model/Player";
+    import {DataService} from '@/services/DataService';
+    import {MatchmakingService} from '@/services/MatchmakingService';
 
 class PlayerCard {
     public ref!: PlayerRef;
@@ -74,6 +76,7 @@ export default class MatchMaking extends Vue {
     get selectedPlayers(): PlayerCard[] {
         return this.availablePlayers.filter((p) => p.selected);
     }
+    @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
     protected games!: Game[];
     private availablePlayers: PlayerCard[] = [];
     private team1: PlayerCard[] = [];
@@ -101,30 +104,9 @@ export default class MatchMaking extends Vue {
 
     public launch() {
         this.matchmaking = true;
-        const orderedGames = orderBy(this.games, ["date"], ["asc"])
-            .slice(Math.max(this.games.length - 4, 1));
-        const playerMeans: any = {};
         this.selectedPlayers.forEach((p) => {
-            orderedGames.forEach((g) => {
-                const isPlayerPresent = g.players.filter((player) => player.playerRef.guid === p.ref.guid);
-                if (isPlayerPresent.length > 0) {
-                    if (!playerMeans[p.ref.guid]) {
-                        playerMeans[p.ref.guid] = [];
-                    }
-                    playerMeans[p.ref.guid].push(isPlayerPresent[0].totalScore);
-                }
-            });
+            p.mean = this.matchMakingService.computeEMP(p.ref.guid, this.games);
         });
-        for (const ref in playerMeans) {
-            if (ref) {
-                const mean = playerMeans[ref].reduce((a: number, b: number) => a + b, 0) / playerMeans[ref].length;
-                this.selectedPlayers.forEach((p) => {
-                    if (p.ref.guid === ref) {
-                        p.mean = mean;
-                    }
-                });
-            }
-        }
         this.computeTeams();
         setTimeout(() => {
             this.matchmaking = false;
