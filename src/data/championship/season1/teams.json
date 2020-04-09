@@ -70,5 +70,23 @@
         "playerName": "Pistol-Pete"
       }
     ]
+  },
+  {
+    "name": "GameOver",
+    "map": "",
+    "members": [
+      {
+        "guid": "6b9a493118e3ea88731d2d577c68b57d",
+        "playerName": "RooKMooT"
+      },
+      {
+        "guid": "6fbc20faab02905c8a9b48ffa8569248",
+        "playerName": "Ycaare"
+      },
+      {
+        "guid": "e56a7f8701d6a8f643f6aac221e176cd",
+        "playerName": "Vaas"
+      }
+    ]
   }
 ]
