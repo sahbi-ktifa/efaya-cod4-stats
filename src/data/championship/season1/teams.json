@@ -55,7 +55,7 @@
   },
   {
     "name": "The PPPunishers",
-    "map": "",
+    "map": "mp_burgundy_2",
     "members": [
       {
         "guid": "f5b4590d00d3b7fa2e3db490fe61b2d0",
@@ -86,6 +86,24 @@
       {
         "guid": "e56a7f8701d6a8f643f6aac221e176cd",
         "playerName": "Vaas"
+      }
+    ]
+  },
+  {
+    "name": "",
+    "map": "",
+    "members": [
+      {
+        "guid": "3856a5e494ee0255cf1f2499b449ec2e",
+        "playerName": "Louis92"
+      },
+      {
+        "guid": "efbf178122af072a6977ed8d9d681707",
+        "playerName": "Angel"
+      },
+      {
+        "guid": "d8b7a5821891cd7e0d33bbc3fbe9e708",
+        "playerName": "BingO_o"
       }
     ]
   }

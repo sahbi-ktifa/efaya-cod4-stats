@@ -4,7 +4,7 @@
             <li><h2>Teams engaged:</h2></li>
             <li v-for="team in teams">
                 <div class="team-info">
-                    <img class="team-logo" alt="Team logo" :src="teamIcon(team.name)">
+                    <img class="team-logo" alt="Team logo" v-if="team.name" :src="teamIcon(team.name)">
                     <h2>{{team.name}} </h2>
                     <span class="mean">({{team.emp.toFixed(0)}} EMP)</span>
                 </div>
