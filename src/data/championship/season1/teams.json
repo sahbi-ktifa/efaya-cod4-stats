@@ -55,7 +55,7 @@
   },
   {
     "name": "The PPPunishers",
-    "map": "mp_burgundy_2",
+    "map": "mp_cgc_crossfire",
     "members": [
       {
         "guid": "f5b4590d00d3b7fa2e3db490fe61b2d0",
@@ -90,8 +90,8 @@
     ]
   },
   {
-    "name": "",
-    "map": "",
+    "name": "Les Sales Gosses",
+    "map": "mp_strike2",
     "members": [
       {
         "guid": "3856a5e494ee0255cf1f2499b449ec2e",
