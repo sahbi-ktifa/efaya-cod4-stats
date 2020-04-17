@@ -40,31 +40,37 @@
             </ul>
         </div>
         <div class="right-content">
-            <h3>Classement</h3>
-            <ul>
-                <li>Waiting for results...</li>
+            <h2>Classement</h2>
+            <ul class="ladder">
+                <li v-for="team in teamsLadder">
+                    <div class="result-team-info">
+                        <img class="team-logo" alt="Team logo" v-if="team.name" :src="teamIcon(team.name)">
+                        <span><strong>{{team.name}}</strong> {{team.points}} pts </span>
+                    </div>
+                </li>
             </ul>
-            <h3>Règlement</h3>
+            <h2>Réglement</h2>
             <ul>
                 <li><strong>Efaya mod v2 SR</strong> - 3 joueurs par équipe</li>
                 <li>Chaque team choisi <strong>sa map pour le tournoi et n'en change pas</strong>. Les maps doivent avoir été jouées sur notre serveur pour être éligible</li>
                 <li>Deux rencontres par équipe : équipe A reçoit équipe B sur sa map pour <strong>deux manches de 5 points gagnants</strong> (le premier à 5), en défense et en attaque. Puis deuxième match où c'est l'équipe B qui reçoit l'équipe A sur sa map, également pour deux manches attaque & défense, soit 4 manches en tout sur deux matchs.</li>
                 <li><strong>Calcul des points = score du match + 2 points pour chaque manche gagnée</strong>. (exemple : score final du premier match 4-5 & 5-1 : équipe A perd 4 à 5 en défense et gagne 5 à 1 en attaque, soit 11 points = 4+(5+2) , du coup l'équipe B marque 8 points = (5+2) + 1.</li>
-                <li><strong>L'équipe qui recoit commence en défense</strong></li>
+                <li><strong>L'équipe qui commence sa map en défense</strong></li>
             </ul>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from 'vue-property-decorator';
+import {Component, Inject, Vue} from "vue-property-decorator";
 import season1Teams from "@/data/championship/season1/teams.json";
 import season1Calendar from "@/data/championship/season1/calendar.json";
-import {ChampionshipMatch, ChampionshipTeam} from '@/model/Championship';
-import {mapGetters} from 'vuex';
-import {MatchmakingService} from '@/services/MatchmakingService';
-import Game from '@/model/Game';
+import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
+import {mapGetters} from "vuex";
+import {MatchmakingService} from "@/services/MatchmakingService";
+import Game from "@/model/Game";
 import results from "@/data/championship/season1/results.json";
+import { orderBy } from "lodash";
 
 
 @Component({
@@ -88,20 +94,22 @@ export default class Championship extends Vue {
         for (let i = 0; i < season1Teams.length; i++) {
             this.teams.push(new ChampionshipTeam(season1Teams[i]));
         }
-        this.teams.forEach(t => {
+        this.teams.forEach((t) => {
             let mean = 0;
-            t.members.forEach(m => mean += this.matchMakingService.computeEMP(m.guid, this.games));
+            t.members.forEach((m) => mean += this.matchMakingService.computeEMP(m.guid, this.games));
             t.emp = mean / 3;
         });
 
 
-        for (const key in results) {
-            this.gameResults.push(Game.build(results[key]));
-        }
+        this.computeResults();
+    }
+
+    get teamsLadder(): ChampionshipTeam[] {
+        return orderBy(this.teams, ["points", "name"], ["desc"]);
     }
 
     get nextMatches(): ChampionshipMatch[] {
-        return this.matches.filter(m => !m.played);
+        return this.matches.filter((m) => !m.played);
     }
 
     public teamIcon(team: string): string {
@@ -111,6 +119,47 @@ export default class Championship extends Vue {
 
     public teamMap(map: string): string {
         return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
+    }
+
+    private computeResults() {
+        for (const key in results) {
+            this.gameResults.push(Game.build(results[key]));
+        }
+        for (const gameResult of this.gameResults) {
+            for (const gameRef of gameResult.gameRefs) {
+                if (gameRef.alliesScore === 5) {
+                    const refGuidAllies = gameRef.players.filter((p) => p.team === "allies")[0].playerRef.guid;
+                    for (const team of this.teams) {
+                        if (team.members.filter((m) => m.guid === refGuidAllies).length > 0) {
+                            team.points += 7;
+                            break;
+                        }
+                    }
+                    const refAxis = gameRef.players.filter((p) => p.team === "axis")[0];
+                    for (const team of this.teams) {
+                        if (team.members.filter((m) => m.guid === refAxis.playerRef.guid).length > 0) {
+                            team.points += refAxis.totalPoints;
+                            break;
+                        }
+                    }
+                } else {
+                    const refGuidAxis = gameRef.players.filter((p) => p.team === "axis")[0].playerRef.guid;
+                    for (const team of this.teams) {
+                        if (team.members.filter((m) => m.guid === refGuidAxis).length > 0) {
+                            team.points += 7;
+                            break;
+                        }
+                    }
+                    const refAllies = gameRef.players.filter((p) => p.team === "allies")[0];
+                    for (const team of this.teams) {
+                        if (team.members.filter((m) => m.guid === refAllies.playerRef.guid).length > 0) {
+                            team.points += refAllies.totalPoints;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
@@ -179,6 +228,20 @@ export default class Championship extends Vue {
     }
     .right-content ul {
         list-style: initial;
+    }
+    .right-content ul.ladder  {
+        list-style: decimal;
+    }
+    .right-content .result-team-info {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+    }
+    .right-content .result-team-info > span {
+        margin-left: 10px;
+    }
+    .right-content img {
+        height: 35px;
     }
     .versus {
         width: 85px;

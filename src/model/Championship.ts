@@ -5,6 +5,7 @@ export class ChampionshipTeam {
     public name!: string;
     public map!: string;
     public emp!: number;
+    public points: number = 0;
 
     constructor(data: any) {
         this.name = data.name;
