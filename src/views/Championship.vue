@@ -20,6 +20,24 @@
             </li>
         </ul>
         <div class="main-content">
+            <h2>Mentions spéciales</h2>
+            <div class="trophies">
+                <div>
+                    <img src="../assets/award/killer.png" class="trophy">
+                    <strong>Le tueur</strong><br/>
+                    <i>{{totalKills.ref.playerName}} : {{totalKills.value}} kills</i>
+                </div>
+                <div>
+                    <img src="../assets/award/killstreak.png" class="trophy">
+                    <strong>La plus longue série de kill</strong><br/>
+                    <i>{{killStreak.ref.playerName}} : {{killStreak.value}} kills d'affilés</i>
+                </div>
+                <div>
+                    <img src="../assets/award/longestKill.png" class="trophy">
+                    <strong>Le kill le plus lointain</strong><br/>
+                    <i>{{longestKill.ref.playerName}} : {{longestKill.value}} mètre(s)</i>
+                </div>
+            </div>
             <h2>Prochain matchs à jouer :</h2>
             <ul>
                 <li v-for="match in nextMatches">
@@ -63,17 +81,18 @@
 
 <script lang="ts">
 import {Component, Inject, Vue} from "vue-property-decorator";
-import season1Teams from "@/data/championship/season1/teams.json";
-import season1Calendar from "@/data/championship/season1/calendar.json";
-import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
-import {mapGetters} from "vuex";
-import {MatchmakingService} from "@/services/MatchmakingService";
-import Game from "@/model/Game";
-import results from "@/data/championship/season1/results.json";
-import { orderBy } from "lodash";
+    import season1Teams from "@/data/championship/season1/teams.json";
+    import season1Calendar from "@/data/championship/season1/calendar.json";
+    import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
+    import {mapGetters} from "vuex";
+    import {MatchmakingService} from "@/services/MatchmakingService";
+    import Game from "@/model/Game";
+    import results from "@/data/championship/season1/results.json";
+    import {orderBy} from "lodash";
+    import {Player, PlayerRef} from "@/model/Player";
 
 
-@Component({
+    @Component({
     computed: {
         ...mapGetters({
             games: "games"
@@ -86,6 +105,9 @@ export default class Championship extends Vue {
     private teams: ChampionshipTeam[] = [];
     private matches: ChampionshipMatch[] = [];
     private gameResults: Game[] = [];
+    private totalKills: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private killStreak: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private longestKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
 
     public created() {
         for (let i = 0; i < season1Calendar.length; i++) {
@@ -102,6 +124,23 @@ export default class Championship extends Vue {
 
 
         this.computeResults();
+        for (const gameResult of this.gameResults) {
+            const totalKills = this.retrieveValue(gameResult, "totalKills");
+            if (this.totalKills.value < totalKills.totalKills) {
+                this.totalKills.value = totalKills.totalKills;
+                this.totalKills.ref = totalKills.playerRef;
+            }
+            const killStreak = this.retrieveValue(gameResult, "killstreak");
+            if (this.killStreak.value < killStreak.killstreak) {
+                this.killStreak.value = killStreak.killstreak;
+                this.killStreak.ref = killStreak.playerRef;
+            }
+            const longestKill = this.retrieveValue(gameResult, "longestKill");
+            if (this.longestKill.value < longestKill.longestKill) {
+                this.longestKill.value = longestKill.longestKill;
+                this.longestKill.ref = longestKill.playerRef;
+            }
+        }
     }
 
     get teamsLadder(): ChampionshipTeam[] {
@@ -160,6 +199,10 @@ export default class Championship extends Vue {
                 }
             }
         }
+    }
+
+    private retrieveValue(game: Game, ref: string): Player {
+        return orderBy(game.players, [ref], ["desc"])[0];
     }
 
 }
@@ -260,5 +303,16 @@ export default class Championship extends Vue {
     }
     .match-displayer h3 {
         margin-left: 20px;
+    }
+    .trophies {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        text-align: center;
+    }
+    .trophies .trophy {
+        width: 180px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 </style>
