@@ -54,20 +54,25 @@ const parsers = [
 ];
 
 // tslint:disable-next-line:max-classes-per-file
+export class ParserContext {
+    public scoreForVictory!: number;
+}
+
+// tslint:disable-next-line:max-classes-per-file
 export default class LogsParserService {
 
-    public async parseFile(file: File) {
+    public async parseFile(file: File, ctx: ParserContext) {
         // @ts-ignore
         const content = await file.text();
         const parsedData = new ParsedData();
         let lines = 0;
         content.split(/\r\n|\n/).forEach((line: string) => {
-            this.parseLine(line, parsedData);
+            this.parseLine(line, parsedData, ctx);
             lines++;
         });
         // console.log(parsedData)
         const gameRefs = parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
-            && (g.axisScore === 10 || g.alliesScore === 10));
+            && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory));
         const games = [];
         for (let i = 0; i < gameRefs.length; i += 2) {
             let j = 0;
@@ -218,10 +223,10 @@ export default class LogsParserService {
             });
     }
 
-    private parseLine(line: string, parsedData: ParsedData) {
+    private parseLine(line: string, parsedData: ParsedData, ctx: ParserContext) {
         const parser = parsers.filter((p) => p.accept(line))[0];
         if (parser) {
-            parser.parse(line, parsedData);
+            parser.parse(line, parsedData, ctx);
         }
     }
 

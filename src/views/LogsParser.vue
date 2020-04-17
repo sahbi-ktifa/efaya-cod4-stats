@@ -1,6 +1,10 @@
 <template>
     <div class="logs-parser">
         <h3>Logs Parser</h3>
+        <div>
+            <label for="score">Score for victory :</label>
+            <input id="score" type="number" v-model="scoreForVictory"/>
+        </div>
         <input type="file" ref="logFile" @change="checkFile">
         <button @click="parse()" :disabled="!logFile">Parse!</button>
 
@@ -20,10 +24,11 @@ export default class LogsParser extends Vue {
     public logFile: File | null =  null;
     public parser = new LogsParserService();
     public games = 0;
+    public scoreForVictory: number = 10;
 
     public async parse() {
         if (this.logFile != null) {
-            await this.parser.parseFile(this.logFile);
+            await this.parser.parseFile(this.logFile, {scoreForVictory: Number(this.scoreForVictory)});
             // @ts-ignore
             this.games = window.games.length;
         }
@@ -51,5 +56,12 @@ export default class LogsParser extends Vue {
     #app h1 {
         position: initial;
         margin-left: initial;
+    }
+    #score {
+        width: 100px;
+        padding: 8px 10px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin: 8px 0 8px 15px;
     }
 </style>

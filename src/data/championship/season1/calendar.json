@@ -17,27 +17,6 @@
 
   {"from": "11/05/20", "to": "17/05/20", "team1": "4G4","team2":"Les Sales Gosses"},
   {"from": "11/05/20", "to": "17/05/20", "team1": "The Office","team2":"Out Of Reach"},
-  {"from": "11/05/20", "to": "17/05/20", "team1": "The PPPunishers","team2":"GameOver"},
-
-
-  {"from": "18/05/20", "to": "24/05/20", "team1": "The Office","team2":"4G4"},
-  {"from": "18/05/20", "to": "24/05/20", "team1": "The PPPunishers","team2":"Out Of Reach"},
-  {"from": "18/05/20", "to": "24/05/20", "team1": "Les Sales Gosses","team2":"GameOver"},
-
-  {"from": "25/05/20", "to": "31/05/20", "team1": "Out Of Reach","team2":"4G4"},
-  {"from": "25/05/20", "to": "31/05/20", "team1": "GameOver","team2":"The Office"},
-  {"from": "25/05/20", "to": "31/05/20", "team1": "Les Sales Gosses","team2":"The PPPunishers"},
-
-  {"from": "01/06/20", "to": "07/06/20", "team1": "4G4","team2":"The PPPunishers"},
-  {"from": "01/06/20", "to": "07/06/20", "team1": "GameOver","team2":"Out Of Reach"},
-  {"from": "01/06/20", "to": "07/06/20", "team1": "The Office","team2":"Les Sales Gosses"},
-
-  {"from": "08/06/20", "to": "14/06/20", "team1": "4G4","team2":"GameOver"},
-  {"from": "08/06/20", "to": "14/06/20", "team1": "The PPPunishers","team2":"The Office"},
-  {"from": "08/06/20", "to": "14/06/20", "team1": "Out Of Reach","team2":"Les Sales Gosses"},
-
-  {"from": "15/06/20", "to": "21/06/20", "team1": "Les Sales Gosses","team2":"4G4"},
-  {"from": "15/06/20", "to": "21/06/20", "team1": "Out Of Reach","team2":"The Office"},
-  {"from": "15/06/20", "to": "21/06/20", "team1": "GameOver","team2":"The PPPunishers"}
+  {"from": "11/05/20", "to": "17/05/20", "team1": "The PPPunishers","team2":"GameOver"}
 ]
 

@@ -20,7 +20,7 @@
             </li>
         </ul>
         <div class="main-content">
-            <h2>Prochain matchs à jouer du {{nextMatches[0].from}} au {{nextMatches[0].to}} :</h2>
+            <h2>Prochain matchs à jouer :</h2>
             <ul>
                 <li v-for="match in nextMatches">
                     <div class="match-displayer">
@@ -64,6 +64,8 @@ import {ChampionshipMatch, ChampionshipTeam} from '@/model/Championship';
 import {mapGetters} from 'vuex';
 import {MatchmakingService} from '@/services/MatchmakingService';
 import Game from '@/model/Game';
+import results from "@/data/championship/season1/results.json";
+
 
 @Component({
     computed: {
@@ -76,13 +78,8 @@ export default class Championship extends Vue {
     @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
     protected games!: Game[];
     private teams: ChampionshipTeam[] = [];
-    private currentMatch = 0;
     private matches: ChampionshipMatch[] = [];
-
-    get nextMatches(): ChampionshipMatch[] {
-        const start = 3 * this.currentMatch;
-        return this.matches.slice(start, start + 3);
-    }
+    private gameResults: Game[] = [];
 
     public created() {
         for (let i = 0; i < season1Calendar.length; i++) {
@@ -92,10 +89,19 @@ export default class Championship extends Vue {
             this.teams.push(new ChampionshipTeam(season1Teams[i]));
         }
         this.teams.forEach(t => {
-            var mean = 0;
+            let mean = 0;
             t.members.forEach(m => mean += this.matchMakingService.computeEMP(m.guid, this.games));
             t.emp = mean / 3;
         });
+
+
+        for (const key in results) {
+            this.gameResults.push(Game.build(results[key]));
+        }
+    }
+
+    get nextMatches(): ChampionshipMatch[] {
+        return this.matches.filter(m => !m.played);
     }
 
     public teamIcon(team: string): string {

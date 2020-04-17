@@ -13,16 +13,19 @@ export class ChampionshipTeam {
     }
 }
 
+// tslint:disable-next-line:max-classes-per-file
 export class ChampionshipMatch {
     public team1!: string;
     public team2!: string;
     public from!: string;
     public to!: string;
+    public played!: boolean;
 
     constructor(data: any) {
         this.team1 = data.team1;
         this.team2 = data.team2;
         this.from = data.from;
         this.to = data.to;
+        this.played = data.played;
     }
 }
