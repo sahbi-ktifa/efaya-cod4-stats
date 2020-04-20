@@ -56,6 +56,26 @@
                     </div>
                 </li>
             </ul>
+            <h2>Matchs déjà joués :</h2>
+            <ul>
+                <li v-for="match in playedMatches">
+                    <div class="match-displayer">
+                        <div>
+                            <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
+                            <h3>{{match.team1}}</h3>
+                        </div>
+                        <div>
+                            <h4>{{match.team1Score}}</h4>
+                            <img src="../assets/versus.png" class="versus">
+                            <h4>{{match.team2Score}}</h4>
+                        </div>
+                        <div>
+                            <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
+                            <h3>{{match.team2}}</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="right-content">
             <h2>Classement</h2>
@@ -63,7 +83,7 @@
                 <li v-for="team in teamsLadder">
                     <div class="result-team-info">
                         <img class="team-logo" alt="Team logo" v-if="team.name" :src="teamIcon(team.name)">
-                        <span><strong>{{team.name}}</strong> {{team.points}} pts </span>
+                        <span><strong>{{team.name}}</strong> <span class="score">{{team.points}} pts</span></span>
                     </div>
                 </li>
             </ul>
@@ -149,6 +169,10 @@ export default class Championship extends Vue {
 
     get nextMatches(): ChampionshipMatch[] {
         return this.matches.filter((m) => !m.played);
+    }
+
+    get playedMatches(): ChampionshipMatch[] {
+        return this.matches.filter((m) => m.played);
     }
 
     public teamIcon(team: string): string {
@@ -283,6 +307,10 @@ export default class Championship extends Vue {
     .right-content .result-team-info > span {
         margin-left: 10px;
     }
+    .right-content .result-team-info .score {
+        color: #36ebff;
+        margin-left: 5px;
+    }
     .right-content img {
         height: 35px;
     }
@@ -304,10 +332,20 @@ export default class Championship extends Vue {
     .match-displayer h3 {
         margin-left: 20px;
     }
+    .match-displayer h4 {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: bold;
+        color: #36ebff;
+        margin-right: 20px;
+    }
     .trophies {
         display: grid;
         grid-template-columns: 33% 33% 33%;
         text-align: center;
+    }
+    .trophies i {
+        color: #36ebff;
     }
     .trophies .trophy {
         width: 180px;
