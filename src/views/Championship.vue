@@ -59,15 +59,21 @@
             <h2>Matchs déjà joués :</h2>
             <ul>
                 <li v-for="match in playedMatches">
-                    <div class="match-displayer">
+                    <div class="match-displayer played">
                         <div>
                             <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
                             <h3>{{match.team1}}</h3>
                         </div>
                         <div>
-                            <h4>{{match.team1Score}}</h4>
+                            <h4>
+                                <div>{{match.match1Map}}</div>
+                                <div>{{match.match1Result}}</div>
+                            </h4>
                             <img src="../assets/versus.png" class="versus">
-                            <h4>{{match.team2Score}}</h4>
+                            <h4>
+                                <div>{{match.match2Map}}</div>
+                                <div>{{match.match2Result}}</div>
+                            </h4>
                         </div>
                         <div>
                             <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
@@ -325,6 +331,9 @@ export default class Championship extends Vue {
     }
     .match-displayer > div {
         display: flex;
+    }
+    .match-displayer.played .versus {
+        width: 35px;
     }
     .match-displayer .team-logo {
         height: 80px;

@@ -21,8 +21,10 @@ export class ChampionshipMatch {
     public from!: string;
     public to!: string;
     public played!: boolean;
-    public team1Score!: number;
-    public team2Score!: number;
+    public match1Map!: string;
+    public match1Result!: string;
+    public match2Map!: string;
+    public match2Result!: string;
 
     constructor(data: any) {
         this.team1 = data.team1;
@@ -30,7 +32,9 @@ export class ChampionshipMatch {
         this.from = data.from;
         this.to = data.to;
         this.played = data.played;
-        this.team1Score = data.team1Score;
-        this.team2Score = data.team2Score;
+        this.match1Map = data.match1Map;
+        this.match2Map = data.match2Map;
+        this.match1Result = data.match1Result;
+        this.match2Result = data.match2Result;
     }
 }

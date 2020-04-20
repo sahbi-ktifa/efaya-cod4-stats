@@ -1,7 +1,7 @@
 [
   {"from": "13/04/20", "to": "21/04/20", "team1": "4G4","team2":"The Office"},
   {"from": "13/04/20", "to": "21/04/20", "team1": "Out Of Reach","team2":"The PPPunishers",
-    "played": true, "team1Score": 20, "team2Score": 7
+    "played": true, "match1Map": "Favela", "match2Map": "Crossfire", "match1Result": "5/1 5/3", "match2Result": "5/3 5/0"
   },
   {"from": "13/04/20", "to": "21/04/20", "team1": "GameOver","team2":"Les Sales Gosses"},
 
