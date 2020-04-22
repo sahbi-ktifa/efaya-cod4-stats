@@ -24,9 +24,11 @@ import {DataService} from "@/services/DataService";
 export default class App extends Vue {
   @Inject("dataService") public dataService!: DataService;
 
-  public async created() {
-    const games = await this.dataService.retrieveGames();
+  public created() {
+    const games = this.dataService.retrieveGames();
     this.$store.commit("gamesRetrieved", games);
+    const gameResults = this.dataService.retrieveChampionshipGames();
+    this.$store.commit("championshipGamesRetrieved", gameResults);
   }
 }
 </script>

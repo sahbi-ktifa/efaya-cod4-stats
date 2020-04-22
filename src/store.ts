@@ -7,17 +7,24 @@ Vue.use(VueX);
 
 export default new VueX.Store({
   state: {
-    games: Array<Game>()
+    games: Array<Game>(),
+    championshipGames: Array<Game>()
   },
   getters: {
     games: (state) => {
       return state.games;
+    },
+    championshipGames: (state) => {
+      return state.championshipGames;
     }
   },
   mutations: {
     gamesRetrieved(state, games: Game[]) {
       state.games = games;
       state.games = orderBy(state.games, ["date"], ["desc"]);
+    },
+    championshipGamesRetrieved(state, games: Game[]) {
+      state.championshipGames = games;
     }
   }
 });

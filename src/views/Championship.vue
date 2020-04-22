@@ -65,12 +65,12 @@
                             <h3>{{match.team1}}</h3>
                         </div>
                         <div>
-                            <h4>
+                            <h4 @click="goToGame(match.match1MapName)">
                                 <div>{{match.match1Map}}</div>
                                 <div>{{match.match1Result}}</div>
                             </h4>
                             <img src="../assets/versus.png" class="versus">
-                            <h4>
+                            <h4 @click="goToGame(match.match2MapName)">
                                 <div>{{match.match2Map}}</div>
                                 <div>{{match.match2Result}}</div>
                             </h4>
@@ -107,30 +107,30 @@
 
 <script lang="ts">
 import {Component, Inject, Vue} from "vue-property-decorator";
-    import season1Teams from "@/data/championship/season1/teams.json";
-    import season1Calendar from "@/data/championship/season1/calendar.json";
-    import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
-    import {mapGetters} from "vuex";
-    import {MatchmakingService} from "@/services/MatchmakingService";
-    import Game from "@/model/Game";
-    import results from "@/data/championship/season1/results.json";
-    import {orderBy} from "lodash";
-    import {Player, PlayerRef} from "@/model/Player";
+import season1Teams from "@/data/championship/season1/teams.json";
+import season1Calendar from "@/data/championship/season1/calendar.json";
+import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
+import {mapGetters} from "vuex";
+import {MatchmakingService} from "@/services/MatchmakingService";
+import Game from "@/model/Game";
+import {orderBy} from "lodash";
+import {Player, PlayerRef} from "@/model/Player";
 
 
     @Component({
     computed: {
         ...mapGetters({
-            games: "games"
+            games: "games",
+            gameResults: "championshipGames"
         })
     }
 })
 export default class Championship extends Vue {
     @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
     protected games!: Game[];
+    protected gameResults!: Game[];
     private teams: ChampionshipTeam[] = [];
     private matches: ChampionshipMatch[] = [];
-    private gameResults: Game[] = [];
     private totalKills: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private killStreak: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private longestKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
@@ -190,10 +190,11 @@ export default class Championship extends Vue {
         return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
     }
 
+    public goToGame(map: string) {
+        this.$router.push("/game/championship" + map);
+    }
+
     private computeResults() {
-        for (const key in results) {
-            this.gameResults.push(Game.build(results[key]));
-        }
         for (const gameResult of this.gameResults) {
             for (const gameRef of gameResult.gameRefs) {
                 if (gameRef.alliesScore === 5) {
@@ -334,6 +335,9 @@ export default class Championship extends Vue {
     }
     .match-displayer.played .versus {
         width: 35px;
+    }
+    .match-displayer.played h4 {
+        cursor: pointer;
     }
     .match-displayer .team-logo {
         height: 80px;

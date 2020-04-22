@@ -6,6 +6,7 @@ import dataWW2 from "@/data/ww2.json";
 import dataSvr from "@/data/svr.json";
 import dataPromod from "@/data/promod.json";
 import extraData from "@/data/extradata.json";
+import results from '@/data/championship/season1/results.json';
 
 const dataMods = [dataImm, dataEfayaV2, dataEfayaV1, dataWW2, dataSvr, dataPromod];
 
@@ -25,6 +26,22 @@ export class DataService {
                 }
                 games.push(Game.build(dataMods[i][key]));
             }
+        }
+        return games;
+    }
+
+    public retrieveChampionshipGames(): Game[] {
+        const games: Game[] = [];
+        for (const key in results) {
+            for (const key2 in extraData) {
+                if (results[key].id === extraData[key2].id) {
+                    results[key].date = extraData[key2].date;
+                    results[key].mapPreview = extraData[key2].mapPreview;
+                    results[key].twitchUrl = extraData[key2].twitchUrl;
+                    results[key].youtubeUrl = extraData[key2].youtubeUrl;
+                }
+            }
+            games.push(Game.build(results[key]));
         }
         return games;
     }

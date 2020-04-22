@@ -231,7 +231,8 @@ import {GameService} from "@/services/GameService";
 @Component({
   computed: {
     ...mapGetters({
-      games: "games"
+      games: "games",
+      gameResults: "championshipGames"
     })
   }
 })
@@ -355,10 +356,15 @@ export default class GameDetails extends Vue {
   public winnerPoints: number[] = [];
   public loserPoints: number[] = [];
   protected games!: Game[];
+  protected gameResults!: Game[];
 
   public created() {
-    // @ts-ignore
-    this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+    if (this.$route.params.map.indexOf("championship") === 0) {
+      const map = this.$route.params.map.replace("championship", "");
+      this.game = this.gameResults.filter((game) => game.map === map)[0];
+    } else {
+      this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+    }
     const [winnersGuid, losersGuid, winnerPoints, loserPoints] = new GameService().computeWinnersLosers(this.game);
     this.winnerPoints = winnerPoints;
     this.loserPoints = loserPoints;
@@ -367,7 +373,7 @@ export default class GameDetails extends Vue {
   }
 
   public formatDate(date: Date): string {
-    return format(date, "dd/MM/yyyy");
+    return !isNaN(date.getDate()) ? format(date, "dd/MM/yyyy") : "";
   }
 
   public mapNamer(mapName: string): string {
