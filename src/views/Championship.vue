@@ -93,8 +93,8 @@
                     </div>
                 </li>
             </ul>
-            <h2>Réglement</h2>
-            <ul>
+            <h2 class="rule">Réglement</h2>
+            <ul class="rule">
                 <li><strong>Efaya mod v2 SR</strong> - 3 joueurs par équipe</li>
                 <li>Chaque team choisi <strong>sa map pour le tournoi et n'en change pas</strong>. Les maps doivent avoir été jouées sur notre serveur pour être éligible</li>
                 <li>Deux rencontres par équipe : équipe A reçoit équipe B sur sa map pour <strong>deux manches de 5 points gagnants</strong> (le premier à 5), en défense et en attaque. Puis deuxième match où c'est l'équipe B qui reçoit l'équipe A sur sa map, également pour deux manches attaque & défense, soit 4 manches en tout sur deux matchs.</li>
@@ -361,5 +361,49 @@ export default class Championship extends Vue {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    @media (max-width: 1150px) {
+        .championship-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .championship-wrapper > .main-content {
+            order: 2;
+        }
+        .championship-wrapper > .right-content{
+            order: 1;
+        }
+        .championship-wrapper > ul:first-child {
+            order: 3;
+        }
+        .trophies {
+            display: grid;
+            grid-template-columns: 100%;
+            text-align: center;
+        }
+        .rule {
+            display: none;
+        }
+        .versus {
+            width: 40px;
+        }
+        .match-displayer .team-logo {
+            height: 45px;
+        }
+        .match-displayer.played h3 {
+            font-size: 12px;
+        }
+        .match-displayer h3 {
+            margin-left: 5px;
+            font-size: 16px;
+        }
+        .match-displayer h4 {
+            font-size: 11px;
+            margin-right: 8px;
+        }
+        .match-displayer {
+            margin-bottom: 10px;
+        }
     }
 </style>

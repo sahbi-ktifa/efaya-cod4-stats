@@ -93,6 +93,9 @@ export default class App extends Vue {
   }
 
   @media (max-width: 640px) {
+    #nav a {
+      font-size: 11px;
+    }
     .cod4-logo, .parser {
       display: none;
     }

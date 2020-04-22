@@ -5,7 +5,7 @@
     "played": true, "match1Map": "Favela", "match2Map": "Crossfire", "match1Result": "5/1 5/3", "match2Result": "5/3 5/0"
   },
   {"from": "13/04/20", "to": "21/04/20", "team1": "GameOver","team2":"Les Sales Gosses",
-    "played": true, "match1Map": "BO2 Yemen", "match2Map": "Strike", "match1Result": "5/3 0/5", "match2Result": "1/5 0/5"
+    "played": true, "match1Map": "Yemen", "match2Map": "Strike", "match1Result": "5/3 0/5", "match2Result": "1/5 0/5"
   },
 
   {"from": "20/04/20", "to": "26/04/20", "team1": "4G4","team2":"Out Of Reach"},
