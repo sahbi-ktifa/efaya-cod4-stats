@@ -36,6 +36,7 @@ export default class Game {
         game.mapPreview = data.mapPreview;
         game.twitchUrl = data.twitchUrl;
         game.youtubeUrl = data.youtubeUrl;
+        game.id = data.id;
         return game;
     }
     public id!: string;
@@ -51,7 +52,7 @@ export default class Game {
     constructor(gameRefs: GameRef[], players: Player[]) {
         this.mod = gameRefs[0].mod;
         this.map = gameRefs[0].map;
-        this.id = btoa(this.mod + "_" + this.map);
+        this.id = btoa(this.mod + "_" + this.map + "_" + Math.random());
         this.gameRefs = gameRefs;
         this.players = players;
     }

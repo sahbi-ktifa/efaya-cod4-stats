@@ -6,7 +6,7 @@ import dataWW2 from "@/data/ww2.json";
 import dataSvr from "@/data/svr.json";
 import dataPromod from "@/data/promod.json";
 import extraData from "@/data/extradata.json";
-import results from '@/data/championship/season1/results.json';
+import results from "@/data/championship/season1/results.json";
 
 const dataMods = [dataImm, dataEfayaV2, dataEfayaV1, dataWW2, dataSvr, dataPromod];
 
