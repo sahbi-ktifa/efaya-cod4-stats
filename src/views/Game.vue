@@ -360,8 +360,8 @@ export default class GameDetails extends Vue {
 
   public created() {
     if (this.$route.params.map.indexOf("championship") === 0) {
-      const map = this.$route.params.map.replace("championship", "");
-      this.game = this.gameResults.filter((game) => game.map === map)[0];
+      const matchId = this.$route.params.map.replace("championship", "");
+      this.game = this.gameResults.filter((game) => game.id === matchId)[0];
     } else {
       this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
     }

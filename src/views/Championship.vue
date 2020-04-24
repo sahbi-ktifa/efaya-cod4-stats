@@ -65,12 +65,12 @@
                             <h3>{{match.team1}}</h3>
                         </div>
                         <div>
-                            <h4 @click="goToGame(match.match1MapName)">
+                            <h4 @click="goToGame(match.match1Id)">
                                 <div>{{match.match1Map}}</div>
                                 <div>{{match.match1Result}}</div>
                             </h4>
                             <img src="../assets/versus.png" class="versus">
-                            <h4 @click="goToGame(match.match2MapName)">
+                            <h4 @click="goToGame(match.match2Id)">
                                 <div>{{match.match2Map}}</div>
                                 <div>{{match.match2Result}}</div>
                             </h4>
@@ -190,8 +190,8 @@ export default class Championship extends Vue {
         return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
     }
 
-    public goToGame(map: string) {
-        this.$router.push("/game/championship" + map);
+    public goToGame(matchId: string) {
+        this.$router.push("/game/championship" + matchId);
     }
 
     private computeResults() {

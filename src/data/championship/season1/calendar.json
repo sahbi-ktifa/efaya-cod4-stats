@@ -1,34 +1,34 @@
 [
-  {"from": "13/04/20", "to": "21/04/20", "team1": "4G4","team2":"The Office",
+  {"match1Id":"ZWZheWFfdjJfbXBfbWlzc2lvbl8wLjIxMjQ2Nzg3NTQwMDA4NDY=", "match2Id":"ZWZheWFfdjJfbXBfaGF1c18wLjcxNTc0MjYyNzE4ODI5Nzg=", "team1": "4G4","team2":"The Office",
     "played": true, "match1MapName": "mp_mission", "match2MapName": "mp_haus",
     "match1Map": "Mission", "match2Map": "Haus", "match1Result": "1/5 3/5", "match2Result": "4/5 4/5"},
-  {"from": "13/04/20", "to": "21/04/20", "team1": "Out Of Reach","team2":"The PPPunishers",
+  {"match1Id":"ZWZheWFfdjJfbXBfZmF2MC4xOTA2NTc2NDM4NDM4ODgyOA==", "match2Id":"ZWZheWFfdjJfbXBfY3Jvc3NmaXJlMC4yNDAxOTYwMDYyODU1NDIzOA==", "team1": "Out Of Reach","team2":"The PPPunishers",
     "match1MapName": "mp_fav", "match2MapName": "mp_crossfire",
     "played": true, "match1Map": "Favela", "match2Map": "Crossfire", "match1Result": "5/1 5/3", "match2Result": "5/3 5/0"
   },
-  {"from": "13/04/20", "to": "21/04/20", "team1": "GameOver","team2":"Les Sales Gosses",
+  {"match1Id":"ZWZheWFfdjJfbXBfYm8yeWVtZW5fMC41NDU1Mjk3ODk1NTc3NDMz", "match2Id":"ZWZheWFfdjJfbXBfc3RyaWtlXzAuMzAzMzI5NTE3NTg3NDc4NA==",  "team1": "GameOver","team2":"Les Sales Gosses",
     "match1MapName": "mp_bo2yemen", "match2MapName": "mp_strike",
     "played": true, "match1Map": "Yemen", "match2Map": "Strike", "match1Result": "5/3 0/5", "match2Result": "1/5 0/5"
   },
 
   {"from": "20/04/20", "to": "26/04/20", "team1": "4G4","team2":"Out Of Reach"},
-  {"from": "20/04/20", "to": "26/04/20", "team1": "The Office","team2":"GameOver",
+  {"match1Id":"ZWZheWFfdjJfbXBfaGF1c18wLjM1MzM1OTkyNzc4NzUwNDE0", "match2Id":"ZWZheWFfdjJfbXBfYm8yeWVtZW5fMC40MDkzNTI5ODA3OTUwNTMzMw==", "team1": "The Office","team2":"GameOver",
     "match1MapName": "mp_haus", "match2MapName": "mp_bo2yemen",
     "played": true, "match1Map": "Haus", "match2Map": "Yemen", "match1Result": "5/4 5/4", "match2Result": "3/5 1/5"},
-  {"from": "20/04/20", "to": "26/04/20", "team1": "The PPPunishers","team2":"Les Sales Gosses",
+  {"match1Id":"ZWZheWFfdjJfbXBfY3Jvc3NmaXJlXzAuNjEyNzg1NzMyMjI0MTU1OQ==", "match2Id":"ZWZheWFfdjJfbXBfc3RyaWtlXzAuOTI1MzEwMDE1NjUzNDI3Nw==", "team1": "The PPPunishers","team2":"Les Sales Gosses",
     "match1MapName": "mp_crossfire", "match2MapName": "mp_strike",
-    "played": true, "match1Map": "Crossfire", "match2Map": "Strike", "match1Result": "1/5 2/5", "match2Result": "1/5 0/5"},
+    "played": true, "match1Map": "Crossfire", "match2Map": "Strike", "match1Result": "1/5 1/5", "match2Result": "1/5 0/5"},
 
-  {"from": "27/04/20", "to": "03/05/20", "team1": "The PPPunishers","team2":"4G4"},
-  {"from": "27/04/20", "to": "03/05/20", "team1": "Out Of Reach","team2":"GameOver"},
-  {"from": "27/04/20", "to": "03/05/20", "team1": "Les Sales Gosses","team2":"The Office"},
+  {"team1": "The PPPunishers","team2":"4G4"},
+  {"team1": "Out Of Reach","team2":"GameOver"},
+  {"team1": "Les Sales Gosses","team2":"The Office"},
 
-  {"from": "04/05/20", "to": "10/05/20", "team1": "GameOver","team2":"4G4"},
-  {"from": "04/05/20", "to": "10/05/20", "team1": "The Office","team2":"The PPPunishers"},
-  {"from": "04/05/20", "to": "10/05/20", "team1": "Les Sales Gosses","team2":"Out Of Reach"},
+  {"team1": "GameOver","team2":"4G4"},
+  {"team1": "The Office","team2":"The PPPunishers"},
+  {"team1": "Les Sales Gosses","team2":"Out Of Reach"},
 
-  {"from": "11/05/20", "to": "17/05/20", "team1": "4G4","team2":"Les Sales Gosses"},
-  {"from": "11/05/20", "to": "17/05/20", "team1": "The Office","team2":"Out Of Reach"},
-  {"from": "11/05/20", "to": "17/05/20", "team1": "The PPPunishers","team2":"GameOver"}
+  {"team1": "4G4","team2":"Les Sales Gosses"},
+  {"team1": "The Office","team2":"Out Of Reach"},
+  {"team1": "The PPPunishers","team2":"GameOver"}
 ]
 

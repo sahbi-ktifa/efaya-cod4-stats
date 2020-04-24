@@ -18,21 +18,19 @@ export class ChampionshipTeam {
 export class ChampionshipMatch {
     public team1!: string;
     public team2!: string;
-    public from!: string;
-    public to!: string;
     public played!: boolean;
     public match1Map!: string;
     public match1MapName!: string;
     public match1Result!: string;
+    public match1Id!: string;
     public match2Map!: string;
     public match2MapName!: string;
     public match2Result!: string;
+    public match2Id!: string;
 
     constructor(data: any) {
         this.team1 = data.team1;
         this.team2 = data.team2;
-        this.from = data.from;
-        this.to = data.to;
         this.played = data.played;
         this.match1Map = data.match1Map;
         this.match1MapName = data.match1MapName;
@@ -40,5 +38,7 @@ export class ChampionshipMatch {
         this.match2MapName = data.match2MapName;
         this.match1Result = data.match1Result;
         this.match2Result = data.match2Result;
+        this.match1Id = data.match1Id;
+        this.match2Id = data.match2Id;
     }
 }
