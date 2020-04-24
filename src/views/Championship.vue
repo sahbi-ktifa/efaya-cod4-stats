@@ -178,7 +178,7 @@ export default class Championship extends Vue {
     }
 
     get playedMatches(): ChampionshipMatch[] {
-        return this.matches.filter((m) => m.played);
+        return this.matches.filter((m) => m.played).reverse();
     }
 
     public teamIcon(team: string): string {

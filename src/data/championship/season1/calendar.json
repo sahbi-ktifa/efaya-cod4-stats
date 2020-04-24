@@ -12,8 +12,12 @@
   },
 
   {"from": "20/04/20", "to": "26/04/20", "team1": "4G4","team2":"Out Of Reach"},
-  {"from": "20/04/20", "to": "26/04/20", "team1": "The Office","team2":"GameOver"},
-  {"from": "20/04/20", "to": "26/04/20", "team1": "The PPPunishers","team2":"Les Sales Gosses"},
+  {"from": "20/04/20", "to": "26/04/20", "team1": "The Office","team2":"GameOver",
+    "match1MapName": "mp_haus", "match2MapName": "mp_bo2yemen",
+    "played": true, "match1Map": "Haus", "match2Map": "Yemen", "match1Result": "5/4 5/4", "match2Result": "3/5 1/5"},
+  {"from": "20/04/20", "to": "26/04/20", "team1": "The PPPunishers","team2":"Les Sales Gosses",
+    "match1MapName": "mp_crossfire", "match2MapName": "mp_strike",
+    "played": true, "match1Map": "Crossfire", "match2Map": "Strike", "match1Result": "1/5 2/5", "match2Result": "1/5 0/5"},
 
   {"from": "27/04/20", "to": "03/05/20", "team1": "The PPPunishers","team2":"4G4"},
   {"from": "27/04/20", "to": "03/05/20", "team1": "Out Of Reach","team2":"GameOver"},
