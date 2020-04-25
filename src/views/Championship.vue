@@ -166,19 +166,19 @@ export default class Championship extends Vue {
         let refRatio3 =  -1;
         for (const gameResult of this.gameResults) {
             const totalKills = this.retrieveValue(gameResult, "totalKills");
-            if (this.totalKills.value < totalKills.totalKills && totalKills.globalRatio > refRatio1) {
+            if (this.totalKills.value < totalKills.totalKills || (this.totalKills.value === totalKills.totalKills && totalKills.globalRatio > refRatio1)) {
                 this.totalKills.value = totalKills.totalKills;
                 this.totalKills.ref = totalKills.playerRef;
                 refRatio1 = totalKills.globalRatio;
             }
             const killStreak = this.retrieveValue(gameResult, "killstreak");
-            if (this.killStreak.value < killStreak.killstreak && killStreak.globalRatio > refRatio2) {
+            if (this.killStreak.value < killStreak.killstreak || (this.killStreak.value === killStreak.killstreak && killStreak.globalRatio > refRatio2)) {
                 this.killStreak.value = killStreak.killstreak;
                 this.killStreak.ref = killStreak.playerRef;
                 refRatio2 = killStreak.globalRatio;
             }
             const longestKill = this.retrieveValue(gameResult, "longestKill");
-            if (this.longestKill.value < longestKill.longestKill && longestKill.globalRatio > refRatio2) {
+            if (this.longestKill.value < longestKill.longestKill || (this.longestKill.value === longestKill.longestKill && longestKill.globalRatio > refRatio3)) {
                 this.longestKill.value = longestKill.longestKill;
                 this.longestKill.ref = longestKill.playerRef;
                 refRatio3 = longestKill.globalRatio;
