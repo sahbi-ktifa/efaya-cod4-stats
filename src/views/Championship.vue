@@ -85,11 +85,22 @@
         </div>
         <div class="right-content">
             <h2>Classement</h2>
+            <div class="result-team-info">
+                <span class="team-ladder">
+                    <strong>Team</strong>
+                    <strong>Score</strong>
+                    <strong>Matchs joués</strong>
+                </span>
+            </div>
             <ul class="ladder">
                 <li v-for="team in teamsLadder">
                     <div class="result-team-info">
                         <img class="team-logo" alt="Team logo" v-if="team.name" :src="teamIcon(team.name)">
-                        <span><strong>{{team.name}}</strong> <span class="score">{{team.points}} pts</span></span>
+                        <span class="team-ladder">
+                            <strong>{{team.name}}</strong>
+                            <span class="score">{{team.points}} pts</span>
+                            <span class="score">{{matchPlayed(team.name)}}</span>
+                        </span>
                     </div>
                 </li>
             </ul>
@@ -150,21 +161,27 @@ export default class Championship extends Vue {
 
 
         this.computeResults();
+        let refRatio1 =  -1;
+        let refRatio2 =  -1;
+        let refRatio3 =  -1;
         for (const gameResult of this.gameResults) {
             const totalKills = this.retrieveValue(gameResult, "totalKills");
-            if (this.totalKills.value < totalKills.totalKills) {
+            if (this.totalKills.value < totalKills.totalKills && totalKills.globalRatio > refRatio1) {
                 this.totalKills.value = totalKills.totalKills;
                 this.totalKills.ref = totalKills.playerRef;
+                refRatio1 = totalKills.globalRatio;
             }
             const killStreak = this.retrieveValue(gameResult, "killstreak");
-            if (this.killStreak.value < killStreak.killstreak) {
+            if (this.killStreak.value < killStreak.killstreak && killStreak.globalRatio > refRatio2) {
                 this.killStreak.value = killStreak.killstreak;
                 this.killStreak.ref = killStreak.playerRef;
+                refRatio2 = killStreak.globalRatio;
             }
             const longestKill = this.retrieveValue(gameResult, "longestKill");
-            if (this.longestKill.value < longestKill.longestKill) {
+            if (this.longestKill.value < longestKill.longestKill && longestKill.globalRatio > refRatio2) {
                 this.longestKill.value = longestKill.longestKill;
                 this.longestKill.ref = longestKill.playerRef;
+                refRatio3 = longestKill.globalRatio;
             }
         }
     }
@@ -192,6 +209,10 @@ export default class Championship extends Vue {
 
     public goToGame(matchId: string) {
         this.$router.push("/game/championship" + matchId);
+    }
+
+    public matchPlayed(team: string): number {
+        return this.matches.filter((m) => m.played && (m.team1 === team || m.team2 === team)).length;
     }
 
     private computeResults() {
@@ -365,6 +386,11 @@ export default class Championship extends Vue {
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    .team-ladder {
+        display: grid;
+        grid-template-columns: 60% 20% 20%;
+        width: 100%;
     }
 
     @media (max-width: 1150px) {
