@@ -11,7 +11,9 @@
     "played": true, "match1Map": "Yemen", "match2Map": "Strike", "match1Result": "5/3 0/5", "match2Result": "1/5 0/5"
   },
 
-  {"from": "20/04/20", "to": "26/04/20", "team1": "4G4","team2":"Out Of Reach"},
+  {"match1Id":"ZWZheWFfdjJfbXBfbWlzc2lvbl8wLjgwOTkxODY3NzAzNzY4MjU=", "match2Id":"ZWZheWFfdjJfbXBfZmF2XzAuNTYzMDU4ODgxNTg0ODg2OQ==", "team1": "4G4","team2":"Out Of Reach",
+    "match1MapName": "mp_mission", "match2MapName": "mp_fav",
+    "played": true, "match1Map": "Mission", "match2Map": "Favela", "match1Result": "5/2 4/5", "match2Result": "0/5 4/5"},
   {"match1Id":"ZWZheWFfdjJfbXBfaGF1c18wLjM1MzM1OTkyNzc4NzUwNDE0", "match2Id":"ZWZheWFfdjJfbXBfYm8yeWVtZW5fMC40MDkzNTI5ODA3OTUwNTMzMw==", "team1": "The Office","team2":"GameOver",
     "match1MapName": "mp_haus", "match2MapName": "mp_bo2yemen",
     "played": true, "match1Map": "Haus", "match2Map": "Yemen", "match1Result": "5/4 5/4", "match2Result": "3/5 1/5"},
