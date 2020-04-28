@@ -22,7 +22,10 @@
     "played": true, "match1Map": "Crossfire", "match2Map": "Strike", "match1Result": "1/5 1/5", "match2Result": "1/5 0/5"},
 
   {"team1": "The PPPunishers","team2":"4G4"},
-  {"team1": "Out Of Reach","team2":"GameOver"},
+  {"team1": "Out Of Reach","team2":"GameOver", "match1Id":"ZWZheWFfdjJfbXBfZmF2XzAuMDE2NzY5Mzc5NzM4NjE3NDc0", "match2Id":"ZWZheWFfdjJfbXBfYm8yeWVtZW5fMC4xNzM5ODI5OTc0OTg1NjM2",
+    "match1MapName": "mp_fav", "match2MapName": "mp_bo2yemen",
+    "played": true, "match1Map": "Favela", "match2Map": "Yemen", "match1Result": "5/4 2/5", "match2Result": "5/0 5/2"
+  },
   {"team1": "Les Sales Gosses","team2":"The Office"},
 
   {"team1": "GameOver","team2":"4G4"},
