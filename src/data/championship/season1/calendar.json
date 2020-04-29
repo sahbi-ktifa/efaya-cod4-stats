@@ -29,7 +29,9 @@
   {"team1": "Les Sales Gosses","team2":"The Office"},
 
   {"team1": "GameOver","team2":"4G4"},
-  {"team1": "The Office","team2":"The PPPunishers"},
+  {"team1": "The Office","team2":"The PPPunishers", "match1Id":"ZWZheWFfdjJfbXBfaGF1c18wLjA5MjE5NDE5Mjk4NTUwODU3", "match2Id":"ZWZheWFfdjJfbXBfY3Jvc3NmaXJlXzAuNjIxMTUwNTI5ODQzOTczOQ==",
+    "match1MapName": "mp_haus", "match2MapName": "mp_crossfire",
+    "played": true, "match1Map": "Haus", "match2Map": "Crossfire", "match1Result": "4/5 5/1", "match2Result": "3/5 5/2"},
   {"team1": "Les Sales Gosses","team2":"Out Of Reach"},
 
   {"team1": "4G4","team2":"Les Sales Gosses"},
