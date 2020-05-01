@@ -26,7 +26,9 @@
     "match1MapName": "mp_fav", "match2MapName": "mp_bo2yemen",
     "played": true, "match1Map": "Favela", "match2Map": "Yemen", "match1Result": "5/4 2/5", "match2Result": "5/0 5/2"
   },
-  {"team1": "Les Sales Gosses","team2":"The Office"},
+  {"team1": "Les Sales Gosses","team2":"The Office", "match1Id":"ZWZheWFfdjJfbXBfc3RyaWtlXzAuNjI5MDgwMTQ4NTU0MzEwNw==", "match2Id":"ZWZheWFfdjJfbXBfaGF1c18wLjE4Njk4NDQxMDA3OTc0NTUz",
+    "match1MapName": "mp_strike", "match2MapName": "mp_haus",
+    "played": true, "match1Map": "Strike", "match2Map": "Haus", "match1Result": "5/3 5/1", "match2Result": "5/4 5/3"},
 
   {"team1": "GameOver","team2":"4G4"},
   {"team1": "The Office","team2":"The PPPunishers", "match1Id":"ZWZheWFfdjJfbXBfaGF1c18wLjA5MjE5NDE5Mjk4NTUwODU3", "match2Id":"ZWZheWFfdjJfbXBfY3Jvc3NmaXJlXzAuNjIxMTUwNTI5ODQzOTczOQ==",
