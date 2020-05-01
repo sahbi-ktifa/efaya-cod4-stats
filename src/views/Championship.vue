@@ -37,6 +37,21 @@
                     <strong>Le kill le plus lointain</strong><br/>
                     <i>{{longestKill.ref.playerName}} : {{longestKill.value}} mètre(s)</i>
                 </div>
+                <div>
+                    <img src="../assets/award/defuser.png" class="trophy">
+                    <strong>Defuser de bombe</strong><br/>
+                    <i>{{defuser.ref.playerName}} : {{defuser.value}} kills</i>
+                </div>
+                <div>
+                    <img src="../assets/award/collateral.png" class="trophy">
+                    <strong>Dommages collatéraux</strong><br/>
+                    <i>{{collateralKill.ref.playerName}} : {{collateralKill.value}} kills</i>
+                </div>
+                <div>
+                    <img src="../assets/award/teamkiller.png" class="trophy">
+                    <strong>Team killer</strong><br/>
+                    <i>{{teamKill.ref.playerName}} : {{teamKill.value}} kills</i>
+                </div>
             </div>
             <h2>Prochain matchs à jouer :</h2>
             <ul>
@@ -128,7 +143,7 @@ import {orderBy} from "lodash";
 import {Player, PlayerRef} from "@/model/Player";
 
 
-    @Component({
+@Component({
     computed: {
         ...mapGetters({
             games: "games",
@@ -145,6 +160,9 @@ export default class Championship extends Vue {
     private totalKills: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private killStreak: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private longestKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private collateralKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private teamKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private defuser: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
 
     public created() {
         for (let i = 0; i < season1Calendar.length; i++) {
@@ -164,6 +182,9 @@ export default class Championship extends Vue {
         let refRatio1 =  -1;
         let refRatio2 =  -1;
         let refRatio3 =  -1;
+        let refRatio4 =  -1;
+        const refRatio5 =  -1;
+        const refRatio6 =  -1;
         for (const gameResult of this.gameResults) {
             const totalKills = this.retrieveValue(gameResult, "totalKills");
             if (this.totalKills.value < totalKills.totalKills || (this.totalKills.value === totalKills.totalKills && totalKills.globalRatio > refRatio1)) {
@@ -182,6 +203,24 @@ export default class Championship extends Vue {
                 this.longestKill.value = longestKill.longestKill;
                 this.longestKill.ref = longestKill.playerRef;
                 refRatio3 = longestKill.globalRatio;
+            }
+            const collateral = this.retrieveValue(gameResult, "collateralKills");
+            if (this.collateralKill.value < collateral.collateralKills || (this.collateralKill.value === collateral.collateralKills && collateral.globalRatio > refRatio4)) {
+                this.collateralKill.value = collateral.collateralKills;
+                this.collateralKill.ref = collateral.playerRef;
+                refRatio4 = collateral.collateralKills;
+            }
+            const teamkiller = this.retrieveValue(gameResult, "teamKills");
+            if (this.teamKill.value < teamkiller.teamKills || (this.teamKill.value === teamkiller.teamKills && teamkiller.globalRatio > refRatio5)) {
+                this.teamKill.value = teamkiller.teamKills;
+                this.teamKill.ref = teamkiller.playerRef;
+                refRatio4 = teamkiller.teamKills;
+            }
+            const defuser = this.retrieveValue(gameResult, "bombsDefused");
+            if (this.defuser.value < defuser.bombsDefused || (this.defuser.value === defuser.bombsDefused && defuser.globalRatio > refRatio6)) {
+                this.defuser.value = defuser.bombsDefused;
+                this.defuser.ref = defuser.playerRef;
+                refRatio4 = defuser.bombsDefused;
             }
         }
     }

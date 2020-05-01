@@ -57,6 +57,9 @@ export default class KillParser implements LineParser {
                     if (tokens[11] === "MOD_MELEE") {
                         player.meleeKills++;
                     }
+                    if (tokens[11] === "MOD_EXPLOSIVE") {
+                        player.collateralKills++;
+                    }
                     if (tokens[11] === "MOD_TRIGGER_HURT" || tokens[11] === "MOD_FALLING"
                         || tokens[11] === "MOD_SUICIDE") {
                         player.suicides++;

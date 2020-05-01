@@ -120,6 +120,7 @@ export class PlayerForRound {
     public shotgunKills = 0;
     public sniperKills = 0;
     public meleeKills = 0;
+    public collateralKills = 0;
     public suicides = 0;
     public tchatter = 0;
     public totalShots = 0;
@@ -168,6 +169,7 @@ export class Player {
     public shotgunKills = 0;
     public sniperKills = 0;
     public meleeKills = 0;
+    public collateralKills = 0;
     public suicides = 0;
     public tchatter = 0;
     public totalShots = 0;

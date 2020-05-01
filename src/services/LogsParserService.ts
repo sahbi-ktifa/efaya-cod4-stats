@@ -145,6 +145,7 @@ export default class LogsParserService {
                         p.smgKills += player.smgKills;
                         p.shotgunKills += player.shotgunKills;
                         p.meleeKills += player.meleeKills;
+                        p.collateralKills += player.collateralKills;
                         p.suicides += player.suicides;
                         p.tchatter += player.tchatter;
                         p.totalShots += player.totalShots;

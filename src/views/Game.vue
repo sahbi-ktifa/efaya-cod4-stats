@@ -214,6 +214,11 @@
           <strong>Le gars qui économise ses balles</strong><br/>
           <i>{{everyBulletCounts.playerRef.playerName}} : {{everyBulletCounts.totalShots}} tir(s)</i>
         </div>
+        <div v-if="collateral.collateralKills > 0">
+          <img src="../assets/award/collateral.png" class="trophy">
+          <strong>Le gars qui utilise l'environnement</strong><br/>
+          <i>{{collateral.playerRef.playerName}} : {{collateral.collateralKills}} kill(s)</i>
+        </div>
       </div>
     </div>
   </div>
@@ -348,6 +353,10 @@ export default class GameDetails extends Vue {
 
   get everyBulletCounts() {
     return orderBy(this.game.players, ["totalShots"], ["asc"])[0];
+  }
+
+  get collateral() {
+    return this.retrieveValue("collateralKills");
   }
 
   public game!: Game;
