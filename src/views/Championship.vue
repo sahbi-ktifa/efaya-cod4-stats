@@ -177,14 +177,13 @@ export default class Championship extends Vue {
             t.emp = mean / 3;
         });
 
-
         this.computeResults();
         let refRatio1 =  -1;
         let refRatio2 =  -1;
         let refRatio3 =  -1;
         let refRatio4 =  -1;
-        const refRatio5 =  -1;
-        const refRatio6 =  -1;
+        let refRatio5 =  -1;
+        let refRatio6 =  -1;
         for (const gameResult of this.gameResults) {
             const totalKills = this.retrieveValue(gameResult, "totalKills");
             if (this.totalKills.value < totalKills.totalKills || (this.totalKills.value === totalKills.totalKills && totalKills.globalRatio > refRatio1)) {
@@ -214,13 +213,13 @@ export default class Championship extends Vue {
             if (this.teamKill.value < teamkiller.teamKills || (this.teamKill.value === teamkiller.teamKills && teamkiller.globalRatio > refRatio5)) {
                 this.teamKill.value = teamkiller.teamKills;
                 this.teamKill.ref = teamkiller.playerRef;
-                refRatio4 = teamkiller.teamKills;
+                refRatio5 = teamkiller.teamKills;
             }
             const defuser = this.retrieveValue(gameResult, "bombsDefused");
             if (this.defuser.value < defuser.bombsDefused || (this.defuser.value === defuser.bombsDefused && defuser.globalRatio > refRatio6)) {
                 this.defuser.value = defuser.bombsDefused;
                 this.defuser.ref = defuser.playerRef;
-                refRatio4 = defuser.bombsDefused;
+                refRatio6 = defuser.bombsDefused;
             }
         }
     }
