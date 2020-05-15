@@ -20,6 +20,35 @@
             </li>
         </ul>
         <div class="main-content">
+            <h2>And the winner are..... Les Sales Gosses!!!!!!!!!! 👏👏 🎉🎉</h2>
+            <div class="players">
+                <ul>
+                    <li>
+                        <strong class="header" @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</strong>
+                        <strong class="header" @click="changeSort('bestScore')" :class="{'active': sortKey === 'bestScore'}">Score</strong>
+                        <strong class="header" @click="changeSort('bestKills')" :class="{'active': sortKey === 'bestKills'}">Kill</strong>
+                        <strong class="header" @click="changeSort('bestRatio')" :class="{'active': sortKey === 'bestRatio'}">Ratio</strong>
+                        <strong class="header" @click="changeSort('bestNades')" :class="{'active': sortKey === 'bestNades'}">Grenade</strong>
+                        <strong class="header" @click="changeSort('bestKnifes')" :class="{'active': sortKey === 'bestKnifes'}">Knife</strong>
+                        <strong class="header" @click="changeSort('bestMedic')" :class="{'active': sortKey === 'bestMedic'}">Rescue</strong>
+                        <strong class="header" @click="changeSort('bestExtermination')" :class="{'active': sortKey === 'bestExtermination'}">Confirmed</strong>
+                        <strong class="header" @click="changeSort('longestKill')" :class="{'active': sortKey === 'longestKill'}">Longest</strong>
+                        <strong class="header" @click="changeSort('killstreak')" :class="{'active': sortKey === 'killstreak'}">Killstreak</strong>
+                    </li>
+                    <li v-for="dataForPlayer in sortedDataForPlayers">
+                        <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
+                        <span>{{dataForPlayer.bestScore}}</span>
+                        <span>{{dataForPlayer.bestKills}}</span>
+                        <span>{{dataForPlayer.bestRatio}}</span>
+                        <span>{{dataForPlayer.bestNades}}</span>
+                        <span>{{dataForPlayer.bestKnifes}}</span>
+                        <span>{{dataForPlayer.bestMedic}}</span>
+                        <span>{{dataForPlayer.bestExtermination}}</span>
+                        <span>{{dataForPlayer.longestKill ? dataForPlayer.longestKill.toFixed(1) : "N/A"}}</span>
+                        <span>{{dataForPlayer.killstreak ? dataForPlayer.killstreak : "N/A"}}</span>
+                    </li>
+                </ul>
+            </div>
             <h2>Mentions spéciales</h2>
             <div class="trophies">
                 <div>
@@ -52,25 +81,12 @@
                     <strong>Team killer</strong><br/>
                     <i>{{teamKill.ref.playerName}} : {{teamKill.value}} kills</i>
                 </div>
+                <div>
+                    <img src="../assets/award/inconsistency.png" class="trophy">
+                    <strong>La médaille de Pascual</strong><br/>
+                    <i>Pascual</i>
+                </div>
             </div>
-            <h2>Prochain matchs à jouer :</h2>
-            <ul>
-                <li v-for="match in nextMatches">
-                    <div class="match-displayer">
-                        <div>
-                            <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
-                            <h3>{{match.team1}}</h3>
-                        </div>
-                        <div>
-                            <img src="../assets/versus.png" class="versus">
-                        </div>
-                        <div>
-                            <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
-                            <h3>{{match.team2}}</h3>
-                        </div>
-                    </div>
-                </li>
-            </ul>
             <h2>Matchs déjà joués :</h2>
             <ul>
                 <li v-for="match in playedMatches">
@@ -140,7 +156,8 @@ import {mapGetters} from "vuex";
 import {MatchmakingService} from "@/services/MatchmakingService";
 import Game from "@/model/Game";
 import {orderBy} from "lodash";
-import {Player, PlayerRef} from "@/model/Player";
+import {Player, PlayerGlobalData, PlayerRef} from '@/model/Player';
+import {DataService} from '@/services/DataService';
 
 
 @Component({
@@ -153,6 +170,7 @@ import {Player, PlayerRef} from "@/model/Player";
 })
 export default class Championship extends Vue {
     @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
+    @Inject("dataService") public dataService!: DataService;
     protected games!: Game[];
     protected gameResults!: Game[];
     private teams: ChampionshipTeam[] = [];
@@ -163,6 +181,9 @@ export default class Championship extends Vue {
     private collateralKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private teamKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private defuser: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
+    private dataForPlayers: PlayerGlobalData[] = [];
+    private sortKey: string = "playerRef.playerName";
+    private sortKeyDirection: string = "asc";
 
     public created() {
         for (let i = 0; i < season1Calendar.length; i++) {
@@ -222,6 +243,8 @@ export default class Championship extends Vue {
                 refRatio6 = defuser.bombsDefused;
             }
         }
+        this.dataForPlayers = this.dataService.computePlayersPerformance(this.gameResults, false);
+        this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
     }
 
     get teamsLadder(): ChampionshipTeam[] {
@@ -234,6 +257,20 @@ export default class Championship extends Vue {
 
     get playedMatches(): ChampionshipMatch[] {
         return this.matches.filter((m) => m.played).reverse();
+    }
+
+    public changeSort(key: string) {
+        if (this.sortKey === key) {
+            this.sortKeyDirection = this.sortKeyDirection === "desc" ? "asc" : "desc";
+        } else {
+            this.sortKeyDirection = "desc";
+        }
+        this.sortKey = key;
+    }
+
+    get sortedDataForPlayers(): PlayerGlobalData[] {
+        // @ts-ignore
+        return orderBy(this.dataForPlayers, [this.sortKey], this.sortKeyDirection);
     }
 
     public teamIcon(team: string): string {
@@ -473,5 +510,29 @@ export default class Championship extends Vue {
         .match-displayer {
             margin-bottom: 10px;
         }
+    }
+
+    .players {
+        padding: 30px;
+        text-align: left;
+    }
+    .name {
+        cursor: pointer;
+        color: #36ebff;
+    }
+    .players > ul > li {
+        display: grid;
+        font-size: 12px;
+        grid-template-columns: 80px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+        grid-gap: 0 20px;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid lightgray;
+    }
+    .header {
+        cursor: pointer;
+    }
+    .header.active {
+        color: orange;
     }
 </style>

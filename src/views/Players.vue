@@ -40,12 +40,14 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+  import {Component, Inject, Vue} from 'vue-property-decorator';
 import {mapGetters} from "vuex";
 import {orderBy} from "lodash";
 import Game from "@/model/Game";
 import {GameMood, PlayerGlobalData} from "@/model/Player";
 import {format} from "date-fns";
+  import {MatchmakingService} from '@/services/MatchmakingService';
+  import {DataService} from '@/services/DataService';
 
 @Component({
   computed: {
@@ -55,75 +57,14 @@ import {format} from "date-fns";
   }
 })
 export default class Players extends Vue {
+  @Inject("dataService") public dataService!: DataService;
   protected games!: Game[];
   private dataForPlayers: PlayerGlobalData[] = [];
   private sortKey: string = "playerRef.playerName";
   private sortKeyDirection: string = "asc";
 
   public created() {
-    const dataForPlayersMap: Map<string, PlayerGlobalData> = new Map();
-    const orderedGames = orderBy(this.games, ["date"], ["asc"]);
-    orderedGames.forEach((game) => {
-      game.players.forEach((player) => {
-        let dataForPlayer = dataForPlayersMap.get(player.playerRef.guid);
-        if (!dataForPlayer) {
-          dataForPlayer = new PlayerGlobalData(player.playerRef, orderedGames.length);
-          dataForPlayersMap.set(player.playerRef.guid, dataForPlayer);
-        }
-      });
-    });
-    let gameIndex = 0;
-    orderedGames.forEach((game) => {
-      let maxScore = 0;
-      game.players.forEach((p) => {
-        if (p.totalPoints > maxScore) {
-          maxScore = p.totalPoints;
-        }
-      });
-
-      game.players.forEach((player) => {
-        const dataForPlayer = dataForPlayersMap.get(player.playerRef.guid);
-        if (player.totalScore > dataForPlayer!!.bestScore) {
-          dataForPlayer!!.bestScore = player.totalScore;
-        }
-        if (player.totalKills > dataForPlayer!!.bestKills) {
-          dataForPlayer!!.bestKills = player.totalKills;
-        }
-        if (player.globalRatio > dataForPlayer!!.bestRatio) {
-          dataForPlayer!!.bestRatio = player.globalRatio;
-        }
-        if (player.grenadeKills > dataForPlayer!!.bestNades) {
-          dataForPlayer!!.bestNades = player.grenadeKills;
-        }
-        if (player.meleeKills > dataForPlayer!!.bestKnifes) {
-          dataForPlayer!!.bestKnifes = player.meleeKills;
-        }
-        if (player.killsConfirmed > dataForPlayer!!.bestExtermination) {
-          dataForPlayer!!.bestExtermination = player.killsConfirmed;
-        }
-        if (player.killsDenied > dataForPlayer!!.bestMedic) {
-          dataForPlayer!!.bestMedic = player.killsDenied;
-        }
-        if (player.consistency < dataForPlayer!!.bestConsistency) {
-          dataForPlayer!!.bestConsistency = player.consistency;
-        }
-        if (player.longestKill > dataForPlayer!!.longestKill) {
-          dataForPlayer!!.longestKill = player.longestKill;
-        }
-        if (player.killstreak > dataForPlayer!!.killstreak) {
-          dataForPlayer!!.killstreak = player.killstreak;
-        }
-        dataForPlayer!!.currentMood[gameIndex].played = true;
-        dataForPlayer!!.currentMood[gameIndex].win = player.totalPoints === maxScore;
-        dataForPlayer!!.currentMood[gameIndex].mapRef = game.map;
-        dataForPlayer!!.currentMood[gameIndex].date = format(game.date, "dd/MM/yyyy");
-        dataForPlayersMap.set(player.playerRef.guid, dataForPlayer!!);
-      });
-      gameIndex++;
-    });
-    dataForPlayersMap.forEach((data) => {
-      this.dataForPlayers.push(data);
-    });
+    this.dataForPlayers = this.dataService.computePlayersPerformance(this.games);
     this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
   }
 
