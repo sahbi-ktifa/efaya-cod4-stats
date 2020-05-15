@@ -25,15 +25,15 @@
                 <ul>
                     <li>
                         <strong class="header" @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</strong>
-                        <strong class="header" @click="changeSort('bestScore')" :class="{'active': sortKey === 'bestScore'}">Score</strong>
-                        <strong class="header" @click="changeSort('bestKills')" :class="{'active': sortKey === 'bestKills'}">Kill</strong>
-                        <strong class="header" @click="changeSort('bestRatio')" :class="{'active': sortKey === 'bestRatio'}">Ratio</strong>
-                        <strong class="header" @click="changeSort('bestNades')" :class="{'active': sortKey === 'bestNades'}">Grenade</strong>
-                        <strong class="header" @click="changeSort('bestKnifes')" :class="{'active': sortKey === 'bestKnifes'}">Knife</strong>
-                        <strong class="header" @click="changeSort('bestMedic')" :class="{'active': sortKey === 'bestMedic'}">Rescue</strong>
-                        <strong class="header" @click="changeSort('bestExtermination')" :class="{'active': sortKey === 'bestExtermination'}">Confirmed</strong>
-                        <strong class="header" @click="changeSort('longestKill')" :class="{'active': sortKey === 'longestKill'}">Longest</strong>
-                        <strong class="header" @click="changeSort('killstreak')" :class="{'active': sortKey === 'killstreak'}">Killstreak</strong>
+                        <strong class="header transform" @click="changeSort('bestScore')" :class="{'active': sortKey === 'bestScore'}">Score</strong>
+                        <strong class="header transform" @click="changeSort('bestKills')" :class="{'active': sortKey === 'bestKills'}">Kill</strong>
+                        <strong class="header transform" @click="changeSort('bestRatio')" :class="{'active': sortKey === 'bestRatio'}">Ratio</strong>
+                        <strong class="header transform" @click="changeSort('bestNades')" :class="{'active': sortKey === 'bestNades'}">Nade</strong>
+                        <strong class="header transform" @click="changeSort('bestKnifes')" :class="{'active': sortKey === 'bestKnifes'}">Knife</strong>
+                        <strong class="header transform" @click="changeSort('bestMedic')" :class="{'active': sortKey === 'bestMedic'}">Rescue</strong>
+                        <strong class="header transform" @click="changeSort('bestExtermination')" :class="{'active': sortKey === 'bestExtermination'}">Confirmed</strong>
+                        <strong class="header transform" @click="changeSort('longestKill')" :class="{'active': sortKey === 'longestKill'}">Longest</strong>
+                        <strong class="header transform" @click="changeSort('killstreak')" :class="{'active': sortKey === 'killstreak'}">Killstreak</strong>
                     </li>
                     <li v-for="dataForPlayer in sortedDataForPlayers">
                         <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
@@ -513,7 +513,6 @@ export default class Championship extends Vue {
     }
 
     .players {
-        padding: 30px;
         text-align: left;
     }
     .name {
@@ -522,7 +521,7 @@ export default class Championship extends Vue {
     }
     .players > ul > li {
         display: grid;
-        font-size: 12px;
+        font-size: 14px;
         grid-template-columns: 80px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
         grid-gap: 0 20px;
         align-items: center;
@@ -534,5 +533,9 @@ export default class Championship extends Vue {
     }
     .header.active {
         color: orange;
+    }
+    .header.transform {
+        transform: rotate(-45deg);
+        margin-bottom: 15px;
     }
 </style>
