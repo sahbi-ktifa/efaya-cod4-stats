@@ -1,7 +1,7 @@
 import {Player, PlayerForRound, PlayerRef} from "@/model/Player";
 
 export enum POINTS {
-    KILL = 10, BOMB_PLANTED = 50, BOMB_DEFUSED = 100, KILL_CONFIRMED = 5, KILL_DENIED = 5, ASSIST = 5
+    KILL = 10, BOMB_PLANTED = 20, BOMB_DEFUSED = 20, KILL_CONFIRMED = 5, KILL_DENIED = 5, ASSIST = 5
 }
 
 export class Round {

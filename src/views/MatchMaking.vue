@@ -1,11 +1,11 @@
 <template>
     <div class="matchmaking-wrapper">
         <div class="pre-matchmaking" v-if="!matchmaking && !matchmakingDone">
-            <h2>Matchmaking</h2>
+            <h2>Matchmaking <span v-if="selectedPlayers.length > 0">({{selectedPlayers.length}})</span></h2>
             <p>Choose among players to launch the matchmaking algorithm</p>
             <div class="available-players">
                 <div v-for="p in availablePlayers" class="player-card" @click="selectPlayer(p)" :class="{'selected': p.selected}">
-                    <span v-if="p.selected">&#10003;</span> {{p.ref.playerName}}
+                    <span v-if="p.selected">&#10003;</span> {{p.ref.playerName}} ({{p.participations}})
                 </div>
             </div>
             <button @click="launch" :disabled="selectedPlayers.length < 4" class="button">Launch MatchMaking!</button>
@@ -42,15 +42,15 @@
 </template>
 
 <script lang="ts">
-    import {Component, Inject, Vue} from 'vue-property-decorator';
-import {mapGetters} from "vuex";
-import {orderBy} from "lodash";
-import Game from "@/model/Game";
-import {PlayerRef} from "@/model/Player";
-    import {DataService} from '@/services/DataService';
-    import {MatchmakingService} from '@/services/MatchmakingService';
+import {Component, Inject, Vue} from "vue-property-decorator";
+    import {mapGetters} from "vuex";
+    import {orderBy} from "lodash";
+    import Game from "@/model/Game";
+    import {PlayerRef} from "@/model/Player";
+    import {DataService} from "@/services/DataService";
+    import {MatchmakingService} from "@/services/MatchmakingService";
 
-class PlayerCard {
+    class PlayerCard {
     public ref!: PlayerRef;
     public participations!: number;
     public selected!: boolean;
@@ -59,12 +59,12 @@ class PlayerCard {
     constructor(ref: PlayerRef) {
         this.ref = ref;
         this.mean = 0;
-        this.participations = 0;
+        this.participations = 1;
         this.selected = false;
     }
 }
 
-@Component({
+    @Component({
     computed: {
         ...mapGetters({
             games: "games"
@@ -83,8 +83,9 @@ export default class MatchMaking extends Vue {
     private team2: PlayerCard[] = [];
     private matchmaking = false;
     private matchmakingDone = false;
-    // Old guid of players (Vaas, pascual, louis)
-    private excludedGuids = ["4d4cd333036a7cc46507cee2bac934c7", "454ed2957639a0dec24b1fa1ed4b0ae8", "ee37f4649620e4ab801fa0854caa2b98"];
+    // Old guid of players (Vaas, pascual, louis, Angel)
+    private excludedGuids = ["4d4cd333036a7cc46507cee2bac934c7", "454ed2957639a0dec24b1fa1ed4b0ae8", "ee37f4649620e4ab801fa0854caa2b98",
+    "90189ba6d585b3313ac24ff1df0a0f04", "debd6ca8825f665585b4a6e80850d555"];
 
     public created() {
         this.refreshPlayers();
@@ -121,6 +122,8 @@ export default class MatchMaking extends Vue {
                 if (players.indexOf(p.playerRef.guid) === -1 && this.excludedGuids.indexOf(p.playerRef.guid) === -1) {
                     this.availablePlayers.push(new PlayerCard(p.playerRef));
                     players.push(p.playerRef.guid);
+                } else if (players.indexOf(p.playerRef.guid) > 0) {
+                    this.availablePlayers.filter((_p) => _p.ref.guid === p.playerRef.guid)[0].participations++;
                 }
             });
         });
