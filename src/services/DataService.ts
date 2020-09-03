@@ -1,34 +1,25 @@
 import Game from "@/model/Game";
-import dataEfayaV2 from "@/data/efayav2.json";
-import dataImm from "@/data/imm.json";
-import dataEfayaV1 from "@/data/efayav1.json";
-import dataWW2 from "@/data/ww2.json";
-import dataSvr from "@/data/svr.json";
-import dataPromod from "@/data/promod.json";
 import extraData from "@/data/extradata.json";
 import results from "@/data/championship/season1/results.json";
 import {PlayerGlobalData} from "@/model/Player";
 import {orderBy} from "lodash";
 import {format} from "date-fns";
 
-const dataMods = [dataImm, dataEfayaV2, dataEfayaV1, dataWW2, dataSvr, dataPromod];
-
 export class DataService {
-    public retrieveGames(): Game[] {
+    public async retrieveGames(): Promise<Game[]> {
+        const dataMods = await (await fetch("https://raw.githubusercontent.com/sahbi-ktifa/efaya-cod4-stats/master/src/data/s16/results.json")).json();
+
         const games: Game[] = [];
         for (let i = 0; i < dataMods.length; i++) {
-            for (const key in dataMods[i]) {
-                // tslint:disable-next-line:forin
-                for (const key2 in extraData) {
-                    if (dataMods[i][key].id === extraData[key2].id) {
-                        dataMods[i][key].date = extraData[key2].date;
-                        dataMods[i][key].mapPreview = extraData[key2].mapPreview;
-                        dataMods[i][key].twitchUrl = extraData[key2].twitchUrl;
-                        dataMods[i][key].youtubeUrl = extraData[key2].youtubeUrl;
-                    }
+            for (const extraDataKey in extraData) {
+                if (dataMods[i].id === extraData[extraDataKey].id) {
+                    dataMods[i].date = extraData[extraDataKey].date;
+                    dataMods[i].mapPreview = extraData[extraDataKey].mapPreview;
+                    dataMods[i].twitchUrl = extraData[extraDataKey].twitchUrl;
+                    dataMods[i].youtubeUrl = extraData[extraDataKey].youtubeUrl;
                 }
-                games.push(Game.build(dataMods[i][key]));
             }
+            games.push(Game.build(dataMods[i]));
         }
         return games;
     }

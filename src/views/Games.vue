@@ -1,5 +1,6 @@
 <template>
   <div class="games">
+    <h3>Season 16 - Sept. 2020</h3>
     <ul>
       <li v-for="game in games" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
