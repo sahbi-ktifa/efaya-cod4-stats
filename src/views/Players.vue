@@ -28,7 +28,7 @@
         <span>{{dataForPlayer.longestKill ? dataForPlayer.longestKill.toFixed(1) : "N/A"}}</span>
         <span>{{dataForPlayer.killstreak ? dataForPlayer.killstreak : "N/A"}}</span>
         <span>
-          <span v-for="mood in dataForPlayer.currentMood.slice(Math.max(dataForPlayer.currentMood.length - 5, 1))">
+          <span v-for="mood in dataForPlayer.currentMood.slice(Math.max(dataForPlayer.currentMood.length - 5, 0))">
             <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)" src="../assets/green.png" v-if="mood.win === true" class="mood"/>
             <img alt="" :title="mood.mapRef + ' (' + mood.date + ')'" @click="goToGame(mood)" src="../assets/red.png" v-if="mood.win === false && mood.played === true" class="mood"/>
             <img alt="" src="../assets/grey.png" v-if="mood.win === false && mood.played === false" class="mood"/>
@@ -40,16 +40,16 @@
 </template>
 
 <script lang="ts">
-  import {Component, Inject, Vue} from 'vue-property-decorator';
-import {mapGetters} from "vuex";
-import {orderBy} from "lodash";
-import Game from "@/model/Game";
-import {GameMood, PlayerGlobalData} from "@/model/Player";
-import {format} from "date-fns";
-  import {MatchmakingService} from '@/services/MatchmakingService';
-  import {DataService} from '@/services/DataService';
+import {Component, Inject, Vue} from "vue-property-decorator";
+  import {mapGetters} from "vuex";
+  import {orderBy} from "lodash";
+  import Game from "@/model/Game";
+  import {GameMood, PlayerGlobalData} from "@/model/Player";
+  import {format} from "date-fns";
+  import {MatchmakingService} from "@/services/MatchmakingService";
+  import {DataService} from "@/services/DataService";
 
-@Component({
+  @Component({
   computed: {
     ...mapGetters({
       games: "games"
