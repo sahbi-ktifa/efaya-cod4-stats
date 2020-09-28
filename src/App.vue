@@ -13,6 +13,9 @@
     <h1 class="long">COD4 iClan Statistiques</h1>
     <h1 class="short">iClan Stats</h1>
     <router-view/>
+    <div v-if="loading">
+      Chargement en cours...
+    </div>
   </div>
 </template>
 
@@ -23,9 +26,12 @@ import {DataService} from "@/services/DataService";
 @Component
 export default class App extends Vue {
   @Inject("dataService") public dataService!: DataService;
+  public loading = false;
 
   public async created() {
+    this.loading = true;
     const games = await this.dataService.retrieveGames();
+    this.loading = false;
     this.$store.commit("gamesRetrieved", games);
     const gameResults = this.dataService.retrieveChampionshipGames();
     this.$store.commit("championshipGamesRetrieved", gameResults);
