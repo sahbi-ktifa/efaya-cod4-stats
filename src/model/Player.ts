@@ -19,6 +19,7 @@ export class Honors {
     public topKillerForARun = new HonorData("Joueur ayant fait le plus de victimes dans une manche", "killer");
     public topBankable = new HonorData("Joueur ayant le meilleur ratio", "bankable");
     public topBankableForARun = new HonorData("Joueur ayant le meilleur ratio dans une manche", "bankable");
+    public topAssistant = new HonorData("Joueur ayant le plus aidé à éliminer les autres", "assistant");
     public tourist = new HonorData("Le joueur qu'on voit rarement", "tourist");
     public goodStudent = new HonorData("Le joueur qu'on voit tout le temps!", "student");
     public headshotMan = new HonorData("Le joueur qui a fait le plus de headshot", "headshot");

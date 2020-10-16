@@ -125,6 +125,11 @@ export default class HallOfFame extends Vue {
   }
 
   private computeOthers(player: Player) {
+    if (this.honors.topAssistant.honorAmount < player.totalAssists) {
+      this.honors.topAssistant.playerName = player.playerRef.playerName;
+      this.honors.topAssistant.playerGuid = player.playerRef.guid;
+      this.honors.topAssistant.honorAmount = player.totalAssists;
+    }
     if (this.honors.headshotMan.honorAmount < player.headShots) {
       this.honors.headshotMan.playerName = player.playerRef.playerName;
       this.honors.headshotMan.playerGuid = player.playerRef.guid;
