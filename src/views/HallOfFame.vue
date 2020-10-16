@@ -1,7 +1,12 @@
 <template>
   <div class="hall-of-fame">
+    <h4>Quelques statistiques générales:</h4>
+    <ul>
+      <li v-if="winStarter !== ''">L'équipe démarrant en {{winStarterLabel}} à <strong>{{winStarterValue.toFixed(0)}}%</strong> de gagner le match.</li>
+      <li v-if="playerMean !== ''">En moyenne, les matchs réunissent {{playerMean}} joueurs !</li>
+    </ul>
     <h1>- &nbsp;Les meilleurs des meilleurs</h1>
-    <i>Ces statistiques sont calculés pour le meilleur sur une seule partie.</i>
+    <i>Les statistiques qui suivent sont calculés pour le meilleur sur une seule partie.</i>
     <ul>
       <li v-for="(honor, propertyName) in honors">
         <div>
@@ -33,11 +38,16 @@ import { orderBy } from "lodash";
 export default class HallOfFame extends Vue {
   protected games!: Game[];
   private honors: Honors = new Honors();
+  private winStarter: String = "";
+  private winStarterValue: number = 0;
+  private playerMean: string = "";
 
   public created() {
     const playerPresence: any = {};
     const consistency: any = {};
+    let players = 0;
     orderBy(this.games, ["date"], ["asc"]).forEach((game) => {
+      players += game.players.length;
       game.players.forEach((player) => {
         this.honors.overallKills.honorAmount += player.totalKills;
         this.computeKills(player);
@@ -55,12 +65,42 @@ export default class HallOfFame extends Vue {
         }
       });
     });
+    this.playerMean = (players / this.games.length).toFixed(0);
     this.computeConsistency(consistency, playerPresence);
     this.computeTourist(playerPresence);
+    this.computeWinStarter();
   }
 
   public getImgUrl(icon: string): string {
     return require("../assets/award/" + icon + ".png");
+  }
+
+
+  get winStarterLabel(): string {
+    if (this.winStarter === "axis") {
+      return "axis (Attaque)";
+    } else {
+      return "allies (Défense)";
+    }
+  }
+
+  private computeWinStarter() {
+    let alliesWinStarter = 0;
+    let axisWinStarter = 0;
+    this.games.forEach((game) => {
+      if (game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore > game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore) {
+        alliesWinStarter++;
+      } else if (game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore < game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore) {
+        axisWinStarter++;
+      }
+    });
+    if (axisWinStarter > alliesWinStarter) {
+      this.winStarter = "axis";
+      this.winStarterValue = (axisWinStarter * 100) / this.games.length;
+    } else if (axisWinStarter < alliesWinStarter) {
+      this.winStarter = "allies";
+      this.winStarterValue = (alliesWinStarter * 100) / this.games.length;
+    }
   }
 
   private computeTourist(playerPresence: any) {
