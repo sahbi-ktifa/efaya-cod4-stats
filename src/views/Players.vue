@@ -40,13 +40,11 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from "vue-property-decorator";
+import {Component, Inject, Vue, Watch} from "vue-property-decorator";
   import {mapGetters} from "vuex";
   import {orderBy} from "lodash";
   import Game from "@/model/Game";
   import {GameMood, PlayerGlobalData} from "@/model/Player";
-  import {format} from "date-fns";
-  import {MatchmakingService} from "@/services/MatchmakingService";
   import {DataService} from "@/services/DataService";
 
   @Component({
@@ -64,6 +62,11 @@ export default class Players extends Vue {
   private sortKeyDirection: string = "asc";
 
   public created() {
+    this.loadData();
+  }
+
+  @Watch("games")
+  public loadData() {
     this.dataForPlayers = this.dataService.computePlayersPerformance(this.games);
     this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
   }

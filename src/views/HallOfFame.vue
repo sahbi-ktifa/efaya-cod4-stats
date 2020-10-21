@@ -22,13 +22,13 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
-import Game from "@/model/Game";
-import {Honors, Player} from "@/model/Player";
-import { orderBy } from "lodash";
+import {Component, Vue, Watch} from "vue-property-decorator";
+  import {mapGetters} from "vuex";
+  import Game from "@/model/Game";
+  import {Honors, Player} from "@/model/Player";
+  import { orderBy } from "lodash";
 
-@Component({
+  @Component({
   computed: {
     ...mapGetters({
       games: "games"
@@ -43,6 +43,11 @@ export default class HallOfFame extends Vue {
   private playerMean: string = "";
 
   public created() {
+    this.loadData();
+  }
+
+  @Watch("games")
+  public loadData() {
     const playerPresence: any = {};
     const consistency: any = {};
     let players = 0;

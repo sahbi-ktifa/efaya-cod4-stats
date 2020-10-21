@@ -236,15 +236,15 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
-import {orderBy} from "lodash";
-import Game from "@/model/Game";
-import {Player} from "@/model/Player";
-import { format } from "date-fns";
-import {GameService} from "@/services/GameService";
+import {Component, Vue, Watch} from "vue-property-decorator";
+  import {mapGetters} from "vuex";
+  import {orderBy} from "lodash";
+  import Game from "@/model/Game";
+  import {Player} from "@/model/Player";
+  import { format } from "date-fns";
+  import {GameService} from "@/services/GameService";
 
-@Component({
+  @Component({
   computed: {
     ...mapGetters({
       games: "games",
@@ -383,6 +383,11 @@ export default class GameDetails extends Vue {
   protected gameResults!: Game[];
 
   public created() {
+    this.loadData();
+  }
+
+  @Watch("games")
+  public loadData() {
     if (this.$route.params.map.indexOf("championship") === 0) {
       const matchId = this.$route.params.map.replace("championship", "");
       this.game = this.gameResults.filter((game) => game.id === matchId)[0];

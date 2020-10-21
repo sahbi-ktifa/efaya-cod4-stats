@@ -156,15 +156,15 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
-import Game from "@/model/Game";
-import {PlayerInfo} from "@/model/Player";
-import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames, WW2Weapons} from "@/model/Weapons";
-import { merge } from "lodash";
-import {GameService} from "@/services/GameService";
+import {Component, Vue, Watch} from "vue-property-decorator";
+  import {mapGetters} from "vuex";
+  import Game from "@/model/Game";
+  import {PlayerInfo} from "@/model/Player";
+  import {EfayaModV1Weapons, EfayaV2Weapons, IMMWeapons, WeaponNames, WW2Weapons} from "@/model/Weapons";
+  import { merge } from "lodash";
+  import {GameService} from "@/services/GameService";
 
-@Component({
+  @Component({
   computed: {
     ...mapGetters({
       games: "games"
@@ -197,6 +197,7 @@ export default class PlayerDetails extends Vue {
     this.updatePlayerData();
   }
 
+  @Watch("games")
   public updatePlayerData() {
     let partsSum = 0;
     const nemesis: any = {};
