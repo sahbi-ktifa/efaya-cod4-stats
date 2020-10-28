@@ -11,7 +11,8 @@
           <span class="round-summary">
             Manche 1 : <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
             Manche 2 : <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
-            Score Final : <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong>
+            Score Final : <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong><br/>
+            <span v-if="duration(game)">Durée : <strong>{{duration(game)}}</strong></span>
           </span>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
@@ -29,6 +30,7 @@ import {Component, Vue} from "vue-property-decorator";
 import {mapGetters} from "vuex";
 import {format} from "date-fns";
 import Game from "@/model/Game";
+import TimeUtils from "@/services/TimeUtils";
 
 @Component({
   computed: {
@@ -39,6 +41,14 @@ import Game from "@/model/Game";
 })
 export default class Games extends Vue {
   protected games!: Game[];
+
+  public duration(game: Game) {
+    if (game.gameRefs[0].startTime) {
+      const duration = (game.gameRefs[0].endTime - game.gameRefs[0].startTime) + (game.gameRefs[1].endTime - game.gameRefs[1].startTime);
+      return TimeUtils.getReadableDiffTime(duration);
+    }
+    return null;
+  }
 
   public isEfayaMod(game: Game) {
     return game.mod.startsWith("efaya_mod");
@@ -132,7 +142,7 @@ export default class Games extends Vue {
     position: absolute;
     width: 65px;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
   }
 
   @media (max-width: 1150px) {
@@ -151,6 +161,8 @@ export default class Games extends Vue {
     }
     .mod-logo {
       width: 50px;
+      top: 0;
+      right: 0;
     }
   }
 </style>

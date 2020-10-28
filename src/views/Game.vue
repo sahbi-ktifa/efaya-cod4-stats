@@ -1,7 +1,11 @@
 <template>
-  <div class="game">
+  <div class="game" v-if="game">
     <img class="map-preview" :src="game.mapPreview" alt="map-preview">
-    <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}} - <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
+    <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}}
+      - Manche 1 : <strong>{{durationRound1}}</strong>
+      - Manche 2 : <strong>{{durationRound2}}</strong>
+      - Durée totale : <strong>{{durationGame}}</strong>
+      - <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
       <img class="mod-logo" alt="Mod logo" src="../assets/efaya_v2.png" v-if="isEfayaModV2(game)">
       <img class="mod-logo" alt="Mod logo" src="../assets/imm.png" v-if="isIMMMod(game)">
       <img class="mod-logo" alt="Mod logo" src="../assets/promod.jpg" v-if="isPromod(game)">
@@ -230,6 +234,16 @@
           <strong>Le gars qui utilise l'environnement</strong><br/>
           <i>{{collateral.playerRef.playerName}} : {{collateral.collateralKills}} kill(s)</i>
         </div>
+        <div v-if="quickestKill">
+          <img src="../assets/award/quickestkill.png" class="trophy">
+          <strong>Le gars qui a dégainé le plus vite</strong><br/>
+          <i>{{quickestKill.playerRef.playerName}} : {{duration(quickestKill.quickestKill)}}</i>
+        </div>
+        <div v-if="quickestDeath">
+          <img src="../assets/award/quickestdeath.png" class="trophy">
+          <strong>Le gars qui a pris une balle très tôt</strong><br/>
+          <i>{{quickestDeath.playerRef.playerName}} : {{duration(quickestDeath.quickestDeath)}}</i>
+        </div>
       </div>
     </div>
   </div>
@@ -237,14 +251,15 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from "vue-property-decorator";
-  import {mapGetters} from "vuex";
-  import {orderBy} from "lodash";
-  import Game from "@/model/Game";
-  import {Player} from "@/model/Player";
-  import { format } from "date-fns";
-  import {GameService} from "@/services/GameService";
+import {mapGetters} from "vuex";
+import {orderBy} from "lodash";
+import Game from "@/model/Game";
+import {Player} from "@/model/Player";
+import { format } from "date-fns";
+import {GameService} from "@/services/GameService";
+import TimeUtils from "@/services/TimeUtils";
 
-  @Component({
+@Component({
   computed: {
     ...mapGetters({
       games: "games",
@@ -253,6 +268,25 @@ import {Component, Vue, Watch} from "vue-property-decorator";
   }
 })
 export default class GameDetails extends Vue {
+
+  get durationRound1() {
+    if (this.game && this.game.gameRefs[0].endTime) {
+      return TimeUtils.getReadableDiffTime(this.game.gameRefs[0].endTime - this.game.gameRefs[0].startTime);
+    }
+  }
+
+  get durationRound2() {
+    if (this.game && this.game.gameRefs[1].endTime) {
+      return TimeUtils.getReadableDiffTime(this.game.gameRefs[1].endTime - this.game.gameRefs[1].startTime);
+    }
+  }
+
+  get durationGame() {
+    if (this.game && this.game.gameRefs[0].endTime) {
+      const duration = (this.game.gameRefs[0].endTime - this.game.gameRefs[0].startTime) + (this.game.gameRefs[1].endTime - this.game.gameRefs[1].startTime);
+      return TimeUtils.getReadableDiffTime(duration);
+    }
+  }
 
   get bankable() {
     return this.retrieveValue("globalRatio");
@@ -362,6 +396,14 @@ export default class GameDetails extends Vue {
     return orderBy(this.game.players, ["distance"], ["asc"])[0];
   }
 
+  get quickestDeath() {
+    return orderBy(this.game.players, ["quickestDeath"], ["desc"])[0];
+  }
+
+  get quickestKill() {
+    return orderBy(this.game.players, ["quickestKill"], ["desc"])[0];
+  }
+
   get crazyShooter() {
     return this.retrieveValue("totalShots");
   }
@@ -374,9 +416,9 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("collateralKills");
   }
 
-  public game!: Game;
-  public winners!: Player[];
-  public losers!: Player[];
+  public game: Game | null = null;
+  public winners!: Player[] = [];
+  public losers!: Player[] = [];
   public winnerPoints: number[] = [];
   public loserPoints: number[] = [];
   protected games!: Game[];
@@ -394,11 +436,17 @@ export default class GameDetails extends Vue {
     } else {
       this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
     }
-    const [winnersGuid, losersGuid, winnerPoints, loserPoints] = new GameService().computeWinnersLosers(this.game);
-    this.winnerPoints = winnerPoints;
-    this.loserPoints = loserPoints;
-    this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
-    this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
+    if (this.game) {
+      const [winnersGuid, losersGuid, winnerPoints, loserPoints] = new GameService().computeWinnersLosers(this.game);
+      this.winnerPoints = winnerPoints;
+      this.loserPoints = loserPoints;
+      this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
+      this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
+    }
+  }
+
+  public duration(time: number): string {
+    return TimeUtils.getReadableDiffTime(time);
   }
 
   public formatDate(date: Date): string {
