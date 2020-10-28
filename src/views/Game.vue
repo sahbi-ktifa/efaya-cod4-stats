@@ -397,11 +397,11 @@ export default class GameDetails extends Vue {
   }
 
   get quickestDeath() {
-    return orderBy(this.game.players, ["quickestDeath"], ["desc"])[0];
+    return orderBy(this.game.players, ["quickestDeath"], ["asc"])[0];
   }
 
   get quickestKill() {
-    return orderBy(this.game.players, ["quickestKill"], ["desc"])[0];
+    return orderBy(this.game.players, ["quickestKill"], ["asc"])[0];
   }
 
   get crazyShooter() {

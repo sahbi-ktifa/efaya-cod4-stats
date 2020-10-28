@@ -48,6 +48,8 @@ export class Honors {
     public longestHS = new HonorData("Le headshot le plus lointain", "longestHS");
     public crazyShooter = new HonorData("Le tireur fou", "maxshots");
     public everyBulletCounts = new HonorData("Chaque balle compte", "minusshot", Infinity);
+    public quickestKill = new HonorData("Le kill le plus rapide", "quickestkill", Infinity);
+    public quickestDeath = new HonorData("La mort la plus rapide", "quickestdeath", Infinity);
 }
 
 // tslint:disable-next-line:max-classes-per-file

@@ -2,8 +2,10 @@
   <div class="hall-of-fame">
     <h4>Quelques statistiques générales:</h4>
     <ul>
-      <li v-if="winStarter !== ''">L'équipe démarrant en {{winStarterLabel}} à <strong>{{winStarterValue.toFixed(0)}}%</strong> de gagner le match.</li>
+      <li v-if="winStarter !== ''">L'équipe démarrant en {{winStarterLabel}} a <strong>{{winStarterValue.toFixed(0)}}%</strong> de gagner le match.</li>
       <li v-if="playerMean !== ''">En moyenne, les matchs réunissent {{playerMean}} joueurs !</li>
+      <li v-if="durationMean">En moyenne, les matchs durent {{durationMean}} !</li>
+      <li v-if="durationRound">En moyenne, les rounds durent {{durationRound}} !</li>
     </ul>
     <h1>- &nbsp;Les meilleurs des meilleurs</h1>
     <i>Les statistiques qui suivent sont calculés pour le meilleur sur une seule partie.</i>
@@ -12,7 +14,8 @@
         <div>
           <img :src="getImgUrl(honor.icon)" class="trophy">
           <strong>{{propertyName}}</strong>
-          <i v-if="propertyName !== 'overallKills'"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}</i>
+          <i v-if="propertyName !== 'overallKills' && propertyName.indexOf('quickest') === -1"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}</i>
+          <i v-if="propertyName.indexOf('quickest') === 0"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}s</i>
           <i v-if="propertyName === 'overallKills'">{{honor.honorAmount}}</i>
           <div class="honor-description" v-if="honor.description && honor.description.length > 0">{{honor.description}}</div>
         </div>
@@ -27,6 +30,7 @@ import {Component, Vue, Watch} from "vue-property-decorator";
   import Game from "@/model/Game";
   import {Honors, Player} from "@/model/Player";
   import { orderBy } from "lodash";
+import TimeUtils from '@/services/TimeUtils';
 
   @Component({
   computed: {
@@ -41,6 +45,8 @@ export default class HallOfFame extends Vue {
   private winStarter: String = "";
   private winStarterValue: number = 0;
   private playerMean: string = "";
+  private durationMean: number = 0;
+  private durationRound: number = 0;
 
   public created() {
     this.loadData();
@@ -74,6 +80,7 @@ export default class HallOfFame extends Vue {
     this.computeConsistency(consistency, playerPresence);
     this.computeTourist(playerPresence);
     this.computeWinStarter();
+    this.computeDuration();
   }
 
   public getImgUrl(icon: string): string {
@@ -87,6 +94,29 @@ export default class HallOfFame extends Vue {
     } else {
       return "allies (Défense)";
     }
+  }
+
+  private computeDuration() {
+    let gamesWithDuration = 0;
+    let duration = 0;
+    let durationRound = 0;
+    let rounds = 0;
+    this.games.forEach(game => {
+      if (game.gameRefs[0].endTime) {
+        duration += (game.gameRefs[0].endTime - game.gameRefs[0].startTime) + (game.gameRefs[1].endTime - game.gameRefs[1].startTime);
+        gamesWithDuration++;
+        game.gameRefs.forEach(gameref => {
+          gameref.rounds.forEach(round => {
+            if (round.endTime - round.startTime < 5 * 60) {
+              durationRound += round.endTime - round.startTime;
+              rounds++;
+            }
+          })
+        })
+      }
+    });
+    this.durationMean = TimeUtils.getReadableDiffTime(duration / gamesWithDuration);
+    this.durationRound = TimeUtils.getReadableDiffTime(durationRound / rounds);
   }
 
   private computeWinStarter() {
@@ -274,6 +304,16 @@ export default class HallOfFame extends Vue {
       this.honors.camper.playerName = player.playerRef.playerName;
       this.honors.camper.playerGuid = player.playerRef.guid;
       this.honors.camper.honorAmount = player.distance;
+    }
+    if (this.honors.quickestKill.honorAmount > player.quickestKill && player.quickestKill > 0) {
+      this.honors.quickestKill.playerName = player.playerRef.playerName;
+      this.honors.quickestKill.playerGuid = player.playerRef.guid;
+      this.honors.quickestKill.honorAmount = player.quickestKill;
+    }
+    if (this.honors.quickestDeath.honorAmount > player.quickestDeath && player.quickestDeath > 0) {
+      this.honors.quickestDeath.playerName = player.playerRef.playerName;
+      this.honors.quickestDeath.playerGuid = player.playerRef.guid;
+      this.honors.quickestDeath.honorAmount = player.quickestDeath;
     }
     if (this.honors.longestKill.honorAmount < player.longestKill) {
       this.honors.longestKill.playerName = player.playerRef.playerName;

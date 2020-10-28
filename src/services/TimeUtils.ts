@@ -17,7 +17,7 @@ class TimeUtils {
         if (hours   < 10) {hours = Number("0" + hours); }
         if (minutes < 10) {minutes = Number("0" + minutes); }
         if (seconds < 10) {seconds = Number("0" + seconds); }
-        return (hours > 0 ? hours + "h " : "") + (minutes > 0 ? minutes + "mins " : "") + seconds + "s";
+        return (hours > 0 ? hours + "h " : "") + (minutes > 0 ? minutes + "mins " : "") + seconds.toFixed(0) + "s";
     }
 }
 
