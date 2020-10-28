@@ -1,6 +1,7 @@
 import {ParsedData} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
 import {POINTS} from "@/model/Game";
+import TimeUtils from "./TimeUtils";
 
 export default class KillParser implements LineParser {
     public accept(line: string): boolean {
@@ -78,6 +79,9 @@ export default class KillParser implements LineParser {
                         player.prey[tokens[1]] = 0;
                     }
                     player.prey[tokens[1]]++;
+                    if (!player.quickestKill) {
+                        player.quickestKill = TimeUtils.getDiffTime(parsedData.currentGame.currentRound.startTime, line);
+                    }
                 }
                 if (player.playerRef.guid === tokens[1]) {
                     player.deaths++;
@@ -85,6 +89,9 @@ export default class KillParser implements LineParser {
                         player.nemesis[tokens[5]] = 0;
                     }
                     player.nemesis[tokens[5]]++;
+                    if (!player.quickestDeath) {
+                        player.quickestDeath = TimeUtils.getDiffTime(parsedData.currentGame.currentRound.startTime, line);
+                    }
                 }
             }
         }

@@ -136,6 +136,8 @@ export class PlayerForRound {
     public nemesis: any = {};
     public prey: any = {};
     public archangel: any = {};
+    public quickestKill!: number;
+    public quickestDeath!: number;
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;
@@ -187,6 +189,8 @@ export class Player {
     public prey: any = {};
     public archangel: any = {};
     public consistency: number = Infinity;
+    public quickestKill: number = Infinity;
+    public quickestDeath: number = Infinity;
 
     public constructor(playerRef: PlayerRef) {
         this.playerRef = playerRef;

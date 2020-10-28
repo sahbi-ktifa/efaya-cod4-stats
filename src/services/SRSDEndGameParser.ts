@@ -1,6 +1,7 @@
 import {ParsedData} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
 import {Round} from "@/model/Game";
+import TimeUtils from "./TimeUtils";
 
 export default class SRSDEndGameParser implements LineParser {
     public accept(line: string): boolean {
@@ -35,8 +36,10 @@ export default class SRSDEndGameParser implements LineParser {
             }
         }
         if (winner) {
+            parsedData.currentGame.currentRound.endTime = TimeUtils.getTime(line);
             parsedData.currentGame.rounds.push(parsedData.currentGame.currentRound);
             parsedData.currentGame.currentRound = new Round();
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line);
         }
     }
 

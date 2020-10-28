@@ -14,6 +14,7 @@ import TchatterParser from "@/services/TchatterParser";
 import AssistParser from "@/services/AssistParser";
 import InGameStatParser from "@/services/InGameStatParser";
 import SVREndGameParser from "@/services/SVREndGameParser";
+import { orderBy } from "lodash";
 
 export enum LogEvent {
     J = "join",
@@ -71,8 +72,8 @@ export default class LogsParserService {
             lines++;
         });
         // console.log(parsedData)
-        const gameRefs = parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
-            && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory));
+        const gameRefs = orderBy(parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
+            && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory)), "startTime");
         const games = [];
         for (let i = 0; i < gameRefs.length; i += 2) {
             let j = 0;
@@ -169,6 +170,12 @@ export default class LogsParserService {
                         }
                         if (player.distance < p.camper) {
                             p.camper = player.distance;
+                        }
+                        if (player.quickestDeath < p.quickestDeath) {
+                            p.quickestDeath = player.quickestDeath;
+                        }
+                        if (player.quickestKill < p.quickestKill) {
+                            p.quickestKill = player.quickestKill;
                         }
                         for (const [key] of Object.entries(player.weaps)) {
                             if (!p.weaps[gameRef.mod]) {

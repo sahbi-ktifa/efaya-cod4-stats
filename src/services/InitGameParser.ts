@@ -1,6 +1,7 @@
 import {ParsedData, ParserContext} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
 import {GameRef} from "@/model/Game";
+import TimeUtils from "./TimeUtils";
 
 export default class InitGameParser implements LineParser {
     public accept(line: string): boolean {
@@ -25,11 +26,13 @@ export default class InitGameParser implements LineParser {
         if (!parsedData.currentGame) {
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
+            parsedData.currentGame.startTime = TimeUtils.getTime(line);
         } else if (parsedData.currentGame &&
             (parsedData.currentGame.gameType !== gameType || parsedData.currentGame.map !== map)) {
             if (parsedData.currentGame.players.length > 2 &&
                 (parsedData.currentGame.alliesScore === ctx.scoreForVictory
                     || parsedData.currentGame.axisScore === ctx.scoreForVictory)) {
+                parsedData.currentGame.endTime = TimeUtils.getTime(line);
                 parsedData.games.push(parsedData.currentGame);
             }
             if (parsedData.currentGame.winnerRef) {
@@ -38,11 +41,14 @@ export default class InitGameParser implements LineParser {
             }
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
+            parsedData.currentGame.startTime = TimeUtils.getTime(line);
         } else if (parsedData.currentGame && (parsedData.currentGame.alliesScore === ctx.scoreForVictory
             || parsedData.currentGame.axisScore === ctx.scoreForVictory)) {
+            parsedData.currentGame.endTime = TimeUtils.getTime(line);
             parsedData.games.push(parsedData.currentGame);
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
+            parsedData.currentGame.startTime = TimeUtils.getTime(line);
         }
 
     }

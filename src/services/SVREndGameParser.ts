@@ -1,6 +1,7 @@
 import {ParsedData} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
 import {Round} from "@/model/Game";
+import TimeUtils from "@/services/TimeUtils";
 
 export default class SVREndGameParser implements LineParser {
     private alliesScore: number = 0;
@@ -24,8 +25,10 @@ export default class SVREndGameParser implements LineParser {
         } else if (team === "axis") {
             parsedData.currentGame.alliesScore = this.alliesScore;
             parsedData.currentGame.axisScore = Number(splittedLine[splittedLine.length - 1].split(";")[2]);
+            parsedData.currentGame.currentRound.endTime = TimeUtils.getTime(line);
             parsedData.currentGame.rounds.push(parsedData.currentGame.currentRound);
             parsedData.currentGame.currentRound = new Round();
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line);
         }
     }
 

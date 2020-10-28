@@ -6,6 +6,8 @@ export enum POINTS {
 
 export class Round {
     public players: PlayerForRound[] = [];
+    public startTime = 0;
+    public endTime = 0;
 }
 
 // tslint:disable-next-line:max-classes-per-file
@@ -19,6 +21,8 @@ export class GameRef {
     public axisScore = 0;
     public rounds: Round[] = [];
     public currentRound: Round = new Round();
+    public startTime = 0;
+    public endTime = 0;
 
     public constructor(mod: string, map: string, gameType: string) {
         this.mod = mod;
