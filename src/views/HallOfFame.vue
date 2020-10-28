@@ -26,13 +26,13 @@
 
 <script lang="ts">
 import {Component, Vue, Watch} from "vue-property-decorator";
-  import {mapGetters} from "vuex";
-  import Game from "@/model/Game";
-  import {Honors, Player} from "@/model/Player";
-  import { orderBy } from "lodash";
-import TimeUtils from '@/services/TimeUtils';
+import {mapGetters} from "vuex";
+import Game from "@/model/Game";
+import {Honors, Player} from "@/model/Player";
+import { orderBy } from "lodash";
+import TimeUtils from "@/services/TimeUtils";
 
-  @Component({
+@Component({
   computed: {
     ...mapGetters({
       games: "games"
@@ -45,8 +45,8 @@ export default class HallOfFame extends Vue {
   private winStarter: String = "";
   private winStarterValue: number = 0;
   private playerMean: string = "";
-  private durationMean: number = 0;
-  private durationRound: number = 0;
+  private durationMean: string = "";
+  private durationRound: string = "";
 
   public created() {
     this.loadData();
@@ -101,18 +101,18 @@ export default class HallOfFame extends Vue {
     let duration = 0;
     let durationRound = 0;
     let rounds = 0;
-    this.games.forEach(game => {
+    this.games.forEach((game) => {
       if (game.gameRefs[0].endTime) {
         duration += (game.gameRefs[0].endTime - game.gameRefs[0].startTime) + (game.gameRefs[1].endTime - game.gameRefs[1].startTime);
         gamesWithDuration++;
-        game.gameRefs.forEach(gameref => {
-          gameref.rounds.forEach(round => {
+        game.gameRefs.forEach((gameref) => {
+          gameref.rounds.forEach((round) => {
             if (round.endTime - round.startTime < 5 * 60) {
               durationRound += round.endTime - round.startTime;
               rounds++;
             }
-          })
-        })
+          });
+        });
       }
     });
     this.durationMean = TimeUtils.getReadableDiffTime(duration / gamesWithDuration);

@@ -301,7 +301,9 @@ export default class GameDetails extends Vue {
   }
 
   get unkillable() {
-    return orderBy(this.game.players, ["totalDeaths"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["totalDeaths"], ["asc"])[0];
+    }
   }
 
   get scorer() {
@@ -361,11 +363,15 @@ export default class GameDetails extends Vue {
   }
 
   get consistency() {
-    return orderBy(this.game.players, ["consistency"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["consistency"], ["asc"])[0];
+    }
   }
 
   get inconsistency() {
-    return orderBy(this.game.players, ["consistency"], ["desc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["consistency"], ["desc"])[0];
+    }
   }
 
   get accuracy() {
@@ -393,15 +399,21 @@ export default class GameDetails extends Vue {
   }
 
   get camper() {
-    return orderBy(this.game.players, ["distance"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["distance"], ["asc"])[0];
+    }
   }
 
   get quickestDeath() {
-    return orderBy(this.game.players, ["quickestDeath"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["quickestDeath"], ["asc"])[0];
+    }
   }
 
   get quickestKill() {
-    return orderBy(this.game.players, ["quickestKill"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["quickestKill"], ["asc"])[0];
+    }
   }
 
   get crazyShooter() {
@@ -409,7 +421,9 @@ export default class GameDetails extends Vue {
   }
 
   get everyBulletCounts() {
-    return orderBy(this.game.players, ["totalShots"], ["asc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, ["totalShots"], ["asc"])[0];
+    }
   }
 
   get collateral() {
@@ -417,8 +431,8 @@ export default class GameDetails extends Vue {
   }
 
   public game: Game | null = null;
-  public winners!: Player[] = [];
-  public losers!: Player[] = [];
+  public winners: Player[] = [];
+  public losers: Player[] = [];
   public winnerPoints: number[] = [];
   public loserPoints: number[] = [];
   protected games!: Game[];
@@ -478,7 +492,9 @@ export default class GameDetails extends Vue {
   }
 
   private retrieveValue(ref: string) {
-    return orderBy(this.game.players, [ref], ["desc"])[0];
+    if (this.game) {
+      return orderBy(this.game.players, [ref], ["desc"])[0];
+    }
   }
 }
 </script>
