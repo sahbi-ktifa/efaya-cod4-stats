@@ -27,6 +27,7 @@ export default class InitGameParser implements LineParser {
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
             parsedData.currentGame.startTime = TimeUtils.getTime(line);
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
         } else if (parsedData.currentGame &&
             (parsedData.currentGame.gameType !== gameType || parsedData.currentGame.map !== map)) {
             if (parsedData.currentGame.players.length > 2 &&
@@ -42,6 +43,7 @@ export default class InitGameParser implements LineParser {
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
             parsedData.currentGame.startTime = TimeUtils.getTime(line);
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
         } else if (parsedData.currentGame && (parsedData.currentGame.alliesScore === ctx.scoreForVictory
             || parsedData.currentGame.axisScore === ctx.scoreForVictory)) {
             parsedData.currentGame.endTime = TimeUtils.getTime(line);
@@ -49,6 +51,7 @@ export default class InitGameParser implements LineParser {
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
             parsedData.currentGame.startTime = TimeUtils.getTime(line);
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
         }
 
     }

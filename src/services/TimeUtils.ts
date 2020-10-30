@@ -1,5 +1,7 @@
 
 class TimeUtils {
+    public ROUND_START_DELAY: number = 18;
+
     public getTime(line: string): number {
         const timeTokens: string[] = line.trim().split(" ")[0].split(":");
         return (Number(timeTokens[0]) * 60) + Number(timeTokens[1]);

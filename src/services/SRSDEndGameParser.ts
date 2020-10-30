@@ -39,7 +39,7 @@ export default class SRSDEndGameParser implements LineParser {
             parsedData.currentGame.currentRound.endTime = TimeUtils.getTime(line);
             parsedData.currentGame.rounds.push(parsedData.currentGame.currentRound);
             parsedData.currentGame.currentRound = new Round();
-            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line);
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
         }
     }
 
