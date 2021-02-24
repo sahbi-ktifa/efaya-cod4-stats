@@ -38,8 +38,8 @@ export default class Game {
         const game = new Game(data.gameRefs, data.players);
         game.date = new Date(data.date);
         game.mapPreview = data.mapPreview;
-        game.twitchUrl = data.twitchUrl;
-        game.youtubeUrl = data.youtubeUrl;
+        game.twitchClips = data.twitchClips;
+        game.youtubeUrls = data.youtubeUrls;
         game.id = data.id;
         return game;
     }
@@ -50,8 +50,8 @@ export default class Game {
     public map!: string;
     public mapPreview!: string;
     public mod!: string;
-    public twitchUrl!: string;
-    public youtubeUrl!: string;
+    public twitchClips!: string[];
+    public youtubeUrls!: string[];
 
     constructor(gameRefs: GameRef[], players: Player[]) {
         this.mod = gameRefs[0].mod;

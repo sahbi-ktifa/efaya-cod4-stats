@@ -1,6 +1,21 @@
 <template>
   <div class="game" v-if="game">
-    <img class="map-preview" :src="game.mapPreview" alt="map-preview">
+    <div class="game-media">
+      <img class="map-preview" :src="game.mapPreview" alt="map-preview">
+      <div class="game-media-yt" v-for="video in game.youtubeUrls">
+        <iframe width="420" height="315"
+                :src="video.replace('/watch?v=', '/embed/')">
+        </iframe>
+      </div>
+    </div>
+    <div class="game-media-twitch">
+      <div v-for="video in game.twitchClips">
+        <iframe
+            :src="'https://clips.twitch.tv/embed?clip=' + video + '&parent=iclan-cod4-stats.netlify.app'"
+            width="420" height="315">
+        </iframe>
+      </div>
+    </div>
     <h3>{{mapNamer(game.map)}} - {{formatDate(game.date)}}
       - Manche 1 : <strong>{{durationRound1}}</strong>
       - Manche 2 : <strong>{{durationRound2}}</strong>
@@ -522,6 +537,18 @@ export default class GameDetails extends Vue {
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
   }
+  .game-media {
+    display: flex;
+    justify-content: center;
+  }
+  .game-media-yt {
+    margin-left: 20px;
+  }
+  .game-media-twitch {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+  }
   .trophies-container {
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 25px;
@@ -548,6 +575,12 @@ export default class GameDetails extends Vue {
     width: 65px;
   }
   @media (max-width: 1150px) {
+    .game-media, .game-media-twitch {
+      display: block;
+    }
+    .game-media-twitch iframe, .game-media-yt iframe {
+      width: 320px;
+    }
     .game > ul {
       overflow-x: auto;
       padding-left: 5px;

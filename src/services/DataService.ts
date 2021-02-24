@@ -15,8 +15,8 @@ export class DataService {
                 if (dataMods[i].id === extraData[extraDataKey].id) {
                     dataMods[i].date = extraData[extraDataKey].date;
                     dataMods[i].mapPreview = extraData[extraDataKey].mapPreview;
-                    dataMods[i].twitchUrl = extraData[extraDataKey].twitchUrl;
-                    dataMods[i].youtubeUrl = extraData[extraDataKey].youtubeUrl;
+                    dataMods[i].twitchClips = extraData[extraDataKey].twitchClips;
+                    dataMods[i].youtubeUrls = extraData[extraDataKey].youtubeUrls;
                 }
             }
             games.push(Game.build(dataMods[i]));
