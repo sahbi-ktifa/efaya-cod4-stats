@@ -6,8 +6,9 @@
     <div id="nav">
       <router-link to="/">Soirées</router-link> |
       <router-link to="/players">Joueurs</router-link> |
-      <router-link to="/halloffame">La creme de la creme</router-link> |
+      <router-link to="/halloffame">Hall of Fame</router-link> |
       <router-link to="/championship">Tournoi</router-link> |
+      <router-link to="/scrims">Scrims</router-link> |
       <router-link to="/matchmaking">Matchmaking</router-link>
     </div>
     <h1 class="long">COD4 iClan Statistiques</h1>
@@ -35,6 +36,8 @@ export default class App extends Vue {
     this.$store.commit("gamesRetrieved", games);
     const gameResults = this.dataService.retrieveChampionshipGames();
     this.$store.commit("championshipGamesRetrieved", gameResults);
+    const scrims = this.dataService.retrieveScrims();
+    this.$store.commit("championshipScrimsRetrieved", scrims);
   }
 }
 </script>

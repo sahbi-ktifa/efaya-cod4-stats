@@ -8,11 +8,15 @@ Vue.use(VueX);
 export default new VueX.Store({
   state: {
     games: Array<Game>(),
-    championshipGames: Array<Game>()
+    championshipGames: Array<Game>(),
+    scrims: Array<Game>(),
   },
   getters: {
     games: (state) => {
       return state.games;
+    },
+    scrims: (state) => {
+      return state.scrims;
     },
     championshipGames: (state) => {
       return state.championshipGames;
@@ -25,6 +29,9 @@ export default new VueX.Store({
     },
     championshipGamesRetrieved(state, games: Game[]) {
       state.championshipGames = games;
-    }
+    },
+    championshipScrimsRetrieved(state, games: Game[]) {
+      state.scrims = games;
+    },
   }
 });

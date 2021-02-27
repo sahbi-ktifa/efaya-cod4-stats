@@ -24,6 +24,24 @@ export class DataService {
         return games;
     }
 
+    public async retrieveScrims(): Promise<Game[]> {
+        const dataMods = await (await fetch("https://raw.githubusercontent.com/sahbi-ktifa/efaya-cod4-stats/master/src/data/scrims/scrims.json")).json();
+
+        const games: Game[] = [];
+        for (let i = 0; i < dataMods.length; i++) {
+            for (const extraDataKey in extraData) {
+                if (dataMods[i].id === extraData[extraDataKey].id) {
+                    dataMods[i].date = extraData[extraDataKey].date;
+                    dataMods[i].mapPreview = extraData[extraDataKey].mapPreview;
+                    dataMods[i].twitchClips = extraData[extraDataKey].twitchClips;
+                    dataMods[i].youtubeUrls = extraData[extraDataKey].youtubeUrls;
+                }
+            }
+            games.push(Game.build(dataMods[i]));
+        }
+        return games;
+    }
+
     public retrieveChampionshipGames(): Game[] {
         const games: Game[] = [];
         for (const key in results) {

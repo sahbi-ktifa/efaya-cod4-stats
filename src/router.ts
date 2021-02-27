@@ -46,6 +46,11 @@ export default new Router({
       path: "/championship",
       name: "championship",
       component: () => import(/* webpackChunkName: "logsparser" */ "./views/Championship.vue"),
+    },
+    {
+      path: "/scrims",
+      name: "scrims",
+      component: () => import(/* webpackChunkName: "logsparser" */ "./views/Scrims.vue"),
     }
   ],
 });

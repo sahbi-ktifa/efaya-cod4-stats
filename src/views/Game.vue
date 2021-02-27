@@ -278,7 +278,8 @@ import TimeUtils from "@/services/TimeUtils";
   computed: {
     ...mapGetters({
       games: "games",
-      gameResults: "championshipGames"
+      gameResults: "championshipGames",
+      scrims: "scrims"
     })
   }
 })
@@ -452,6 +453,7 @@ export default class GameDetails extends Vue {
   public loserPoints: number[] = [];
   protected games!: Game[];
   protected gameResults!: Game[];
+  protected scrims!: Game[];
 
   public created() {
     this.loadData();
@@ -462,6 +464,9 @@ export default class GameDetails extends Vue {
     if (this.$route.params.map.indexOf("championship") === 0) {
       const matchId = this.$route.params.map.replace("championship", "");
       this.game = this.gameResults.filter((game) => game.id === matchId)[0];
+    } else if (this.$route.params.map.indexOf("scrims") === 0) {
+      const matchId = this.$route.params.map.replace("scrims", "");
+      this.game = this.scrims.filter((game) => game.id === matchId)[0];
     } else {
       this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
     }
