@@ -36,7 +36,7 @@ export default class App extends Vue {
     this.$store.commit("gamesRetrieved", games);
     const gameResults = this.dataService.retrieveChampionshipGames();
     this.$store.commit("championshipGamesRetrieved", gameResults);
-    const scrims = this.dataService.retrieveScrims();
+    const scrims = await this.dataService.retrieveScrims();
     this.$store.commit("championshipScrimsRetrieved", scrims);
   }
 }

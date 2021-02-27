@@ -5,7 +5,7 @@
       <li v-for="game in scrims" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
         <div class="game-summary">
-          <h4>{{mapNamer(game.map)}}</h4>
+          <h4>{{mapNamer(game.map)}} - iClan vs XI</h4>
           <h4 class="game-date">{{formatDate(game.date)}}</h4>
           <div class="players-summary">Joueurs : <strong>{{game.players.length}}</strong></div>
           <span class="round-summary">
@@ -75,7 +75,7 @@ export default class Scrims extends Vue {
   }
 
   public goToGame(game: Game) {
-    this.$router.push("/game/scrims/" + game.map);
+    this.$router.push("/game/scrims" + game.id);
   }
 
   public mapNamer(mapName: string): string {
