@@ -1,11 +1,21 @@
 import Game from "@/model/Game";
 import extraData from "@/data/extradata.json";
-import results from "@/data/championship/season1/results.json";
+import resultsS1 from "@/data/championship/season1/results.json";
+import resultsS2 from "@/data/championship/season2/results.json";
 import {PlayerGlobalData} from "@/model/Player";
 import {orderBy} from "lodash";
 import {format} from "date-fns";
 
 export class DataService {
+    private championshipResults: any[] = [];
+
+    constructor() {
+        // @ts-ignore
+        this.championshipResults["2020"] = resultsS1;
+        // @ts-ignore
+        this.championshipResults["2021"] = resultsS2;
+    }
+
     public async retrieveGames(): Promise<Game[]> {
         const dataMods = await (await fetch("https://raw.githubusercontent.com/sahbi-ktifa/efaya-cod4-stats/master/src/data/s16/results.json")).json();
 
@@ -42,8 +52,10 @@ export class DataService {
         return games;
     }
 
-    public retrieveChampionshipGames(): Game[] {
+    public retrieveChampionshipGames(season: string): Game[] {
         const games: Game[] = [];
+        // @ts-ignore
+        const results = this.championshipResults[season];
         for (const key in results) {
             for (const key2 in extraData) {
                 if (results[key].id === extraData[key2].id) {

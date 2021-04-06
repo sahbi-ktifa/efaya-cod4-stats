@@ -1,12 +1,17 @@
 <template>
     <div class="championship-wrapper">
+        <div class="championship-selector">
+          Tournoi :
+          <strong @click="goToTournament('2020')" :class="{'selected' : seasonKey === '2020'}">2020</strong>
+          <strong @click="goToTournament('2021')" :class="{'selected' : seasonKey === '2021'}">2021</strong>
+        </div>
         <ul>
             <li><h2>Teams engagées:</h2></li>
             <li v-for="team in teams">
                 <div class="team-info">
                     <img class="team-logo" alt="Team logo" v-if="team.name" :src="teamIcon(team.name)">
                     <h2>{{team.name}} </h2>
-                    <span class="mean">({{team.emp.toFixed(0)}} EMP)</span>
+                    <span v-if="team.emp" class="mean">({{team.emp.toFixed(0)}} EMP)</span>
                 </div>
                 <div class="team-info">
                     <img v-if="team.map" class="team-map" alt="Team map" :src="teamMap(team.map)">
@@ -20,8 +25,8 @@
             </li>
         </ul>
         <div class="main-content">
-            <h2>And the winner are..... Les Sales Gosses!!!!!!!!!! 👏👏 🎉🎉</h2>
-            <div class="players">
+            <h2 v-if="winner">And the winner are..... {{ winner }}!!!!!!!!!! 👏👏 🎉🎉</h2>
+            <div class="players" v-if="sortedDataForPlayers.length > 0">
                 <ul>
                     <li>
                         <strong class="header" @click="changeSort('playerRef.playerName')" :class="{'active': sortKey === 'playerRef.playerName'}">Joueur</strong>
@@ -49,8 +54,13 @@
                     </li>
                 </ul>
             </div>
-            <h2>Mentions spéciales</h2>
-            <div class="trophies">
+            <h2 v-if="sortedDataForPlayers.length > 0">Mentions spéciales</h2>
+            <div class="trophies" v-if="sortedDataForPlayers.length > 0">
+                <div>
+                    <img src="../assets/award/trophy.png" class="trophy">
+                    <strong>MVP</strong><br/>
+                    <i>{{bestPlayer.ref.playerName}} : {{bestPlayer.value}} points</i>
+                </div>
                 <div>
                     <img src="../assets/award/killer.png" class="trophy">
                     <strong>Le tueur</strong><br/>
@@ -69,7 +79,7 @@
                 <div>
                     <img src="../assets/award/defuser.png" class="trophy">
                     <strong>Defuser de bombe</strong><br/>
-                    <i>{{defuser.ref.playerName}} : {{defuser.value}} kills</i>
+                    <i>{{defuser.ref.playerName}} : {{defuser.value}} defuse(s)</i>
                 </div>
                 <div>
                     <img src="../assets/award/collateral.png" class="trophy">
@@ -87,8 +97,8 @@
                     <i>Pascual</i>
                 </div>
             </div>
-            <h2>Matchs déjà joués :</h2>
-            <ul>
+            <h2 v-if="playedMatches.length > 0">Matchs déjà joués :</h2>
+            <ul v-if="playedMatches.length > 0">
                 <li v-for="match in playedMatches">
                     <div class="match-displayer played">
                         <div>
@@ -113,6 +123,24 @@
                     </div>
                 </li>
             </ul>
+          <h2 v-if="nextMatches.length > 0">Prochain matchs à jouer :</h2>
+          <ul v-if="nextMatches.length > 0">
+            <li v-for="match in nextMatches">
+              <div class="match-displayer">
+                <div>
+                  <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
+                  <h3>{{match.team1}}</h3>
+                </div>
+                <div>
+                  <img src="../assets/versus.png" class="versus">
+                </div>
+                <div>
+                  <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
+                  <h3>{{match.team2}}</h3>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
         <div class="right-content">
             <h2>Classement</h2>
@@ -149,15 +177,17 @@
 
 <script lang="ts">
 import {Component, Inject, Vue} from "vue-property-decorator";
-import season1Teams from "@/data/championship/season1/teams.json";
-import season1Calendar from "@/data/championship/season1/calendar.json";
-import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
 import {mapGetters} from "vuex";
-import {MatchmakingService} from "@/services/MatchmakingService";
-import Game from "@/model/Game";
 import {orderBy} from "lodash";
-import {Player, PlayerGlobalData, PlayerRef} from '@/model/Player';
-import {DataService} from '@/services/DataService';
+import season1Teams from "@/data/championship/season1/teams.json";
+import season2Teams from "@/data/championship/season2/teams.json";
+import season1Calendar from "@/data/championship/season1/calendar.json";
+import season2Calendar from "@/data/championship/season2/calendar.json";
+import {MatchmakingService} from "@/services/MatchmakingService";
+import {DataService} from "@/services/DataService";
+import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
+import Game from "@/model/Game";
+import {Player, PlayerGlobalData, PlayerRef} from "@/model/Player";
 
 
 @Component({
@@ -166,6 +196,16 @@ import {DataService} from '@/services/DataService';
             games: "games",
             gameResults: "championshipGames"
         })
+    },
+    beforeRouteEnter(to, from, next) {
+      next((vm) => {
+        if (vm.$route.query.s) {
+          // @ts-ignore
+          vm.seasonKey = vm.$route.query.s;
+        }
+        // @ts-ignore
+        vm.init();
+      });
     }
 })
 export default class Championship extends Vue {
@@ -175,6 +215,7 @@ export default class Championship extends Vue {
     protected gameResults!: Game[];
     private teams: ChampionshipTeam[] = [];
     private matches: ChampionshipMatch[] = [];
+    private bestPlayer: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private totalKills: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private killStreak: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private longestKill: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
@@ -184,28 +225,51 @@ export default class Championship extends Vue {
     private dataForPlayers: PlayerGlobalData[] = [];
     private sortKey: string = "playerRef.playerName";
     private sortKeyDirection: string = "asc";
+    private seasonKey: string = "2021";
 
-    public created() {
-        for (let i = 0; i < season1Calendar.length; i++) {
-            this.matches.push(new ChampionshipMatch(season1Calendar[i]));
+    public reset() {
+      this.teams = [];
+      this.matches = [];
+      this.bestPlayer = {ref: {} as PlayerRef, value: 0};
+      this.totalKills = {ref: {} as PlayerRef, value: 0};
+      this.killStreak = {ref: {} as PlayerRef, value: 0};
+      this.longestKill = {ref: {} as PlayerRef, value: 0};
+      this.collateralKill = {ref: {} as PlayerRef, value: 0};
+      this.teamKill = {ref: {} as PlayerRef, value: 0};
+      this.defuser = {ref: {} as PlayerRef, value: 0};
+      this.dataForPlayers = [];
+    }
+
+    public init() {
+      const gameResults = this.dataService.retrieveChampionshipGames(this.seasonKey);
+      this.$store.commit("championshipGamesRetrieved", gameResults);
+      this.reset();
+      for (let i = 0; i < this.calendarBySeason.length; i++) {
+            this.matches.push(new ChampionshipMatch(this.calendarBySeason[i]));
         }
-        for (let i = 0; i < season1Teams.length; i++) {
-            this.teams.push(new ChampionshipTeam(season1Teams[i]));
+      for (let i = 0; i < this.teamsBySeason.length; i++) {
+            this.teams.push(new ChampionshipTeam(this.teamsBySeason[i]));
         }
-        this.teams.forEach((t) => {
+      this.teams.forEach((t) => {
             let mean = 0;
             t.members.forEach((m) => mean += this.matchMakingService.computeEMP(m.guid, this.games));
             t.emp = mean / 3;
         });
 
-        this.computeResults();
-        let refRatio1 =  -1;
-        let refRatio2 =  -1;
-        let refRatio3 =  -1;
-        let refRatio4 =  -1;
-        let refRatio5 =  -1;
-        let refRatio6 =  -1;
-        for (const gameResult of this.gameResults) {
+      this.computeResults();
+      let refRatio1 =  -1;
+      let refRatio2 =  -1;
+      let refRatio3 =  -1;
+      let refRatio4 =  -1;
+      let refRatio5 =  -1;
+      let refRatio6 =  -1;
+      for (const gameResult of this.gameResults) {
+            const totalScore = this.retrieveValue(gameResult, "totalScore");
+            if (this.bestPlayer.value < totalScore.totalScore || (this.bestPlayer.value === totalScore.totalScore && totalScore.globalRatio > refRatio1)) {
+                this.bestPlayer.value = totalScore.totalScore;
+                this.bestPlayer.ref = totalScore.playerRef;
+                refRatio1 = totalScore.globalRatio;
+            }
             const totalKills = this.retrieveValue(gameResult, "totalKills");
             if (this.totalKills.value < totalKills.totalKills || (this.totalKills.value === totalKills.totalKills && totalKills.globalRatio > refRatio1)) {
                 this.totalKills.value = totalKills.totalKills;
@@ -243,8 +307,36 @@ export default class Championship extends Vue {
                 refRatio6 = defuser.bombsDefused;
             }
         }
-        this.dataForPlayers = this.dataService.computePlayersPerformance(this.gameResults, false);
-        this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
+      this.dataForPlayers = this.dataService.computePlayersPerformance(this.gameResults, false);
+      this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
+    }
+
+    get winner(): string {
+      if (this.seasonKey === "2020") {
+        return "Les Sales gosses";
+      }
+      return "";
+    }
+
+    get calendarBySeason() {
+      if (this.seasonKey === "2020") {
+        return season1Calendar;
+      }
+      return season2Calendar;
+    }
+
+    get teamsBySeason() {
+      if (this.seasonKey === "2020") {
+        return season1Teams;
+      }
+      return season2Teams;
+    }
+
+    get seasonName() {
+      if (this.seasonKey === "2020") {
+        return "season1";
+      }
+      return "season2";
     }
 
     get teamsLadder(): ChampionshipTeam[] {
@@ -274,8 +366,8 @@ export default class Championship extends Vue {
     }
 
     public teamIcon(team: string): string {
-        const images = require.context("../data/championship/season1/icons", false, /\.png$/);
-        return images("./" + team + ".png");
+        const images = require.context("../data/championship/", true, /\.png$/);
+        return images("./" + this.seasonName + "/icons/" + team + ".png");
     }
 
     public teamMap(map: string): string {
@@ -284,6 +376,11 @@ export default class Championship extends Vue {
 
     public goToGame(matchId: string) {
         this.$router.push("/game/championship" + matchId);
+    }
+
+    public goToTournament(tournamentSeason: string) {
+      this.seasonKey = tournamentSeason;
+      this.init();
     }
 
     public matchPlayed(team: string): number {
@@ -336,6 +433,22 @@ export default class Championship extends Vue {
 </script>
 
 <style scoped>
+  .championship-selector > strong {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .championship-selector > strong.selected {
+    color: #36ebff;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .championship-selector > strong:hover {
+    color: #36ebff;
+  }
+  .championship-selector {
+    position: absolute;
+    font-style: italic;
+  }
     .championship-wrapper {
         background-color: rgba(0, 0, 0, 0.4);
         grid-template-columns: 25% 50% 25%;

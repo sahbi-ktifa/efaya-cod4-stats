@@ -1,0 +1,110 @@
+[
+  {
+    "name": "NGBC",
+    "map": "mp_mw3_lookout",
+    "members": [
+      {
+        "guid": "df1ee051745ce762b779ad5f6c358fc5",
+        "playerName": "[NGBC]Raptor"
+      },
+      {
+        "guid": "707b4ca1f85022a42efebe0c38e5469e",
+        "playerName": "[NGBC]Guillaume"
+      },
+      {
+        "guid": "8dd694477b3bd8c4496d7410eb58616c",
+        "playerName": "[NGBC]Tcherenkov"
+      }
+    ]
+  },
+  {
+    "name": "Les pisseurs",
+    "map": "mp_crash2",
+    "members": [
+      {
+        "guid": "d8b7a5821891cd7e0d33bbc3fbe9e708",
+        "playerName": "BingO_o"
+      },
+      {
+        "guid": "357e8601e337dbf72c286cd7a2d7db44",
+        "playerName": "Fre2x3"
+      },
+      {
+        "guid": "e56a7f8701d6a8f643f6aac221e176cd",
+        "playerName": "Vaas"
+      }
+    ]
+  },
+  {
+    "name": "Happy fraggers",
+    "map": "mp_stalingrad2",
+    "members": [
+      {
+        "guid": "babcdf4277b4bc3accf89ab45cdeecdd",
+        "playerName": "Ycaare"
+      },
+      {
+        "guid": "971ab0c65576db223856462391403f10",
+        "playerName": "Pistol-Pete"
+      },
+      {
+        "guid": "f13a742970b0b875c47372b97d668a82",
+        "playerName": "Akabane"
+      }
+    ]
+  },
+  {
+    "name": "Les durs à cuire",
+    "map": "mp_ziba_tower",
+    "members": [
+      {
+        "guid": "f5b4590d00d3b7fa2e3db490fe61b2d0",
+        "playerName": "Pascual"
+      },
+      {
+        "guid": "9b26363dcbdfb0676e64637b635feb91",
+        "playerName": "Efaya"
+      },
+      {
+        "guid": "597dce65ed33d9cf4b40064f7550eb82",
+        "playerName": "JmD"
+      }
+    ]
+  },
+  {
+    "name": "tba",
+    "map": "",
+    "members": [
+      {
+        "guid": "efbf178122af072a6977ed8d9d681707",
+        "playerName": "Angel"
+      },
+      {
+        "guid": "bad40b5d8f3b3b99ae2361b92ed6ad81",
+        "playerName": "Gabit"
+      },
+      {
+        "guid": "034656fe8a661e092470947563b489a9",
+        "playerName": "Paf"
+      }
+    ]
+  },
+  {
+    "name": "Louis trio, la belle affaire",
+    "map": "mp_remagen",
+    "members": [
+      {
+        "guid": "3856a5e494ee0255cf1f2499b449ec2e",
+        "playerName": "Louis92"
+      },
+      {
+        "guid": "debd6ca8825f665585b4a6e80850d555",
+        "playerName": "RookMoot"
+      },
+      {
+        "guid": "130236d724d02bcdd927e1622bdac598",
+        "playerName": "Cedmac"
+      }
+    ]
+  }
+]
