@@ -36,7 +36,7 @@
     ]
   },
   {
-    "name": "Happy fraggers",
+    "name": "Trigger-Happy",
     "map": "mp_stalingrad2",
     "members": [
       {
@@ -72,8 +72,8 @@
     ]
   },
   {
-    "name": "tba",
-    "map": "",
+    "name": "NoName",
+    "map": "mp_highrise",
     "members": [
       {
         "guid": "efbf178122af072a6977ed8d9d681707",
