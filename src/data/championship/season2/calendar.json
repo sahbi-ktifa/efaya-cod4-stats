@@ -1,7 +1,7 @@
 [
-  {"match1Id":"", "match2Id":"", "team1": "Louis trio, la belle affaire","team2":"Les pisseurs",
-    "played": false, "match1MapName": "mp_remagen", "match2MapName": "mp_crash",
-    "match1Map": "Remagen", "match2Map": "Crash", "match1Result": "", "match2Result": ""},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9yZW1hZ2VuXzAuMTg2MzM3Mzc0OTU3NTY0Mw==", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9jcmFzaF8wLjgwNDA2NzQ4NzQ2Njc5MjY=", "team1": "Louis trio, la belle affaire","team2":"Les pisseurs",
+    "played": true, "match1MapName": "mp_remagen", "match2MapName": "mp_crash",
+    "match1Map": "Remagen", "match2Map": "Crash", "match1Result": "0/5 1/5", "match2Result": "2/5 3/5"},
   {"match1Id":"", "match2Id":"", "team1": "NGBC","team2":"Les durs à cuire",
     "played": false, "match1MapName": "mp_mw3_lookout", "match2MapName": "mp_efa_ziba_tower",
     "match1Map": "Lookout", "match2Map": "Ziba Tower", "match1Result": "", "match2Result": ""}
