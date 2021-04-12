@@ -4,6 +4,9 @@
     "match1Map": "Remagen", "match2Map": "Crash", "match1Result": "0/5 1/5", "match2Result": "2/5 3/5"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9tdzNfbG9va291dF8wLjI3MjQ5MjUzNDk4NzU2Mjk=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9lZmFfemliYV90b3dlcl8wLjYxNDkzNjU5Njg5ODIxMzc=", "team1": "NGBC","team2":"Les durs à cuire",
     "played": true, "match1MapName": "mp_mw3_lookout", "match2MapName": "mp_efa_ziba_tower",
-    "match1Map": "Lookout", "match2Map": "Ziba Tower", "match1Result": "3/5 1/5", "match2Result": "0/5 0/5"}
+    "match1Map": "Lookout", "match2Map": "Ziba Tower", "match1Result": "3/5 1/5", "match2Result": "0/5 0/5"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9zdGFsaW5ncmFkMl8wLjkxNjQ2MTIxMjAyMjU4Nzc=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9jcmFzaF8wLjQ3NTI1MjEyNjgxNDM4NDg=", "team1": "Trigger Happy","team2":"Les pisseurs",
+    "played": true, "match1MapName": "mp_stalingrad2", "match2MapName": "mp_crash",
+    "match1Map": "Stalingrad", "match2Map": "Crash", "match1Result": "1/5 2/5", "match2Result": "2/5 1/5"}
 ]
 

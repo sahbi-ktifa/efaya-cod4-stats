@@ -635,7 +635,7 @@ export default class Championship extends Vue {
     .players > ul > li {
         display: grid;
         font-size: 14px;
-        grid-template-columns: 80px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+        grid-template-columns: 120px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
         grid-gap: 0 20px;
         align-items: center;
         margin-bottom: 10px;

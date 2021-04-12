@@ -71,7 +71,7 @@ export default class LogsParserService {
             this.parseLine(line, parsedData, ctx);
             lines++;
         });
-        // console.log(parsedData)
+         console.log(parsedData)
         const gameRefs = orderBy(parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
             && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory)), "startTime");
         const games = [];
@@ -109,12 +109,11 @@ export default class LogsParserService {
         }
         let parsedContent = "";
         games.forEach((g) => {
+            console.log(JSON.stringify(g), g);
             if (g.players.length > 4) {
                 parsedContent += JSON.stringify(g) + ",\n";
             }
         });
-        // tslint:disable-next-line:no-console
-        console.log(parsedContent, games);
         // @ts-ignore
         window.games = games;
     }
