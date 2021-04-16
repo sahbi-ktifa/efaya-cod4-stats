@@ -10,6 +10,9 @@
     "match1Map": "Stalingrad", "match2Map": "Crash", "match1Result": "1/5 2/5", "match2Result": "2/5 1/5"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9zdGFsaW5ncmFkMl8wLjk0ODg3NTYyNDE3NTU4MTY=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9lZmFfemliYV90b3dlcl8wLjE0MTc5MTE0NTY3NjE4MTM0", "team1": "Trigger Happy","team2":"Les durs à cuire",
     "played": true, "match1MapName": "mp_stalingrad2", "match2MapName": "mp_efa_ziba_tower",
-    "match1Map": "Stalingrad", "match2Map": "Ziba Tower", "match1Result": "2/5 5/3", "match2Result": "0/5 5/1"}
+    "match1Map": "Stalingrad", "match2Map": "Ziba Tower", "match1Result": "2/5 5/3", "match2Result": "0/5 5/1"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9oaWdocmlzZV8wLjU1NjY0NjU1NDE4MDQwMzE=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9zdGFsaW5ncmFkMl8wLjA5MTk5Mzk1ODA2OTkzMTgy", "team1": "NoName","team2":"Trigger Happy",
+    "played": true, "match1MapName": "mp_highrise", "match2MapName": "mp_stalingrad2",
+    "match1Map": "Highrise", "match2Map": "Stalingrad", "match1Result": "3/5 1/5", "match2Result": "2/5 1/5"}
 ]
 
