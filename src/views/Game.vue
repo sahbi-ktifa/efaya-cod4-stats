@@ -111,7 +111,7 @@
         </div>
         <div>
           <img src="../assets/award/bankable.png" class="trophy">
-          <strong>Celui sur qui parié (meilleur ratio)</strong><br/>
+          <strong>Celui sur qui parier (meilleur ratio)</strong><br/>
           <i>{{bankable.playerRef.playerName}} : {{bankable.globalRatio}}</i>
         </div>
         <div>
@@ -318,7 +318,7 @@ export default class GameDetails extends Vue {
 
   get unkillable() {
     if (this.game) {
-      return orderBy(this.game.players, ["totalDeaths"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["totalDeaths"], ["asc"])[0];
     }
   }
 
@@ -380,13 +380,13 @@ export default class GameDetails extends Vue {
 
   get consistency() {
     if (this.game) {
-      return orderBy(this.game.players, ["consistency"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["consistency"], ["asc"])[0];
     }
   }
 
   get inconsistency() {
     if (this.game) {
-      return orderBy(this.game.players, ["consistency"], ["desc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["consistency"], ["desc"])[0];
     }
   }
 
@@ -416,19 +416,19 @@ export default class GameDetails extends Vue {
 
   get camper() {
     if (this.game) {
-      return orderBy(this.game.players, ["distance"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["distance"], ["asc"])[0];
     }
   }
 
   get quickestDeath() {
     if (this.game) {
-      return orderBy(this.game.players, ["quickestDeath"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["quickestDeath"], ["asc"])[0];
     }
   }
 
   get quickestKill() {
     if (this.game) {
-      return orderBy(this.game.players, ["quickestKill"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["quickestKill"], ["asc"])[0];
     }
   }
 
@@ -438,7 +438,7 @@ export default class GameDetails extends Vue {
 
   get everyBulletCounts() {
     if (this.game) {
-      return orderBy(this.game.players, ["totalShots"], ["asc"])[0];
+      return orderBy(this.playersWithoutSpectators, ["totalShots"], ["asc"])[0];
     }
   }
 
@@ -459,6 +459,13 @@ export default class GameDetails extends Vue {
     this.loadData();
   }
 
+  get playersWithoutSpectators(): Player[] {
+    if (!this.game) {
+      return [];
+    }
+    return this.game.players.filter((p) => p.totalDeaths > 0);
+  }
+
   @Watch("games")
   public loadData() {
     if (this.$route.params.map.indexOf("championship") === 0) {
@@ -474,8 +481,8 @@ export default class GameDetails extends Vue {
       const [winnersGuid, losersGuid, winnerPoints, loserPoints] = new GameService().computeWinnersLosers(this.game);
       this.winnerPoints = winnerPoints;
       this.loserPoints = loserPoints;
-      this.winners = this.game.players.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
-      this.losers = this.game.players.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
+      this.winners = this.playersWithoutSpectators.filter((p) => winnersGuid.indexOf(p.playerRef.guid) > -1);
+      this.losers = this.playersWithoutSpectators.filter((p) => losersGuid.indexOf(p.playerRef.guid) > -1);
     }
   }
 
@@ -513,7 +520,7 @@ export default class GameDetails extends Vue {
 
   private retrieveValue(ref: string) {
     if (this.game) {
-      return orderBy(this.game.players, [ref], ["desc"])[0];
+      return orderBy(this.playersWithoutSpectators, [ref], ["desc"])[0];
     }
   }
 }
