@@ -13,6 +13,9 @@
     "match1Map": "Stalingrad", "match2Map": "Ziba Tower", "match1Result": "2/5 5/3", "match2Result": "0/5 5/1"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9oaWdocmlzZV8wLjU1NjY0NjU1NDE4MDQwMzE=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9zdGFsaW5ncmFkMl8wLjA5MTk5Mzk1ODA2OTkzMTgy", "team1": "NoName","team2":"Trigger Happy",
     "played": true, "match1MapName": "mp_highrise", "match2MapName": "mp_stalingrad2",
-    "match1Map": "Highrise", "match2Map": "Stalingrad", "match1Result": "3/5 1/5", "match2Result": "2/5 1/5"}
+    "match1Map": "Highrise", "match2Map": "Stalingrad", "match1Result": "3/5 1/5", "match2Result": "2/5 1/5"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9tdzNfbG9va291dF8wLjU0MjkxMTUxMzY4MDI1NTQ=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9jcmFzaF8wLjkyODk4NTEyNzg5MTcwOTQ=", "team1": "NGBC","team2":"Les pisseurs",
+    "played": true, "match1MapName": "mp_mw3_lookout", "match2MapName": "mp_crash2",
+    "match1Map": "Lookout", "match2Map": "Crash", "match1Result": "1/5 3/5", "match2Result": "2/5 0/5"}
 ]
 
