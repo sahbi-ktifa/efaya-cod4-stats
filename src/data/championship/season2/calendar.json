@@ -16,6 +16,9 @@
     "match1Map": "Highrise", "match2Map": "Stalingrad", "match1Result": "3/5 1/5", "match2Result": "2/5 1/5"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9tdzNfbG9va291dF8wLjU0MjkxMTUxMzY4MDI1NTQ=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9jcmFzaF8wLjkyODk4NTEyNzg5MTcwOTQ=", "team1": "NGBC","team2":"Les pisseurs",
     "played": true, "match1MapName": "mp_mw3_lookout", "match2MapName": "mp_crash2",
-    "match1Map": "Lookout", "match2Map": "Crash", "match1Result": "1/5 3/5", "match2Result": "2/5 0/5"}
+    "match1Map": "Lookout", "match2Map": "Crash", "match1Result": "1/5 3/5", "match2Result": "2/5 0/5"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9yZW1hZ2VuXzAuMjIxNjUyOTA4MzQ5MTExMjI=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9zdGFsaW5ncmFkMl8wLjkxNjUxNjY0MDI1NTQ2MDg=", "team1": "Louis trio, la belle affaire","team2":"Trigger Happy",
+    "played": true, "match1MapName": "mp_remagen", "match2MapName": "mp_stalingrad2",
+    "match1Map": "Remagen", "match2Map": "Stalingrad", "match1Result": "5/4 5/4", "match2Result": "4/5 4/5"}
 ]
 
