@@ -28,6 +28,9 @@
     "match1Map": "Lookout", "match2Map": "Stalingrad", "match1Result": "3/5 1/5", "match2Result": "1/5 2/5"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9lZmFfemliYV90b3dlcl8wLjE0MTY4MTY3MzU5OTM3NDY3", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9yZW1hZ2VuXzAuOTE0MDEyMTU4ODgwMjg2Mw==", "team1": "Les durs à cuire","team2": "Louis trio, la belle affaire",
     "played": true, "match1MapName": "mp_efa_ziba_tower", "match2MapName": "mp_remagen",
-    "match1Map": "Ziba Tower", "match2Map": "Remagen", "match1Result": "5/3 4/5", "match2Result": "1/5 2/5"}
+    "match1Map": "Ziba Tower", "match2Map": "Remagen", "match1Result": "5/3 4/5", "match2Result": "1/5 2/5"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9jcmFzaF8wLjM3MzA1NzI2MjIxNDgxNDU=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9oaWdocmlzZV8wLjEwODQwNjUwMDU1MTI4MTc2", "team1": "Les pisseurs","team2": "NoName",
+    "played": true, "match1MapName": "mp_crash", "match2MapName": "mp_highrise",
+    "match1Map": "Crash", "match2Map": "Highrise", "match1Result": "2/5 2/5", "match2Result": "5/1 5/3"}
 ]
 
