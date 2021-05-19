@@ -37,6 +37,9 @@
     "match1Map": "Crash", "match2Map": "Highrise", "match1Result": "5/4 2/5", "match2Result": "0/5 2/5"},
   {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9oaWdocmlzZV8wLjQ5NzcyNzM3MTA5NzEyNjE3", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9yZW1hZ2VuXzAuNTU2NTgzMDA2MzMwNTc5NA==", "team2": "Louis trio, la belle affaire","team1": "NoName",
     "played": true, "match1MapName": "mp_highrise", "match2MapName": "mp_remagen",
-    "match1Map": "Highrise", "match2Map": "Remagen", "match1Result": "5/3 5/0", "match2Result": "4/5 2/5"}
+    "match1Map": "Highrise", "match2Map": "Remagen", "match1Result": "5/3 5/0", "match2Result": "4/5 2/5"},
+  {"match1Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9tdzNfbG9va291dF8wLjg5NjkyODM3OTA0NzcwNzY=", "match2Id":"ZWZheWFfdjJfdG91cm5hbWVudF9tcF9oaWdocmlzZV8wLjE5NTIzMDQ5MDY1Nzg2NTk=", "team1": "NGBC","team2": "NoName",
+    "played": true, "match1MapName": "mp_mw3_lookout", "match2MapName": "mp_highrise",
+    "match1Map": "Lookout", "match2Map": "Highrise", "match1Result": "", "match2Result": ""}
 ]
 
