@@ -315,6 +315,9 @@ export default class Championship extends Vue {
       if (this.seasonKey === "2020") {
         return "Les Sales gosses";
       }
+      if (this.seasonKey === "2021") {
+        return "Les pisseurs";
+      }
       return "";
     }
 
