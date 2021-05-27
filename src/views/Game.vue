@@ -164,10 +164,10 @@
           <strong>Le mec qui joue en fait pour l'autre équipe</strong><br/>
           <i>{{teamKiller.playerRef.playerName}} : {{teamKiller.teamKills}} teamkill(s)</i>
         </div>
-        <div v-if="teamKilled.teamKilled > 0">
+        <div v-if="teamKilled.length > 0">
           <img src="../assets/award/teamkiller.png" class="trophy">
-          <strong>Le mec trahi par sa propre équipe</strong><br/>
-          <i>{{teamKilled.playerRef.playerName}} : {{teamKilled.teamKilled}} teamkillé(s)</i>
+          <strong>Le(s) mec(s) trahi par sa propre équipe</strong><br/>
+          <i><span v-for="(tk, idx) in teamKilled">{{tk.playerRef.playerName}}<span v-if="idx + 1 < teamKilled.length">, </span></span> : Teamkillé(s) {{teamKilled[0].teamKilled}} fois</i>
         </div>
         <div v-if="rifleKiller.rifleKills > 0">
           <img src="../assets/award/rifler.png" class="trophy">
@@ -372,7 +372,7 @@ export default class GameDetails extends Vue {
   }
 
   get teamKilled() {
-    return this.retrieveValue("teamKilled");
+    return this.retrieveValues("teamKilled");
   }
 
   get knifeKiller() {
@@ -530,6 +530,12 @@ export default class GameDetails extends Vue {
   private retrieveValue(ref: string) {
     if (this.game) {
       return orderBy(this.playersWithoutSpectators, [ref], ["desc"])[0];
+    }
+  }
+
+  private retrieveValues(ref: string) {
+    if (this.game) {
+      return orderBy(this.playersWithoutSpectators, [ref], ["desc"]);
     }
   }
 }
