@@ -164,7 +164,7 @@
           <strong>Le mec qui joue en fait pour l'autre équipe</strong><br/>
           <i>{{teamKiller.playerRef.playerName}} : {{teamKiller.teamKills}} teamkill(s)</i>
         </div>
-        <div v-if="teamKilled.length > 0">
+        <div v-if="teamKilled.length > 0 && teamKilled[0].teamKilled">
           <img src="../assets/award/teamkiller.png" class="trophy">
           <strong>Le(s) mec(s) trahi par sa propre équipe</strong><br/>
           <i><span v-for="(tk, idx) in teamKilled">{{tk.playerRef.playerName}}<span v-if="idx + 1 < teamKilled.length">, </span></span> : Teamkillé(s) {{teamKilled[0].teamKilled}} fois</i>
@@ -535,7 +535,9 @@ export default class GameDetails extends Vue {
 
   private retrieveValues(ref: string) {
     if (this.game) {
-      return orderBy(this.playersWithoutSpectators, [ref], ["desc"]);
+      const ordered = orderBy(this.playersWithoutSpectators, [ref], ["desc"]);
+      // @ts-ignore
+      return ordered.filter((v) => v[ref] === ordered[0][ref]);
     }
   }
 }
