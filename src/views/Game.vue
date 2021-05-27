@@ -164,6 +164,11 @@
           <strong>Le mec qui joue en fait pour l'autre équipe</strong><br/>
           <i>{{teamKiller.playerRef.playerName}} : {{teamKiller.teamKills}} teamkill(s)</i>
         </div>
+        <div v-if="teamKilled.teamKilled > 0">
+          <img src="../assets/award/teamkiller.png" class="trophy">
+          <strong>Le mec trahi par sa propre équipe</strong><br/>
+          <i>{{teamKilled.playerRef.playerName}} : {{teamKilled.teamKilled}} teamkillé(s)</i>
+        </div>
         <div v-if="rifleKiller.rifleKills > 0">
           <img src="../assets/award/rifler.png" class="trophy">
           <strong>Maître des fusils d'assaut</strong><br/>
@@ -364,6 +369,10 @@ export default class GameDetails extends Vue {
 
   get teamKiller() {
     return this.retrieveValue("teamKills");
+  }
+
+  get teamKilled() {
+    return this.retrieveValue("teamKilled");
   }
 
   get knifeKiller() {

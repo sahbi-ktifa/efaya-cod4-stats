@@ -22,9 +22,12 @@ export default class KillParser implements LineParser {
             for (const player of parsedData.currentGame.currentRound.players) {
                 if (player.playerRef.guid === tokens[5]) {
                     player.kills++;
-                    player.score += POINTS.KILL;
                     if (tokens[3] === tokens[7]) {
+                        console.log('TK');
                         player.teamKills++;
+                        parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0].teamKilled++;
+                    } else {
+                        player.score += POINTS.KILL;
                     }
                     if (tokens[12] === "head") {
                         player.headShots++;
