@@ -139,6 +139,9 @@ export default class LogsParserService {
                         p.headShots += player.headShots;
                         p.teamKills += player.teamKills;
                         p.teamKilled += player.teamKilled;
+                        p.headShoted += player.headShoted;
+                        p.knifed += player.knifed;
+                        p.grenaded += player.grenaded;
                         p.grenadeKills += player.grenadeKills;
                         p.pistolKills += player.pistolKills;
                         p.sniperKills += player.sniperKills;

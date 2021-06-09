@@ -117,6 +117,9 @@ export class PlayerForRound {
     public headShots = 0;
     public teamKills = 0;
     public teamKilled = 0;
+    public knifed = 0;
+    public headShoted = 0;
+    public grenaded = 0;
     public grenadeKills = 0;
     public pistolKills = 0;
     public rifleKills = 0;
@@ -169,6 +172,9 @@ export class Player {
     public headShots = 0;
     public teamKills = 0;
     public teamKilled = 0;
+    public knifed = 0;
+    public headShoted = 0;
+    public grenaded = 0;
     public grenadeKills = 0;
     public pistolKills = 0;
     public rifleKills = 0;

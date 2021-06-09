@@ -194,10 +194,30 @@
           <strong>Maître des Grenades</strong><br/>
           <i>{{nadeKiller.playerRef.playerName}} : {{nadeKiller.grenadeKills}} kills</i>
         </div>
+        <div v-if="grenaded.length > 0 && grenaded[0].grenaded">
+          <img src="../assets/award/grenade.png" class="trophy">
+          <strong>Le(s) mec(s) jamais au bon endroit</strong><br/>
+          <i><span v-for="(p, idx) in grenaded">{{p.playerRef.playerName}}<span v-if="idx + 1 < grenaded.length">, </span></span> : Grenadé(s) {{grenaded[0].grenaded}} fois</i>
+        </div>
         <div v-if="knifeKiller.meleeKills > 0">
           <img src="../assets/award/knife.png" class="trophy">
           <strong>Maître du couteau</strong><br/>
           <i>{{knifeKiller.playerRef.playerName}} : {{knifeKiller.meleeKills}} kills</i>
+        </div>
+        <div v-if="knifed.length > 0 && knifed[0].knifed">
+          <img src="../assets/award/knife.png" class="trophy">
+          <strong>Le(s) mec(s) qui se fait découper</strong><br/>
+          <i><span v-for="(p, idx) in knifed">{{p.playerRef.playerName}}<span v-if="idx + 1 < knifed.length">, </span></span> : Découpé(s) {{knifed[0].knifed}} fois</i>
+        </div>
+        <div v-if="headshot.headShots > 0">
+          <img src="../assets/award/headshot.png" class="trophy">
+          <strong>Celui qui ne vise que la tête</strong><br/>
+          <i>{{headshot.playerRef.playerName}} : {{headshot.headShots}} headshots</i>
+        </div>
+        <div v-if="headShoted.length > 0 && headShoted[0].headShoted">
+          <img src="../assets/award/headshot.png" class="trophy">
+          <strong>Le(s) mec(s) qui sort trop la tête</strong><br/>
+          <i><span v-for="(p, idx) in headShoted">{{p.playerRef.playerName}}<span v-if="idx + 1 < headShoted.length">, </span></span> : Headshoté(s) {{headShoted[0].headShoted}} fois</i>
         </div>
         <div v-if="pistolKiller.pistolKills > 0">
           <img src="../assets/award/pistol.png" class="trophy">
@@ -379,8 +399,24 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("meleeKills");
   }
 
+  get knifed() {
+    return this.retrieveValues("knifed");
+  }
+
+  get headshot() {
+    return this.retrieveValue("headshots");
+  }
+
+  get headShoted() {
+    return this.retrieveValues("headShoted");
+  }
+
   get nadeKiller() {
     return this.retrieveValue("grenadeKills");
+  }
+
+  get grenaded() {
+    return this.retrieveValues("grenaded");
   }
 
   get pistolKiller() {

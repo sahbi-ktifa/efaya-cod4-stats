@@ -33,9 +33,17 @@ export default class KillParser implements LineParser {
                     }
                     if (tokens[12] === "head") {
                         player.headShots++;
+                        const headShoted = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        if (headShoted) {
+                            headShoted.headShoted++;
+                        }
                     }
                     if (tokens[9] === "frag_grenade_mp" || tokens[9] === "frag_grenade_short_mp") {
                         player.grenadeKills++;
+                        const grenaded = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        if (grenaded) {
+                            grenaded.grenaded++;
+                        }
                     }
                     if (tokens[9].indexOf("usp") === 0 || tokens[9].indexOf("beretta") === 0
                         || tokens[9].indexOf("colt") === 0 || tokens[9].indexOf("deserteagle") === 0) {
@@ -62,6 +70,10 @@ export default class KillParser implements LineParser {
                     }
                     if (tokens[11] === "MOD_MELEE") {
                         player.meleeKills++;
+                        const knifed = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        if (knifed) {
+                            knifed.knifed++;
+                        }
                     }
                     if (tokens[11] === "MOD_EXPLOSIVE") {
                         player.collateralKills++;
