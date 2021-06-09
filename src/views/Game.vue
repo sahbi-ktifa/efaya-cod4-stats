@@ -169,22 +169,22 @@
           <strong>Le(s) mec(s) trahi par sa propre équipe</strong><br/>
           <i><span v-for="(tk, idx) in teamKilled">{{tk.playerRef.playerName}}<span v-if="idx + 1 < teamKilled.length">, </span></span> : Teamkillé(s) {{teamKilled[0].teamKilled}} fois</i>
         </div>
-        <div v-if="rifleKiller.rifleKills > 0">
+        <div v-if="rifleKiller.rifleKills > 0 && !isIMMMod(game) && !isWW2Mod(game)">
           <img src="../assets/award/rifler.png" class="trophy">
           <strong>Maître des fusils d'assaut</strong><br/>
           <i>{{rifleKiller.playerRef.playerName}} : {{rifleKiller.rifleKills}} kills</i>
         </div>
-        <div v-if="smgKiller.smgKills > 0">
+        <div v-if="smgKiller.smgKills > 0 && !isIMMMod(game) && !isWW2Mod(game)">
           <img src="../assets/award/smg.png" class="trophy">
           <strong>Maître des SMG</strong><br/>
           <i>{{smgKiller.playerRef.playerName}} : {{smgKiller.smgKills}} kills</i>
         </div>
-        <div v-if="sniperKiller.sniperKills > 0">
+        <div v-if="sniperKiller.sniperKills > 0 && !isIMMMod(game) && !isWW2Mod(game)">
           <img src="../assets/award/sniper.png" class="trophy">
           <strong>Maître des Sniper</strong><br/>
           <i>{{sniperKiller.playerRef.playerName}} : {{sniperKiller.sniperKills}} kills</i>
         </div>
-        <div v-if="shotgunKiller.shotgunKills > 0">
+        <div v-if="shotgunKiller.shotgunKills > 0 && !isIMMMod(game) && !isWW2Mod(game)">
           <img src="../assets/award/shotgun.png" class="trophy">
           <strong>Maître du pompe</strong><br/>
           <i>{{shotgunKiller.playerRef.playerName}} : {{shotgunKiller.shotgunKills}} kills</i>
