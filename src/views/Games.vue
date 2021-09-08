@@ -1,6 +1,8 @@
 <template>
   <div class="games">
-    <h3>Season 16 - Sept. 2020</h3>
+    <h3>Season: <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021</strong>
+      <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020</strong></h3>
+
     <ul>
       <li v-for="game in games" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
@@ -26,11 +28,12 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
+import {Component, Inject, Vue} from 'vue-property-decorator';
 import {mapGetters} from "vuex";
 import {format} from "date-fns";
 import Game from "@/model/Game";
 import TimeUtils from "@/services/TimeUtils";
+import {DataService} from '@/services/DataService';
 
 @Component({
   computed: {
@@ -40,7 +43,11 @@ import TimeUtils from "@/services/TimeUtils";
   }
 })
 export default class Games extends Vue {
+  @Inject("dataService") public dataService!: DataService;
+
   protected games!: Game[];
+  private seasonKey: string = "s17";
+
 
   public duration(game: Game) {
     if (game.gameRefs[0].startTime) {
@@ -48,6 +55,14 @@ export default class Games extends Vue {
       return TimeUtils.getReadableDiffTime(duration);
     }
     return null;
+  }
+
+  async goToSeason(season: string) {
+    if (this.seasonKey != season) {
+      this.seasonKey = season
+      const games = await this.dataService.retrieveGames(this.seasonKey);
+      this.$store.commit("gamesRetrieved", games);
+    }
   }
 
   public isEfayaMod(game: Game) {
@@ -88,6 +103,18 @@ export default class Games extends Vue {
   .games {
     padding: 20px 200px 20px 20px;
     text-align: left;
+  }
+  .games h3 > strong {
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  .games h3 > strong.selected {
+    color: #36ebff;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .games h3 > strong:hover {
+    color: #36ebff;
   }
   .games > ul {
     display: grid;

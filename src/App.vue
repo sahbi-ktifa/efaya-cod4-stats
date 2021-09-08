@@ -31,7 +31,7 @@ export default class App extends Vue {
 
   public async created() {
     this.loading = true;
-    const games = await this.dataService.retrieveGames();
+    const games = await this.dataService.retrieveGames("s17");
     this.loading = false;
     this.$store.commit("gamesRetrieved", games);
     const scrims = await this.dataService.retrieveScrims();
@@ -42,7 +42,7 @@ export default class App extends Vue {
 
 <style>
   html {
-    background: url("assets/background2.jpg") no-repeat center center fixed;
+    background: url("assets/background.jpg") no-repeat center center fixed;
     background-size: cover;
   }
   body {

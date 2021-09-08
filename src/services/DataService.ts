@@ -16,8 +16,8 @@ export class DataService {
         this.championshipResults["2021"] = resultsS2;
     }
 
-    public async retrieveGames(): Promise<Game[]> {
-        const dataMods = await (await fetch("https://raw.githubusercontent.com/sahbi-ktifa/efaya-cod4-stats/master/src/data/s16/results.json")).json();
+    public async retrieveGames(season: string): Promise<Game[]> {
+        const dataMods = await (await fetch("https://raw.githubusercontent.com/sahbi-ktifa/efaya-cod4-stats/master/src/data/" + season + "/results.json")).json();
 
         const games: Game[] = [];
         for (let i = 0; i < dataMods.length; i++) {
