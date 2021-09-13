@@ -284,6 +284,26 @@
           <strong>Le gars qui a pris une balle très tôt</strong><br/>
           <i>{{quickestDeath.playerRef.playerName}} : {{duration(quickestDeath.quickestDeath)}}</i>
         </div>
+        <div v-if="firstKiller">
+          <img src="../assets/award/killer.png" class="trophy">
+          <strong>Le chasseur qui se lève toujours tôt</strong><br/>
+          <i>{{firstKiller.playerRef.playerName}} : {{firstKiller.firstKiller}} fois</i>
+        </div>
+        <div v-if="firstKilled">
+          <img src="../assets/award/killer.png" class="trophy">
+          <strong>Le lapin qui se lève toujours trop tôt</strong><br/>
+          <i>{{firstKilled.playerRef.playerName}} : {{firstKilled.firstKilled}} fois</i>
+        </div>
+        <div v-if="lastKiller">
+          <img src="../assets/award/killer.png" class="trophy">
+          <strong>Le Mr Propre de la fin</strong><br/>
+          <i>{{lastKiller.playerRef.playerName}} : {{lastKiller.lastKiller}} fois</i>
+        </div>
+        <div v-if="lastKilled">
+          <img src="../assets/award/killer.png" class="trophy">
+          <strong>Le gars qui planque au fond de la map</strong><br/>
+          <i>{{lastKilled.playerRef.playerName}} : {{lastKilled.lastKilled}} fois</i>
+        </div>
       </div>
     </div>
   </div>
@@ -489,6 +509,22 @@ export default class GameDetails extends Vue {
 
   get collateral() {
     return this.retrieveValue("collateralKills");
+  }
+
+  get firstKiller() {
+    return this.retrieveValue("firstKiller");
+  }
+
+  get firstKilled() {
+    return this.retrieveValue("firstKilled");
+  }
+
+  get lastKiller() {
+    return this.retrieveValue("lastKiller");
+  }
+
+  get lastKilled() {
+    return this.retrieveValue("lastKilled");
   }
 
   public game: Game | null = null;

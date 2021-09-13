@@ -8,6 +8,10 @@ export class Round {
     public players: PlayerForRound[] = [];
     public startTime = 0;
     public endTime = 0;
+    public firstKiller!: PlayerRef;
+    public firstKilled!: PlayerRef;
+    public lastKiller!: PlayerRef;
+    public lastKilled!: PlayerRef;
 }
 
 // tslint:disable-next-line:max-classes-per-file

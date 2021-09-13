@@ -71,7 +71,7 @@ export default class LogsParserService {
             this.parseLine(line, parsedData, ctx);
             lines++;
         });
-         console.log(parsedData)
+        console.log(parsedData);
         const gameRefs = orderBy(parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
             && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory)), "startTime");
         const games = [];
@@ -217,6 +217,18 @@ export default class LogsParserService {
                             } else {
                                 p.prey[key] += player.prey[key];
                             }
+                        }
+                        if (round.firstKiller.guid === p.playerRef.guid) {
+                            p.firstKiller++;
+                        }
+                        if (round.firstKilled.guid === p.playerRef.guid) {
+                            p.firstKilled++;
+                        }
+                        if (round.lastKiller.guid === p.playerRef.guid) {
+                            p.lastKiller++;
+                        }
+                        if (round.lastKilled.guid === p.playerRef.guid) {
+                            p.lastKilled++;
                         }
                     });
             }

@@ -24,23 +24,34 @@ export default class KillParser implements LineParser {
                     player.kills++;
                     if (tokens[3] === tokens[7]) {
                         player.teamKills++;
-                        const teamKilled = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        const teamKilled = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
                         if (teamKilled) {
                             teamKilled.teamKilled++;
                         }
                     } else {
                         player.score += POINTS.KILL;
+                        const killed = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
+                        if (!parsedData.currentGame.currentRound.firstKiller) {
+                            parsedData.currentGame.currentRound.firstKiller =  player.playerRef;
+                            if (killed) {
+                                parsedData.currentGame.currentRound.firstKilled =  killed.playerRef;
+                            }
+                        }
+                        parsedData.currentGame.currentRound.lastKiller =  player.playerRef;
+                        if (killed) {
+                            parsedData.currentGame.currentRound.lastKilled =  killed.playerRef;
+                        }
                     }
                     if (tokens[12] === "head") {
                         player.headShots++;
-                        const headShoted = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        const headShoted = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
                         if (headShoted) {
                             headShoted.headShoted++;
                         }
                     }
                     if (tokens[9] === "frag_grenade_mp" || tokens[9] === "frag_grenade_short_mp") {
                         player.grenadeKills++;
-                        const grenaded = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        const grenaded = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
                         if (grenaded) {
                             grenaded.grenaded++;
                         }
@@ -70,7 +81,7 @@ export default class KillParser implements LineParser {
                     }
                     if (tokens[11] === "MOD_MELEE") {
                         player.meleeKills++;
-                        const knifed = parsedData.currentGame.currentRound.players.filter(p => p.playerRef.guid === tokens[1])[0];
+                        const knifed = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
                         if (knifed) {
                             knifed.knifed++;
                         }

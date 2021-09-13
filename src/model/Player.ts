@@ -159,6 +159,10 @@ export class Player {
     public deaths: number[] = [0, 0];
     public assists: number[] = [0, 0];
     public ratio: number[] = [0, 0];
+    public firstKiller: number = 0;
+    public firstKilled: number = 0;
+    public lastKiller: number = 0;
+    public lastKilled: number = 0;
     public totalPoints: number = 0;
     public totalScore: number = 0;
     public totalKills: number = 0;
