@@ -11,9 +11,9 @@
           <h4 class="game-date">{{formatDate(game.date)}}</h4>
           <div class="players-summary">Joueurs : <strong>{{game.players.length}}</strong></div>
           <span class="round-summary">
-            Manche 1 : <strong>{{game.gameRefs[0].alliesScore}}</strong> / <strong>{{game.gameRefs[0].axisScore}}</strong><br/>
-            Manche 2 : <strong>{{game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[1].alliesScore}}</strong><br/>
-            Score Final : <strong>{{game.gameRefs[0].alliesScore + game.gameRefs[1].axisScore}}</strong> / <strong>{{game.gameRefs[0].axisScore + game.gameRefs[1].alliesScore}}</strong><br/>
+            Manche 1 : <strong>{{team1Round1(game.gameRefs[0])}}</strong> / <strong>{{team2Round2(game.gameRefs[0])}}</strong><br/>
+            Manche 2 : <strong>{{team1Round2(game.gameRefs[1])}}</strong> / <strong>{{team2Round2(game.gameRefs[1])}}</strong><br/>
+            Score Final : <strong>{{team1Round1(game.gameRefs[0]) + team1Round2(game.gameRefs[1])}}</strong> / <strong>{{team2Round1(game.gameRefs[0]) + team2Round2(game.gameRefs[1])}}</strong><br/>
             <span v-if="duration(game)">Durée : <strong>{{duration(game)}}</strong></span>
           </span>
           <img class="mod-logo" alt="Mod logo" src="../assets/efaya_mod.png" v-if="isEfayaMod(game)">
@@ -28,12 +28,12 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from 'vue-property-decorator';
+import {Component, Inject, Vue} from "vue-property-decorator";
 import {mapGetters} from "vuex";
 import {format} from "date-fns";
-import Game from "@/model/Game";
+import Game, {GameRef} from "@/model/Game";
 import TimeUtils from "@/services/TimeUtils";
-import {DataService} from '@/services/DataService';
+import {DataService} from "@/services/DataService";
 
 @Component({
   computed: {
@@ -48,6 +48,21 @@ export default class Games extends Vue {
   protected games!: Game[];
   private seasonKey: string = "s17";
 
+  public team1Round1(gameRef: GameRef): number {
+    return gameRef.alliesScore;
+  }
+
+  public team2Round1(gameRef: GameRef): number {
+    return gameRef.axisScore;
+  }
+
+  public team1Round2(gameRef: GameRef): number {
+    return gameRef.switchGameRef ? gameRef.alliesScore : gameRef.axisScore;
+  }
+
+  public team2Round2(gameRef: GameRef): number {
+    return gameRef.switchGameRef ? gameRef.axisScore : gameRef.alliesScore;
+  }
 
   public duration(game: Game) {
     if (game.gameRefs[0].startTime) {
@@ -57,9 +72,9 @@ export default class Games extends Vue {
     return null;
   }
 
-  async goToSeason(season: string) {
+  public async goToSeason(season: string) {
     if (this.seasonKey != season) {
-      this.seasonKey = season
+      this.seasonKey = season;
       const games = await this.dataService.retrieveGames(this.seasonKey);
       this.$store.commit("gamesRetrieved", games);
     }
