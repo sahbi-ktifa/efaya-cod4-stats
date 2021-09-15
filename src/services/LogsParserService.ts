@@ -57,6 +57,7 @@ const parsers = [
 // tslint:disable-next-line:max-classes-per-file
 export class ParserContext {
     public scoreForVictory!: number;
+    public teamSwitch!: boolean;
 }
 
 // tslint:disable-next-line:max-classes-per-file
@@ -73,7 +74,8 @@ export default class LogsParserService {
         });
         console.log(parsedData);
         const gameRefs = orderBy(parsedData.games.filter((g) => (g.gameType === "sr" || g.gameType === "sd")
-            && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory)), "startTime");
+            && (g.axisScore === ctx.scoreForVictory || g.alliesScore === ctx.scoreForVictory
+                || g.switchGameRef)), "startTime");
         const games = [];
         for (let i = 0; i < gameRefs.length; i += 2) {
             let j = 0;

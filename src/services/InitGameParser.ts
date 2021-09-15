@@ -32,7 +32,9 @@ export default class InitGameParser implements LineParser {
             (parsedData.currentGame.gameType !== gameType || parsedData.currentGame.map !== map)) {
             if (parsedData.currentGame.players.length > 2 &&
                 (parsedData.currentGame.alliesScore === ctx.scoreForVictory
-                    || parsedData.currentGame.axisScore === ctx.scoreForVictory)) {
+                    || parsedData.currentGame.axisScore === ctx.scoreForVictory
+                    || parsedData.currentGame.axisScore + parsedData.currentGame.previousAxisScore === ctx.scoreForVictory
+                    || parsedData.currentGame.alliesScore + parsedData.currentGame.previousAlliesScore === ctx.scoreForVictory)) {
                 parsedData.currentGame.endTime = TimeUtils.getTime(line);
                 parsedData.games.push(parsedData.currentGame);
             }
@@ -44,12 +46,27 @@ export default class InitGameParser implements LineParser {
             parsedData.currentGame = new GameRef(mod, map, gameType);
             parsedData.currentGame.startTime = TimeUtils.getTime(line);
             parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
-        } else if (parsedData.currentGame && (parsedData.currentGame.alliesScore === ctx.scoreForVictory
+        } else if (parsedData.currentGame && !ctx.teamSwitch && (parsedData.currentGame.alliesScore === ctx.scoreForVictory
             || parsedData.currentGame.axisScore === ctx.scoreForVictory)) {
             parsedData.currentGame.endTime = TimeUtils.getTime(line);
             parsedData.games.push(parsedData.currentGame);
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
+            parsedData.currentGame.startTime = TimeUtils.getTime(line);
+            parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
+        } else if (parsedData.currentGame && ctx.teamSwitch
+            && parsedData.currentGame.alliesScore + parsedData.currentGame.axisScore === ctx.scoreForVictory - 1) {
+            // Team switch handle
+            parsedData.currentGame.endTime = TimeUtils.getTime(line);
+            parsedData.currentGame.switchGameRef = true;
+            parsedData.games.push(parsedData.currentGame);
+            const allies = parsedData.currentGame.alliesScore;
+            const axis = parsedData.currentGame.axisScore;
+            // @ts-ignore
+            parsedData.currentGame = new GameRef(mod, map, gameType);
+            parsedData.currentGame.switchGameRef = true;
+            parsedData.currentGame.previousAxisScore = axis;
+            parsedData.currentGame.previousAlliesScore = allies;
             parsedData.currentGame.startTime = TimeUtils.getTime(line);
             parsedData.currentGame.currentRound.startTime = TimeUtils.getTime(line) + TimeUtils.ROUND_START_DELAY;
         }

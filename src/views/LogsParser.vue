@@ -28,7 +28,8 @@ export default class LogsParser extends Vue {
 
     public async parse() {
         if (this.logFile != null) {
-            await this.parser.parseFile(this.logFile, {scoreForVictory: Number(this.scoreForVictory)});
+          let scoreForVictory = Number(this.scoreForVictory);
+          await this.parser.parseFile(this.logFile, {scoreForVictory: scoreForVictory, teamSwitch: scoreForVictory > 10});
             // @ts-ignore
             this.games = window.games.length;
         }

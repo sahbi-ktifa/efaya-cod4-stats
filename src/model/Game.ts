@@ -23,6 +23,9 @@ export class GameRef {
     public mod!: string;
     public alliesScore = 0;
     public axisScore = 0;
+    public previousAlliesScore = 0;
+    public previousAxisScore = 0;
+    public switchGameRef = false;
     public rounds: Round[] = [];
     public currentRound: Round = new Round();
     public startTime = 0;
