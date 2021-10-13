@@ -220,16 +220,16 @@ export default class LogsParserService {
                                 p.prey[key] += player.prey[key];
                             }
                         }
-                        if (round.firstKiller.guid === p.playerRef.guid) {
+                        if (round.firstKiller && round.firstKiller.guid === p.playerRef.guid) {
                             p.firstKiller++;
                         }
-                        if (round.firstKilled.guid === p.playerRef.guid) {
+                        if (round.firstKilled && round.firstKilled.guid === p.playerRef.guid) {
                             p.firstKilled++;
                         }
-                        if (round.lastKiller.guid === p.playerRef.guid) {
+                        if (round.lastKiller && round.lastKiller.guid === p.playerRef.guid) {
                             p.lastKiller++;
                         }
-                        if (round.lastKilled.guid === p.playerRef.guid) {
+                        if (round.lastKilled && round.lastKilled.guid === p.playerRef.guid) {
                             p.lastKilled++;
                         }
                     });
