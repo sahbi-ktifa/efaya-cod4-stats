@@ -23,6 +23,7 @@ export default class InitGameParser implements LineParser {
                 map = tokens[i + 1];
             }
         }
+        console.log(parsedData.currentGame);
         if (!parsedData.currentGame) {
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
@@ -33,8 +34,10 @@ export default class InitGameParser implements LineParser {
             if (parsedData.currentGame.players.length > 2 &&
                 (parsedData.currentGame.alliesScore === ctx.scoreForVictory
                     || parsedData.currentGame.axisScore === ctx.scoreForVictory
+                    || parsedData.currentGame.axisScore + parsedData.currentGame.previousAlliesScore === ctx.scoreForVictory
                     || parsedData.currentGame.axisScore + parsedData.currentGame.previousAxisScore === ctx.scoreForVictory
-                    || parsedData.currentGame.alliesScore + parsedData.currentGame.previousAlliesScore === ctx.scoreForVictory)) {
+                    || parsedData.currentGame.alliesScore + parsedData.currentGame.previousAlliesScore === ctx.scoreForVictory
+                    || parsedData.currentGame.alliesScore + parsedData.currentGame.previousAxisScore === ctx.scoreForVictory)) {
                 parsedData.currentGame.endTime = TimeUtils.getTime(line);
                 parsedData.games.push(parsedData.currentGame);
             }
@@ -62,6 +65,7 @@ export default class InitGameParser implements LineParser {
             parsedData.games.push(parsedData.currentGame);
             const allies = parsedData.currentGame.alliesScore;
             const axis = parsedData.currentGame.axisScore;
+            console.log("half-time: " + allies + "/" + axis);
             // @ts-ignore
             parsedData.currentGame = new GameRef(mod, map, gameType);
             parsedData.currentGame.switchGameRef = true;
