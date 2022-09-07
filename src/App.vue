@@ -31,7 +31,7 @@ export default class App extends Vue {
 
   public async created() {
     this.loading = true;
-    const games = await this.dataService.retrieveGames("s17");
+    const games = await this.dataService.retrieveGames("s18");
     this.loading = false;
     this.$store.commit("gamesRetrieved", games);
     const scrims = await this.dataService.retrieveScrims();

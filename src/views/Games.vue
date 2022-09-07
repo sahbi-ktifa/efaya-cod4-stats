@@ -1,7 +1,8 @@
 <template>
   <div class="games">
-    <h3>Season: <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021</strong>
-      <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020</strong></h3>
+    <h3>Season: <strong @click="goToSeason('s1!')" :class="{'selected' : seasonKey === 's18'}">2022/2023</strong>
+      <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021/2022</strong>
+      <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020/2021</strong></h3>
 
     <ul>
       <li v-for="game in games" @click="goToGame(game)">
@@ -46,7 +47,7 @@ export default class Games extends Vue {
   @Inject("dataService") public dataService!: DataService;
 
   protected games!: Game[];
-  private seasonKey: string = "s17";
+  private seasonKey: string = "s18";
 
   public team1Round1(gameRef: GameRef): number {
     return gameRef.alliesScore;
