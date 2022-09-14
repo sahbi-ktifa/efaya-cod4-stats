@@ -16,13 +16,14 @@ export default class KillParser implements LineParser {
     public parse(line: string, parsedData: ParsedData): void {
         // tslint:disable-next-line:max-line-length
         // 11:50 K;597dce65ed33d9cf4b40064f7550eb82;1;axis;4t4JmD;3cf249f789f3b36a35b4330f3e97bbce;5;axis;iClan|Tecka;m16_mp;84;MOD_RIFLE_BULLET;torso_lower
+        // 11:57 K;9b26363dcbdfb0676e64637b635feb91;2;;iClan|Efaya;debd6ca8825f665585b4a6e80850d555;9;;iClan|RooKMooT;m14_mp;180;MOD_RIFLE_BULLET;torso_upper
         const splittedLine = line.split(" ");
         const tokens = splittedLine[splittedLine.length - 1].split(";");
         if (tokens) {
             for (const player of parsedData.currentGame.currentRound.players) {
                 if (player.playerRef.guid === tokens[5]) {
                     player.kills++;
-                    if (tokens[3] === tokens[7]) {
+                    if (tokens[3].length > 0 && tokens[3] === tokens[7]) {
                         player.teamKills++;
                         const teamKilled = parsedData.currentGame.currentRound.players.filter((p) => p.playerRef.guid === tokens[1])[0];
                         if (teamKilled) {
