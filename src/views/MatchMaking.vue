@@ -119,7 +119,7 @@ export default class MatchMaking extends Vue {
                 if (players.indexOf(p.playerRef.guid) === -1 && this.excludedGuids.indexOf(p.playerRef.guid) === -1) {
                     this.availablePlayers.push(new PlayerCard(p.playerRef));
                     players.push(p.playerRef.guid);
-                } else if (players.indexOf(p.playerRef.guid) > 0) {
+                } else if (players.indexOf(p.playerRef.guid) >= 0) {
                   const playerCard = this.availablePlayers.filter((_p) => _p.ref.guid === p.playerRef.guid)[0];
                   playerCard.ref.playerName = p.playerRef.playerName;
                   playerCard.participations++;

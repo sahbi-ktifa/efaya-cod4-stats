@@ -42,7 +42,7 @@ export default class App extends Vue {
 
 <style>
   html {
-    background: url("assets/background.jpg") no-repeat center center fixed;
+    background: url("assets/background3.jpeg") no-repeat center center fixed;
     background-size: cover;
   }
   body {

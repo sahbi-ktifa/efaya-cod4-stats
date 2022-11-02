@@ -4,6 +4,17 @@
       <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021/2022</strong>
       <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020/2021</strong></h3>
 
+    <div class="top-players">
+      <h3>TOP 3 players of the moment:</h3>
+      <ul>
+        <li v-for="player in topPlayers">
+          <span>🏆&nbsp;</span>
+          <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
+        </li>
+      </ul>
+    </div>
+
+    <h3>Game results:</h3>
     <ul>
       <li v-for="game in games" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
@@ -12,7 +23,7 @@
           <h4 class="game-date">{{formatDate(game.date)}}</h4>
           <div class="players-summary">Joueurs : <strong>{{game.players.length}}</strong></div>
           <span class="round-summary">
-            Manche 1 : <strong>{{team1Round1(game.gameRefs[0])}}</strong> / <strong>{{team2Round2(game.gameRefs[0])}}</strong><br/>
+            Manche 1 : <strong>{{team1Round1(game.gameRefs[0])}}</strong> / <strong>{{team2Round1(game.gameRefs[0])}}</strong><br/>
             Manche 2 : <strong>{{team1Round2(game.gameRefs[1])}}</strong> / <strong>{{team2Round2(game.gameRefs[1])}}</strong><br/>
             Score Final : <strong>{{team1Round1(game.gameRefs[0]) + team1Round2(game.gameRefs[1])}}</strong> / <strong>{{team2Round1(game.gameRefs[0]) + team2Round2(game.gameRefs[1])}}</strong><br/>
             <span v-if="duration(game)">Durée : <strong>{{duration(game)}}</strong></span>
@@ -35,6 +46,21 @@ import {format} from "date-fns";
 import Game, {GameRef} from "@/model/Game";
 import TimeUtils from "@/services/TimeUtils";
 import {DataService} from "@/services/DataService";
+import {PlayerRef} from "@/model/Player";
+import {MatchmakingService} from "@/services/MatchmakingService";
+import {orderBy} from "lodash";
+
+class TopPlayer {
+
+  public ref!: PlayerRef;
+  public participation!: number;
+  public mean!: number;
+  constructor(playerRef: PlayerRef, mean: number) {
+    this.ref = playerRef;
+    this.mean = mean;
+    this.participation = 1;
+  }
+}
 
 @Component({
   computed: {
@@ -45,9 +71,28 @@ import {DataService} from "@/services/DataService";
 })
 export default class Games extends Vue {
   @Inject("dataService") public dataService!: DataService;
+  @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
 
   protected games!: Game[];
   private seasonKey: string = "s18";
+
+  get topPlayers(): TopPlayer[] {
+    const players: TopPlayer[] = [];
+    const _players: string[] = [];
+    const games = this.games.slice(0, 4);
+    games.forEach((g) => {
+      g.players.forEach((p) => {
+        if (_players.indexOf(p.playerRef.guid) === -1) {
+          _players.push(p.playerRef.guid);
+          players.push(new TopPlayer(p.playerRef, Math.round(this.matchMakingService.computeEMP(p.playerRef.guid, games))));
+        } else if (_players.indexOf(p.playerRef.guid) >= 0) {
+          const _p = players.filter((_p) => _p.ref.guid === p.playerRef.guid)[0];
+          _p.participation++;
+        }
+      });
+    });
+    return orderBy(players.filter((p) => p.participation > 2), ["mean"], ["desc"]).slice(0, 3);
+  }
 
   public team1Round1(gameRef: GameRef): number {
     return gameRef.alliesScore;
@@ -186,6 +231,10 @@ export default class Games extends Vue {
     width: 65px;
     right: 0;
     bottom: 10px;
+  }
+  .name {
+    cursor: pointer;
+    color: #36ebff;
   }
 
   @media (max-width: 1150px) {
