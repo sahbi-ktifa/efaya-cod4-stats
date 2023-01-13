@@ -5,7 +5,7 @@
       <li v-for="game in scrims" @click="goToGame(game)">
         <img class="map-preview" :src="game.mapPreview" alt="map-preview">
         <div class="game-summary">
-          <h4>{{mapNamer(game.map)}} - iClan vs XI</h4>
+          <h4>{{mapNamer(game.map)}} vs {{ opponent(game) }}</h4>
           <h4 class="game-date">{{formatDate(game.date)}}</h4>
           <div class="players-summary">Joueurs : <strong>{{game.players.length}}</strong></div>
           <span class="round-summary">
@@ -41,6 +41,17 @@ import TimeUtils from "@/services/TimeUtils";
 })
 export default class Scrims extends Vue {
   protected scrims!: Game[];
+  private xiGameIds = [
+    "ZWZheWFfdjJfbXBfZWZhX21hcmtldF8wLjgzNDQzNTA1NTM0NDkzMTM=",
+    "ZWZheWFfdjJfbXBfY2FyZW50YW5fMC42MjM2Njk1ODgyNDU5Njkx",
+    "ZWZheWFfdjJfbXBfY3Jhc2hfMC41NzY2ODA2NzkzMjkwOA==",
+    "ZWZheWFfdjJfbXBfc3RyaWtlXzAuOTUzMDUxNDI1ODAwMzc3OQ==",
+  ];
+  private rejekzGameIds = [
+    "ZWZheWFfdjJfbXBfZWZhX2NhbmFsc18wLjA2MDM4NzMzNTg3MTAxNzYz",
+    "ZWZheWFfdjJfbXBfZGVzdHJveWVkX3ZpbGxhZ2VfMC4zMjQzMDQyMzM1NTc4ODc4NA==",
+    "ZWZheWFfdjJfbXBfYml0dGVyXzAuMzU5MTAyNzI5NTI5ODYxNjY=",
+  ];
 
   public duration(game: Game) {
     if (game.gameRefs[0].startTime) {
@@ -80,6 +91,17 @@ export default class Scrims extends Vue {
 
   public mapNamer(mapName: string): string {
     return mapName.replace("mp_", "").replace(/_/g, " ").toUpperCase();
+  }
+
+  public opponent(game: Game): string {
+    if (this.xiGameIds.indexOf(game.id) > -1 ) {
+      return "XI";
+    } else {
+      if (this.rejekzGameIds.indexOf(game.id) > -1 ) {
+            return "Rejekz";
+          }
+    }
+    return "N/A";
   }
 }
 </script>

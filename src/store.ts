@@ -24,14 +24,13 @@ export default new VueX.Store({
   },
   mutations: {
     gamesRetrieved(state, games: Game[]) {
-      state.games = games;
-      state.games = orderBy(state.games, ["date"], ["desc"]);
+      state.games = orderBy(games, ["date"], ["desc"]);
     },
     championshipGamesRetrieved(state, games: Game[]) {
       state.championshipGames = games;
     },
     championshipScrimsRetrieved(state, games: Game[]) {
-      state.scrims = games;
+      state.scrims = orderBy(games, ["date"], ["desc"]);
     },
   }
 });
