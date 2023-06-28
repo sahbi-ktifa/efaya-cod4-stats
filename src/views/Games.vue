@@ -5,13 +5,24 @@
       <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020/2021</strong></h3>
 
     <div class="top-players">
-      <h3>TOP 3 players of the moment:</h3>
-      <ul>
-        <li v-for="player in topPlayers">
-          <span>🏆&nbsp;</span>
-          <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
-        </li>
-      </ul>
+      <div class="recent">
+        <h3>TOP 5 players of the season:</h3>
+        <ul>
+          <li v-for="player in topSeasonPlayers">
+            <span>🏆&nbsp;</span>
+            <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
+          </li>
+        </ul>
+      </div>
+      <div class="recent">
+        <h3>TOP 5 players of the moment:</h3>
+        <ul>
+          <li v-for="player in topRecentPlayers">
+            <span>🏆&nbsp;</span>
+            <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
+          </li>
+        </ul>
+      </div>
     </div>
 
     <h3>Game results:</h3>
@@ -76,7 +87,24 @@ export default class Games extends Vue {
   protected games!: Game[];
   private seasonKey: string = "s18";
 
-  get topPlayers(): TopPlayer[] {
+  get topSeasonPlayers(): TopPlayer[] {
+    const players: TopPlayer[] = [];
+    const _players: string[] = [];
+    this.games.forEach((g) => {
+      g.players.forEach((p) => {
+        if (_players.indexOf(p.playerRef.guid) === -1) {
+          _players.push(p.playerRef.guid);
+          players.push(new TopPlayer(p.playerRef, Math.round(this.matchMakingService.computeEMP(p.playerRef.guid, this.games))));
+        } else if (_players.indexOf(p.playerRef.guid) >= 0) {
+          const _p = players.filter((_p) => _p.ref.guid === p.playerRef.guid)[0];
+          _p.participation++;
+        }
+      });
+    });
+    return orderBy(players.filter((p) => p.participation > 2), ["mean"], ["desc"]).slice(0, 5);
+  }
+
+  get topRecentPlayers(): TopPlayer[] {
     const players: TopPlayer[] = [];
     const _players: string[] = [];
     const games = this.games.slice(0, 4);
@@ -91,7 +119,7 @@ export default class Games extends Vue {
         }
       });
     });
-    return orderBy(players.filter((p) => p.participation > 2), ["mean"], ["desc"]).slice(0, 3);
+    return orderBy(players.filter((p) => p.participation > 2), ["mean"], ["desc"]).slice(0, 5);
   }
 
   public team1Round1(gameRef: GameRef): number {
@@ -256,5 +284,9 @@ export default class Games extends Vue {
       top: 0;
       right: 0;
     }
+  }
+  .top-players {
+    display: flex;
+    gap: 20px;
   }
 </style>
