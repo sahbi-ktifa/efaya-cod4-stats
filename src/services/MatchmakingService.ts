@@ -7,9 +7,7 @@ export class MatchmakingService {
         games.forEach((g) => {
             const isPlayerPresent = g.players.filter((player) => player.playerRef.guid === playerGuid);
             if (isPlayerPresent.length > 0) {
-                if (means.length < 4) {
-                    means.push(isPlayerPresent[0].totalScore);
-                }
+                means.push(isPlayerPresent[0].totalScore);
             }
         });
         return means.reduce((a: number, b: number) => a + b, 0) / means.length;

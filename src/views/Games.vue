@@ -107,7 +107,7 @@ export default class Games extends Vue {
   get topRecentPlayers(): TopPlayer[] {
     const players: TopPlayer[] = [];
     const _players: string[] = [];
-    const games = this.games.slice(0, 4);
+    const games = this.games.slice(0, 5);
     games.forEach((g) => {
       g.players.forEach((p) => {
         if (_players.indexOf(p.playerRef.guid) === -1) {
