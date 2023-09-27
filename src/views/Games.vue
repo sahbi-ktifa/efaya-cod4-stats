@@ -5,7 +5,7 @@
       <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021/2022</strong>
       <strong @click="goToSeason('s16')" :class="{'selected' : seasonKey === 's16'}">2020/2021</strong></h3>
 
-    <div class="top-players" v-if="topSeasonPlayers.length > 0">
+    <div class="top-players" v-if="topRecentPlayers.length > 0">
       <div class="recent">
         <h3>TOP 5 players of the season:</h3>
         <ul>
