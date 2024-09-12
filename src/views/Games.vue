@@ -8,8 +8,8 @@
 
     <div class="top-players" v-if="topRecentPlayers.length > 0">
       <div class="recent">
-        <h3>TOP 5 players of the season:</h3>
-        <ul>
+        <h3 v-if="topSeasonPlayers.length > 0">TOP 5 players of the season:</h3>
+        <ul v-if="topSeasonPlayers.length > 0">
           <li v-for="player in topSeasonPlayers">
             <span>🏆&nbsp;</span>
             <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP

@@ -166,7 +166,8 @@
             </ul>
             <h2 class="rule">Réglement</h2>
             <ul class="rule">
-                <li><strong>Efaya mod v2 SR</strong> - 3 joueurs par équipe</li>
+                <li v-if="seasonKey !== '2024'"><strong>Efaya mod v2 SR</strong> - 3 joueurs par équipe</li>
+                <li v-else><strong>iWarfare24 SR</strong> - 3 joueurs par équipe</li>
                 <li>Chaque team choisi <strong>sa map pour le tournoi et n'en change pas</strong>. Les maps doivent avoir été jouées sur notre serveur pour être éligible</li>
                 <li>Deux rencontres par équipe : équipe A reçoit équipe B sur sa map pour <strong>deux manches de 5 points gagnants</strong> (le premier à 5), en défense et en attaque. Puis deuxième match où c'est l'équipe B qui reçoit l'équipe A sur sa map, également pour deux manches attaque & défense, soit 4 manches en tout sur deux matchs.</li>
                 <li><strong>Calcul des points = score du match + 2 points pour chaque manche gagnée</strong>. (exemple : score final du premier match 4-5 & 5-1 : équipe A perd 4 à 5 en défense et gagne 5 à 1 en attaque, soit 11 points = 4+(5+2) , du coup l'équipe B marque 8 points = (5+2) + 1.</li>
