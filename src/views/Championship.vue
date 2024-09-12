@@ -182,8 +182,10 @@ import {mapGetters} from "vuex";
 import {orderBy} from "lodash";
 import season1Teams from "@/data/championship/season1/teams.json";
 import season2Teams from "@/data/championship/season2/teams.json";
+import season3Teams from "@/data/championship/season3/teams.json";
 import season1Calendar from "@/data/championship/season1/calendar.json";
 import season2Calendar from "@/data/championship/season2/calendar.json";
+import season3Calendar from "@/data/championship/season3/calendar.json";
 import {MatchmakingService} from "@/services/MatchmakingService";
 import {DataService} from "@/services/DataService";
 import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
@@ -326,21 +328,30 @@ export default class Championship extends Vue {
       if (this.seasonKey === "2020") {
         return season1Calendar;
       }
-      return season2Calendar;
+      if (this.seasonKey === "2021") {
+        return season2Calendar;
+      }
+      return season3Calendar;
     }
 
     get teamsBySeason() {
       if (this.seasonKey === "2020") {
         return season1Teams;
       }
-      return season2Teams;
+      if (this.seasonKey === "2021") {
+        return season2Teams;
+      }
+      return season3Teams;
     }
 
     get seasonName() {
       if (this.seasonKey === "2020") {
         return "season1";
       }
-      return "season2";
+      if (this.seasonKey === "2021") {
+        return "season2";
+      }
+      return "season3";
     }
 
     get teamsLadder(): ChampionshipTeam[] {
