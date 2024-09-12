@@ -4,6 +4,7 @@
           Tournoi :
           <strong @click="goToTournament('2020')" :class="{'selected' : seasonKey === '2020'}">2020</strong>
           <strong @click="goToTournament('2021')" :class="{'selected' : seasonKey === '2021'}">2021</strong>
+          <strong @click="goToTournament('2024')" :class="{'selected' : seasonKey === '2024'}">2024</strong>
         </div>
         <ul>
             <li><h2>Teams engagées:</h2></li>
@@ -225,7 +226,7 @@ export default class Championship extends Vue {
     private dataForPlayers: PlayerGlobalData[] = [];
     private sortKey: string = "playerRef.playerName";
     private sortKeyDirection: string = "asc";
-    private seasonKey: string = "2021";
+    private seasonKey: string = "2024";
 
     public reset() {
       this.teams = [];

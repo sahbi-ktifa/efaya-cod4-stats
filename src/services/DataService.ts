@@ -2,6 +2,7 @@ import Game from "@/model/Game";
 import extraData from "@/data/extradata.json";
 import resultsS1 from "@/data/championship/season1/results.json";
 import resultsS2 from "@/data/championship/season2/results.json";
+import resultsS3 from "@/data/championship/season3/results.json";
 import {PlayerGlobalData} from "@/model/Player";
 import {orderBy} from "lodash";
 import {format} from "date-fns";
@@ -14,6 +15,8 @@ export class DataService {
         this.championshipResults["2020"] = resultsS1;
         // @ts-ignore
         this.championshipResults["2021"] = resultsS2;
+        // @ts-ignore
+        this.championshipResults["2024"] = resultsS3;
     }
 
     public async retrieveGames(season: string): Promise<Game[]> {

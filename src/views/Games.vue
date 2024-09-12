@@ -121,7 +121,7 @@ export default class Games extends Vue {
         }
       });
     });
-    return orderBy(players.filter((p) => p.participation > 2), ["mean"], ["desc"]).slice(0, 5);
+    return orderBy(players.filter((p) => p.participation >= 2), ["mean"], ["desc"]).slice(0, 5);
   }
 
   public team1Round1(gameRef: GameRef): number {
