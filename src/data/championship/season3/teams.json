@@ -88,5 +88,23 @@
         "playerName": "iClan|pascual66"
       }
     ]
+  },
+  {
+    "name": "Les Bourreaux",
+    "map": "",
+    "members": [
+      {
+        "guid": "",
+        "playerName": "iClan|Cedmac"
+      },
+      {
+        "guid": "",
+        "playerName": "iClan|Fre2x3"
+      },
+      {
+        "guid": "",
+        "playerName": "iClan|Akabane"
+      }
+    ]
   }
 ]
