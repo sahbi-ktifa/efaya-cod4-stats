@@ -106,5 +106,23 @@
         "playerName": "iClan|Akabane"
       }
     ]
+  },
+  {
+    "name": "SkibiTeam",
+    "map": "loadscreen_mp_overgrown",
+    "members": [
+      {
+        "guid": "",
+        "playerName": "Louvenarde"
+      },
+      {
+        "guid": "",
+        "playerName": "Ynepsis"
+      },
+      {
+        "guid": "",
+        "playerName": "Craména"
+      }
+    ]
   }
 ]
