@@ -387,7 +387,10 @@ export default class Championship extends Vue {
     }
 
     public teamMap(map: string): string {
-        return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
+      if (map.indexOf("http") === 0) {
+        return map;
+      }
+      return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
     }
 
     public goToGame(matchId: string) {

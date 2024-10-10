@@ -1,7 +1,7 @@
 [
   {
     "name": "NGBC",
-    "map": "mp_rasalem_winter",
+    "map": "https://customapscod.com/images/maps/cod4/mp_winter_rasalem.jpg",
     "members": [
       {
         "guid": "df1ee051745ce762b779ad5f6c358fc5",
@@ -19,7 +19,7 @@
   },
   {
     "name": "FH Clan",
-    "map": "mp_backlot",
+    "map": "https://customapscod.com/images/maps/cod2/cod2_mp_backlot.jpg",
     "members": [
       {
         "guid": "14a14136732860d186ea431fe7bcee0e",
@@ -95,7 +95,7 @@
   },
   {
     "name": "Les Bourreaux",
-    "map": "mp_kam5",
+    "map": "https://images.gamebanana.com/img/embeddables/Mod_139924_sd_image.jpg",
     "members": [
       {
         "guid": "130236d724d02bcdd927e1622bdac598",
@@ -113,7 +113,7 @@
   },
   {
     "name": "SkibiTeam",
-    "map": "loadscreen_mp_overgrown",
+    "map": "https://static.wikia.nocookie.net/callofduty/images/7/7d/Bare_Load_Screen_Overgrown_CoD4.jpg",
     "members": [
       {
         "guid": "",
