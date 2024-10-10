@@ -789,6 +789,12 @@ export default class GameDetails extends Vue {
   }
   .head-to-head-container ul {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .head-to-head-container ul li {
+    display: inline-flex;
   }
   .head-to-head-name {
     font-weight: bold;
