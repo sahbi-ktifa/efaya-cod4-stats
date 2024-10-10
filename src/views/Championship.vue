@@ -548,6 +548,7 @@ export default class Championship extends Vue {
     }
     .right-content img {
         height: 35px;
+        flex: 1 0 65px;
     }
     .versus {
         width: 85px;
