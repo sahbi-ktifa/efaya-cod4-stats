@@ -306,6 +306,28 @@
         </div>
       </div>
     </div>
+    <div class="head-to-head-container">
+      <h3>Want to play a match in the match?</h3>
+      <div>
+        <div>
+          <select v-model="contender1">
+            <option v-for="winner in winners" :key="winner.playerRef.guid" :value="winner.playerRef.guid">{{winner.playerRef.playerName}}</option>
+          </select>
+          <img src="../assets/versus.png" class="versus">
+          <select v-model="contender2">
+            <option v-for="loser in losers" :key="loser.playerRef.guid" :value="loser.playerRef.guid">{{loser.playerRef.playerName}}</option>
+          </select>
+        </div>
+        <div v-if="contender1Information.length > 0 && contender2Information.length > 0">
+          <ul>
+            <li v-for="_index in contenderInformation.length" :key="_index-1">
+              <span class="head-to-head-name">{{contenderInformation[_index-1]}}</span>
+              <span class="head-to-head-value">{{contender1Information[_index-1]}} / {{contender2Information[_index-1]}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -313,7 +335,7 @@
 import {Component, Vue, Watch} from "vue-property-decorator";
 import {mapGetters} from "vuex";
 import {orderBy} from "lodash";
-import Game from "@/model/Game";
+import Game, {GameRef} from '@/model/Game';
 import {Player} from "@/model/Player";
 import { format } from "date-fns";
 import {GameService} from "@/services/GameService";
@@ -530,6 +552,23 @@ export default class GameDetails extends Vue {
   public game: Game | null = null;
   public winners: Player[] = [];
   public losers: Player[] = [];
+  public contender1: string | null = null;
+  public contender2: string | null = null;
+  public contender1Information: string[] = [];
+  public contender2Information: string[] = [];
+  public contenderInformation: string[] = [
+      "Total Score",
+      "Total Kills",
+      "Total Deaths",
+      "Accuracy",
+      "Kill streak",
+      "Death streak",
+      "Distance",
+      "Headshots",
+      "Longest Kill",
+      "Longest Headshot",
+      "Head to Head kills",
+  ];
   public winnerPoints: number[] = [];
   public loserPoints: number[] = [];
   protected games!: Game[];
@@ -545,6 +584,43 @@ export default class GameDetails extends Vue {
       return [];
     }
     return this.game.players.filter((p) => p.totalDeaths > 0);
+  }
+
+  @Watch("contender1")
+  @Watch("contender2")
+  public checkContenders() {
+    if (this.game && this.contender1 != null && this.contender2 != null) {
+      this.contender1Information = [];
+      this.contender2Information = [];
+      this.game.players.forEach((_p: Player) => {
+        if (_p.playerRef.guid === this.contender1) {
+          this.contender1Information.push("" + _p.totalScore);
+          this.contender1Information.push("" + _p.totalKills);
+          this.contender1Information.push("" + _p.totalDeaths);
+          this.contender1Information.push("" + _p.accuracy + "%");
+          this.contender1Information.push("" + _p.killstreak);
+          this.contender1Information.push("" + _p.deathstreak);
+          this.contender1Information.push("" + _p.distance + "m");
+          this.contender1Information.push("" + _p.headShots);
+          this.contender1Information.push("" + _p.longestKill + "m");
+          this.contender1Information.push("" + _p.longestHS + "m");
+          this.contender1Information.push("" + (_p.prey[this.contender2!!] || 0));
+        }
+        if (_p.playerRef.guid === this.contender2) {
+          this.contender2Information.push("" + _p.totalScore);
+          this.contender2Information.push("" + _p.totalKills);
+          this.contender2Information.push("" + _p.totalDeaths);
+          this.contender2Information.push("" + _p.accuracy + "%");
+          this.contender2Information.push("" + _p.killstreak);
+          this.contender2Information.push("" + _p.deathstreak);
+          this.contender2Information.push("" + _p.distance + "m");
+          this.contender2Information.push("" + _p.headShots);
+          this.contender2Information.push("" + _p.longestKill + "m");
+          this.contender2Information.push("" + _p.longestHS + "m");
+          this.contender2Information.push("" + (_p.prey[this.contender1!!] || 0));
+        }
+      });
+    }
   }
 
   @Watch("games")
@@ -700,4 +776,29 @@ export default class GameDetails extends Vue {
       width: 180px;
     }
   }
+  .versus {
+    width: 75px;
+    margin: auto;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .head-to-head-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+  .head-to-head-container ul {
+    list-style: none;
+  }
+  .head-to-head-name {
+    font-weight: bold;
+    color: #36ebff;
+    margin-right: 40px;
+  }
+  .head-to-head-value {
+    font-weight: bold;
+    text-align: right;
+    display: block;
+  }
+
 </style>
