@@ -76,8 +76,8 @@
     ]
   },
   {
-    "name": "iClan1",
-    "map": "",
+    "name": "Le Bon, La Brute et le Truand",
+    "map": "mp_csgo_monastery",
     "members": [
       {
         "guid": "9b26363dcbdfb0676e64637b635feb91",
@@ -95,7 +95,7 @@
   },
   {
     "name": "Les Bourreaux",
-    "map": "",
+    "map": "mp_kam5",
     "members": [
       {
         "guid": "130236d724d02bcdd927e1622bdac598",
