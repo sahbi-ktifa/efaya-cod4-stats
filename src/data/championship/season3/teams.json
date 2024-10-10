@@ -1,73 +1,77 @@
 [
   {
     "name": "NGBC",
-    "map": "",
+    "map": "mp_rasalem_winter",
     "members": [
       {
-        "guid": "",
-        "playerName": "???"
+        "guid": "df1ee051745ce762b779ad5f6c358fc5",
+        "playerName": "[NGBC]Raptor"
       },
       {
-        "guid": "",
-        "playerName": "???"
+        "guid": "707b4ca1f85022a42efebe0c38e5469e",
+        "playerName": "[NGBC]Guillaume"
       },
       {
-        "guid": "",
+        "guid": "8dd694477b3bd8c4496d7410eb58616c",
         "playerName": "[NGBC]Tcherenkov"
       }
     ]
   },
   {
     "name": "FH Clan",
-    "map": "",
+    "map": "mp_backlot",
     "members": [
       {
-        "guid": "",
+        "guid": "14a14136732860d186ea431fe7bcee0e",
         "playerName": "|FH|Mits"
       },
       {
-        "guid": "",
+        "guid": "0d8366b9a46ac6c6a97f961ba9b0858d",
         "playerName": "|FH|Indi"
       },
       {
-        "guid": "",
+        "guid": "91aee3837094dacae6f367cbaf9c92b2",
         "playerName": "|FH|commando247"
       }
     ]
   },
   {
-    "name": "4T4",
+    "name": "West Wild Warriors",
     "map": "",
     "members": [
       {
-        "guid": "",
+        "guid": "597dce65ed33d9cf4b40064f7550eb82",
         "playerName": "4t4JmD"
       },
       {
-        "guid": "",
+        "guid": "902cc6549e48763b23b4c719b0b4fa62",
         "playerName": "4t4Chris"
       },
       {
-        "guid": "",
-        "playerName": "4t4Pepito"
+        "guid": "001489cdb1e13dc0cfe6ecbf94e73b2e",
+        "playerName": "Gamoul"
       }
     ]
   },
   {
-    "name": "XI Clan",
+    "name": "Rebirth Team",
     "map": "",
     "members": [
       {
-        "guid": "",
-        "playerName": "???"
+        "guid":"e56a7f8701d6a8f643f6aac221e176cd",
+        "playerName":"iClan|Vaas"
       },
       {
-        "guid": "",
-        "playerName": "???"
+        "guid":"3856a5e494ee0255cf1f2499b449ec2e",
+        "playerName":"iClan|Louis92"
       },
       {
-        "guid": "",
-        "playerName": "???"
+        "guid":"971ab0c65576db223856462391403f10",
+        "playerName":"iClan|Pistol-Pe"
+      },
+      {
+        "guid":"90189ba6d585b3313ac24ff1df0a0f04",
+        "playerName":"iClan|AnGeL"
       }
     ]
   },
@@ -76,15 +80,15 @@
     "map": "",
     "members": [
       {
-        "guid": "",
+        "guid": "9b26363dcbdfb0676e64637b635feb91",
         "playerName": "iClan|Efaya"
       },
       {
-        "guid": "",
+        "guid": "d8b7a5821891cd7e0d33bbc3fbe9e708",
         "playerName": "iClan|BingO_o"
       },
       {
-        "guid": "",
+        "guid": "f5b4590d00d3b7fa2e3db490fe61b2d0",
         "playerName": "iClan|pascual66"
       }
     ]
@@ -94,15 +98,15 @@
     "map": "",
     "members": [
       {
-        "guid": "",
+        "guid": "130236d724d02bcdd927e1622bdac598",
         "playerName": "iClan|Cedmac"
       },
       {
-        "guid": "",
+        "guid": "9f01f167d4db0599a16d87e0e05c637d",
         "playerName": "iClan|Fre2x3"
       },
       {
-        "guid": "",
+        "guid": "5a3c87c77fc7bfc9c6d6f7154f16097f",
         "playerName": "iClan|Akabane"
       }
     ]

@@ -69,6 +69,7 @@ export default class LogsParserService {
         const parsedData = new ParsedData();
         let lines = 0;
         content.split(/\r\n|\n/).forEach((line: string) => {
+            line = line.replace("|FH| ", "|FH|");
             this.parseLine(line, parsedData, ctx);
             lines++;
         });
