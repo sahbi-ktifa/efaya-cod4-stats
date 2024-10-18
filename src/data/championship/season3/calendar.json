@@ -69,7 +69,7 @@
     "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jYXJlbnRhbjQ0XzAuNDM3MzEzODYyMTAxMDYzMDQ=",
     "team1": "NGBC",
     "team2": "The Chemical Brothers",
-    "played": false,
+    "played": true,
     "match1MapName": "mp_winter_rasalem",
     "match2MapName": "mp_carentan44",
     "match1Map": "Winter Rasalem",
