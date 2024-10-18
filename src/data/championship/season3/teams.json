@@ -37,7 +37,7 @@
   },
   {
     "name": "West Wild Warriors",
-    "map": "",
+    "map": "https://customapscod.com/images/maps/cod4/mp_4t4dawnville.jpg",
     "members": [
       {
         "guid": "597dce65ed33d9cf4b40064f7550eb82",
@@ -55,7 +55,7 @@
   },
   {
     "name": "The Chemical Brothers",
-    "map": "",
+    "map": "https://customapscod.com/images/maps/cod4/mp_carentan44.jpg",
     "members": [
       {
         "guid":"e56a7f8701d6a8f643f6aac221e176cd",

@@ -65,17 +65,17 @@
     "match2Result": ""
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjAzODQ4MTIwNTE3NTE1ODg1",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jYXJlbnRhbjQ0XzAuNDM3MzEzODYyMTAxMDYzMDQ=",
     "team1": "NGBC",
     "team2": "The Chemical Brothers",
     "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "match1MapName": "mp_winter_rasalem",
+    "match2MapName": "mp_carentan44",
+    "match1Map": "Winter Rasalem",
+    "match2Map": "Carentan 1944",
+    "match1Result": "0/5 0/5",
+    "match2Result": "3/5 1/5"
   },
 
   {
