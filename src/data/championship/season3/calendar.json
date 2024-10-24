@@ -39,17 +39,17 @@
     "match2Result": ""
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9rYW01XzAuNDc3NzM4MTY1ODkzMTc1NjQ=",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjAxOTU1Nzk5MjAzMTUyMDUzMg==",
     "team1": "NGBC",
     "team2": "Les Bourreaux",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_kam5",
+    "match2MapName": "mp_winter_rasalem",
+    "match1Map": "Kamtchaka Depot",
+    "match2Map": "Winter Rasalem",
+    "match1Result": "4/5 5/1",
+    "match2Result": "5/1 5/2"
   },
   {
     "match1Id":"",
