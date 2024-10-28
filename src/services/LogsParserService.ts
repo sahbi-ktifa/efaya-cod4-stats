@@ -70,6 +70,7 @@ export default class LogsParserService {
         let lines = 0;
         content.split(/\r\n|\n/).forEach((line: string) => {
             line = line.replace("|FH| ", "|FH|");
+            line = line.replace("z00m) ", "z00m)");
             this.parseLine(line, parsedData, ctx);
             lines++;
         });
