@@ -131,17 +131,17 @@
     "match2Result": ""
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9iYWNrbG90XzAuMzUyODIyMTg0Njg2NzcxODQ=",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jYXJlbnRhbjQ0XzAuOTkzMDcyODA1NTk2MDM4Nw==",
     "team1": "FH Clan",
     "team2": "The Chemical Brothers",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_backlot",
+    "match2MapName": "mp_carentan44",
+    "match1Map": "Backlot",
+    "match2Map": "Carentan 1944",
+    "match1Result": "2/5 5/2",
+    "match2Result": "1/5 3/5"
   },
 
   {
