@@ -1,16 +1,16 @@
 [
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9iYWNrbG90XzAuNzg5ODQzMjMwMDY2MzI1Ng==",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjc4MzU2MjczMDgyNTg4Mzk=",
     "team1": "NGBC",
     "team2": "FH Clan",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_backlot",
+    "match2MapName": "mp_winter_rasalem",
+    "match1Map": "Backlot",
+    "match2Map": "Winter Rasalem",
+    "match1Result": "5/4 1/5",
+    "match2Result": "1/5 4/5"
   },
   {
     "match1Id":"",
