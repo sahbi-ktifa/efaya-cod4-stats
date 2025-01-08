@@ -408,56 +408,45 @@ export default class Championship extends Vue {
 
     private computeResults() {
         for (const gameResult of this.gameResults) {
-            for (const gameRef of gameResult.gameRefs) {
+          for (const gameRef of gameResult.gameRefs) {
+            const refAllies = gameRef.players.filter((p) => p.team === "allies")[0];
+            for (const team of this.teams) {
+              if (team.members.filter((m) => m.guid === refAllies.playerRef.guid).length > 0) {
+                team.points += gameRef.alliesScore;
                 if (gameRef.alliesScore === 5) {
-                    const refGuidAllies = gameRef.players.filter((p) => p.team === "allies")[0].playerRef.guid;
-                    for (const team of this.teams) {
-                        if (team.members.filter((m) => m.guid === refGuidAllies).length > 0) {
-                            team.points += 7;
-                            break;
-                        }
-                    }
-                    const refAxis = gameRef.players.filter((p) => p.team === "axis")[0];
-                    for (const team of this.teams) {
-                        if (team.members.filter((m) => m.guid === refAxis.playerRef.guid).length > 0) {
-                            team.points += refAxis.totalPoints;
-                            break;
-                        }
-                    }
-                } else {
-                    const refGuidAxis = gameRef.players.filter((p) => p.team === "axis")[0].playerRef.guid;
-                    for (const team of this.teams) {
-                        if (team.members.filter((m) => m.guid === refGuidAxis).length > 0) {
-                            team.points += 7;
-                            break;
-                        }
-                    }
-                    const refAllies = gameRef.players.filter((p) => p.team === "allies")[0];
-                    for (const team of this.teams) {
-                        if (team.members.filter((m) => m.guid === refAllies.playerRef.guid).length > 0) {
-                            team.points += refAllies.totalPoints;
-                            break;
-                        }
-                    }
+                  team.points += 2;
                 }
+                break;
+              }
             }
+            const refAxis = gameRef.players.filter((p) => p.team === "axis")[0];
+            for (const team of this.teams) {
+              if (team.members.filter((m) => m.guid === refAxis.playerRef.guid).length > 0) {
+                team.points += gameRef.axisScore;
+                if (gameRef.axisScore === 5) {
+                  team.points += 2;
+                }
+                break;
+              }
+            }
+          }
         }
     }
 
-    private retrieveValue(game: Game, ref: string): Player {
-        return orderBy(game.players, [ref], ["desc"])[0];
-    }
+  private retrieveValue(game: Game, ref: string): Player {
+    return orderBy(game.players, [ref], ["desc"])[0];
+  }
 
 }
 </script>
 
 <style scoped>
-  .championship-selector > strong {
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  .championship-selector > strong.selected {
-    color: #36ebff;
+.championship-selector > strong {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.championship-selector > strong.selected {
+  color: #36ebff;
     font-style: normal;
     font-weight: bold;
   }

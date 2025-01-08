@@ -61,7 +61,7 @@
     "match2MapName": "mp_overgrown",
     "match1Map": "Winter Rasalem",
     "match2Map": "Overgrown",
-    "match1Result": "5/2 0/5",
+    "match1Result": "5/2 5/0",
     "match2Result": "5/2 5/2"
   },
   {
@@ -114,8 +114,8 @@
     "match2MapName": "mp_csgo_monastery",
     "match1Map": "Backlot",
     "match2Map": "Monastery",
-    "match1Result": "3/5 5/4",
-    "match2Result": "4/5 5/1"
+    "match1Result": "4/5 5/1",
+    "match2Result": "4/5 3/5"
   },
   {
     "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9iYWNrbG90XzAuOTA3OTc4OTM4ODQyMzA3Ng==",
