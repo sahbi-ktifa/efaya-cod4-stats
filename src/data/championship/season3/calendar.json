@@ -13,17 +13,17 @@
     "match2Result": "1/5 4/5"
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjc4MzU2MjczMDgyNTg4Mok=",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjc4MoU2MjczMDgyNTg4Mok=",
     "team1": "NGBC",
     "team2": "West Wild Warriors",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_winter_rasalem",
+    "match2MapName": "mp_4t4dawnville",
+    "match1Map": "Winter Rasalem",
+    "match2Map": "Dawnville",
+    "match1Result": "4/5 5/0",
+    "match2Result": "5/0 5/0"
   },
   {
     "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF93aW50ZXJfcmFzYWxlbV8wLjQyNjMyMjYxMTg5MTE2MDU=",
@@ -251,17 +251,17 @@
     "match2Result": ""
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jc2dvX21vbmFzdGVyeV8wLjcwMjM1NjM1NDQ4MzUwODU=",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jYXJlbnRhbjQ0XzAuNjQ4NDU4NzE1MDIzNTk3Mg==",
     "team1": "Le Bon, La Brute et le Truand",
     "team2": "The Chemical Brothers",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_csgo_monastery",
+    "match2MapName": "mp_carentan44",
+    "match1Map": "Monastery",
+    "match2Map": "Carentan",
+    "match1Result": "3/5 4/5",
+    "match2Result": "4/5 5/1"
   },
 
   {
