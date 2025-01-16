@@ -238,17 +238,17 @@
   },
 
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9vdmVyZ3Jvd25fMC41MDQ4MzIzNjU2ODAxMjgx",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jc2dvX21vbmFzdGVyeV8wLjEyNzExNDcwMjU1MzIyMTE=",
     "team1": "Le Bon, La Brute et le Truand",
     "team2": "SkibiTeam",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_overgrown",
+    "match2MapName": "mp_csgo_monastery",
+    "match1Map": "Overgrown",
+    "match2Map": "Monastery",
+    "match1Result": "5/1 5/0",
+    "match2Result": "4/5 5/1"
   },
   {
     "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jc2dvX21vbmFzdGVyeV8wLjcwMjM1NjM1NDQ4MzUwODU=",
