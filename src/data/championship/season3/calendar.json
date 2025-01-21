@@ -171,17 +171,17 @@
     "match2Result": ""
   },
   {
-    "match1Id":"",
-    "match2Id":"",
+    "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9vdmVyZ3Jvd25fMC43NDczNjE5MTM4NjEzNjUy",
+    "match2Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9rYW01XzAuMDU3ODI4MTc5NTExMjcxMTc=",
     "team1": "Les Bourreaux",
     "team2": "SkibiTeam",
-    "played": false,
-    "match1MapName": "",
-    "match2MapName": "",
-    "match1Map": "",
-    "match2Map": "",
-    "match1Result": "",
-    "match2Result": ""
+    "played": true,
+    "match1MapName": "mp_overgrown",
+    "match2MapName": "mp_kam5",
+    "match1Map": "Overgrown",
+    "match2Map": "Kamtchaka Depot",
+    "match1Result": "5/2 2/5",
+    "match2Result": "5/1 5/3"
   },
   {
     "match1Id":"aWNsYW5fd2FyZmFyZV8yNF9tcF9jYXJlbnRhbjQ0XzAuMTk1MDcxMzc3MTA2MzA3NQ==",
