@@ -1,0 +1,46 @@
+[
+  {
+    "matchId":"aWNsYW5fd2FyZmFyZV8yNF9tcF9maW5jYV8wLjc4NDIzNzc0MzM3NDE2MzQ=",
+    "team1": "NGBC",
+    "team2": "The Chemical Brothers",
+    "played": true,
+    "matchMap": "mp_finca",
+    "matchMapName": "Finca",
+    "matchResult": "3/5 1/5",
+    "final": false,
+    "smallFinal": false
+  },
+  {
+    "matchId":"aWNsYW5fd2FyZmFyZV8yNF9tcF9maW5jYV8wLjg4NjYxMzIzMzQxMzE4NzM=",
+    "team1": "Le Bon, La Brute et le Truand",
+    "team2": "FH Clan",
+    "played": true,
+    "matchMap": "mp_finca",
+    "matchMapName": "Finca",
+    "matchResult": "5/3 5/1",
+    "final": false,
+    "smallFinal": false
+  },
+  {
+    "matchId":"aWNsYW5fd2FyZmFyZV8yNF9tcF9maW5jYV8wLjk0OTc1NDUwMDM5NDEwODQ=",
+    "team1": "Le Bon, La Brute et le Truand",
+    "team2": "The Chemical Brothers",
+    "played": true,
+    "matchMap": "mp_finca",
+    "matchMapName": "Finca",
+    "matchResult": "5/3 5/4",
+    "final": true,
+    "smallFinal": false
+  },
+  {
+    "matchId":"aWNsYW5fd2FyZmFyZV8yNF9tcF9maW5jYV8wLjc5MjA5MTAyMjgzOTM4MTI=",
+    "team1": "NGBC",
+    "team2": "FH Clan",
+    "played": true,
+    "matchMap": "mp_finca",
+    "matchMapName": "Finca",
+    "matchResult": "3/5 1/5",
+    "final": false,
+    "smallFinal": true
+  }
+]

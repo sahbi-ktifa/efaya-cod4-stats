@@ -42,3 +42,26 @@ export class ChampionshipMatch {
         this.match2Id = data.match2Id;
     }
 }
+
+// tslint:disable-next-line:max-classes-per-file
+export class FinalMatch {
+    public team1!: string;
+    public team2!: string;
+    public matchMap!: string;
+    public matchMapName!: string;
+    public matchResult!: string;
+    public matchId!: string;
+    public final!: boolean;
+    public smallFinal!: boolean;
+
+    constructor(data: any) {
+        this.team1 = data.team1;
+        this.team2 = data.team2;
+        this.matchMap = data.matchMap;
+        this.matchMapName = data.matchMapName;
+        this.matchResult = data.matchResult;
+        this.matchId = data.matchId;
+        this.final = data.final;
+        this.smallFinal = data.smallFinal;
+    }
+}

@@ -1,10 +1,10 @@
 <template>
     <div class="championship-wrapper">
         <div class="championship-selector">
-          Tournoi :
-          <strong @click="goToTournament('2020')" :class="{'selected' : seasonKey === '2020'}">2020</strong>
-          <strong @click="goToTournament('2021')" :class="{'selected' : seasonKey === '2021'}">2021</strong>
-          <strong @click="goToTournament('2024')" :class="{'selected' : seasonKey === '2024'}">2024</strong>
+            Tournoi :
+            <strong @click="goToTournament('2020')" :class="{'selected' : seasonKey === '2020'}">2020</strong>
+            <strong @click="goToTournament('2021')" :class="{'selected' : seasonKey === '2021'}">2021</strong>
+            <strong @click="goToTournament('2024')" :class="{'selected' : seasonKey === '2024'}">2024</strong>
         </div>
         <ul>
             <li><h2>Teams engagées:</h2></li>
@@ -124,26 +124,81 @@
                     </div>
                 </li>
             </ul>
-          <h2 v-if="nextMatches.length > 0">Prochain matchs à jouer :</h2>
-          <ul v-if="nextMatches.length > 0">
-            <li v-for="match in nextMatches">
-              <div class="match-displayer">
-                <div>
-                  <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
-                  <h3>{{match.team1}}</h3>
-                </div>
-                <div>
-                  <img src="../assets/versus.png" class="versus">
-                </div>
-                <div>
-                  <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
-                  <h3>{{match.team2}}</h3>
-                </div>
-              </div>
-            </li>
-          </ul>
+            <h2 v-if="nextMatches.length > 0">Prochain matchs à jouer :</h2>
+            <ul v-if="nextMatches.length > 0">
+                <li v-for="match in nextMatches">
+                    <div class="match-displayer">
+                        <div>
+                            <img class="team-logo" alt="Team logo" v-if="match.team1" :src="teamIcon(match.team1)">
+                            <h3>{{match.team1}}</h3>
+                        </div>
+                        <div>
+                            <img src="../assets/versus.png" class="versus">
+                        </div>
+                        <div>
+                            <img class="team-logo" alt="Team logo" v-if="match.team2" :src="teamIcon(match.team2)">
+                            <h3>{{match.team2}}</h3>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="right-content">
+            <div v-if="finalMatches.length > 0" class="final-four">
+                <h2>Final Four</h2>
+                <p>A la fin de la phase de classement, on passe à la phase finale du tournoi: Le premier rencontre le
+                    quatrième, et le deuxième, le troisième, avant les petites et grandes finales.</p>
+                <h3>Semi-finals</h3>
+                <div class="result-team-info-finals" v-for="semiFinal in semiFinals">
+                    <div class="result-team-info-final-logo">
+                        <span>
+                            <img class="team-logo" alt="Team logo" :src="teamIcon(semiFinal.team1)">
+                        </span>
+                        <span>
+                            <img class="team-logo" alt="Team logo" :src="teamIcon(semiFinal.team2)">
+                        </span>
+                    </div>
+                    <div class="result-team-info-final-teams">
+                        <strong>{{ semiFinal.team1 }}</strong> VS <strong>{{ semiFinal.team2}}</strong>
+                    </div>
+                    <div class="result-team-info-final-score">
+                        <strong @click="goToGame(semiFinal.matchId)">{{ semiFinal.matchResult }}</strong>
+                    </div>
+                </div>
+                <h3>Finals</h3>
+                <div class="result-team-info-finals" v-if="final">
+                    <div class="result-team-info-final-logo">
+                        <span>
+                            🥇<img class="team-logo" alt="Team logo" :src="teamIcon(final.team1)">
+                        </span>
+                        <span>
+                            <img class="team-logo" alt="Team logo" :src="teamIcon(final.team2)"> 🥇
+                        </span>
+                    </div>
+                    <div class="result-team-info-final-teams">
+                        <strong>{{ final.team1 }}</strong> VS <strong>{{ final.team2}}</strong>
+                    </div>
+                    <div class="result-team-info-final-score">
+                        <strong @click="goToGame(final.matchId)">{{ final.matchResult }}</strong>
+                    </div>
+                </div>
+                <div class="result-team-info-finals" v-if="smallFinal">
+                    <div class="result-team-info-final-logo">
+                        <span>
+                            🥉<img class="team-logo" alt="Team logo" :src="teamIcon(smallFinal.team1)">
+                        </span>
+                        <span>
+                            <img class="team-logo" alt="Team logo" :src="teamIcon(smallFinal.team2)"> 🥉
+                        </span>
+                    </div>
+                    <div class="result-team-info-final-teams">
+                        <strong>{{ smallFinal.team1 }}</strong> VS <strong>{{ smallFinal.team2}}</strong>
+                    </div>
+                    <div class="result-team-info-final-score">
+                        <strong @click="goToGame(smallFinal.matchId)">{{ smallFinal.matchResult }}</strong>
+                    </div>
+                </div>
+            </div>
             <h2>Classement</h2>
             <div class="result-team-info">
                 <span class="team-ladder">
@@ -167,7 +222,7 @@
             <h2 class="rule">Réglement</h2>
             <ul class="rule">
                 <li v-if="seasonKey !== '2024'"><strong>Efaya mod v2 SR</strong> - 3 joueurs par équipe</li>
-                <li v-else><strong>iWarfare24 SR</strong> - 3 joueurs par équipe</li>
+                <li v-else><strong>iWarfare SR</strong> - 3 joueurs par équipe</li>
                 <li>Chaque team choisi <strong>sa map pour le tournoi et n'en change pas</strong>. Les maps doivent avoir été jouées sur notre serveur pour être éligible</li>
                 <li>Deux rencontres par équipe : équipe A reçoit équipe B sur sa map pour <strong>deux manches de 5 points gagnants</strong> (le premier à 5), en défense et en attaque. Puis deuxième match où c'est l'équipe B qui reçoit l'équipe A sur sa map, également pour deux manches attaque & défense, soit 4 manches en tout sur deux matchs.</li>
                 <li><strong>Calcul des points = score du match + 2 points pour chaque manche gagnée</strong>. (exemple : score final du premier match 4-5 & 5-1 : équipe A perd 4 à 5 en défense et gagne 5 à 1 en attaque, soit 11 points = 4+(5+2) , du coup l'équipe B marque 8 points = (5+2) + 1.</li>
@@ -187,9 +242,10 @@ import season3Teams from "@/data/championship/season3/teams.json";
 import season1Calendar from "@/data/championship/season1/calendar.json";
 import season2Calendar from "@/data/championship/season2/calendar.json";
 import season3Calendar from "@/data/championship/season3/calendar.json";
+import season3FinalFour from "@/data/championship/season3/finals.json";
 import {MatchmakingService} from "@/services/MatchmakingService";
 import {DataService} from "@/services/DataService";
-import {ChampionshipMatch, ChampionshipTeam} from "@/model/Championship";
+import {ChampionshipMatch, ChampionshipTeam, FinalMatch} from '@/model/Championship';
 import Game from "@/model/Game";
 import {Player, PlayerGlobalData, PlayerRef} from "@/model/Player";
 
@@ -202,14 +258,14 @@ import {Player, PlayerGlobalData, PlayerRef} from "@/model/Player";
         })
     },
     beforeRouteEnter(to, from, next) {
-      next((vm) => {
-        if (vm.$route.query.s) {
-          // @ts-ignore
-          vm.seasonKey = vm.$route.query.s;
-        }
-        // @ts-ignore
-        vm.init();
-      });
+        next((vm) => {
+            if (vm.$route.query.s) {
+                // @ts-ignore
+                vm.seasonKey = vm.$route.query.s;
+            }
+            // @ts-ignore
+            vm.init();
+        });
     }
 })
 export default class Championship extends Vue {
@@ -219,6 +275,7 @@ export default class Championship extends Vue {
     protected gameResults!: Game[];
     private teams: ChampionshipTeam[] = [];
     private matches: ChampionshipMatch[] = [];
+    private finalMatches: FinalMatch[] = [];
     private bestPlayer: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private totalKills: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
     private killStreak: {ref: PlayerRef, value: number} = {ref: {} as PlayerRef, value: 0};
@@ -232,42 +289,46 @@ export default class Championship extends Vue {
     private seasonKey: string = "2024";
 
     public reset() {
-      this.teams = [];
-      this.matches = [];
-      this.bestPlayer = {ref: {} as PlayerRef, value: 0};
-      this.totalKills = {ref: {} as PlayerRef, value: 0};
-      this.killStreak = {ref: {} as PlayerRef, value: 0};
-      this.longestKill = {ref: {} as PlayerRef, value: 0};
-      this.collateralKill = {ref: {} as PlayerRef, value: 0};
-      this.teamKill = {ref: {} as PlayerRef, value: 0};
-      this.defuser = {ref: {} as PlayerRef, value: 0};
-      this.dataForPlayers = [];
+        this.teams = [];
+        this.matches = [];
+        this.finalMatches = [];
+        this.bestPlayer = {ref: {} as PlayerRef, value: 0};
+        this.totalKills = {ref: {} as PlayerRef, value: 0};
+        this.killStreak = {ref: {} as PlayerRef, value: 0};
+        this.longestKill = {ref: {} as PlayerRef, value: 0};
+        this.collateralKill = {ref: {} as PlayerRef, value: 0};
+        this.teamKill = {ref: {} as PlayerRef, value: 0};
+        this.defuser = {ref: {} as PlayerRef, value: 0};
+        this.dataForPlayers = [];
     }
 
     public init() {
-      const gameResults = this.dataService.retrieveChampionshipGames(this.seasonKey);
-      this.$store.commit("championshipGamesRetrieved", gameResults);
-      this.reset();
-      for (let i = 0; i < this.calendarBySeason.length; i++) {
+        const gameResults = this.dataService.retrieveChampionshipGames(this.seasonKey);
+        this.$store.commit("championshipGamesRetrieved", gameResults);
+        this.reset();
+        for (let i = 0; i < this.calendarBySeason.length; i++) {
             this.matches.push(new ChampionshipMatch(this.calendarBySeason[i]));
         }
-      for (let i = 0; i < this.teamsBySeason.length; i++) {
+        for (let i = 0; i < this.finalFourBySeason.length; i++) {
+            this.finalMatches.push(new FinalMatch(this.finalFourBySeason[i]));
+        }
+        for (let i = 0; i < this.teamsBySeason.length; i++) {
             this.teams.push(new ChampionshipTeam(this.teamsBySeason[i]));
         }
-      this.teams.forEach((t) => {
+        this.teams.forEach((t) => {
             let mean = 0;
             t.members.forEach((m) => mean += this.matchMakingService.computeEMP(m.guid, this.games));
             t.emp = mean / 3;
         });
 
-      this.computeResults();
-      let refRatio1 =  -1;
-      let refRatio2 =  -1;
-      let refRatio3 =  -1;
-      let refRatio4 =  -1;
-      let refRatio5 =  -1;
-      let refRatio6 =  -1;
-      for (const gameResult of this.gameResults) {
+        this.computeResults();
+        let refRatio1 =  -1;
+        let refRatio2 =  -1;
+        let refRatio3 =  -1;
+        let refRatio4 =  -1;
+        let refRatio5 =  -1;
+        let refRatio6 =  -1;
+        for (const gameResult of this.gameResults) {
             const totalScore = this.retrieveValue(gameResult, "totalScore");
             if (this.bestPlayer.value < totalScore.totalScore || (this.bestPlayer.value === totalScore.totalScore && totalScore.globalRatio > refRatio1)) {
                 this.bestPlayer.value = totalScore.totalScore;
@@ -311,48 +372,58 @@ export default class Championship extends Vue {
                 refRatio6 = defuser.bombsDefused;
             }
         }
-      this.dataForPlayers = this.dataService.computePlayersPerformance(this.gameResults, false);
-      this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
+        this.dataForPlayers = this.dataService.computePlayersPerformance(this.gameResults, false);
+        this.dataForPlayers = orderBy(this.dataForPlayers, ["playerRef.playerName"], ["asc"]);
     }
 
     get winner(): string {
-      if (this.seasonKey === "2020") {
-        return "Les Sales gosses";
-      }
-      if (this.seasonKey === "2021") {
-        return "Les pisseurs";
-      }
-      return "";
+        if (this.seasonKey === "2020") {
+            return "Les Sales gosses";
+        }
+        if (this.seasonKey === "2021") {
+            return "Les pisseurs";
+        }
+        if (this.seasonKey === "2024") {
+            return "Le Bon, La Brute et le Truand";
+        }
+        return "";
     }
 
     get calendarBySeason() {
-      if (this.seasonKey === "2020") {
-        return season1Calendar;
-      }
-      if (this.seasonKey === "2021") {
-        return season2Calendar;
-      }
-      return season3Calendar;
+        if (this.seasonKey === "2020") {
+            return season1Calendar;
+        }
+        if (this.seasonKey === "2021") {
+            return season2Calendar;
+        }
+        return season3Calendar;
+    }
+
+    get finalFourBySeason() {
+        if (this.seasonKey === "2024") {
+            return season3FinalFour;
+        }
+        return [];
     }
 
     get teamsBySeason() {
-      if (this.seasonKey === "2020") {
-        return season1Teams;
-      }
-      if (this.seasonKey === "2021") {
-        return season2Teams;
-      }
-      return season3Teams;
+        if (this.seasonKey === "2020") {
+            return season1Teams;
+        }
+        if (this.seasonKey === "2021") {
+            return season2Teams;
+        }
+        return season3Teams;
     }
 
     get seasonName() {
-      if (this.seasonKey === "2020") {
-        return "season1";
-      }
-      if (this.seasonKey === "2021") {
-        return "season2";
-      }
-      return "season3";
+        if (this.seasonKey === "2020") {
+            return "season1";
+        }
+        if (this.seasonKey === "2021") {
+            return "season2";
+        }
+        return "season3";
     }
 
     get teamsLadder(): ChampionshipTeam[] {
@@ -365,6 +436,28 @@ export default class Championship extends Vue {
 
     get playedMatches(): ChampionshipMatch[] {
         return this.matches.filter((m) => m.played).reverse();
+    }
+
+    get semiFinals(): FinalMatch[] {
+        return this.finalMatches.filter((m) => !m.final && !m.smallFinal);
+    }
+
+    get final(): FinalMatch | null {
+        const finals = this.finalMatches.filter((m) => m.final && !m.smallFinal)
+        if (finals.length > 0) {
+            return finals[0];
+        } else {
+            return null;
+        }
+    }
+
+    get smallFinal(): FinalMatch | null {
+        const smallFinals = this.finalMatches.filter((m) => !m.final && m.smallFinal)
+        if (smallFinals.length > 0) {
+            return smallFinals[0];
+        } else {
+            return null;
+        }
     }
 
     public changeSort(key: string) {
@@ -387,10 +480,10 @@ export default class Championship extends Vue {
     }
 
     public teamMap(map: string): string {
-      if (map.indexOf("http") === 0) {
-        return map;
-      }
-      return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
+        if (map.indexOf("http") === 0) {
+            return map;
+        }
+        return "http://www.customapscod.com/images/maps/cod4/" + map + ".jpg";
     }
 
     public goToGame(matchId: string) {
@@ -398,8 +491,8 @@ export default class Championship extends Vue {
     }
 
     public goToTournament(tournamentSeason: string) {
-      this.seasonKey = tournamentSeason;
-      this.init();
+        this.seasonKey = tournamentSeason;
+        this.init();
     }
 
     public matchPlayed(team: string): number {
@@ -408,256 +501,273 @@ export default class Championship extends Vue {
 
     private computeResults() {
         for (const gameResult of this.gameResults) {
-          for (const gameRef of gameResult.gameRefs) {
-            const refAllies = gameRef.players.filter((p) => p.team === "allies")[0];
-            for (const team of this.teams) {
-              if (team.members.filter((m) => m.guid === refAllies.playerRef.guid).length > 0) {
-                team.points += gameRef.alliesScore;
-                if (gameRef.alliesScore === 5) {
-                  team.points += 2;
+            for (const gameRef of gameResult.gameRefs) {
+                const refAllies = gameRef.players.filter((p) => p.team === "allies")[0];
+                for (const team of this.teams) {
+                    if (team.members.filter((m) => m.guid === refAllies.playerRef.guid).length > 0) {
+                        team.points += gameRef.alliesScore;
+                        if (gameRef.alliesScore === 5) {
+                            team.points += 2;
+                        }
+                        break;
+                    }
                 }
-                break;
-              }
-            }
-            const refAxis = gameRef.players.filter((p) => p.team === "axis")[0];
-            for (const team of this.teams) {
-              if (team.members.filter((m) => m.guid === refAxis.playerRef.guid).length > 0) {
-                team.points += gameRef.axisScore;
-                if (gameRef.axisScore === 5) {
-                  team.points += 2;
+                const refAxis = gameRef.players.filter((p) => p.team === "axis")[0];
+                for (const team of this.teams) {
+                    if (team.members.filter((m) => m.guid === refAxis.playerRef.guid).length > 0) {
+                        team.points += gameRef.axisScore;
+                        if (gameRef.axisScore === 5) {
+                            team.points += 2;
+                        }
+                        break;
+                    }
                 }
-                break;
-              }
             }
-          }
         }
     }
 
-  private retrieveValue(game: Game, ref: string): Player {
-    return orderBy(game.players, [ref], ["desc"])[0];
-  }
+    private retrieveValue(game: Game, ref: string): Player {
+        return orderBy(game.players, [ref], ["desc"])[0];
+    }
 
 }
 </script>
 
 <style scoped>
 .championship-selector > strong {
-  cursor: pointer;
-  margin-right: 10px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 .championship-selector > strong.selected {
-  color: #36ebff;
+    color: #36ebff;
     font-style: normal;
     font-weight: bold;
-  }
-  .championship-selector > strong:hover {
+}
+.championship-selector > strong:hover {
     color: #36ebff;
-  }
-  .championship-selector {
+}
+.championship-selector {
     position: absolute;
     font-style: italic;
-  }
-    .championship-wrapper {
-        background-color: rgba(0, 0, 0, 0.4);
-        grid-template-columns: 25% 50% 25%;
-        display: grid;
-        grid-gap: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .championship-wrapper > ul > li {
-        padding-bottom: 20px;
-        margin-bottom: 20px;
-        border-bottom: 1px dashed white;
-    }
-    .championship-wrapper > ul > li:first-child {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-    .championship-wrapper > ul > li:first-child,
-    .championship-wrapper > ul > li:last-child {
-        border-bottom: none;
-    }
-    ul {
-        list-style: none;
-        padding-left: 0;
-    }
-    .name {
-        cursor: pointer;
-        color: #36ebff;
-    }
-    .team-info {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 5px;
-    }
-    .team-info > ul {
-        padding-left: 10px;
-    }
-    .team-info h2 {
-        margin-top: 45px;
-        margin-left: 20px;
-    }
-    .team-logo {
-        height: 120px;
-    }
+}
+.championship-wrapper {
+    background-color: rgba(0, 0, 0, 0.4);
+    grid-template-columns: 25% 50% 25%;
+    display: grid;
+    grid-gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.championship-wrapper > ul > li {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed white;
+}
+.championship-wrapper > ul > li:first-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.championship-wrapper > ul > li:first-child,
+.championship-wrapper > ul > li:last-child {
+    border-bottom: none;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+.name {
+    cursor: pointer;
+    color: #36ebff;
+}
+.team-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.team-info > ul {
+    padding-left: 10px;
+}
+.team-info h2 {
+    margin-top: 45px;
+    margin-left: 20px;
+}
+.team-logo {
+    height: 120px;
+}
 
-    .team-map {
-        width: 250px;
-    }
-    .mean {
-        font-size: 14px;
-        font-style: italic;
-        font-weight: bold;
-        color: #36ebff;
-        margin-top: 25px;
-        margin-left: 10px;
-    }
-    .main-content, .right-content {
-        text-align: left;
-    }
-    .right-content ul {
-        list-style: initial;
-    }
-    .right-content ul.ladder  {
-        list-style: decimal;
-    }
-    .right-content .result-team-info {
+.team-map {
+    width: 250px;
+}
+.mean {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+    color: #36ebff;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.main-content, .right-content {
+    text-align: left;
+}
+.right-content ul {
+    list-style: initial;
+}
+.right-content ul.ladder  {
+    list-style: decimal;
+}
+.right-content .result-team-info {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+.right-content .result-team-info > span {
+    margin-left: 10px;
+}
+.right-content .result-team-info .score {
+    color: #36ebff;
+    margin-left: 5px;
+}
+.right-content img {
+    height: 35px;
+    flex: 1 0 65px;
+}
+.versus {
+    width: 85px;
+    margin: auto;
+}
+.match-displayer {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-bottom: 20px;
+}
+.match-displayer > div {
+    display: flex;
+}
+.match-displayer.played .versus {
+    width: 35px;
+}
+.match-displayer.played h4 {
+    cursor: pointer;
+}
+.match-displayer .team-logo {
+    height: 80px;
+}
+.match-displayer h3 {
+    margin-left: 20px;
+}
+.match-displayer h4 {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color: #36ebff;
+    margin-right: 20px;
+}
+.trophies {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    text-align: center;
+}
+.trophies i {
+    color: #36ebff;
+}
+.trophies .trophy {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.team-ladder {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    width: 100%;
+}
+
+@media (max-width: 1150px) {
+    .championship-wrapper {
         display: flex;
-        align-items: center;
-        margin-top: 6px;
+        flex-direction: column;
     }
-    .right-content .result-team-info > span {
-        margin-left: 10px;
+    .championship-wrapper > .main-content {
+        order: 2;
     }
-    .right-content .result-team-info .score {
-        color: #36ebff;
-        margin-left: 5px;
+    .championship-wrapper > .right-content{
+        order: 1;
     }
-    .right-content img {
-        height: 35px;
-        flex: 1 0 65px;
-    }
-    .versus {
-        width: 85px;
-        margin: auto;
-    }
-    .match-displayer {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
-        margin-bottom: 20px;
-    }
-    .match-displayer > div {
-        display: flex;
-    }
-    .match-displayer.played .versus {
-        width: 35px;
-    }
-    .match-displayer.played h4 {
-        cursor: pointer;
-    }
-    .match-displayer .team-logo {
-        height: 80px;
-    }
-    .match-displayer h3 {
-        margin-left: 20px;
-    }
-    .match-displayer h4 {
-        font-size: 20px;
-        font-style: italic;
-        font-weight: bold;
-        color: #36ebff;
-        margin-right: 20px;
+    .championship-wrapper > ul:first-child {
+        order: 3;
     }
     .trophies {
         display: grid;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 100%;
         text-align: center;
     }
-    .trophies i {
-        color: #36ebff;
+    .rule {
+        display: none;
     }
-    .trophies .trophy {
-        width: 180px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+    .versus {
+        width: 40px;
     }
-    .team-ladder {
-        display: grid;
-        grid-template-columns: 60% 20% 20%;
-        width: 100%;
+    .match-displayer .team-logo {
+        height: 45px;
     }
-
-    @media (max-width: 1150px) {
-        .championship-wrapper {
-            display: flex;
-            flex-direction: column;
-        }
-        .championship-wrapper > .main-content {
-            order: 2;
-        }
-        .championship-wrapper > .right-content{
-            order: 1;
-        }
-        .championship-wrapper > ul:first-child {
-            order: 3;
-        }
-        .trophies {
-            display: grid;
-            grid-template-columns: 100%;
-            text-align: center;
-        }
-        .rule {
-            display: none;
-        }
-        .versus {
-            width: 40px;
-        }
-        .match-displayer .team-logo {
-            height: 45px;
-        }
-        .match-displayer.played h3 {
-            font-size: 12px;
-        }
-        .match-displayer h3 {
-            margin-left: 5px;
-            font-size: 16px;
-        }
-        .match-displayer h4 {
-            font-size: 11px;
-            margin-right: 8px;
-        }
-        .match-displayer {
-            margin-bottom: 10px;
-        }
+    .match-displayer.played h3 {
+        font-size: 12px;
     }
-
-    .players {
-        text-align: left;
+    .match-displayer h3 {
+        margin-left: 5px;
+        font-size: 16px;
     }
-    .name {
-        cursor: pointer;
-        color: #36ebff;
+    .match-displayer h4 {
+        font-size: 11px;
+        margin-right: 8px;
     }
-    .players > ul > li {
-        display: grid;
-        font-size: 14px;
-        grid-template-columns: 120px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
-        grid-gap: 0 20px;
-        align-items: center;
+    .match-displayer {
         margin-bottom: 10px;
-        border-bottom: 1px solid lightgray;
     }
-    .header {
-        cursor: pointer;
+}
+
+.players {
+    text-align: left;
+}
+.name {
+    cursor: pointer;
+    color: #36ebff;
+}
+.players > ul > li {
+    display: grid;
+    font-size: 14px;
+    grid-template-columns: 120px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    grid-gap: 0 20px;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.header {
+    cursor: pointer;
+}
+.header.active {
+    color: orange;
+}
+.header.transform {
+    transform: rotate(-45deg);
+    margin-bottom: 15px;
+}
+.final-four {
+    p {
+        margin: 10px;
     }
-    .header.active {
-        color: orange;
+    .result-team-info-finals {
+        text-align: center;
     }
-    .header.transform {
-        transform: rotate(-45deg);
-        margin-bottom: 15px;
+    .result-team-info-final-score {
+        color: #36ebff;
     }
+    .result-team-info-final-logo {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
 </style>
