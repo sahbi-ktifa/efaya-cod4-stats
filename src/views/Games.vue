@@ -1,6 +1,7 @@
 <template>
   <div class="games">
-    <h3>Season: <strong @click="goToSeason('s20')" :class="{'selected' : seasonKey === 's20'}">2024/2025</strong>
+    <h3>Season: <strong @click="goToSeason('s21')" :class="{'selected' : seasonKey === 's21'}">2025/2026</strong>
+      <strong @click="goToSeason('s20')" :class="{'selected' : seasonKey === 's19'}">2024/2025</strong>
       <strong @click="goToSeason('s19')" :class="{'selected' : seasonKey === 's19'}">2023/2024</strong>
       <strong @click="goToSeason('s18')" :class="{'selected' : seasonKey === 's18'}">2022/2023</strong>
       <strong @click="goToSeason('s17')" :class="{'selected' : seasonKey === 's17'}">2021/2022</strong>
@@ -87,7 +88,7 @@ export default class Games extends Vue {
   @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
 
   protected games!: Game[];
-  private seasonKey: string = "s20";
+  private seasonKey: string = "s21";
 
   get topSeasonPlayers(): TopPlayer[] {
     const players: TopPlayer[] = [];
