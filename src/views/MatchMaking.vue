@@ -42,8 +42,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Inject, Vue} from "vue-facing-decorator";
 import {orderBy} from "lodash";
 import Game from "@/model/Game";
 import {PlayerRef} from "@/model/Player";
@@ -64,20 +63,14 @@ class PlayerCard {
     }
 }
 
-@Component({
-    computed: {
-        ...mapGetters({
-            games: "games"
-        })
-    }
-})
+@Component
 export default class MatchMaking extends Vue {
 
     get selectedPlayers(): PlayerCard[] {
         return this.availablePlayers.filter((p) => p.selected);
     }
-    @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
-    protected games!: Game[];
+    get games(): Game[] { return this.$store.state.games; }
+    @Inject({ from: "matchMakingService" }) public matchMakingService!: MatchmakingService;
     private availablePlayers: PlayerCard[] = [];
     private team1: PlayerCard[] = [];
     private team2: PlayerCard[] = [];

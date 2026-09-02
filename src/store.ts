@@ -1,11 +1,9 @@
-import Vue from "vue";
-import VueX from "vuex";
+import { createStore } from "vuex";
+import type { Store } from "vuex";
 import { orderBy } from "lodash";
 import Game from "@/model/Game";
 
-Vue.use(VueX);
-
-export default new VueX.Store({
+export default createStore({
   state: {
     games: Array<Game>(),
     championshipGames: Array<Game>(),
@@ -20,7 +18,7 @@ export default new VueX.Store({
     },
     championshipGames: (state) => {
       return state.championshipGames;
-    }
+    },
   },
   mutations: {
     gamesRetrieved(state, games: Game[]) {
@@ -32,5 +30,11 @@ export default new VueX.Store({
     championshipScrimsRetrieved(state, games: Game[]) {
       state.scrims = orderBy(games, ["date"], ["desc"]);
     },
-  }
+  },
 });
+
+declare module "@vue/runtime-core" {
+  interface ComponentCustomProperties {
+    $store: Store<{ games: Game[]; championshipGames: Game[]; scrims: Game[] }>;
+  }
+}

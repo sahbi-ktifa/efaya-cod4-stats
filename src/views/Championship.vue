@@ -19,7 +19,7 @@
                     <ul>
                         <li><i>Members:</i></li>
                         <li v-for="member in team.members">
-                            <router-link :to="'/player/' + member.guid" tag="strong" class="name">{{member.playerName}}</router-link>
+                            <router-link :to="'/player/' + member.guid" class="name">{{member.playerName}}</router-link>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +42,7 @@
                         <strong class="header transform" @click="changeSort('killstreak')" :class="{'active': sortKey === 'killstreak'}">Killstreak</strong>
                     </li>
                     <li v-for="dataForPlayer in sortedDataForPlayers">
-                        <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
+                        <router-link :to="'player/' + dataForPlayer.playerRef.guid" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
                         <span>{{dataForPlayer.bestScore}}</span>
                         <span>{{dataForPlayer.bestKills}}</span>
                         <span>{{dataForPlayer.bestRatio}}</span>
@@ -233,8 +233,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Inject, Vue} from "vue-facing-decorator";
 import {orderBy} from "lodash";
 import season1Teams from "@/data/championship/season1/teams.json";
 import season2Teams from "@/data/championship/season2/teams.json";
@@ -250,29 +249,12 @@ import Game from "@/model/Game";
 import {Player, PlayerGlobalData, PlayerRef} from "@/model/Player";
 
 
-@Component({
-    computed: {
-        ...mapGetters({
-            games: "games",
-            gameResults: "championshipGames"
-        })
-    },
-    beforeRouteEnter(to, from, next) {
-        next((vm) => {
-            if (vm.$route.query.s) {
-                // @ts-ignore
-                vm.seasonKey = vm.$route.query.s;
-            }
-            // @ts-ignore
-            vm.init();
-        });
-    }
-})
+@Component
 export default class Championship extends Vue {
-    @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
-    @Inject("dataService") public dataService!: DataService;
-    protected games!: Game[];
-    protected gameResults!: Game[];
+    @Inject({ from: "matchMakingService" }) public matchMakingService!: MatchmakingService;
+    @Inject({ from: "dataService" }) public dataService!: DataService;
+    get games(): Game[] { return this.$store.state.games; }
+    get gameResults(): Game[] { return this.$store.state.championshipGames; }
     private teams: ChampionshipTeam[] = [];
     private matches: ChampionshipMatch[] = [];
     private finalMatches: FinalMatch[] = [];
@@ -287,6 +269,13 @@ export default class Championship extends Vue {
     private sortKey: string = "playerRef.playerName";
     private sortKeyDirection: string = "asc";
     private seasonKey: string = "2024";
+
+    public created() {
+        if (this.$route.query.s) {
+            this.seasonKey = this.$route.query.s as string;
+        }
+        this.init();
+    }
 
     public reset() {
         this.teams = [];
@@ -475,8 +464,7 @@ export default class Championship extends Vue {
     }
 
     public teamIcon(team: string): string {
-        const images = require.context("../data/championship/", true, /\.png$/);
-        return images("./" + this.seasonName + "/icons/" + team + ".png");
+        return new URL(`../data/championship/${this.seasonName}/icons/${team}.png`, import.meta.url).href;
     }
 
     public teamMap(map: string): string {

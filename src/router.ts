@@ -1,56 +1,52 @@
-import Vue from "vue";
-import Router from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-Vue.use(Router);
-
-export default new Router({
-  mode: "history",
-  base: process.env.BASE_URL,
+export default createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
       name: "games",
-      component: () => import(/* webpackChunkName: "games" */ "./views/Games.vue"),
+      component: () => import("./views/Games.vue"),
     },
     {
       path: "/game/:map",
       name: "game",
-      component: () => import(/* webpackChunkName: "game" */ "./views/Game.vue"),
+      component: () => import("./views/Game.vue"),
     },
     {
       path: "/players",
       name: "players",
-      component: () => import(/* webpackChunkName: "players" */ "./views/Players.vue"),
+      component: () => import("./views/Players.vue"),
     },
     {
       path: "/player/:guid",
       name: "player",
-      component: () => import(/* webpackChunkName: "player" */ "./views/Player.vue"),
+      component: () => import("./views/Player.vue"),
     },
     {
       path: "/halloffame",
       name: "halloffame",
-      component: () => import(/* webpackChunkName: "halloffame" */ "./views/HallOfFame.vue"),
+      component: () => import("./views/HallOfFame.vue"),
     },
     {
       path: "/parser",
       name: "parser",
-      component: () => import(/* webpackChunkName: "logsparser" */ "./views/LogsParser.vue"),
+      component: () => import("./views/LogsParser.vue"),
     },
     {
       path: "/matchmaking",
       name: "matchmaking",
-      component: () => import(/* webpackChunkName: "logsparser" */ "./views/MatchMaking.vue"),
+      component: () => import("./views/MatchMaking.vue"),
     },
     {
       path: "/championship",
       name: "championship",
-      component: () => import(/* webpackChunkName: "logsparser" */ "./views/Championship.vue"),
+      component: () => import("./views/Championship.vue"),
     },
     {
       path: "/scrims",
       name: "scrims",
-      component: () => import(/* webpackChunkName: "logsparser" */ "./views/Scrims.vue"),
-    }
+      component: () => import("./views/Scrims.vue"),
+    },
   ],
 });

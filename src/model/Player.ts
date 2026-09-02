@@ -137,7 +137,7 @@ export class PlayerForRound {
     public longestHS = 0;
     public longestKill = 0;
     public distance = 0;
-    public weaps: any = {};
+    public weaps: Record<string, number> = {};
     public parts: any = {};
     public nemesis: any = {};
     public prey: any = {};
@@ -197,7 +197,7 @@ export class Player {
     public longestKill = 0;
     public distance = 0;
     public camper = Infinity;
-    public weaps: any = {};
+    public weaps: Record<string, Record<string, number>> = {};
     public parts: any = {};
     public nemesis: any = {};
     public prey: any = {};
@@ -240,7 +240,7 @@ export class PlayerInfo {
     public meleeKills = new PlayerInfoDetails();
     public suicides = new PlayerInfoDetails();
     public tchatter = new PlayerInfoDetails();
-    public weaps: any = {};
+    public weaps: Record<string, Record<string, number>> = {};
     public parts: any = {};
     public consistency = new PlayerInfoDetails();
     public inconsistency = new PlayerInfoDetails();

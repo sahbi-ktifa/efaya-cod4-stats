@@ -26,21 +26,14 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Vue} from "vue-facing-decorator";
 import {format} from "date-fns";
 import Game from "@/model/Game";
 import TimeUtils from "@/services/TimeUtils";
 
-@Component({
-  computed: {
-    ...mapGetters({
-      scrims: "scrims"
-    })
-  }
-})
+@Component
 export default class Scrims extends Vue {
-  protected scrims!: Game[];
+  get scrims(): Game[] { return this.$store.state.scrims; }
   private xiGameIds = [
     "ZWZheWFfdjJfbXBfZWZhX21hcmtldF8wLjgzNDQzNTA1NTM0NDkzMTM=",
     "ZWZheWFfdjJfbXBfY2FyZW50YW5fMC42MjM2Njk1ODgyNDU5Njkx",

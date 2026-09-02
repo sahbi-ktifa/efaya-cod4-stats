@@ -52,7 +52,7 @@
         <div>Manche 1 : <strong>{{winnerPoints[0]}}</strong> / Manche 2 : <strong>{{winnerPoints[1]}}</strong> - Total : <strong>{{winnerPoints[0] + winnerPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in winners">
-            <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
+            <router-link :to="'/player/' + player.playerRef.guid" class="name">{{player.playerRef.playerName}}</router-link>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.assists[0]}}<br/>{{player.assists[1]}}</span>
@@ -75,7 +75,7 @@
         <div>Manche 1 : <strong>{{loserPoints[0]}}</strong> / Manche 2 : <strong>{{loserPoints[1]}}</strong> - Total: <strong>{{loserPoints[0] + loserPoints[1]}}</strong></div>
         <ul>
           <li v-for="player in losers">
-            <router-link :to="'/player/' + player.playerRef.guid" tag="strong" class="name">{{player.playerRef.playerName}}</router-link>
+            <router-link :to="'/player/' + player.playerRef.guid" class="name">{{player.playerRef.playerName}}</router-link>
             <span>{{player.score[0]}}<br/>{{player.score[1]}}</span>
             <span>{{player.kills[0]}}<br/>{{player.kills[1]}}</span>
             <span>{{player.assists[0]}}<br/>{{player.assists[1]}}</span>
@@ -332,8 +332,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue, Watch} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Vue, Watch} from "vue-facing-decorator";
 import {orderBy} from "lodash";
 import Game, {GameRef} from '@/model/Game';
 import {Player} from "@/model/Player";
@@ -341,15 +340,7 @@ import { format } from "date-fns";
 import {GameService} from "@/services/GameService";
 import TimeUtils from "@/services/TimeUtils";
 
-@Component({
-  computed: {
-    ...mapGetters({
-      games: "games",
-      gameResults: "championshipGames",
-      scrims: "scrims"
-    })
-  }
-})
+@Component
 export default class GameDetails extends Vue {
 
   get durationRound1() {
@@ -383,10 +374,8 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("totalAssists");
   }
 
-  get unkillable() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["totalDeaths"], ["asc"])[0];
-    }
+  get unkillable(): Player {
+    return orderBy(this.playersWithoutSpectators, ["totalDeaths"], ["asc"])[0] as Player;
   }
 
   get scorer() {
@@ -465,16 +454,12 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("pistolKills");
   }
 
-  get consistency() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["consistency"], ["asc"])[0];
-    }
+  get consistency(): Player {
+    return orderBy(this.playersWithoutSpectators, ["consistency"], ["asc"])[0] as Player;
   }
 
-  get inconsistency() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["consistency"], ["desc"])[0];
-    }
+  get inconsistency(): Player {
+    return orderBy(this.playersWithoutSpectators, ["consistency"], ["desc"])[0] as Player;
   }
 
   get accuracy() {
@@ -501,32 +486,24 @@ export default class GameDetails extends Vue {
     return this.retrieveValue("distance");
   }
 
-  get camper() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["distance"], ["asc"])[0];
-    }
+  get camper(): Player {
+    return orderBy(this.playersWithoutSpectators, ["distance"], ["asc"])[0] as Player;
   }
 
-  get quickestDeath() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["quickestDeath"], ["asc"])[0];
-    }
+  get quickestDeath(): Player {
+    return orderBy(this.playersWithoutSpectators, ["quickestDeath"], ["asc"])[0] as Player;
   }
 
-  get quickestKill() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["quickestKill"], ["asc"])[0];
-    }
+  get quickestKill(): Player {
+    return orderBy(this.playersWithoutSpectators, ["quickestKill"], ["asc"])[0] as Player;
   }
 
   get crazyShooter() {
     return this.retrieveValue("totalShots");
   }
 
-  get everyBulletCounts() {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, ["totalShots"], ["asc"])[0];
-    }
+  get everyBulletCounts(): Player {
+    return orderBy(this.playersWithoutSpectators, ["totalShots"], ["asc"])[0] as Player;
   }
 
   get collateral() {
@@ -571,9 +548,9 @@ export default class GameDetails extends Vue {
   ];
   public winnerPoints: number[] = [];
   public loserPoints: number[] = [];
-  protected games!: Game[];
-  protected gameResults!: Game[];
-  protected scrims!: Game[];
+  get games(): Game[] { return this.$store.state.games; }
+  get gameResults(): Game[] { return this.$store.state.championshipGames; }
+  get scrims(): Game[] { return this.$store.state.scrims; }
 
   public created() {
     this.loadData();
@@ -625,14 +602,15 @@ export default class GameDetails extends Vue {
 
   @Watch("games")
   public loadData() {
-    if (this.$route.params.map.indexOf("championship") === 0) {
-      const matchId = this.$route.params.map.replace("championship", "");
+    const mapParam = this.$route.params.map as string;
+    if (mapParam.indexOf("championship") === 0) {
+      const matchId = mapParam.replace("championship", "");
       this.game = this.gameResults.filter((game) => game.id === matchId)[0];
-    } else if (this.$route.params.map.indexOf("scrims") === 0) {
-      const matchId = this.$route.params.map.replace("scrims", "");
+    } else if (mapParam.indexOf("scrims") === 0) {
+      const matchId = mapParam.replace("scrims", "");
       this.game = this.scrims.filter((game) => game.id === matchId)[0];
     } else {
-      this.game = this.games.filter((game) => game.map === this.$route.params.map)[0];
+      this.game = this.games.filter((game) => game.map === mapParam)[0];
     }
     if (this.game) {
       const [winnersGuid, losersGuid, winnerPoints, loserPoints] = new GameService().computeWinnersLosers(this.game);
@@ -675,18 +653,14 @@ export default class GameDetails extends Vue {
     return game.mod.startsWith("pml");
   }
 
-  private retrieveValue(ref: string) {
-    if (this.game) {
-      return orderBy(this.playersWithoutSpectators, [ref], ["desc"])[0];
-    }
+  private retrieveValue(ref: string): Player {
+    return orderBy(this.playersWithoutSpectators, [ref], ["desc"])[0] as Player;
   }
 
-  private retrieveValues(ref: string) {
-    if (this.game) {
-      const ordered = orderBy(this.playersWithoutSpectators, [ref], ["desc"]);
-      // @ts-ignore
-      return ordered.filter((v) => v[ref] === ordered[0][ref]);
-    }
+  private retrieveValues(ref: string): Player[] {
+    const ordered = orderBy(this.playersWithoutSpectators, [ref], ["desc"]);
+    // @ts-ignore
+    return ordered.filter((v) => v[ref] === ordered[0][ref]);
   }
 }
 </script>

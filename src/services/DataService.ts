@@ -64,7 +64,9 @@ export class DataService {
                 if (results[key].id === extraData[key2].id) {
                     results[key].date = extraData[key2].date;
                     results[key].mapPreview = extraData[key2].mapPreview;
+                    // @ts-ignore
                     results[key].twitchUrl = extraData[key2].twitchUrl;
+                    // @ts-ignore
                     results[key].youtubeUrl = extraData[key2].youtubeUrl;
                 }
             }

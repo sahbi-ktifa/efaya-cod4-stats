@@ -21,12 +21,12 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from "vue-property-decorator";
+import {Component, Inject, Vue} from "vue-facing-decorator";
 import {DataService} from "@/services/DataService";
 
 @Component
 export default class App extends Vue {
-  @Inject("dataService") public dataService!: DataService;
+  @Inject({ from: "dataService" }) public dataService!: DataService;
   public loading = false;
 
   public async created() {

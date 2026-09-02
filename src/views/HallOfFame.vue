@@ -14,8 +14,8 @@
         <div>
           <img :src="getImgUrl(honor.icon)" class="trophy">
           <strong>{{propertyName}}</strong>
-          <i v-if="propertyName !== 'overallKills' && propertyName.indexOf('quickest') === -1"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}</i>
-          <i v-if="propertyName.indexOf('quickest') === 0"><router-link :to="'/player/' + honor.playerGuid" tag="strong" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}s</i>
+          <i v-if="propertyName !== 'overallKills' && propertyName.indexOf('quickest') === -1"><router-link :to="'/player/' + honor.playerGuid" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}</i>
+          <i v-if="propertyName.indexOf('quickest') === 0"><router-link :to="'/player/' + honor.playerGuid" class="name">{{honor.playerName}}</router-link> {{honor.honorAmount}}s</i>
           <i v-if="propertyName === 'overallKills'">{{honor.honorAmount}}</i>
           <div class="honor-description" v-if="honor.description && honor.description.length > 0">{{honor.description}}</div>
         </div>
@@ -25,22 +25,15 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue, Watch} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Vue, Watch} from "vue-facing-decorator";
 import Game from "@/model/Game";
 import {Honors, Player} from "@/model/Player";
 import { orderBy } from "lodash";
 import TimeUtils from "@/services/TimeUtils";
 
-@Component({
-  computed: {
-    ...mapGetters({
-      games: "games"
-    })
-  }
-})
+@Component
 export default class HallOfFame extends Vue {
-  protected games!: Game[];
+  get games(): Game[] { return this.$store.state.games; }
   private honors: Honors = new Honors();
   private winStarter: String = "";
   private winStarterValue: number = 0;
@@ -84,7 +77,7 @@ export default class HallOfFame extends Vue {
   }
 
   public getImgUrl(icon: string): string {
-    return require("../assets/award/" + icon + ".png");
+    return new URL(`../assets/award/${icon}.png`, import.meta.url).href;
   }
 
 

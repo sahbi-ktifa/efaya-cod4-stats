@@ -1,6 +1,7 @@
 import {ParsedData} from "@/services/LogsParserService";
 import LineParser from "@/services/LineParser";
 import {PlayerRef} from "@/model/Player";
+import {GameRef} from "@/model/Game";
 
 export default class WinParser implements LineParser {
     public accept(line: string): boolean {
@@ -19,8 +20,8 @@ export default class WinParser implements LineParser {
         const tokens = splittedLine[splittedLine.length - 1].split(";");
         if (tokens && tokens.length === 4) {
             parsedData.currentGame.winnerRef = new PlayerRef(tokens[1], tokens[3]);
-            delete parsedData.currentGame.alliesScore;
-            delete parsedData.currentGame.axisScore;
+            delete (parsedData.currentGame as Partial<GameRef>).alliesScore;
+            delete (parsedData.currentGame as Partial<GameRef>).axisScore;
         }
         // tslint:disable-next-line:max-line-length
         if (parsedData.currentGame.mod === "svr" && parsedData.currentGame.gameType === "sd") { // Dirty fix for SVR team assignations

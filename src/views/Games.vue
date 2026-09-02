@@ -13,7 +13,7 @@
         <ul v-if="topSeasonPlayers.length > 0">
           <li v-for="player in topSeasonPlayers">
             <span>🏆&nbsp;</span>
-            <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
+            <router-link :to="'player/' + player.ref.guid" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
           </li>
         </ul>
       </div>
@@ -22,7 +22,7 @@
         <ul>
           <li v-for="player in topRecentPlayers">
             <span>🏆&nbsp;</span>
-            <router-link :to="'player/' + player.ref.guid" tag="strong" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
+            <router-link :to="'player/' + player.ref.guid" class="name">{{player.ref.playerName}}</router-link> - {{player.mean}} EMP
           </li>
         </ul>
       </div>
@@ -54,8 +54,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue} from "vue-property-decorator";
-import {mapGetters} from "vuex";
+import {Component, Inject, Vue} from "vue-facing-decorator";
 import {format} from "date-fns";
 import Game, {GameRef} from "@/model/Game";
 import TimeUtils from "@/services/TimeUtils";
@@ -76,18 +75,12 @@ class TopPlayer {
   }
 }
 
-@Component({
-  computed: {
-    ...mapGetters({
-      games: "games"
-    })
-  }
-})
+@Component
 export default class Games extends Vue {
-  @Inject("dataService") public dataService!: DataService;
-  @Inject("matchMakingService") public matchMakingService!: MatchmakingService;
+  @Inject({ from: "dataService" }) public dataService!: DataService;
+  @Inject({ from: "matchMakingService" }) public matchMakingService!: MatchmakingService;
 
-  protected games!: Game[];
+  get games(): Game[] { return this.$store.state.games; }
   private seasonKey: string = "s21";
 
   get topSeasonPlayers(): TopPlayer[] {

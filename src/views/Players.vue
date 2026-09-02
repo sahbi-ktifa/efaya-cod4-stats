@@ -16,7 +16,7 @@
         <strong>Forme actuelle sur les 5 derniers matchs</strong>
       </li>
       <li v-for="dataForPlayer in sortedDataForPlayers">
-        <router-link :to="'player/' + dataForPlayer.playerRef.guid" tag="strong" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
+        <router-link :to="'player/' + dataForPlayer.playerRef.guid" class="name">{{dataForPlayer.playerRef.playerName}}</router-link>
         <span>{{dataForPlayer.bestScore}}</span>
         <span>{{dataForPlayer.bestKills}}</span>
         <span>{{dataForPlayer.bestRatio}}</span>
@@ -40,23 +40,16 @@
 </template>
 
 <script lang="ts">
-import {Component, Inject, Vue, Watch} from "vue-property-decorator";
-  import {mapGetters} from "vuex";
+import {Component, Inject, Vue, Watch} from "vue-facing-decorator";
   import {orderBy} from "lodash";
   import Game from "@/model/Game";
   import {GameMood, PlayerGlobalData} from "@/model/Player";
   import {DataService} from "@/services/DataService";
 
-  @Component({
-  computed: {
-    ...mapGetters({
-      games: "games"
-    })
-  }
-})
+  @Component
 export default class Players extends Vue {
-  @Inject("dataService") public dataService!: DataService;
-  protected games!: Game[];
+  @Inject({ from: "dataService" }) public dataService!: DataService;
+  get games(): Game[] { return this.$store.state.games; }
   private dataForPlayers: PlayerGlobalData[] = [];
   private sortKey: string = "playerRef.playerName";
   private sortKeyDirection: string = "asc";
